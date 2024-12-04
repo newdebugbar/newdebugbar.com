@@ -1,6 +1,12 @@
 <div>
     <form
-        @submit.prevent="$el.blur()"
+        @submit.prevent="() => {
+            if (window.pirsch) {
+                pirsch('Submitted the subscription form')
+            }
+
+            $el.blur()
+        }"
         wire:submit="submit"
     >
         <div class="flex flex-wrap sm:flex-nowrap justify-center gap-2 items-center">
@@ -20,6 +26,7 @@
 
             <button
                 @if ($subscribed) disabled @endif
+                data-pirsch-event="Clicked subscribe"
                 class="px-4 py-3 rounded-lg font-medium bg-blue-600 disabled:bg-gray-800"
             >
                 @if ($subscribed) Thank you! @else Keep me posted @endif
