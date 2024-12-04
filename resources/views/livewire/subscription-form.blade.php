@@ -28,27 +28,9 @@
         @enderror
     </form>
 
-    @session('status')
-        <div
-            class="fixed font-medium bottom-4 left-1/2 -translate-x-1/2 w-max bg-blue-800 text-white px-4 py-3 rounded-lg"
-            x-cloak
-            x-data="{ visible: false }"
-            x-init="setTimeout(() => {
-                visible = true
-
-                setTimeout(() => {
-                    visible = false
-                }, 5000)
-            }, 1)"
-            x-show="visible"
-            x-transition:enter="transition ease-out duration-[400ms]"
-            x-transition:enter-start="opacity-0 scale-90"
-            x-transition:enter-end="opacity-100 scale-100"
-            x-transition:leave="transition ease-in duration-[400ms]"
-            x-transition:leave-start="opacity-100 scale-100"
-            x-transition:leave-end="opacity-0 scale-90"
-        >
-            <p>{{ $value }}</p>
-        </div>
+    @session('notification')
+        <x-notification type="{{ $value['type'] }}">
+            {{ $value['message'] }}
+        </x-notification>
     @endsession
 </div>

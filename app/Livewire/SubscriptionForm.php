@@ -30,7 +30,10 @@ class SubscriptionForm extends Component
 
         $this->reset();
 
-        session()->flash('status', "Almost there! Something's waiting in your inbox.");
+        session()->flash('notification', [
+            'type' => 'info',
+            'message' => "Almost there! Something's waiting in your inbox.",
+        ]);
 
         $this->subscribed = true;
     }

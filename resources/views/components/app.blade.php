@@ -14,5 +14,11 @@
     </head>
     <body {{ $attributes->class('bg-gray-900 font-light text-gray-300') }}>
         {{ $slot }}
+
+        @session('notification')
+            <x-notification type="{{ $value['type'] }}">
+                {{ $value['message'] }}
+            </x-notification>
+        @endsession
     </body>
 </html>
