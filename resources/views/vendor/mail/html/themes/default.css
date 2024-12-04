@@ -9,8 +9,9 @@ body *:not(html):not(style):not(br):not(tr):not(code) {
 
 body {
     -webkit-text-size-adjust: none;
-    background-color: #f9fafb;
-    color: #374151;
+    background-color: #101827;
+    background-image: linear-gradient(to bottom, #030813, #101827);
+    color: #D1D5DB;
     line-height: 1.4;
     margin: 0;
     padding: 0;
@@ -26,7 +27,7 @@ blockquote {
 }
 
 a {
-    color: #2463eb;
+    color: #2564EB;
 }
 
 a img {
@@ -36,8 +37,8 @@ a img {
 /* Typography */
 
 h1 {
-    color: #374151;
-    font-size: 18px;
+    color: white;
+    font-size: 16px;
     margin-top: 0;
     text-align: left;
     font-weight: 500;
@@ -78,7 +79,8 @@ img {
     -premailer-cellpadding: 0;
     -premailer-cellspacing: 0;
     -premailer-width: 100%;
-    background-color: #f9fafb;
+    background-color: #101827;
+    background-image: linear-gradient(to bottom, #030813, #101827);
     margin: 0;
     padding: 0;
     width: 100%;
@@ -101,7 +103,7 @@ img {
 }
 
 .header a {
-    color: #000;
+    color: white;
     font-size: 19px;
     font-weight: 500;
     text-decoration: none;
@@ -140,8 +142,8 @@ img {
 .subcopy {
     margin-top: 2em;
     padding-top: 2em;
-    border-top: 1px solid #e8e5ef;
-    color: #6b7280;
+    border-top: 1px solid #37465A;
+    color: #687689;
 }
 
 .subcopy p {
@@ -161,14 +163,14 @@ img {
 }
 
 .footer p {
-    color: #b0adc5;
+    color: #4B5968;
     font-size: 12px;
     text-align: center;
     margin: 0;
 }
 
 .footer a {
-    color: #b0adc5;
+    color: #687689;
     text-decoration: underline;
 }
 
@@ -224,11 +226,11 @@ img {
 
 .button-blue,
 .button-primary {
-    background-color: #2463eb;
-    border-bottom: 12px solid #2463eb;
-    border-left: 24px solid #2463eb;
-    border-right: 24px solid #2463eb;
-    border-top: 12px solid #2463eb;
+    background-color: #2564EB;
+    border-bottom: 12px solid #2564EB;
+    border-left: 24px solid #2564EB;
+    border-right: 24px solid #2564EB;
+    border-top: 12px solid #2564EB;
 }
 
 .button-green,
@@ -258,11 +260,11 @@ img {
 
 .panel-content {
     background-color: #edf2f7;
-    color: #374151;
+    color: white;
 }
 
 .panel-content p {
-    color: #374151;
+    color: white;
 }
 
 .panel-item {

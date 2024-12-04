@@ -26,7 +26,7 @@ class Confirm extends Notification
             ->subject('Are you a bot?')
             ->greeting('Thanks for your interest!')
             ->line('If you want to receive updates, please confirm that you are not a bot by clicking the button below.')
-            ->action('Beep boop… I am not a bot', app(UrlGenerator::class)->signedRoute('confirm-subscriber', $subscriber))
+            ->action('Beep bo… I am not a bot', app(UrlGenerator::class)->signedRoute('confirm-subscriber', $subscriber))
             ->line('See you later!');
     }
 }
