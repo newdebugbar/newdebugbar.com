@@ -1,7 +1,10 @@
 <div>
-    <form wire:submit="submit">
-        <div class="flex gap-2 items-center">
-            <div>
+    <form
+        @submit.prevent="$el.blur()"
+        wire:submit="submit"
+    >
+        <div class="flex flex-wrap sm:flex-nowrap justify-center gap-2 items-center">
+            <div class="flex-grow">
                 <label for="email" class="sr-only">Email</label>
 
                 <input
@@ -11,7 +14,7 @@
                     placeholder="you@example.com"
                     required
                     @if ($subscribed) disabled @endif
-                    class="bg-gray-800 sm:min-w-[350px] border-0 rounded-lg px-4 py-3 placeholder-gray-600"
+                    class="bg-gray-800 disabled:bg-transparent disabled:border disabled:border-gray-800 disabled:placeholder-gray-700 w-full sm:w-auto sm:min-w-[350px] border-0 rounded-lg px-4 py-3 placeholder-gray-600"
                 />
             </div>
 
@@ -19,7 +22,7 @@
                 @if ($subscribed) disabled @endif
                 class="px-4 py-3 rounded-lg font-medium bg-blue-600 disabled:bg-gray-800"
             >
-                @if ($subscribed) Thank you! @else Subscribe @endif
+                @if ($subscribed) Thank you! @else Keep me posted @endif
             </button>
         </div>
 

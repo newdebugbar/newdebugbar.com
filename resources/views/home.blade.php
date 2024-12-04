@@ -19,7 +19,7 @@
 
             <p class="mt-8">Get updates on <a href="https://github.com/newdebugbar" target="_blank" class="font-medium text-white underline underline-offset-4 decoration-white/50">GitHub</a> and <a href="https://x.com/newdebugbar" target="_blank" class="font-medium text-white underline underline-offset-4 decoration-white/50">X</a>, and subscribe.</p>
 
-            <div class="mt-4">
+            <div class="container mt-4">
                 <livewire:subscription-form />
             </div>
 
