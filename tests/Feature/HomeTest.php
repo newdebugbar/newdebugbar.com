@@ -3,6 +3,5 @@
 use function Pest\Laravel\get;
 
 it('works', function () {
-    get(route('home'))
-        ->assertOk();
+    get(route('home'))->assertOk();
 });
