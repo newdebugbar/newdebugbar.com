@@ -12,7 +12,10 @@
                 debug bar for Laravel developers.
             </h2>
 
-            <p class="mt-8">Get updates on <a href="https://github.com/newdebugbar" target="_blank" class="font-medium text-white underline underline-offset-4 decoration-white/50">GitHub</a> and <a href="https://x.com/newdebugbar" target="_blank" class="font-medium text-white underline underline-offset-4 decoration-white/50">X</a>, and subscribe.</p>
+            <p class="mt-8">
+                It's coming in Q1 2025.<br />
+                Get updates on <a href="https://github.com/newdebugbar" target="_blank" class="font-medium text-white underline underline-offset-4 decoration-white/50">GitHub</a> and <a href="https://x.com/newdebugbar" target="_blank" class="font-medium text-white underline underline-offset-4 decoration-white/50">X</a>, and subscribe.
+            </p>
 
             <div class="container mt-4">
                 <livewire:subscription-form />
