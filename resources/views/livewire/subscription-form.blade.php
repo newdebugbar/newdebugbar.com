@@ -37,10 +37,4 @@
             <p class="text-red-500 mt-2">{{ $message }}</p>
         @enderror
     </form>
-
-    @session('notification')
-        <x-notification type="{{ $value['type'] }}">
-            {{ $value['message'] }}
-        </x-notification>
-    @endsession
 </div>
