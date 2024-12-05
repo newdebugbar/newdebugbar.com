@@ -149,7 +149,7 @@
                 </li>
             </ul>
 
-            <h3 class="text-xl font-medium">Beyond 1.0</h3>
+            <h3 class="text-xl font-medium">Beyond version 1.0</h3>
 
             <ul class="pl-4 ml-4 list-disc grid gap-2">
                 <li>
