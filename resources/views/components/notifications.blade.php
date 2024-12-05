@@ -6,12 +6,18 @@
     <div class="grid gap-4">
         <template x-for="(notification, key) in notifications" :key="key">
             <x-notification />
-
-            @session('status')
-                <x-notification>
-                    {{ $value }}
-                </x-notification>
-            @endsession
         </template>
+
+        @session('notification')
+            <x-notification
+                x-data="{
+                    notification: {
+                        type: '{{ $value['type'] }}',
+                        message: '{{ $value['message'] }}',
+                    },
+                    visible: false,
+                }"
+            />
+        @endsession
     </div>
 </div>
