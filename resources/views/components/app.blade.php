@@ -32,6 +32,6 @@
 
         {{ $slot }}
 
-        <x-notification />
+        <x-notifications />
     </body>
 </html>

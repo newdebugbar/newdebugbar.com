@@ -23,8 +23,10 @@
         </div>
     </div>
 
-    <section class="mt-32 container 2xl:max-w-screen-xl">
-        <h2 class="text-center uppercase text-sm tracking-widest">Wall of love</h2>
+    <x-section class="mt-32">
+        <x-slot:title>
+            Wall of love
+        </x-slot>
 
         <div class="grid mt-8 md:grid-cols-2 gap-4">
             <a href="https://x.com/michaeldyrynda/status/1834328870969016687" target="_blank" data-pirsch-event="Clicked Michael's tweet">
@@ -51,7 +53,128 @@
                 </div>
             </a>
         </div>
-    </section>
+    </x-section>
+
+    <x-section class="mt-32">
+        <x-slot:title>
+            Roadmap
+        </x-slot>
+
+        <div class="md:max-w-screen-sm md:mx-auto grid gap-4 mt-8">
+            <h3 class="text-xl font-medium">Version 1.0 (Q1 2025)</h3>
+
+            <h4 class="font-medium">A modern UI</h4>
+
+            <ul class="pl-4 ml-4 list-disc grid gap-2">
+                <li class="line-through">
+                    Light and dark mode!
+                    <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
+                </li>
+
+                <li class="line-through">
+                    Sleep and streamlined user interface
+                    <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
+                </li>
+
+                <li class="line-through">
+                    A command palette that supports fuzzy search for fast developers
+                    <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
+                </li>
+
+                <li class="line-through">
+                    A floating panel with glanceable information that you can position anywhere
+                    <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
+                </li>
+            </ul>
+
+            <h4 class="font-medium">Customization</h4>
+
+            <ul class="pl-4 ml-4 list-disc grid gap-2">
+                <li>
+                    Publish the debug bar's views and change them however you like
+                </li>
+
+                <li>
+                    Create your own workspaces
+                </li>
+            </ul>
+
+            <h4 class="font-medium">Workspaces</h4>
+
+            <ul class="pl-4 ml-4 list-disc grid gap-2">
+                <li>
+                    Cache
+                </li>
+
+                <li>
+                    Dumps
+                </li>
+
+                <li>
+                    Jobs
+                </li>
+
+                <li>
+                    Log
+                </li>
+
+                <li>
+                    Mail
+                </li>
+
+                <li>
+                    Models
+                </li>
+
+                <li>
+                    Notifications
+                </li>
+
+                <li class="line-through">
+                    Queries
+                    <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
+                </li>
+
+                <li>
+                    Request
+                </li>
+
+                <li class="line-through">
+                    Route
+                    <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
+                </li>
+
+                <li>
+                    Views
+                </li>
+            </ul>
+
+            <h3 class="text-xl font-medium">Beyond 1.0</h3>
+
+            <ul class="pl-4 ml-4 list-disc grid gap-2">
+                <li>
+                    Pin your favorite workspaces
+                </li>
+
+                <li>
+                    Customize the UI to your liking
+                </li>
+
+                <li>
+                    AI-assisted debugging (use your OpenAI API key)
+                </li>
+
+                <li>
+                    User accounts to sync settings, favorites, and more, accross projects effortlessly
+                </li>
+            </ul>
+
+            <div class="mt-8 bg-gray-950 rounded-lg p-4 md:p-6 flex items-center md:justify-center gap-3">
+                <x-heroicon-o-heart class="size-5 flex-none text-pink-500" />
+                <p>Help me work full-time on the project by sponsoring it on <a href="https://github.com/sponsors/benjamincrozat" target="_blank" data-pirsch-event="Clicked GitHub Sponsors" class="font-medium text-white underline underline-offset-4 decoration-white/50">GitHub</a>.</p>
+            </div>
+        </div>
+    </x-section>
 
     <footer class="mt-16 text-center">
         <p class="text-sm text-gray-500">
