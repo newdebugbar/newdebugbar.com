@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers\Subscribers;
 
+use App\Models\User;
 use App\Models\Subscriber;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
+use App\Notifications\Subscribers\Fresh;
 
 class ConfirmController extends Controller
 {
     public function __invoke(Subscriber $subscriber) : RedirectResponse
     {
         $subscriber->update(['email_verified_at' => now()]);
+
+        User::query()
+            ->where('email', 'hello@benjamincrozat.com')
+            ->first()
+            ?->notify(new Fresh($subscriber));
 
         return to_route('home')->with('notification', [
             'type' => 'success',
