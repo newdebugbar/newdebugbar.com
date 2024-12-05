@@ -25,7 +25,7 @@
         <a href="https://github.com/sponsors/benjamincrozat" target="_blank">
             <div class="bg-gray-950">
                 <div class="container text-center py-4 text-sm">
-                    <strong class="font-medium text-white">The project is looking for funding.</strong> <x-heroicon-s-arrow-top-right-on-square class="size-4 oopacity-75 ml-[.175rem] inline translate-y-[-2px]" />
+                    <strong class="font-medium text-white">Get early access. Help fund the project.</strong> <x-heroicon-s-arrow-top-right-on-square class="size-4 oopacity-75 ml-[.175rem] inline translate-y-[-2px]" />
                 </div>
             </div>
         </a>
