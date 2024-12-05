@@ -18,9 +18,15 @@ export default {
             center: true,
             padding: '1rem',
         },
+
         extend: {
             fontFamily: {
                 sans: ['Outfit', ...defaultTheme.fontFamily.sans],
+            },
+
+            screens: {
+                ...defaultTheme.screens,
+                '2xl': '1440px',
             },
         },
     },

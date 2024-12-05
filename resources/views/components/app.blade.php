@@ -22,6 +22,14 @@
         <link rel="apple-touch-icon" sizes="180x180" href="{{ Vite::asset('resources/img/apple-touch-icon.png') }}" />
     </head>
     <body {{ $attributes->class('bg-gray-900 font-light text-gray-300') }}>
+        <a href="https://github.com/sponsors/benjamincrozat" target="_blank">
+            <div class="bg-gray-950">
+                <div class="container text-center py-4 text-sm">
+                    <strong class="font-medium text-white">The project is looking for funding.</strong> <x-heroicon-s-arrow-top-right-on-square class="size-4 oopacity-75 ml-[.175rem] inline translate-y-[-2px]" />
+                </div>
+            </div>
+        </a>
+
         {{ $slot }}
 
         <x-notification />

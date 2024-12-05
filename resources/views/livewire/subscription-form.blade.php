@@ -20,14 +20,14 @@
                     placeholder="you@example.com"
                     required
                     @if ($subscribed) disabled @endif
-                    class="bg-gray-800 disabled:bg-transparent disabled:border disabled:border-gray-800 disabled:placeholder-gray-700 w-full sm:w-auto sm:min-w-[350px] border-0 rounded-lg px-4 py-3 placeholder-gray-600"
+                    class="bg-gray-800 w-full disabled:bg-transparent disabled:border disabled:border-gray-800 disabled:placeholder-gray-700 sm:min-w-[350px] border-0 rounded-lg px-4 py-3 placeholder-gray-600"
                 />
             </div>
 
             <button
                 @if ($subscribed) disabled @endif
                 data-pirsch-event="Clicked subscribe"
-                class="px-4 py-3 rounded-lg font-medium bg-blue-600 disabled:bg-gray-800"
+                class="px-4 py-3 flex-none rounded-lg font-medium bg-blue-600 disabled:bg-gray-800"
             >
                 @if ($subscribed) Thank you! @else Keep me posted @endif
             </button>
