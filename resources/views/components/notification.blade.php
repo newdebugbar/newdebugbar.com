@@ -6,7 +6,7 @@
     <div class="grid gap-4">
         <template x-for="(notification, key) in notifications" :key="key">
             <div
-                class="pointer-events-auto flex items-center gap-3 font-medium w-full md:w-[60dvw] lg:w-[30dvw] text-white px-4 py-3 rounded-lg"
+                class="pointer-events-auto flex items-center gap-3 mx-auto font-medium w-full md:w-[60dvw] lg:w-[30dvw] text-white px-4 py-3 rounded-lg"
                 x-bind:class="{
                     'bg-blue-800': 'info' === notification?.type,
                     'bg-green-800': 'success' === notification?.type,
