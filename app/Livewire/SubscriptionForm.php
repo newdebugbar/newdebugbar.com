@@ -30,7 +30,7 @@ class SubscriptionForm extends Component
 
         $this->reset();
 
-        $this->dispatch('notification', [
+        $this->dispatch('notify', [
             'type' => 'info',
             'message' => "Almost there! Something's waiting in your inbox.",
         ]);
