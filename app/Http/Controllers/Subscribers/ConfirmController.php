@@ -12,6 +12,13 @@ class ConfirmController extends Controller
 {
     public function __invoke(Subscriber $subscriber) : RedirectResponse
     {
+        if ($subscriber->email_verified_at) {
+            return to_route('home')->with('notification', [
+                'type' => 'success',
+                'message' => 'No worries, you already confirmed your email.',
+            ]);
+        }
+
         $subscriber->update(['email_verified_at' => now()]);
 
         User::query()
