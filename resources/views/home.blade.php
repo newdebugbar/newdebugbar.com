@@ -41,29 +41,55 @@
         </x-slot>
 
         <div class="grid mt-8 md:grid-cols-2 gap-4">
-            <a href="https://x.com/michaeldyrynda/status/1834328870969016687" target="_blank" data-pirsch-event="Clicked Michael's tweet">
-                <div class="bg-gray-800/50 flex items-start gap-4 md:gap-6 p-4 md:p-6 rounded-lg h-full">
-                    <img src="https://pbs.twimg.com/profile_images/1858019523577917444/SQU_Kbod_400x400.jpg" alt="Michael Dyrynda" class="size-12 md:size-16 rounded-full" />
+            <x-tweet
+                avatar="https://pbs.twimg.com/profile_images/1858019523577917444/SQU_Kbod_400x400.jpg"
+                bio="Organizer of Laracon AU and podcast co-host."
+                link="https://x.com/michaeldyrynda/status/1834328870969016687"
+                name="Michael Dyrynda"
+                data-pirsch-event="Clicked Michael's tweet"
+            >
+                <p>OK, this is kinda awesome [...] Very interested in this the more I see!</p>
+            </x-tweet>
 
-                    <div>
-                        <p class="font-medium text-white">Michael Dyrynda</p>
-                        <p>OK, this is kinda awesome [...] Very interested in this the more I see!</p>
-                        <p class="text-gray-400 mt-4">— Organizer of Laracon AU and podcast co-host.</p>
-                    </div>
-                </div>
-            </a>
+            <x-tweet
+                avatar="https://pbs.twimg.com/profile_images/951138971026952194/VEfZA8NC_400x400.jpg"
+                bio="Maker of the original debug bar for Laravel."
+                link="https://x.com/barryvdh/status/1836458733716803766"
+                name="Barry vd. Heuvel"
+                data-pirsch-event="Clicked Barry's tweet"
+            >
+                <p>Wow, looks nice! [...] looking forward to borrow some good ideas from you for Laravel Debugbar and Telescope Toolbar. 😁 Good luck!</p>
+            </x-tweet>
 
-            <a href="https://x.com/barryvdh/status/1836458733716803766" target="_blank" data-pirsch-event="Clicked Barry's tweet">
-                <div class="bg-gray-800/50 flex items-start gap-4 md:gap-6 p-4 md:p-6 rounded-lg h-full">
-                    <img src="https://pbs.twimg.com/profile_images/951138971026952194/VEfZA8NC_400x400.jpg" alt="Barry vd. Heuvel" class="size-12 md:size-16 rounded-full" />
+            <x-tweet
+                avatar="https://pbs.twimg.com/profile_images/1838524088496594944/FMLhjUaU_400x400.jpg"
+                bio="The API guy."
+                link="https://x.com/JustSteveKing/status/1864580608439009606"
+                name="Steve McDougall"
+                data-pirsch-event="Clicked Steve's tweet"
+            >
+                <p>Looking forward to trying this out! [...]</p>
+            </x-tweet>
 
-                    <div>
-                        <p class="font-medium text-white">Barry vd. Heuvel</p>
-                        <p>Wow, looks nice! [...] looking forward to borrow some good ideas from you for Laravel Debugbar and Telescope Toolbar. 😁 Good luck!</p>
-                        <p class="text-gray-400 mt-4">— Maker of the original debug bar for Laravel.</p>
-                    </div>
-                </div>
-            </a>
+            <x-tweet
+                avatar="https://pbs.twimg.com/profile_images/1581394119653474304/bqxzdiBc_400x400.jpg"
+                bio="Laravel developer and Rector fan."
+                link="https://x.com/SlyFireFox/status/1834202120049844562"
+                name="Peter Fox"
+                data-pirsch-event="Clicked Peter's tweet"
+            >
+                <p>This looks pretty awesome. Not been a fan of many debug bars for the reason they're just not all that nice to use. I could see myself using this.</p>
+            </x-tweet>
+
+            <x-tweet
+                avatar="https://pbs.twimg.com/profile_images/1844799448649486341/5cpINazw_400x400.jpg"
+                bio="The legendary Laravel samuraï."
+                link="https://x.com/LaravelJutsu/status/1834657567672332576"
+                name="Ludovic Guénet"
+                data-pirsch-event="Clicked Ludovic's tweet"
+            >
+                <p>I'd be glad to make a video out of it!</p>
+            </x-tweet>
         </div>
     </x-section>
 
