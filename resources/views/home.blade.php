@@ -15,7 +15,7 @@
         <div class="text-center">
             <h1>
                 <a wire:navigate href="{{ route('home') }}" data-pirsch-event="Clicked the logo">
-                    <img src="{{ Vite::asset('resources/img/logo.png') }}" alt="{{ config('app.name') }}" class="h-64 mx-auto" />
+                    <img src="{{ Vite::asset('resources/img/logo.png') }}" alt="{{ config('app.name') }}" class="h-56 md:h-64 mx-auto" />
                 </a>
             </h1>
 
