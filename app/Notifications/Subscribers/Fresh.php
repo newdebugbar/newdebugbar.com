@@ -26,7 +26,7 @@ class Fresh extends Notification
     public function toMail() : MailMessage
     {
         return (new MailMessage)
-            ->subject('Good news!')
+            ->subject('New subscriber')
             ->greeting('Good news!')
             ->line("**{$this->subscriber->email}** is one more person interested in the new debug bar!");
     }
