@@ -32,6 +32,22 @@
 
         {{ $slot }}
 
+        <footer class="py-8 mt-16 bg-gray-950 text-center">
+            <nav class="container xl:max-w-screen-lg flex items-center justify-center gap-4">
+                <a href="https://github.com/newdebugbar" target="_blank" data-pirsch-event="Clicked GitHub in the footer" class="inline-block">
+                    <x-icon-github class="size-5 fill-current" />
+                </a>
+
+                <a href="https://x.com/newdebugbar" target="_blank" data-pirsch-event="Clicked X in the footer" class="inline-block">
+                    <x-icon-x class="size-5 fill-current" />
+                </a>
+            </nav>
+
+            <p class="text-sm text-gray-500 mt-4">
+                Made with <span class="text-pink-400">♥</span> by <a href="https://x.com/benjamincrozat" target="_blank" data-pirsch-event="Clicked Benjamin's name" class="font-medium text-gray-400 underline underline-offset-4 decoration-gray-400/50">Benjamin Crozat</a>.
+            </p>
+        </footer>
+
         <x-notifications />
     </body>
 </html>

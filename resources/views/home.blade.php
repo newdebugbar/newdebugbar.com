@@ -1,4 +1,4 @@
-<x-app class="pb-8">
+<x-app>
     <nav class="container xl:max-w-screen-lg flex items-center justify-end gap-8 mt-8">
         <a href="#roadmap" class="font-medium">Roadmap</a>
 
@@ -181,26 +181,10 @@
                 </li>
             </ul>
 
-            <div class="mt-4 bg-gray-950 rounded-lg p-4 md:p-6 flex items-center md:justify-center gap-3">
+            <div class="mt-4 bg-gray-950/30 rounded-lg p-4 md:p-6 flex items-center md:justify-center gap-3">
                 <x-heroicon-o-heart class="size-5 flex-none text-pink-500" />
                 <p>Help me work full-time on the project by sponsoring it on <a href="https://github.com/sponsors/benjamincrozat" target="_blank" data-pirsch-event="Clicked GitHub Sponsors" class="font-medium text-white underline underline-offset-4 decoration-white/50">GitHub</a>.</p>
             </div>
         </div>
     </x-section>
-
-    <footer class="mt-16 text-center">
-        <nav class="container xl:max-w-screen-lg flex items-center justify-center gap-4">
-            <a href="https://github.com/newdebugbar" target="_blank" data-pirsch-event="Clicked GitHub in the footer" class="fill-current">
-                <x-icon-github class="size-5" />
-            </a>
-
-            <a href="https://x.com/newdebugbar" target="_blank" data-pirsch-event="Clicked X in the footer" class="fill-current">
-                <x-icon-x class="size-5" />
-            </a>
-        </nav>
-
-        <p class="text-sm text-gray-500 mt-8">
-            Made with <span class="text-pink-400">♥</span> by <a href="https://x.com/benjamincrozat" target="_blank" data-pirsch-event="Clicked Benjamin's name" class="font-medium text-gray-400 underline underline-offset-4 decoration-gray-400/50">Benjamin Crozat</a>.
-        </p>
-    </footer>
 </x-app>
