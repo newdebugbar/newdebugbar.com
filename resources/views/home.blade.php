@@ -203,7 +203,7 @@
                 </li>
 
                 <li>
-                    User accounts to sync settings, themes, favorites, and more, accross projects effortlessly
+                    User accounts to sync settings, themes, favorites, and more, across projects effortlessly
                 </li>
             </ul>
 
