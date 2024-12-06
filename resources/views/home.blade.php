@@ -181,9 +181,9 @@
                 </li>
             </ul>
 
-            <div class="mt-2 bg-gray-950/30 text-gray-400 rounded-lg p-4 md:p-6 flex items-center md:justify-center gap-3">
+            <div class="mt-2 bg-gray-950/30 rounded-lg p-4 md:p-6 flex items-center md:justify-center gap-3">
                 <x-heroicon-o-heart class="size-5 flex-none text-pink-500" />
-                <p>Help me work full-time on the project by sponsoring it on <a href="https://github.com/sponsors/benjamincrozat" target="_blank" data-pirsch-event="Clicked GitHub Sponsors" class="font-medium text-gray-300 underline underline-offset-4 decoration-gray-300/50">GitHub</a>.</p>
+                <p>Help me work full-time on the project by sponsoring it on <a href="https://github.com/sponsors/benjamincrozat" target="_blank" data-pirsch-event="Clicked GitHub Sponsors" class="font-medium underline underline-offset-4 decoration-gray-300/50">GitHub</a>.</p>
             </div>
         </div>
     </x-section>
