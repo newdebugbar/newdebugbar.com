@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use Illuminate\Routing\Middleware\ValidateSignature;
 use App\Http\Controllers\Subscribers\ConfirmController;
 
-Route::view('/', 'home')->name('home');
+Route::get('/', HomeController::class)->name('home');
 
 Route::middleware(ValidateSignature::class)
     ->get('/confirm/{subscriber:email}', ConfirmController::class)
