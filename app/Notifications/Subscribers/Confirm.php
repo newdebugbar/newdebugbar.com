@@ -15,7 +15,7 @@ class Confirm extends Notification
     /**
      * @return array<int, string>
      */
-    public function via(Subscriber $subscriber) : array
+    public function via() : array
     {
         return ['mail'];
     }
