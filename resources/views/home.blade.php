@@ -1,4 +1,16 @@
 <x-app class="pb-8">
+    <nav class="container xl:max-w-screen-lg flex items-center justify-end gap-8 mt-8">
+        <a href="#roadmap" class="font-medium">Roadmap</a>
+
+        <a href="https://github.com/newdebugbar" target="_blank" data-pirsch-event="Clicked GitHub in the nav bar" class="fill-current">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="size-5"><path fill-rule="evenodd" d="M10 0c5.523 0 10 4.59 10 10.253 0 4.529-2.862 8.371-6.833 9.728-.507.101-.687-.219-.687-.492 0-.338.012-1.442.012-2.814 0-.956-.32-1.58-.679-1.898 2.227-.254 4.567-1.121 4.567-5.059 0-1.12-.388-2.034-1.03-2.752.104-.259.447-1.302-.098-2.714 0 0-.838-.275-2.747 1.051-.799-.227-1.655-.341-2.505-.345-.85.004-1.705.118-2.503.345-1.911-1.326-2.751-1.051-2.751-1.051-.543 1.412-.2 2.455-.097 2.714-.639.718-1.03 1.632-1.03 2.752 0 3.928 2.335 4.808 4.556 5.067-.286.256-.545.708-.635 1.371-.57.262-2.018.715-2.91-.852 0 0-.529-.985-1.533-1.057 0 0-.975-.013-.068.623 0 0 .655.315 1.11 1.5 0 0 .587 1.83 3.369 1.21.005.857.014 1.665.014 1.909 0 .271-.184.588-.683.493C2.865 18.627 0 14.783 0 10.253 0 4.59 4.478 0 10 0"/></svg>
+        </a>
+
+        <a href="https://x.com/newdebugbar" target="_blank" data-pirsch-event="Clicked X in the nav bar" class="-ml-4 fill-current">
+            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 24 24" class="size-5"><path d="M14.095479 10.316482 22.286354 1h-1.940718l-7.115352 8.087682L7.551414 1H1l8.589488 12.231093L1 23h1.940717l7.509372-8.542861L16.448587 23H23l-8.904521-12.683518zm-2.658957 3.021983-.871624-1.218704-6.924311-9.68815h2.981339l5.58978 7.82155.867949 1.218704 7.26506 10.166271h-2.981339l-5.926854-8.299671z"/></svg>
+        </a>
+    </nav>
+
     <div class="container mt-8 md:max-w-screen-sm">
         <div class="text-center">
             <h1>
@@ -55,7 +67,7 @@
         </div>
     </x-section>
 
-    <x-section class="mt-32">
+    <x-section id="roadmap" class="mt-32">
         <x-slot:title>
             Roadmap
         </x-slot>
