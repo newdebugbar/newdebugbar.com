@@ -78,22 +78,22 @@
             <h4 class="font-medium">A modern UI</h4>
 
             <ul class="pl-4 ml-4 list-disc grid gap-2">
-                <li class="line-through">
+                <li class="line-through opacity-55">
                     Light and dark mode!
                     <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
                 </li>
 
-                <li class="line-through">
+                <li class="line-through opacity-55">
                     Sleep and streamlined user interface
                     <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
                 </li>
 
-                <li class="line-through">
+                <li class="line-through opacity-55">
                     A command palette that supports fuzzy search for fast developers
                     <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
                 </li>
 
-                <li class="line-through">
+                <li class="line-through opacity-55">
                     A floating panel with glanceable information that you can position anywhere
                     <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
                 </li>
@@ -142,7 +142,7 @@
                     Notifications
                 </li>
 
-                <li class="line-through">
+                <li class="line-through opacity-55">
                     Queries
                     <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
                 </li>
@@ -151,7 +151,7 @@
                     Request
                 </li>
 
-                <li class="line-through">
+                <li class="line-through opacity-55">
                     Route
                     <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
                 </li>
