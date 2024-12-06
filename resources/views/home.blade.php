@@ -1,6 +1,6 @@
 <x-app>
     <nav class="container xl:max-w-screen-lg flex items-center justify-end gap-8 mt-8">
-        <a href="#roadmap" class="font-medium">Roadmap</a>
+        <a href="#roadmap" data-pirsch-event='Clicked "Roadmap" in the nav bar' class="font-medium">Roadmap</a>
 
         <a href="https://github.com/newdebugbar" target="_blank" data-pirsch-event="Clicked GitHub in the nav bar" class="fill-current">
             <x-icon-github class="size-5" />
