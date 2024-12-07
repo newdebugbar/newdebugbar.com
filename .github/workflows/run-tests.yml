@@ -42,7 +42,9 @@ jobs:
         run: cp .env.example .env
 
       - name: Install back-end dependencies
-        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+        run: |
+          composer remove newdebugbar/newdebugbar --dev
+          composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
       - name: Generate encryption key
         run: php artisan key:generate
