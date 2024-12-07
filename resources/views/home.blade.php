@@ -88,7 +88,7 @@
             Roadmap
         </x-slot>
 
-        <div class="md:max-w-screen-sm md:mx-auto grid gap-4 mt-8">
+        <div class="lg:max-w-screen-md lg:mx-auto grid gap-4 mt-8">
             <h3 class="text-xl font-medium">Version 1.0 (Q1 2025)</h3>
 
             <h4 class="font-medium">A modern UI</h4>

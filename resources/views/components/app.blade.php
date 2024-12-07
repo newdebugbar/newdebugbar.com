@@ -6,11 +6,11 @@
 
         <title>{{ $title ?? config('app.name') }}</title>
 
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+
         @if (app()->isProduction())
             <script defer src="https://api.pirsch.io/pa.js" id="pianjs" data-code="HXdkUoyfzOakKngFs6IwJUaR7WryTzx3"></script>
         @endif
-
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
