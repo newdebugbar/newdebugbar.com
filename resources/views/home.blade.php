@@ -36,9 +36,9 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 186" class="h-8 flex-none fill-[#F97315] mt-1"><path fill="#F97315" fill-rule="evenodd" d="M33 0C14.775 0 0 14.775 0 33v120c0 18.225 14.775 33 33 33h126c18.226 0 33-14.775 33-33V33c0-18.225-14.774-33-33-33H33Zm82.099 41h-43v23h-22v17.721c0 2.7329494 1.1181691 5.3468984 3.095 7.234L72.099 107h-22v22h22v23h43v-23h22v-17.721c0-2.732949-1.118169-5.346898-3.095-7.234L115.099 86h22V64h-22V41Zm0 23v22h-33c-5.523 0-10-4.477-10-10V64h43Zm0 65h-43v-22h33c5.523 0 10 4.477 10 10v12Z"/></svg>
 
                     <div>
-                        <p class="font-medium text-white">Sevalla</p>
+                        <p class="font-medium text-white underline underline-offset-4 decoration-white/50 decoration-1">Sevalla</p>
                         <p class="opacity-75">Host and manage your applications, databases, and static sites in a single, intuitive platform.</p>
-                        <p class="font-medium mt-2">Join Sevalla today and get $50 free credits!</p>
+                        <p class="font-medium mt-2"><span class="underline underline-offset-4 decoration-white/50 decoration-1">Join Sevalla</span> today and get $50 free credits!</p>
                     </div>
                 </div>
             </a>
