@@ -16,7 +16,7 @@
 
             <p>
                 It's coming in Q1 2025.<br />
-                Get updates on <a href="https://github.com/newdebugbar" target="_blank" data-pirsch-event="Clicked GitHub" class="font-medium text-white underline underline-offset-4 decoration-white/50">GitHub</a> and <a href="https://x.com/newdebugbar" target="_blank" data-pirsch-event="Clicked X" class="font-medium text-white underline underline-offset-4 decoration-white/50">X</a>, and join {{ trans_choice(':count subscriber|:count subscribers', $subscribersCount) }}.
+                Get updates on <a href="https://github.com/newdebugbar" target="_blank" data-pirsch-event="Clicked GitHub" class="font-medium text-white underline underline-offset-4 decoration-white/50">GitHub</a> and <a href="https://x.com/newdebugbar" target="_blank" data-pirsch-event="Clicked X" class="font-medium text-white underline underline-offset-4 decoration-white/50">X</a>, and <strong class="font-medium text-white">join {{ trans_choice(':count subscriber|:count subscribers', $subscribersCount) }}</strong>.
             </p>
 
             <div class="mt-4 max-w-[480px] mx-auto">
