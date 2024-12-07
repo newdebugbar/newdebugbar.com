@@ -6,6 +6,10 @@
 
         <title>{{ $title ?? config('app.name') }}</title>
 
+        <meta property="og:image" content="{{ Vite::asset('resources/img/og-image.webp') }}" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="{{ Vite::asset('resources/img/og-image.webp') }}" />
+
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         @if (app()->isProduction())

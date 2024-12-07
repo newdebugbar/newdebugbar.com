@@ -19,7 +19,7 @@
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
         "mockery/mockery": "^1.6",
-        "newdebugbar/newdebugbar": "*",
+        "newdebugbar/newdebugbar": "dev-main",
         "nunomaduro/collision": "^8.1",
         "pestphp/pest": "^3.6",
         "pestphp/pest-plugin-laravel": "^3.0"
@@ -58,7 +58,9 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "laravel/telescope"
+            ]
         }
     },
     "config": {
