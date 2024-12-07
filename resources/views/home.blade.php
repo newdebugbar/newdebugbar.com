@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <x-section class="mt-24 xl:!max-w-screen-lg">
+    <x-section id="sponsors" class="mt-24 xl:!max-w-screen-lg">
         <x-slot:title>
             Sponsors
         </x-slot>

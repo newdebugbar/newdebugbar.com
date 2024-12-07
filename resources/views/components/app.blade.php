@@ -31,6 +31,8 @@
         </a>
 
         <nav class="container xl:max-w-screen-lg flex items-center justify-end gap-8 mt-8">
+            <a href="#sponsors" data-pirsch-event='Clicked "Sponsors" in the nav bar' class="font-medium">Sponsors</a>
+
             <a href="#roadmap" data-pirsch-event='Clicked "Roadmap" in the nav bar' class="font-medium">Roadmap</a>
 
             <a href="https://github.com/newdebugbar" target="_blank" data-pirsch-event="Clicked GitHub in the nav bar" class="fill-current">
