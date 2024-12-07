@@ -38,7 +38,7 @@
                     <div>
                         <p class="font-medium text-white underline underline-offset-4 decoration-white/50 decoration-1">Sevalla</p>
                         <p class="opacity-75">Host and manage your applications, databases, and static sites in a single, intuitive platform.</p>
-                        <p class="font-medium mt-2"><span class="underline underline-offset-4 decoration-white/50 decoration-1">Join Sevalla</span> today and get $50 free credits!</p>
+                        <p class="font-medium text-white mt-2"><span class="underline underline-offset-4 decoration-white/50 decoration-1">Join Sevalla</span> today and get $50 free credits!</p>
                     </div>
                 </div>
             </a>
