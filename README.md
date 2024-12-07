@@ -1,3 +1,5 @@
+![The new debug bar for Laravel](https://github.com/user-attachments/assets/bd21b553-fa7a-401a-9b05-ac1287325e2b)
+
 # [newdebugbar.com](https://newdebugbar.com)
 
 This is the official website for the new debug bar for Laravel.

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b93ab9274c9b670ec0e6e3a1d02adab0",
+    "content-hash": "2a59d0a1f3fd827625919284f7802ba7",
     "packages": [
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2491,58 +2491,6 @@
                 "source": "https://github.com/nette/utils/tree/v4.0.5"
             },
             "time": "2024-08-07T15:39:19+00:00"
-        },
-        {
-            "name": "newdebugbar/newdebugbar",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "../newdebugbar",
-                "reference": "226d3b2ee8e1479012ffd881a216cb38b6619a1f"
-            },
-            "require": {
-                "illuminate/support": "^11.34",
-                "livewire/livewire": "^3.5",
-                "php": "^8.3"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.18",
-                "orchestra/testbench": "^9.6",
-                "pestphp/pest": "^3.6",
-                "pestphp/pest-plugin-arch": "^3.0",
-                "pestphp/pest-plugin-laravel": "^3.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "NewDebugBar\\NewDebugBarServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "NewDebugBar\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "NewDebugBar\\Tests\\": "tests/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Benjamin Crozat",
-                    "email": "hello@benjamincrozat.com"
-                }
-            ],
-            "description": "A new modern, powerful, free, and open source debug bar for Laravel developers.",
-            "transport-options": {
-                "relative": true
-            }
         },
         {
             "name": "nikic/php-parser",
@@ -6773,6 +6721,58 @@
                 }
             ],
             "time": "2024-11-08T17:47:46+00:00"
+        },
+        {
+            "name": "newdebugbar/newdebugbar",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "../newdebugbar",
+                "reference": "226d3b2ee8e1479012ffd881a216cb38b6619a1f"
+            },
+            "require": {
+                "illuminate/support": "^11.34",
+                "livewire/livewire": "^3.5",
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.18",
+                "orchestra/testbench": "^9.6",
+                "pestphp/pest": "^3.6",
+                "pestphp/pest-plugin-arch": "^3.0",
+                "pestphp/pest-plugin-laravel": "^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "NewDebugBar\\NewDebugBarServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "NewDebugBar\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "NewDebugBar\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Crozat",
+                    "email": "hello@benjamincrozat.com"
+                }
+            ],
+            "description": "A new modern, powerful, free, and open source debug bar for Laravel developers.",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "nunomaduro/collision",
