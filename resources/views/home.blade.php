@@ -1,26 +1,24 @@
 <x-app>
-    <div class="container mt-8 md:max-w-screen-sm">
-        <div class="text-center">
-            <h1>
-                <a wire:navigate href="{{ route('home') }}" data-pirsch-event="Clicked the logo">
-                    <img src="{{ Vite::asset('resources/img/logo.png') }}" alt="{{ config('app.name') }}" class="h-56 md:h-64 mx-auto" />
-                </a>
-            </h1>
+    <div class="container mt-8 md:max-w-screen-sm text-center">
+        <h1>
+            <a wire:navigate href="{{ route('home') }}" data-pirsch-event="Clicked the logo">
+                <img src="{{ Vite::asset('resources/img/logo.png') }}" alt="{{ config('app.name') }}" class="h-56 md:h-64 mx-auto" />
+            </a>
+        </h1>
 
-            <h2 class="mt-5 text-blue-200">
-                A new modern, powerful, free, and open source<br />
-                debug bar for Laravel developers.
-            </h2>
+        <h2 class="mt-5 text-blue-200">
+            A new modern, powerful, free, and open source<br />
+            debug bar for Laravel developers.
+        </h2>
 
-            <div class="h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent my-8"></div>
+        <div class="h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent my-8"></div>
 
-            <p>
-                It's coming in Q1 2025.<br />
-                Get updates on <a href="https://github.com/newdebugbar" target="_blank" data-pirsch-event="Clicked GitHub" class="font-medium text-white underline underline-offset-4 decoration-white/50">GitHub</a> and <a href="https://x.com/newdebugbar" target="_blank" data-pirsch-event="Clicked X" class="font-medium text-white underline underline-offset-4 decoration-white/50">X</a>,<br />
-                and <strong class="font-medium text-white">join {{ trans_choice(':count subscriber|:count subscribers', $subscribersCount) }}</strong>.
+        <div class="max-w-[480px] mx-auto">
+            <p class="text-balance">
+                It's coming in Q1 2025. Get updates on <a href="https://github.com/newdebugbar" target="_blank" data-pirsch-event="Clicked GitHub" class="font-medium text-white underline underline-offset-4 decoration-white/50">GitHub</a> and <a href="https://x.com/newdebugbar" target="_blank" data-pirsch-event="Clicked X" class="font-medium text-white underline underline-offset-4 decoration-white/50">X</a>, and <strong class="font-medium text-white">join {{ trans_choice(':count subscriber|:count subscribers', $subscribersCount) }}</strong>.
             </p>
 
-            <div class="mt-4 max-w-[480px] mx-auto">
+            <div class="mt-4">
                 <livewire:subscription-form />
             </div>
         </div>
