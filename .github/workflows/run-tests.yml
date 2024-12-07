@@ -1,0 +1,64 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:latest
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+        ports:
+          - 3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          coverage: none
+          php-version: 8.3
+
+      - name: Setup MySQL database
+        run: mysql -u root -h 127.0.0.1 -P ${{ job.services.mysql.ports[3306] }} -e "CREATE DATABASE newdebugbar_test"
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create .env file
+        run: cp .env.example .env
+
+      - name: Install back-end dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+      - name: Generate encryption key
+        run: php artisan key:generate
+
+      - name: Install front-end dependencies and build CSS and JavaScript
+        run: |
+          npm i --no-fund
+          npm run build
+
+      - name: Run tests
+        run: php artisan test
+        env:
+          DB_PORT: ${{ job.services.mysql.ports[3306] }}
+
+      - name: Upload logs
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          path: storage/logs/laravel.log
