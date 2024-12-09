@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Subscriber;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,5 +14,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Benjamin Crozat',
             'email' => 'hello@benjamincrozat.com',
         ]);
+
+        Subscriber::factory(10)->create();
     }
 }

@@ -10,6 +10,8 @@
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="{{ Vite::asset('resources/img/og-image.webp') }}" />
 
+        <livewire:styles />
+
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         @if (app()->isProduction())
@@ -26,46 +28,52 @@
         <link rel="apple-touch-icon" sizes="180x180" href="{{ Vite::asset('resources/img/apple-touch-icon.png') }}" />
     </head>
     <body {{ $attributes->class('bg-gray-900 font-light text-gray-300') }}>
-        <a href="https://github.com/sponsors/benjamincrozat" target="_blank">
-            <div class="bg-gray-950">
-                <div class="container text-center py-4 text-sm">
-                    <strong class="font-medium text-white">Get early access. Help fund the project.</strong> <x-heroicon-s-arrow-top-right-on-square class="size-4 oopacity-75 ml-[.175rem] inline translate-y-[-2px]" />
+        <div class="flex flex-col min-h-screen">
+            <a href="https://github.com/sponsors/benjamincrozat" target="_blank">
+                <div class="bg-gray-950">
+                    <div class="container text-center py-4 text-sm">
+                        <strong class="font-medium text-white">Get early access. Help fund the project.</strong> <x-heroicon-s-arrow-top-right-on-square class="size-4 oopacity-75 ml-[.175rem] inline translate-y-[-2px]" />
+                    </div>
                 </div>
-            </div>
-        </a>
-
-        <nav class="container xl:max-w-screen-lg flex items-center justify-end gap-8 mt-8">
-            <a href="#sponsors" data-pirsch-event='Clicked "Sponsors" in the nav bar' class="font-medium">Sponsors</a>
-
-            <a href="#roadmap" data-pirsch-event='Clicked "Roadmap" in the nav bar' class="font-medium">Roadmap</a>
-
-            <a href="https://github.com/newdebugbar" target="_blank" data-pirsch-event="Clicked GitHub in the nav bar" class="fill-current">
-                <x-icon-github class="size-5" />
             </a>
 
-            <a href="https://x.com/newdebugbar" target="_blank" data-pirsch-event="Clicked X in the nav bar" class="-ml-4 fill-current">
-                <x-icon-x class="size-5" />
-            </a>
-        </nav>
+            <nav class="container xl:max-w-screen-lg flex items-center justify-end gap-8 mt-8">
+                <a href="#sponsors" data-pirsch-event='Clicked "Sponsors" in the nav bar' class="font-medium">Sponsors</a>
 
-        {{ $slot }}
+                <a href="#roadmap" data-pirsch-event='Clicked "Roadmap" in the nav bar' class="font-medium">Roadmap</a>
 
-        <footer class="py-8 mt-16 bg-gray-950 text-center">
-            <nav class="container xl:max-w-screen-lg flex items-center justify-center gap-4">
-                <a href="https://github.com/newdebugbar" target="_blank" data-pirsch-event="Clicked GitHub in the footer" class="inline-block">
-                    <x-icon-github class="size-5 fill-current" />
+                <a href="https://github.com/newdebugbar" target="_blank" data-pirsch-event="Clicked GitHub in the nav bar" class="fill-current">
+                    <x-icon-github class="size-5" />
                 </a>
 
-                <a href="https://x.com/newdebugbar" target="_blank" data-pirsch-event="Clicked X in the footer" class="inline-block">
-                    <x-icon-x class="size-5 fill-current" />
+                <a href="https://x.com/newdebugbar" target="_blank" data-pirsch-event="Clicked X in the nav bar" class="-ml-4 fill-current">
+                    <x-icon-x class="size-5" />
                 </a>
             </nav>
 
-            <p class="text-sm text-gray-500 mt-4">
-                Made with <span class="text-pink-400">♥</span> by <a href="https://x.com/benjamincrozat" target="_blank" data-pirsch-event="Clicked Benjamin's name" class="font-medium text-gray-400 underline underline-offset-4 decoration-gray-400/50">Benjamin Crozat</a>.
-            </p>
-        </footer>
+            <div class="flex-grow">
+                {{ $slot }}
+            </div>
+
+            <footer class="py-8 mt-16 bg-gray-950 text-center">
+                <nav class="container xl:max-w-screen-lg flex items-center justify-center gap-4">
+                    <a href="https://github.com/newdebugbar" target="_blank" data-pirsch-event="Clicked GitHub in the footer" class="inline-block">
+                        <x-icon-github class="size-5 fill-current" />
+                    </a>
+
+                    <a href="https://x.com/newdebugbar" target="_blank" data-pirsch-event="Clicked X in the footer" class="inline-block">
+                        <x-icon-x class="size-5 fill-current" />
+                    </a>
+                </nav>
+
+                <p class="text-sm text-gray-500 mt-4">
+                    Made with <span class="text-pink-400">♥</span> by <a href="https://x.com/benjamincrozat" target="_blank" data-pirsch-event="Clicked Benjamin's name" class="font-medium text-gray-400 underline underline-offset-4 decoration-gray-400/50">Benjamin Crozat</a>.
+                </p>
+            </footer>
+        </div>
 
         <x-notifications />
+
+        <livewire:scripts />
     </body>
 </html>
