@@ -37,16 +37,18 @@
                 </div>
             </a>
 
-            <nav class="container xl:max-w-screen-lg flex items-center justify-end gap-8 mt-8">
+            <nav class="container xl:max-w-screen-lg flex items-center justify-end gap-6 md:gap-8 mt-4 text-sm md:text-base">
+                <a href="#features" data-pirsch-event='Clicked "Features" in the nav bar' class="font-medium">Features</a>
+
                 <a href="#sponsors" data-pirsch-event='Clicked "Sponsors" in the nav bar' class="font-medium">Sponsors</a>
 
                 <a href="#roadmap" data-pirsch-event='Clicked "Roadmap" in the nav bar' class="font-medium">Roadmap</a>
 
-                <a href="https://github.com/newdebugbar" target="_blank" data-pirsch-event="Clicked GitHub in the nav bar" class="fill-current">
+                <a href="https://github.com/newdebugbar" target="_blank" data-pirsch-event="Clicked GitHub in the nav bar" class="-mr-2 md:-mr-4 fill-current">
                     <x-icon-github class="size-5" />
                 </a>
 
-                <a href="https://x.com/newdebugbar" target="_blank" data-pirsch-event="Clicked X in the nav bar" class="-ml-4 fill-current">
+                <a href="https://x.com/newdebugbar" target="_blank" data-pirsch-event="Clicked X in the nav bar" class="fill-current">
                     <x-icon-x class="size-5" />
                 </a>
             </nav>

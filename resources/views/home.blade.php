@@ -48,6 +48,59 @@
         </div>
     </x-section>
 
+    <x-section class="mt-24 xl:!max-w-screen-lg">
+        <x-slot:title>
+            Features
+        </x-slot>
+
+        <div class="grid gap-4 mt-8">
+            <div class="grid md:grid-cols-12 bg-gray-950/30 p-4 md:p-6 rounded-lg">
+                <div class="md:col-span-6">
+                    <h3 class="font-medium">
+                        A beautiful and modern user interface
+                    </h3>
+
+                    <div class="text-gray-400 mt-1">
+                        <p>The Laravel ecosystem is known for its elegantly designed tools that challenge the notion that developer software must be ugly. The new debug bar continues this tradition of beautiful craftsmanship.</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-6">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-12 bg-gray-950/30 p-4 md:p-6 rounded-lg">
+                <div class="md:col-span-6">
+                </div>
+
+                <div class="md:col-span-6">
+                    <h3 class="font-medium">
+                        An always available command palette
+                    </h3>
+
+                    <div class="text-gray-400 mt-1">
+                        <p>Access the command palette instantly from anywhere in your application using ⌘⇧P, providing quick access to all debug bar features.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-12 bg-gray-950/30 p-4 md:p-6 rounded-lg">
+                <div class="md:col-span-6">
+                    <h3 class="font-medium">
+                        Built by Laravel developers, for Laravel developers
+                    </h3>
+
+                    <div class="text-gray-400 mt-1">
+                        <p>The new debug bar is built exclusively for Laravel and powered by Livewire. This focused approach allows to continuously enhance the debugging experience while ensuring a robust and maintainable codebase that third-party contributors will also enjoy.</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-6">
+                </div>
+            </div>
+        </div>
+    </x-section>
+
     <x-section class="mt-24">
         <x-slot:title>
             Wall of love
