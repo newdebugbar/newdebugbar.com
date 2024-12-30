@@ -1,23 +1,16 @@
 <x-app>
-    <div class="container mt-8 md:max-w-screen-sm text-center">
+    <div class="flex pl-4 mt-16 lg:justify-center lg:px-4">
+        <img src="{{ Vite::asset('resources/img/hero.webp') }}" alt="The new debug bar for Laravel" class="rounded-t max-w-none flex-none w-[175dvw] md:w-[115dvw] lg:w-full xl:w-[85dvw]" style="mask-image: linear-gradient(to top, transparent, black 70%); -webkit-mask-image: linear-gradient(to top, transparent, black 70%);" />
+    </div>
+
+    <div class="container -mt-10 text-center md:max-w-screen-sm">
         <h1>
             <a wire:navigate href="{{ route('home') }}" data-pirsch-event="Clicked the logo">
                 <img src="{{ Vite::asset('resources/img/logo.webp') }}" alt="{{ config('app.name') }}" class="h-56 mx-auto" />
             </a>
         </h1>
 
-        <h2 class="mt-4 text-blue-200">
-            Modern, powerful, free, and open source.<br />
-        </h2>
-
-        <div class="h-px bg-gradient-to-r from-transparent via-gray-700/75 to-transparent my-8"></div>
-
-        <h2>
-            Coming in Q1 2025.<br />
-            Join {{ trans_choice(':count developer|:count developers', $subscribersCount) }} for updates.
-        </h2>
-
-        <div class="mt-4 max-w-[480px] mx-auto">
+        <div class="mt-8 max-w-[480px] mx-auto">
             <livewire:subscription-form />
         </div>
     </div>
@@ -27,39 +20,40 @@
             Sponsors
         </x-slot>
 
-        <div class="grid md:grid-cols-2 gap-4 mt-8">
+        <div class="grid gap-4 mt-8 md:grid-cols-2">
             <a href="https://sevalla.com?ref=newdebugbar.com" target="_blank" data-pirsch-event="Clicked Sevalla">
-                <div class="flex gap-5 bg-gray-950/30 h-full p-4 md:p-6 rounded-lg">
+                <div class="flex h-full gap-5 p-4 rounded-lg bg-gray-950/30 md:p-6">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 186" class="h-8 flex-none fill-[#F97315] mt-1"><path fill="#F97315" fill-rule="evenodd" d="M33 0C14.775 0 0 14.775 0 33v120c0 18.225 14.775 33 33 33h126c18.226 0 33-14.775 33-33V33c0-18.225-14.774-33-33-33H33Zm82.099 41h-43v23h-22v17.721c0 2.7329494 1.1181691 5.3468984 3.095 7.234L72.099 107h-22v22h22v23h43v-23h22v-17.721c0-2.732949-1.118169-5.346898-3.095-7.234L115.099 86h22V64h-22V41Zm0 23v22h-33c-5.523 0-10-4.477-10-10V64h43Zm0 65h-43v-22h33c5.523 0 10 4.477 10 10v12Z"/></svg>
 
                     <div>
                         <p class="font-medium text-white underline underline-offset-4 decoration-white/50 decoration-1">Sevalla</p>
                         <p class="opacity-75">Host and manage your applications, databases, and static sites in a single, intuitive platform.</p>
-                        <p class="font-medium text-white mt-2"><span class="underline underline-offset-4 decoration-white/50 decoration-1">Join Sevalla</span> today and get $50 free credits!</p>
+                        <p class="mt-2 font-medium text-white"><span class="underline underline-offset-4 decoration-white/50 decoration-1">Join Sevalla</span> today and get $50 free credits!</p>
                     </div>
                 </div>
             </a>
 
             <a href="https://github.com/sponsors/benjamincrozat" target="_blank" data-pirsch-event='Clicked "Your company here"'>
-                <div class="grid uppercase text-xs tracking-widest opacity-75 h-full place-items-center border-2 border-gray-800 border-dashed p-6 rounded-lg">
+                <div class="grid h-full p-6 text-xs tracking-widest uppercase border-2 border-gray-800 border-dashed rounded-lg opacity-75 place-items-center">
                     Your logo here
                 </div>
             </a>
         </div>
     </x-section>
 
-    <x-section class="mt-24">
+    <x-section class="mt-24 !max-w-none !px-0">
         <x-slot:title>
             Wall of love
         </x-slot>
 
-        <div class="grid mt-8 md:grid-cols-2 gap-4">
+        <div class="flex gap-4 mt-8 overflow-x-auto [&>a]:flex-none [&>a]:w-[85dvw] sm:[&>a]:w-[75dvw] md:[&>a]:w-[60dvw] lg:[&>a]:w-[45dvw] xl:[&>a]:w-[40dvw] px-4">
             <x-tweet
                 avatar="https://pbs.twimg.com/profile_images/1858019523577917444/SQU_Kbod_400x400.jpg"
                 bio="Organizer of Laracon AU and podcast co-host."
                 link="https://x.com/michaeldyrynda/status/1834328870969016687"
                 name="Michael Dyrynda"
                 data-pirsch-event="Clicked Michael's tweet"
+                class="flex-none"
             >
                 <p>OK, this is kinda awesome [...] Very interested in this the more I see!</p>
             </x-tweet>
@@ -111,12 +105,12 @@
             Roadmap
         </x-slot>
 
-        <div class="lg:max-w-screen-md lg:mx-auto grid gap-4 mt-8">
+        <div class="grid gap-4 mt-8 lg:max-w-screen-md lg:mx-auto">
             <h3 class="text-xl font-medium">Version 1.0 (Q1 2025)</h3>
 
             <h4 class="font-medium">A modern UI</h4>
 
-            <ul class="pl-4 ml-4 list-disc grid gap-2">
+            <ul class="grid gap-2 pl-4 ml-4 list-disc">
                 <li class="line-through opacity-55">
                     Light and dark mode!
                     <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
@@ -145,7 +139,7 @@
 
             <h4 class="font-medium">Customization</h4>
 
-            <ul class="pl-4 ml-4 list-disc grid gap-2">
+            <ul class="grid gap-2 pl-4 ml-4 list-disc">
                 <li>
                     Customize parts of the debug bar like the info bar or the floating widget.
                 </li>
@@ -157,9 +151,10 @@
 
             <h4 class="font-medium">Workspaces</h4>
 
-            <ul class="pl-4 ml-4 list-disc grid gap-2">
-                <li>
+            <ul class="grid gap-2 pl-4 ml-4 list-disc">
+                <li class="line-through opacity-55">
                     Cache
+                    <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
                 </li>
 
                 <li>
@@ -178,8 +173,9 @@
                     Mail
                 </li>
 
-                <li>
+                <li class="line-through opacity-55">
                     Models
+                    <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
                 </li>
 
                 <li>
@@ -191,8 +187,9 @@
                     <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
                 </li>
 
-                <li>
+                <li class="line-through opacity-55">
                     Request
+                    <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
                 </li>
 
                 <li class="line-through opacity-55">
@@ -200,14 +197,15 @@
                     <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
                 </li>
 
-                <li>
+                <li class="line-through opacity-55">
                     Views
+                    <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
                 </li>
             </ul>
 
             <h3 class="text-xl font-medium">Beyond version 1.0</h3>
 
-            <ul class="pl-4 ml-4 list-disc grid gap-2">
+            <ul class="grid gap-2 pl-4 ml-4 list-disc">
                 <li>
                     Pin your favorite workspaces
                 </li>
@@ -225,8 +223,8 @@
                 </li>
             </ul>
 
-            <div class="mt-2 bg-gray-950/30 rounded-lg p-4 md:p-6 flex items-center md:justify-center gap-3">
-                <x-heroicon-o-heart class="size-5 flex-none text-pink-500" />
+            <div class="flex items-center gap-3 p-4 mt-2 rounded-lg bg-gray-950/30 md:p-6 md:justify-center">
+                <x-heroicon-o-heart class="flex-none text-pink-500 size-5" />
                 <p>Help me work full-time on the project by sponsoring it on <a href="https://github.com/sponsors/benjamincrozat" target="_blank" data-pirsch-event="Clicked GitHub Sponsors" class="font-medium underline underline-offset-4 decoration-gray-300/50">GitHub</a>.</p>
             </div>
         </div>

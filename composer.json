@@ -22,7 +22,8 @@
         "newdebugbar/newdebugbar": "dev-main",
         "nunomaduro/collision": "^8.1",
         "pestphp/pest": "^3.6",
-        "pestphp/pest-plugin-laravel": "^3.0"
+        "pestphp/pest-plugin-laravel": "^3.0",
+        "spatie/ray": "^1.41"
     },
     "autoload": {
         "psr-4": {
