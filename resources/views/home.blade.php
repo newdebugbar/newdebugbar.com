@@ -6,7 +6,7 @@
     <div class="container -mt-10 text-center md:max-w-screen-sm">
         <h1>
             <a wire:navigate href="{{ route('home') }}" data-pirsch-event="Clicked the logo">
-                <img src="{{ Vite::asset('resources/img/logo.webp') }}" alt="{{ config('app.name') }}" class="h-56 mx-auto" />
+                <img src="{{ Vite::asset('resources/img/logo.webp') }}" alt="{{ config('app.name') }}" class="h-48 mx-auto md:h-56" />
             </a>
         </h1>
 
