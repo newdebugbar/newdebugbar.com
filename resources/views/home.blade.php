@@ -46,7 +46,7 @@
             Wall of love
         </x-slot>
 
-        <div class="flex gap-4 mt-8 overflow-x-auto [&>a]:flex-none [&>a]:w-[85dvw] sm:[&>a]:w-[75dvw] md:[&>a]:w-[60dvw] lg:[&>a]:w-[45dvw] xl:[&>a]:w-[40dvw] px-4">
+        <div class="flex snap-mandatory snap-x gap-4 mt-8 overflow-x-auto [&>a]:flex-none [&>a]:w-[85dvw] sm:[&>a]:w-[75dvw] md:[&>a]:w-[60dvw] lg:[&>a]:w-[45dvw] xl:[&>a]:w-[40dvw] [&>a]:scroll-ml-4 [&>a]:snap-start px-4">
             <x-tweet
                 avatar="https://pbs.twimg.com/profile_images/1858019523577917444/SQU_Kbod_400x400.jpg"
                 bio="Organizer of Laracon AU and podcast co-host."
