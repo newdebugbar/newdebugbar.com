@@ -47,65 +47,6 @@
         </div>
     </x-section>
 
-    <x-section class="mt-24 !max-w-none !px-0">
-        <x-slot:title>
-            Wall of love
-        </x-slot>
-
-        <div class="flex snap-mandatory snap-x gap-4 mt-8 overflow-x-auto [&>a]:flex-none [&>a]:w-[85dvw] sm:[&>a]:w-[75dvw] md:[&>a]:w-[60dvw] lg:[&>a]:w-[45dvw] xl:[&>a]:w-[40dvw] [&>a]:scroll-ml-4 [&>a]:snap-start px-4">
-            <x-tweet
-                avatar="https://pbs.twimg.com/profile_images/1858019523577917444/SQU_Kbod_400x400.jpg"
-                bio="Organizer of Laracon AU and podcast co-host."
-                link="https://x.com/michaeldyrynda/status/1834328870969016687"
-                name="Michael Dyrynda"
-                data-pirsch-event="Clicked Michael's tweet"
-                class="flex-none"
-            >
-                <p>OK, this is kinda awesome [...] Very interested in this the more I see!</p>
-            </x-tweet>
-
-            <x-tweet
-                avatar="https://pbs.twimg.com/profile_images/951138971026952194/VEfZA8NC_400x400.jpg"
-                bio="Maker of the original debug bar for Laravel."
-                link="https://x.com/barryvdh/status/1836458733716803766"
-                name="Barry vd. Heuvel"
-                data-pirsch-event="Clicked Barry's tweet"
-            >
-                <p>Wow, looks nice! [...] looking forward to borrow some good ideas from you for Laravel Debugbar and Telescope Toolbar. 😁 Good luck!</p>
-            </x-tweet>
-
-            <x-tweet
-                avatar="https://pbs.twimg.com/profile_images/1838524088496594944/FMLhjUaU_400x400.jpg"
-                bio="The API guy."
-                link="https://x.com/JustSteveKing/status/1864580608439009606"
-                name="Steve McDougall"
-                data-pirsch-event="Clicked Steve's tweet"
-            >
-                <p>Looking forward to trying this out! [...]</p>
-            </x-tweet>
-
-            <x-tweet
-                avatar="https://pbs.twimg.com/profile_images/1581394119653474304/bqxzdiBc_400x400.jpg"
-                bio="Laravel developer and Rector fan."
-                link="https://x.com/SlyFireFox/status/1834202120049844562"
-                name="Peter Fox"
-                data-pirsch-event="Clicked Peter's tweet"
-            >
-                <p>This looks pretty awesome. Not been a fan of many debug bars for the reason they're just not all that nice to use. I could see myself using this.</p>
-            </x-tweet>
-
-            <x-tweet
-                avatar="https://pbs.twimg.com/profile_images/1844799448649486341/5cpINazw_400x400.jpg"
-                bio="The legendary Laravel samuraï."
-                link="https://x.com/LaravelJutsu/status/1834657567672332576"
-                name="Ludovic Guénet"
-                data-pirsch-event="Clicked Ludovic's tweet"
-            >
-                <p>I'd be glad to make a video out of it!</p>
-            </x-tweet>
-        </div>
-    </x-section>
-
     <x-section id="roadmap" class="mt-24">
         <x-slot:title>
             Roadmap
@@ -229,10 +170,73 @@
                 </li>
             </ul>
 
-            <div class="flex items-center gap-4 p-4 mt-2 rounded-lg bg-gray-950/30 md:p-6 md:justify-center">
-                <x-heroicon-o-heart class="flex-none text-pink-500 size-5" />
-                <p>Help me work full-time on the project by sponsoring it on <a href="https://github.com/sponsors/benjamincrozat" target="_blank" data-pirsch-event="Clicked GitHub Sponsors" class="font-medium underline underline-offset-4 decoration-gray-300/50">GitHub</a>.</p>
-            </div>
+            <a
+                href="https://github.com/sponsors/benjamincrozat"
+                target="_blank"
+                data-pirsch-event="Clicked Sponsorship CTA"
+                class="inline-block gap-3 px-4 py-3 mt-4 font-medium text-white bg-blue-600 rounded-lg justify-self-center"
+            >
+                Sponsor on GitHub
+            </a>
+        </div>
+    </x-section>
+
+    <x-section class="mt-24 !max-w-none !px-0">
+        <x-slot:title>
+            Wall of love
+        </x-slot>
+
+        <div class="flex snap-mandatory snap-x gap-4 mt-8 overflow-x-auto [&>a]:flex-none [&>a]:w-[85dvw] sm:[&>a]:w-[75dvw] md:[&>a]:w-[60dvw] lg:[&>a]:w-[45dvw] xl:[&>a]:w-[40dvw] [&>a]:scroll-ml-4 [&>a]:snap-start px-4">
+            <x-tweet
+                avatar="https://pbs.twimg.com/profile_images/1858019523577917444/SQU_Kbod_400x400.jpg"
+                bio="Organizer of Laracon AU and podcast co-host."
+                link="https://x.com/michaeldyrynda/status/1834328870969016687"
+                name="Michael Dyrynda"
+                data-pirsch-event="Clicked Michael's tweet"
+                class="flex-none"
+            >
+                <p>OK, this is kinda awesome [...] Very interested in this the more I see!</p>
+            </x-tweet>
+
+            <x-tweet
+                avatar="https://pbs.twimg.com/profile_images/951138971026952194/VEfZA8NC_400x400.jpg"
+                bio="Maker of the original debug bar for Laravel."
+                link="https://x.com/barryvdh/status/1836458733716803766"
+                name="Barry vd. Heuvel"
+                data-pirsch-event="Clicked Barry's tweet"
+            >
+                <p>Wow, looks nice! [...] looking forward to borrow some good ideas from you for Laravel Debugbar and Telescope Toolbar. 😁 Good luck!</p>
+            </x-tweet>
+
+            <x-tweet
+                avatar="https://pbs.twimg.com/profile_images/1838524088496594944/FMLhjUaU_400x400.jpg"
+                bio="The API guy."
+                link="https://x.com/JustSteveKing/status/1864580608439009606"
+                name="Steve McDougall"
+                data-pirsch-event="Clicked Steve's tweet"
+            >
+                <p>Looking forward to trying this out! [...]</p>
+            </x-tweet>
+
+            <x-tweet
+                avatar="https://pbs.twimg.com/profile_images/1581394119653474304/bqxzdiBc_400x400.jpg"
+                bio="Laravel developer and Rector fan."
+                link="https://x.com/SlyFireFox/status/1834202120049844562"
+                name="Peter Fox"
+                data-pirsch-event="Clicked Peter's tweet"
+            >
+                <p>This looks pretty awesome. Not been a fan of many debug bars for the reason they're just not all that nice to use. I could see myself using this.</p>
+            </x-tweet>
+
+            <x-tweet
+                avatar="https://pbs.twimg.com/profile_images/1844799448649486341/5cpINazw_400x400.jpg"
+                bio="The legendary Laravel samuraï."
+                link="https://x.com/LaravelJutsu/status/1834657567672332576"
+                name="Ludovic Guénet"
+                data-pirsch-event="Clicked Ludovic's tweet"
+            >
+                <p>I'd be glad to make a video out of it!</p>
+            </x-tweet>
         </div>
     </x-section>
 </x-app>
