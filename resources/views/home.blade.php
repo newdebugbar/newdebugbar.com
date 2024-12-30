@@ -223,7 +223,7 @@
                 </li>
             </ul>
 
-            <div class="flex items-center gap-3 p-4 mt-2 rounded-lg bg-gray-950/30 md:p-6 md:justify-center">
+            <div class="flex items-center gap-4 p-4 mt-2 rounded-lg bg-gray-950/30 md:p-6 md:justify-center">
                 <x-heroicon-o-heart class="flex-none text-pink-500 size-5" />
                 <p>Help me work full-time on the project by sponsoring it on <a href="https://github.com/sponsors/benjamincrozat" target="_blank" data-pirsch-event="Clicked GitHub Sponsors" class="font-medium underline underline-offset-4 decoration-gray-300/50">GitHub</a>.</p>
             </div>
