@@ -27,7 +27,7 @@
             <button
                 @if ($subscribed) disabled @endif
                 data-pirsch-event="Clicked subscribe"
-                class="flex-none px-4 py-3 font-medium bg-blue-600 rounded-lg disabled:bg-gray-800"
+                class="flex-none w-full px-4 py-3 font-medium bg-blue-600 rounded-lg sm:w-auto disabled:bg-gray-800"
             >
                 @if ($subscribed) Thank you! @else Keep me posted @endif
             </button>
