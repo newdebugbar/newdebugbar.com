@@ -13,6 +13,12 @@
         <div class="mt-8 max-w-[480px] mx-auto">
             <livewire:subscription-form />
         </div>
+
+        <x-heroicon-o-arrow-up class="mx-auto mt-6 size-5" />
+
+        <p class="mt-2 text-xs font-medium tracking-widest uppercase">
+            {{ trans_choice(':count subscriber|:count subscribers', $subscribersCount) }}
+        </p>
     </div>
 
     <x-section id="sponsors" class="mt-24 xl:!max-w-screen-lg">

@@ -22,6 +22,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Outfit', ...defaultTheme.fontFamily.sans],
+                handwriting: ['Playpen Sans', ...defaultTheme.fontFamily.serif],
             },
 
             screens: {
