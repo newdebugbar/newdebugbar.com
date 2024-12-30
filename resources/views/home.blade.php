@@ -87,6 +87,11 @@
             <h4 class="font-medium">Customization</h4>
 
             <ul class="grid gap-2 pl-4 ml-4 list-disc">
+                <li class="line-through opacity-55">
+                    Pin your favorite workspaces
+                    <x-heroicon-o-check class="size-5 inline translate-y-[-.15rem]" />
+                </li>
+
                 <li>
                     Customize parts of the debug bar like the info bar or the floating widget.
                 </li>
@@ -153,10 +158,6 @@
             <h3 class="text-xl font-medium">Beyond version 1.0</h3>
 
             <ul class="grid gap-2 pl-4 ml-4 list-disc">
-                <li>
-                    Pin your favorite workspaces
-                </li>
-
                 <li>
                     Customize the UI to your liking
                 </li>
