@@ -1,5 +1,5 @@
 <x-app>
-    <div class="flex pt-16 pl-4 overflow-hidden lg:justify-center lg:px-4">
+    <div class="flex pt-8 pl-4 overflow-hidden md:pt-16 lg:justify-center lg:px-4">
         <img src="{{ Vite::asset('resources/img/hero.webp') }}" alt="The new debug bar for Laravel" class="rounded-t max-w-none flex-none w-[175dvw] md:w-[115dvw] lg:w-full xl:w-[85dvw]" style="mask-image: linear-gradient(to top, transparent, black 70%); -webkit-mask-image: linear-gradient(to top, transparent, black 70%)" />
     </div>
 
