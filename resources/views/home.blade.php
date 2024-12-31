@@ -175,10 +175,6 @@
 
             <ul class="grid gap-2 pl-4 ml-4 list-disc">
                 <li>
-                    Customize the UI to your liking
-                </li>
-
-                <li>
                     AI-assisted debugging (use your OpenAI API key)
                 </li>
 
