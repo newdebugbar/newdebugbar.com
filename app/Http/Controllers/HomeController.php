@@ -11,6 +11,11 @@ class HomeController extends Controller
     {
         return view('home', [
             'subscribersCount' => Subscriber::count(),
+            'subscribersGravatarsHashes' => Subscriber::verified()
+                ->withWorkingGravatar()
+                ->inRandomOrder()
+                ->limit(10)
+                ->pluck('gravatar_hash'),
         ]);
     }
 }

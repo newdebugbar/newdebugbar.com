@@ -8,8 +8,11 @@ use function Pest\Laravel\get;
 use Illuminate\Routing\UrlGenerator;
 use App\Notifications\Subscribers\Fresh;
 use Illuminate\Support\Facades\Notification;
+use Facades\App\Actions\Subscribers\CheckForWorkingGravatar;
 
-it('confirms an unverified subscriber', function () {
+it('confirms an unverified subscriber and checks for a working gravatar', function () {
+    CheckForWorkingGravatar::shouldReceive('check')->once();
+
     Notification::fake();
 
     $admin = User::factory()->create([
@@ -30,7 +33,9 @@ it('confirms an unverified subscriber', function () {
     Notification::assertSentTo($admin, Fresh::class);
 });
 
-it('handles already verified subscribers', function () {
+it("handles already verified subscribers and doesn't check for a working gravatar", function () {
+    CheckForWorkingGravatar::shouldReceive('check')->never();
+
     Notification::fake();
 
     $subscriber = Subscriber::factory()->create(['email_verified_at' => now()]);

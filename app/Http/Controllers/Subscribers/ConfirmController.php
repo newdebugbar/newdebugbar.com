@@ -7,6 +7,7 @@ use App\Models\Subscriber;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use App\Notifications\Subscribers\Fresh;
+use App\Actions\Subscribers\CheckForWorkingGravatar;
 
 class ConfirmController extends Controller
 {
@@ -19,12 +20,14 @@ class ConfirmController extends Controller
             ]);
         }
 
-        $subscriber->update(['email_verified_at' => now()]);
+        $subscriber->markAsVerified();
 
         User::query()
             ->where('email', 'hello@benjamincrozat.com')
             ->first()
             ?->notify(new Fresh($subscriber));
+
+        app(CheckForWorkingGravatar::class)->check($subscriber);
 
         return to_route('home')->with('notification', [
             'type' => 'success',

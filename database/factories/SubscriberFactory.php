@@ -18,4 +18,9 @@ class SubscriberFactory extends Factory
             'email' => fake()->safeEmail(),
         ];
     }
+
+    public function verified() : self
+    {
+        return $this->state(['email_verified_at' => now()]);
+    }
 }

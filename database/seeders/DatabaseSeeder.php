@@ -15,6 +15,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'hello@benjamincrozat.com',
         ]);
 
-        Subscriber::factory(random_int(100, 200))->create();
+        Subscriber::factory(random_int(100, 200))->verified()->create();
     }
 }
