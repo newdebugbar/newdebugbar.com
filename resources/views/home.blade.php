@@ -22,7 +22,7 @@
 
         <div class="flex items-center justify-center mt-3">
             @forelse ($subscribersGravatarsHashes as $gravatarHash)
-                <img src="https://www.gravatar.com/avatar/{{ $gravatarHash }}?s=80&d=mp" class="-ml-1 bg-black rounded-full size-10" />
+                <img src="https://www.gravatar.com/avatar/{{ $gravatarHash }}?s=80&d=mp" class="-ml-1 bg-black rounded-full size-8 md:size-10" />
             @empty
                 @foreach (range(1, 10) as $i)
                     @php
@@ -31,7 +31,7 @@
                     ]);
                     @endphp
 
-                    <div class="-ml-1 rounded-full size-10 {{ $bgColors->random() }}"></div>
+                    <div class="-ml-1 rounded-full size-8 md:size-10 {{ $bgColors->random() }}"></div>
                 @endforeach
             @endforelse
         </div>
