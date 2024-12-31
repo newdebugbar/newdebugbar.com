@@ -14,6 +14,12 @@ class HomeController extends Controller
             'subscribersGravatarsHashes' => Subscriber::verified()
                 ->withWorkingGravatar()
                 ->inRandomOrder()
+                ->whereNotIn('email', [
+                    'benjamincrozat@me.com',
+                    'hello@benjamincrozat.com',
+                    'benjamincrozat@gmail.com',
+                    'benjamincrozat@icloud.com',
+                ])
                 ->limit(10)
                 ->pluck('gravatar_hash'),
         ]);
