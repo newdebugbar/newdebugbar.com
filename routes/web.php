@@ -7,8 +7,20 @@ use App\Http\Controllers\HomeController;
 use App\Notifications\Subscribers\Confirm;
 use Illuminate\Routing\Middleware\ValidateSignature;
 use App\Http\Controllers\Subscribers\ConfirmController;
+use App\Http\Controllers\Documentation\ShowDocumentController;
+use App\Http\Controllers\Documentation\ListDocumentsController;
 
 Route::get('/', HomeController::class)->name('home');
+
+Route::middleware(ValidateSignature::class)
+    ->get('/confirm/{subscriber:email}', ConfirmController::class)
+    ->name('confirm-subscriber');
+
+Route::get('/docs', ListDocumentsController::class)
+    ->name('docs.index');
+
+Route::get('/docs/{slug}', ShowDocumentController::class)
+    ->name('docs.show');
 
 if (app()->isLocal()) {
     Route::get('/benchmark', function () {
@@ -22,7 +34,3 @@ if (app()->isLocal()) {
         return view('benchmark');
     })->name('benchmark');
 }
-
-Route::middleware(ValidateSignature::class)
-    ->get('/confirm/{subscriber:email}', ConfirmController::class)
-    ->name('confirm-subscriber');
