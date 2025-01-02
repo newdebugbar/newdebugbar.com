@@ -8,7 +8,7 @@ To install the new debug bar for Laravel if you have early access to the private
 {
     "repositories": [
         {
-            "type": "composer",
+            "type": "vcs",
             "url": "git@github.com:newdebugbar/newdebugbar.git"
         }
     ]
