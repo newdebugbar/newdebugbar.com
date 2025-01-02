@@ -9,13 +9,13 @@ To install the new debug bar for Laravel if you have early access to the private
     "repositories": [
         {
             "type": "composer",
-            "url": "https://github.com/newdebugbar/newdebugbar"
+            "url": "git@github.com:newdebugbar/newdebugbar.git"
         }
     ]
 }
 ```
 
-Then, all it takes is to run this command:
+Then, if you [added your public SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account), all it takes is to run this command:
 
 ```bash
 composer require newdebugbar/newdebugbar --dev

@@ -53,7 +53,7 @@
                 {{ $slot }}
             </main>
 
-            <x-footer class="mt-16" />
+            <x-footer class="mt-8 md:mt-16" />
         </div>
 
         <x-notifications />
