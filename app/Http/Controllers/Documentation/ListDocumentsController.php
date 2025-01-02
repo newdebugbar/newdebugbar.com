@@ -9,11 +9,11 @@ use App\Actions\Documentation\ListDocuments;
 
 class ListDocumentsController extends Controller
 {
-    public function __invoke() : View
+    public function __invoke(string $version) : View
     {
-        $navigation = app(ListDocuments::class)->list();
+        $navigation = app(ListDocuments::class)->list($version);
 
-        $content = File::get(resource_path('docs/00-introduction.md'));
+        $content = File::get(resource_path("docs/$version/00-introduction.md"));
 
         return view('docs.index', compact('navigation', 'content'));
     }

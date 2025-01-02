@@ -1,5 +1,5 @@
 <div {{ $attributes->class('flex items-center justify-end gap-8 text-sm md:text-base') }}>
-    <a wire:navigate href="{{ route('docs.index') }}" data-pirsch-event='Clicked "Documentation" in the nav bar' @class([
+    <a wire:navigate href="{{ route('docs.index', 'v1') }}" data-pirsch-event='Clicked "Documentation" in the nav bar' @class([
         'font-medium',
         'text-blue-500' => request()->routeIs('docs.*'),
     ])>

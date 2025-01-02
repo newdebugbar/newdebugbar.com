@@ -9,13 +9,13 @@ use App\Actions\Documentation\ListDocuments;
 
 class ShowDocumentController extends Controller
 {
-    public function __invoke(string $slug) : View
+    public function __invoke(string $version, string $slug) : View
     {
-        $navigation = app(ListDocuments::class)->list();
+        $navigation = app(ListDocuments::class)->list($version);
 
         $title = $navigation->firstWhere('slug', $slug)['title'];
 
-        $content = File::get(glob(resource_path("docs/*$slug.md"))[0]);
+        $content = File::get(glob(resource_path("docs/$version/*$slug.md"))[0]);
 
         return view('docs.show', compact('navigation', 'title', 'slug', 'content'));
     }

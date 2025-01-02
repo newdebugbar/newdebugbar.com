@@ -16,10 +16,10 @@ Route::middleware(ValidateSignature::class)
     ->get('/confirm/{subscriber:email}', ConfirmController::class)
     ->name('confirm-subscriber');
 
-Route::get('/docs', ListDocumentsController::class)
+Route::get('/docs/{version}', ListDocumentsController::class)
     ->name('docs.index');
 
-Route::get('/docs/{slug}', ShowDocumentController::class)
+Route::get('/docs/{version}/{slug}', ShowDocumentController::class)
     ->name('docs.show');
 
 if (app()->isLocal()) {

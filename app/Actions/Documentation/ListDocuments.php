@@ -9,9 +9,9 @@ use Symfony\Component\Finder\SplFileInfo;
 
 class ListDocuments
 {
-    public function list() : Collection
+    public function list(string $version) : Collection
     {
-        return collect(File::files(resource_path('docs')))
+        return collect(File::files(resource_path("docs/$version")))
             ->filter(fn (SplFileInfo $file) => '00-introduction' !== $file->getFilenameWithoutExtension())
             ->map(function (SplFileInfo $file) {
                 return [
@@ -20,7 +20,7 @@ class ListDocuments
                     'sections' => $this->getSubheadings($file->getPathname()),
                     'url' => route(
                         'docs.show',
-                        $this->getSlug($file->getFilenameWithoutExtension()),
+                        ['v1', $this->getSlug($file->getFilenameWithoutExtension())],
                     ),
                 ];
             });
