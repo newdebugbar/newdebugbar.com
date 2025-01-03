@@ -2,7 +2,6 @@
 
 namespace App\Actions\Documentation;
 
-use App\Str;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 use Symfony\Component\Finder\Finder;
@@ -22,7 +21,7 @@ class ListDocuments
                     'heading' => $matches['title'] ?? null,
                     'url' => route(
                         'docs.show',
-                        ['v1', Str::slug(basename($file, '.md'))],
+                        ['v1', $this->getSlug($file)],
                     ),
                 ];
             })
@@ -42,5 +41,13 @@ class ListDocuments
                 )
             )
         );
+    }
+
+    protected function getSlug(string $file) : string
+    {
+        return str($file)
+            ->basename('.md')
+            ->replaceMatches('/\d+-/', '')
+            ->slug();
     }
 }

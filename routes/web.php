@@ -15,10 +15,7 @@ Route::middleware(ValidateSignature::class)
     ->get('/confirm/{subscriber:email}', ConfirmController::class)
     ->name('confirm-subscriber');
 
-Route::redirect('/docs', '/docs/v1')
-    ->name('docs.index');
-
-Route::redirect('/docs/{version}', '/docs/v1/introduction')
+Route::redirect('/docs/{version?}', '/docs/v1/introduction')
     ->name('docs.index');
 
 Route::get('/docs/{version}/{slug}', ShowDocumentController::class)
