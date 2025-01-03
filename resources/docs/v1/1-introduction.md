@@ -1,3 +1,7 @@
+---
+Section: Introduction
+---
+
 # Introduction
 
 The new debug bar for Laravel is a free, open-source, modern, and beautiful tool created to help Laravel developers.

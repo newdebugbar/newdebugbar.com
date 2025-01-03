@@ -35,50 +35,30 @@
                 @keydown.esc="visible = false"
             >
                 <ul class="grid gap-8">
-                    <li class="flex items-center gap-4">
-                        @if (request()->routeIs('docs.index'))
-                            <div class="w-1 h-4 -ml-5 bg-blue-500 rounded-full"></div>
-                        @endif
-
-                        <a wire:navigate href="{{ route('docs.index', 'v1') }}" @class([
-                            'font-medium transition-colors',
-                            'hover:text-white' => ! request()->routeIs('docs.index'),
-                            'text-white' => request()->routeIs('docs.index'),
-                        ])>
-                            Introduction
-                        </a>
-                    </li>
-
-                    @foreach ($navigation as $item)
-                        <li>
-                            <div @class([
-                                'flex items-center gap-4',
-                                '-ml-5' => request()->fullUrlIs($item['url']),
-                            ])>
-                                @if (request()->fullUrlIs($item['url']))
-                                    <div class="w-1 h-4 bg-blue-500 rounded-full"></div>
-                                @endif
-
-                                <a wire:navigate href="{{ $item['url'] }}" @class([
-                                    'font-medium transition-colors',
-                                    'hover:text-white' => ! request()->fullUrlIs($item['url']),
-                                    'text-white' => request()->fullUrlIs($item['url']),
-                                ])>
-                                    {{ $item['title'] }}
-                                </a>
-                            </div>
-
-                            @if (! empty($item['sections']))
-                                <ul class="grid gap-4 mt-3 ml-4x">
-                                    @foreach ($item['sections'] as $section)
-                                        <li>
-                                            <a href="{{ $item['url'] }}#{{ $section['slug'] }}" class="transition-colors hover:text-white">
-                                                {{ $section['title'] }}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                </ul>
+                    @foreach ($navigation as $group => $items)
+                        <li class="grid gap-4">
+                            @if ($items->count() > 1)
+                                <span class="cursor-default">
+                                    {{ $group }}
+                                </span>
                             @endif
+
+                            <ul class="grid gap-4">
+                                @foreach ($items as $item)
+                                    <li class="flex items-center gap-4">
+                                        @if (request()->fullUrlIs($item['url']))
+                                            <div class="w-1 h-4 -ml-5 bg-blue-500 rounded-full"></div>
+                                        @endif
+
+                                        <a wire:navigate href="{{ $item['url'] }}" @class([
+                                            'transition-colors text-gray-300/85 hover:text-white',
+                                            'text-white' => request()->fullUrlIs($item['url']),
+                                        ])>
+                                            {{ $item['heading'] }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
                         </li>
                     @endforeach
                 </ul>

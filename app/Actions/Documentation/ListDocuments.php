@@ -5,48 +5,42 @@ namespace App\Actions\Documentation;
 use App\Str;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
-use Symfony\Component\Finder\SplFileInfo;
+use Symfony\Component\Finder\Finder;
 
 class ListDocuments
 {
     public function list(string $version) : Collection
     {
-        return collect(File::files(resource_path("docs/$version")))
-            ->filter(fn (SplFileInfo $file) => '00-introduction' !== $file->getFilenameWithoutExtension())
-            ->map(function (SplFileInfo $file) {
+        return $this->getFiles($version)
+            ->map(function (string $file) {
+                $content = File::get($file);
+
+                preg_match('/^---\s*\nSection:\s*(?P<section>.*?)\s*\n---\s*\n\s*#\s*(?P<title>.*?)\s*\n/s', $content, $matches);
+
                 return [
-                    'title' => $this->getHeading($file->getPathname()),
-                    'slug' => $this->getSlug($file->getFilenameWithoutExtension()),
-                    'sections' => $this->getSubheadings($file->getPathname()),
+                    'section' => $matches['section'] ?? null,
+                    'heading' => $matches['title'] ?? null,
                     'url' => route(
                         'docs.show',
-                        ['v1', $this->getSlug($file->getFilenameWithoutExtension())],
+                        ['v1', Str::slug(basename($file, '.md'))],
                     ),
                 ];
-            });
+            })
+            ->groupBy('section');
     }
 
-    public function getHeading(string $path) : string
+    protected function getFiles(string $version) : Collection
     {
-        preg_match('/^# (.*)/m', File::get($path), $matches);
-
-        return $matches[1] ?? 'Untitled';
-    }
-
-    public function getSubheadings(string $path) : array
-    {
-        preg_match_all('/^## (.*)/m', File::get($path), $matches);
-
-        return collect($matches[1] ?? [])->map(function (string $heading) {
-            return [
-                'title' => $heading,
-                'slug' => Str::slug($heading),
-            ];
-        })->toArray();
-    }
-
-    public function getSlug(string $filename) : string
-    {
-        return preg_replace('/^\d+-/', '', Str::slug($filename));
+        return collect(
+            array_values(
+                iterator_to_array(
+                    app(Finder::class)
+                        ->files()
+                        ->in(resource_path("docs/$version"))
+                        ->name('*.md')
+                        ->sortByName()
+                )
+            )
+        );
     }
 }

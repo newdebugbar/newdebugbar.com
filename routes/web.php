@@ -8,7 +8,6 @@ use App\Notifications\Subscribers\Confirm;
 use Illuminate\Routing\Middleware\ValidateSignature;
 use App\Http\Controllers\Subscribers\ConfirmController;
 use App\Http\Controllers\Documentation\ShowDocumentController;
-use App\Http\Controllers\Documentation\ListDocumentsController;
 
 Route::get('/', HomeController::class)->name('home');
 
@@ -16,7 +15,10 @@ Route::middleware(ValidateSignature::class)
     ->get('/confirm/{subscriber:email}', ConfirmController::class)
     ->name('confirm-subscriber');
 
-Route::get('/docs/{version}', ListDocumentsController::class)
+Route::redirect('/docs', '/docs/v1')
+    ->name('docs.index');
+
+Route::redirect('/docs/{version}', '/docs/v1/introduction')
     ->name('docs.index');
 
 Route::get('/docs/{version}/{slug}', ShowDocumentController::class)

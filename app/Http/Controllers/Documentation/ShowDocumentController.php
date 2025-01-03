@@ -2,29 +2,26 @@
 
 namespace App\Http\Controllers\Documentation;
 
-use Illuminate\View\View;
+use Exception;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\File;
+use App\Actions\Documentation\ShowDocument;
 use App\Actions\Documentation\ListDocuments;
 
 class ShowDocumentController extends Controller
 {
-    public function __invoke(string $version, string $slug) : View
+    public function __invoke(string $version, string $slug)
     {
-        $directory = resource_path("docs/$version");
+        $navigation = app(ListDocuments::class)->list($version);
 
-        $filePath = data_get(glob("$directory/*$slug.md"), 0);
-
-        if (! File::exists($directory) || empty($filePath)) {
+        try {
+            $document = app(ShowDocument::class)->show($version, $slug);
+        } catch (Exception $e) {
             abort(404);
         }
 
-        $navigation = app(ListDocuments::class)->list($version);
-
-        $title = $navigation->firstWhere('slug', $slug)['title'];
-
-        $content = File::get($filePath);
-
-        return view('docs.show', compact('navigation', 'title', 'slug', 'content'));
+        return view('docs.show', compact('navigation') + [
+            'title' => $document['title'],
+            'content' => $document['content'],
+        ]);
     }
 }

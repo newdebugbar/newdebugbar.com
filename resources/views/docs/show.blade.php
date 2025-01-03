@@ -3,7 +3,7 @@
     :$title
 >
     <x-prose>
-        {!! Str::markdown($content) !!}
+        {!! Str::markdown($content ?? '') !!}
     </x-prose>
 </x-docs-layout>
 
