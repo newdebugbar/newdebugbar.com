@@ -2,9 +2,8 @@
 
 namespace App\Actions\Documentation;
 
-use Exception;
+use App\Str;
 use Illuminate\Support\Facades\File;
-use Symfony\Component\Finder\Finder;
 
 class ShowDocument
 {
@@ -25,18 +24,11 @@ class ShowDocument
 
     protected function getFile(string $version, string $slug) : ?string
     {
-        $file = array_values(
-            iterator_to_array(
-                app(Finder::class)
-                    ->files()
-                    ->in($path = resource_path("docs/$version"))
-                    ->name($name = "*$slug.md")
-            )
-        )[0] ?? null;
+        $file = app(ListDocuments::class)->list($version)->firstWhere(
+            fn (string $file) => Str::endsWith($file, "$slug.md")
+        );
 
-        if (empty($file)) {
-            throw new Exception("No file matches $path/$name");
-        }
+        throw_if(empty($file), "No file matches \"$slug\"");
 
         return $file;
     }
