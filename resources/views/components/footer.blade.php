@@ -9,7 +9,7 @@
         </a>
     </nav>
 
-    <p class="mt-4 text-sm text-gray-500">
+    <p class="mt-4 text-sm text-gray-400">
         Made with <span class="text-pink-400">♥</span> by <a href="https://x.com/benjamincrozat" target="_blank" data-pirsch-event="Clicked Benjamin's name" class="font-medium text-gray-400 underline underline-offset-4 decoration-gray-400/50">Benjamin Crozat</a>.
     </p>
 </footer>
