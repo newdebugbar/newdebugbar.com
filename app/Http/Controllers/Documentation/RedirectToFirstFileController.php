@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Documentation;
 
+use Exception;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use App\Actions\Documentation\ListDocuments;
@@ -11,7 +12,13 @@ class RedirectToFirstFileController extends Controller
 {
     public function __invoke(?string $version = 'v1') : RedirectResponse
     {
-        $firstFile = app(ListDocuments::class)->list($version)->first();
+        try {
+            $firstFile = app(ListDocuments::class)
+                ->list($version)
+                ->firstOrFail();
+        } catch (Exception $e) {
+            abort(404);
+        }
 
         $slug = app(ConvertFilepathToSlug::class)->convert($firstFile);
 
