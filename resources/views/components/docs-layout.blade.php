@@ -50,7 +50,10 @@
                                 @foreach ($items as $item)
                                     <li class="flex items-center gap-3">
                                         @if (request()->fullUrlIs($item['url']))
-                                            <div class="w-1 h-4 -ml-4 bg-blue-500 rounded-full"></div>
+                                            <div @class([
+                                                'w-1 h-4 bg-blue-500 rounded-full',
+                                                'md:-ml-4' => $items->count() > 1,
+                                            ])></div>
                                         @endif
 
                                         <a wire:navigate href="{{ $item['url'] }}" class="transition-colors hover:text-white">
