@@ -27,7 +27,7 @@
             </button>
 
             <nav
-                class="md:!block mt-8 md:mt-0"
+                class="md:!block mt-8 md:mt-0 text-gray-300/85"
                 x-cloak
                 x-show="visible"
                 x-trap="visible"
@@ -38,22 +38,22 @@
                     @foreach ($navigation as $group => $items)
                         <li class="grid gap-4">
                             @if ($items->count() > 1)
-                                <span class="cursor-default">
+                                <span class="font-medium text-white cursor-default">
                                     {{ $group }}
                                 </span>
                             @endif
 
-                            <ul class="grid gap-4">
+                            <ul @class([
+                                'grid gap-4',
+                                'ml-4' => $items->count() > 1,
+                            ])>
                                 @foreach ($items as $item)
-                                    <li class="flex items-center gap-4">
+                                    <li class="flex items-center gap-3">
                                         @if (request()->fullUrlIs($item['url']))
-                                            <div class="w-1 h-4 -ml-5 bg-blue-500 rounded-full"></div>
+                                            <div class="w-1 h-4 -ml-4 bg-blue-500 rounded-full"></div>
                                         @endif
 
-                                        <a wire:navigate href="{{ $item['url'] }}" @class([
-                                            'transition-colors text-gray-300/85 hover:text-white',
-                                            'text-white' => request()->fullUrlIs($item['url']),
-                                        ])>
+                                        <a wire:navigate href="{{ $item['url'] }}" class="transition-colors hover:text-white">
                                             {{ $item['heading'] }}
                                         </a>
                                     </li>
