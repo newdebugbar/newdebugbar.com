@@ -1,9 +1,9 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "newdebugbar/website",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "The official website for New Debug Bar.",
+    "keywords": ["debugging", "laravel", "newdebugbar"],
     "license": "MIT",
     "require": {
         "php": "^8.3",
