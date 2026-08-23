@@ -75,7 +75,7 @@
                     </h1>
 
                     <p class="mt-7 max-w-[32rem] text-lg leading-8 text-zinc-600 sm:text-xl sm:leading-9 dark:text-zinc-400">
-                        Understand what happened and what to check next. Agents get exact MCP context with fewer tokens.
+                        Explore requests, queries, exceptions, and application activity with clear explanations of what happened and what to check next. Coding agents get the same structured context through MCP with fewer tokens.
                     </p>
 
                     <div class="mt-9 max-w-[31rem]">

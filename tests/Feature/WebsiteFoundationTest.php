@@ -13,7 +13,7 @@ class WebsiteFoundationTest extends TestCase
         $this->get('/')
             ->assertOk()
             ->assertSee('Powerful, agent-friendly Laravel debugging—free and open source')
-            ->assertSee('Understand what happened and what to check next. Agents get exact MCP context with fewer tokens.')
+            ->assertSee('Explore requests, queries, exceptions, and application activity with clear explanations of what happened and what to check next. Coding agents get the same structured context through MCP with fewer tokens.')
             ->assertSee('composer require newdebugbar/newdebugbar:dev-main --dev')
             ->assertSee('Built for AI-pilled developers')
             ->assertSee('https://github.com/newdebugbar/newdebugbar#readme', false)
