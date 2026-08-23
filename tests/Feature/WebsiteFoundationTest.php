@@ -12,9 +12,10 @@ class WebsiteFoundationTest extends TestCase
 
         $this->get('/')
             ->assertOk()
-            ->assertSee('Stop making your coding agent guess.')
-            ->assertSee('composer require newdebugbar/newdebugbar --dev')
-            ->assertSee('Built for developers + agents')
+            ->assertSee('The modern debug bar for Laravel developers and agents')
+            ->assertSee('Explore requests, queries, exceptions, and application activity with clear explanations')
+            ->assertSee('composer require newdebugbar/newdebugbar:dev-main --dev')
+            ->assertSee('Built for AI-pilled developers')
             ->assertSee('https://github.com/newdebugbar/newdebugbar#readme', false)
             ->assertSee('data-theme-toggle', false)
             ->assertSee('data-hero-mobile-source', false)
@@ -36,6 +37,16 @@ class WebsiteFoundationTest extends TestCase
             $this->assertFileExists($path);
             $this->assertSame($expectedDimensions, array_slice(getimagesize($path), 0, 2));
             $this->assertSame(6, ord(file_get_contents($path, false, null, 25, 1)), "{$capture} must use RGBA pixels.");
+
+            $image = imagecreatefrompng($path);
+
+            $this->assertNotFalse($image);
+
+            foreach ([[0, 0], [$expectedDimensions[0] - 1, 0], [3, 3], [$expectedDimensions[0] - 4, 3]] as [$x, $y]) {
+                $alpha = (imagecolorat($image, $x, $y) >> 24) & 0x7F;
+
+                $this->assertSame(127, $alpha, "{$capture} must have transparent rounded corners.");
+            }
         }
     }
 }

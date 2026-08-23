@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta
             name="description"
-            content="Inspect every Laravel request in a modern UI and give coding agents focused, structured debug data through MCP."
+            content="Explore Laravel requests, queries, exceptions, and application activity with clear explanations for developers and structured context for coding agents through MCP."
         >
         <meta name="color-scheme" content="dark light">
         <meta name="theme-color" content="#07070a">
@@ -64,35 +64,35 @@
         </header>
 
         <main class="hero-backdrop overflow-hidden">
-            <section class="mx-auto grid min-h-[calc(100svh-4.75rem)] max-w-[100rem] items-center gap-14 px-5 py-16 sm:px-8 sm:py-20 lg:px-10 min-[70rem]:grid-cols-[minmax(25rem,0.82fr)_minmax(48rem,1.45fr)] min-[70rem]:gap-12 min-[70rem]:py-24" aria-labelledby="hero-title">
-                <div class="relative z-10 w-full min-w-0 max-w-[34rem]">
+            <section class="mx-auto grid min-h-[calc(100svh-4.75rem)] max-w-[100rem] items-center gap-14 px-5 py-16 sm:px-8 sm:py-20 lg:px-10 min-[76rem]:grid-cols-[minmax(28rem,0.78fr)_minmax(44rem,1.22fr)] min-[76rem]:gap-8 min-[76rem]:py-24" aria-labelledby="hero-title">
+                <div class="relative z-10 w-full min-w-0 max-w-[36rem]">
                     <p class="text-xs font-semibold uppercase tracking-[0.2em] text-violet-600 sm:text-[0.82rem] dark:text-violet-400">
-                        Built for developers + agents
+                        Built for AI-pilled developers
                     </p>
 
-                    <h1 id="hero-title" class="mt-6 text-[clamp(2.75rem,6vw,4.4rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-zinc-950 dark:text-white">
-                        Stop making your coding agent guess.
+                    <h1 id="hero-title" class="mt-6 text-[2.55rem] font-semibold leading-none tracking-[-0.055em] text-zinc-950 sm:text-[3.5rem] min-[76rem]:text-[3.65rem] min-[90rem]:text-[4rem] dark:text-white">
+                        The modern debug bar for Laravel developers and agents
                     </h1>
 
                     <p class="mt-7 max-w-[32rem] text-lg leading-8 text-zinc-600 sm:text-xl sm:leading-9 dark:text-zinc-400">
-                        Inspect every Laravel request in a modern UI—and expose focused, structured debug data through MCP.
+                        Explore requests, queries, exceptions, and application activity with clear explanations of what happened and what to check next. Coding agents get the same structured context through MCP.
                     </p>
 
                     <div class="mt-9 max-w-[31rem]">
-                        <div class="flex min-h-[4.5rem] items-center gap-2 rounded-xl border border-zinc-200 bg-white/75 px-3 shadow-sm sm:gap-3 sm:px-5 dark:border-white/[0.13] dark:bg-white/[0.025] dark:shadow-none">
-                            <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap font-mono text-[0.625rem] font-medium text-zinc-900 sm:text-[0.8rem] dark:text-zinc-100">composer require newdebugbar/newdebugbar --dev</code>
+                        <div class="inline-flex max-w-full items-center gap-1.5 rounded-xl border border-zinc-200 bg-white/75 p-2 shadow-sm dark:border-white/[0.13] dark:bg-white/[0.025] dark:shadow-none">
+                            <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap font-mono text-[0.5625rem] leading-4 font-medium text-zinc-900 sm:text-xs dark:text-zinc-100">composer require newdebugbar/newdebugbar:dev-main --dev</code>
                             <button
-                                class="grid size-8 shrink-0 place-items-center rounded-lg text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 sm:size-9 dark:text-zinc-400 dark:hover:bg-white/[0.07] dark:hover:text-white"
+                                class="grid size-7 shrink-0 place-items-center rounded-lg text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:bg-white/[0.07] dark:hover:text-white"
                                 type="button"
-                                data-copy-command="composer require newdebugbar/newdebugbar --dev"
+                                data-copy-command="composer require newdebugbar/newdebugbar:dev-main --dev"
                                 aria-label="Copy install command"
                                 title="Copy install command"
                             >
-                                <svg data-copy-icon class="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <svg data-copy-icon class="size-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                     <rect x="8" y="8" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.7"/>
                                     <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
                                 </svg>
-                                <svg data-copy-success class="hidden size-5 text-emerald-500" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <svg data-copy-success class="hidden size-4 text-emerald-500" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                     <path d="m5 12.5 4.3 4.3L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
