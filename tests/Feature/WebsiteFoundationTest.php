@@ -4,13 +4,38 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-/**
- * Confirms the temporary Laravel landing screen remains reachable while the site is designed.
- */
 class WebsiteFoundationTest extends TestCase
 {
-    public function test_the_site_is_reachable(): void
+    public function test_the_landing_page_introduces_the_product(): void
     {
-        $this->get('/')->assertOk();
+        $this->withoutVite();
+
+        $this->get('/')
+            ->assertOk()
+            ->assertSee('Stop making your coding agent guess.')
+            ->assertSee('composer require newdebugbar/newdebugbar --dev')
+            ->assertSee('Built for developers + agents')
+            ->assertSee('https://github.com/newdebugbar/newdebugbar#readme', false)
+            ->assertSee('data-theme-toggle', false)
+            ->assertSee('data-hero-mobile-source', false)
+            ->assertDontSee('LOCAL · READ-ONLY AGENT ACCESS');
+    }
+
+    public function test_the_hero_has_desktop_and_mobile_captures_for_both_themes(): void
+    {
+        $captures = [
+            'inspector-desktop-dark.png' => [1536, 780],
+            'inspector-desktop-light.png' => [1536, 780],
+            'inspector-mobile-dark.png' => [780, 1386],
+            'inspector-mobile-light.png' => [780, 1386],
+        ];
+
+        foreach ($captures as $capture => $expectedDimensions) {
+            $path = resource_path("images/hero/{$capture}");
+
+            $this->assertFileExists($path);
+            $this->assertSame($expectedDimensions, array_slice(getimagesize($path), 0, 2));
+            $this->assertSame(6, ord(file_get_contents($path, false, null, 25, 1)), "{$capture} must use RGBA pixels.");
+        }
     }
 }

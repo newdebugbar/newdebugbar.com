@@ -2,7 +2,7 @@
 
 This is the Laravel application for [newdebugbar.com](https://newdebugbar.com).
 
-The project is currently a fresh Laravel foundation. Its site architecture, frontend, and content-rendering approach are intentionally not implemented yet.
+The current foundation includes the responsive landing-page navigation and hero. The rest of the site architecture and content will follow as the product direction is defined.
 
 ## Local setup
 

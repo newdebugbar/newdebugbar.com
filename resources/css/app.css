@@ -1,9 +1,123 @@
 @import 'tailwindcss';
 
+@source '../views/**/*.blade.php';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@layer base {
+    html {
+        background: #fafafa;
+        color-scheme: light;
+    }
+
+    html[data-theme='dark'] {
+        background: #07070a;
+        color-scheme: dark;
+    }
+
+    button,
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+.hero-backdrop {
+    position: relative;
+    isolation: isolate;
+    background:
+        radial-gradient(circle at 73% 46%, rgb(124 58 237 / 10%), transparent 29rem),
+        linear-gradient(145deg, #ffffff 0%, #fafafa 56%, #f7f5ff 100%);
+}
+
+[data-theme='dark'] .hero-backdrop {
+    background:
+        radial-gradient(circle at 73% 47%, rgb(119 87 255 / 14%), transparent 31rem),
+        radial-gradient(circle at 18% 87%, rgb(76 29 149 / 7%), transparent 28rem),
+        #07070a;
+}
+
+.hero-product {
+    position: relative;
+    width: min(70rem, 70vw);
+    min-width: 48rem;
+}
+
+.hero-product::before {
+    position: absolute;
+    z-index: -1;
+    inset: 12% 7% 5%;
+    border-radius: 50%;
+    background: rgb(124 58 237 / 16%);
+    content: '';
+    filter: blur(5rem);
+}
+
+.hero-product__picture {
+    display: block;
+    aspect-ratio: 1536 / 780;
+    opacity: 0;
+    transition: opacity 400ms ease;
+}
+
+.hero-product__picture[data-ready='true'] {
+    opacity: 1;
+}
+
+.hero-product__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 1.75rem 2.5rem rgb(24 10 58 / 17%));
+}
+
+[data-theme='dark'] .hero-product__image {
+    filter: drop-shadow(0 1.75rem 2.5rem rgb(0 0 0 / 48%));
+}
+
+@media (max-width: 69.999rem) {
+    .hero-product {
+        justify-self: center;
+        width: min(64rem, calc(100vw - 2.5rem));
+        min-width: 0;
+    }
+}
+
+@media (max-width: 47.999rem) {
+    .hero-backdrop {
+        background:
+            radial-gradient(circle at 50% 74%, rgb(124 58 237 / 10%), transparent 24rem),
+            #fafafa;
+    }
+
+    [data-theme='dark'] .hero-backdrop {
+        background:
+            radial-gradient(circle at 50% 72%, rgb(119 87 255 / 13%), transparent 24rem),
+            #07070a;
+    }
+
+    .hero-product {
+        width: min(25rem, calc(100vw - 2.5rem));
+    }
+
+    .hero-product__picture {
+        aspect-ratio: 780 / 1386;
+    }
+
+    .hero-product::before {
+        inset: 16% 0 8%;
+        filter: blur(3.5rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-product__picture {
+        transition: none;
+    }
 }
