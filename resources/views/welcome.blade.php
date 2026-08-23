@@ -70,12 +70,12 @@
                         Built for AI-pilled developers
                     </p>
 
-                    <h1 id="hero-title" class="mt-6 text-[2.55rem] font-semibold leading-none tracking-[-0.055em] text-zinc-950 sm:text-[3.5rem] min-[76rem]:text-[3.65rem] min-[90rem]:text-[4rem] dark:text-white">
-                        The modern debug bar for Laravel developers and agents
+                    <h1 id="hero-title" class="mt-6 text-balance text-[2.55rem] font-semibold leading-none tracking-[-0.055em] text-zinc-950 sm:text-[3.5rem] min-[76rem]:text-[3.65rem] min-[90rem]:text-[4rem] dark:text-white">
+                        Powerful, agent-friendly Laravel debugging—free and open source
                     </h1>
 
                     <p class="mt-7 max-w-[32rem] text-lg leading-8 text-zinc-600 sm:text-xl sm:leading-9 dark:text-zinc-400">
-                        Explore requests, queries, exceptions, and application activity with clear explanations of what happened and what to check next. Coding agents get the same structured context through MCP.
+                        Understand what happened and what to check next. Agents get exact MCP context with fewer tokens.
                     </p>
 
                     <div class="mt-9 max-w-[31rem]">
