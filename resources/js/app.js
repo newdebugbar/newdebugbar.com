@@ -5,6 +5,9 @@ import mobileLight from '../images/hero/inspector-mobile-light.png';
 
 const themeStorageKey = 'newdebugbar-website-theme';
 const themeOptions = document.querySelectorAll('[data-theme-option]');
+const themeMenuRoot = document.querySelector('[data-theme-menu-root]');
+const themeMenu = document.querySelector('[data-theme-menu]');
+const themeMenuTrigger = document.querySelector('[data-theme-menu-trigger]');
 const themeColor = document.querySelector('meta[name="theme-color"]');
 const heroProduct = document.querySelector('[data-hero-product]');
 const heroImage = document.querySelector('[data-hero-image]');
@@ -28,7 +31,17 @@ const applyTheme = (themeMode, persist = false) => {
     document.documentElement.dataset.theme = resolvedTheme;
 
     themeOptions.forEach((themeOption) => {
-        themeOption.setAttribute('aria-pressed', String(themeOption.dataset.themeOption === selectedTheme));
+        const isSelected = themeOption.dataset.themeOption === selectedTheme;
+
+        if (themeOption.hasAttribute('aria-pressed')) {
+            themeOption.setAttribute('aria-pressed', String(isSelected));
+        }
+
+        if (themeOption.hasAttribute('aria-checked')) {
+            themeOption.setAttribute('aria-checked', String(isSelected));
+        }
+
+        themeOption.querySelector('[data-theme-selection]')?.classList.toggle('hidden', !isSelected);
     });
 
     if (themeColor) {
@@ -48,10 +61,42 @@ const applyTheme = (themeMode, persist = false) => {
 
 applyTheme(document.documentElement.dataset.themeMode);
 
+const closeThemeMenu = (restoreFocus = false) => {
+    themeMenu?.classList.add('hidden');
+    themeMenuTrigger?.setAttribute('aria-expanded', 'false');
+
+    if (restoreFocus) {
+        themeMenuTrigger?.focus();
+    }
+};
+
+themeMenuTrigger?.addEventListener('click', () => {
+    const isOpen = themeMenuTrigger.getAttribute('aria-expanded') === 'true';
+
+    themeMenu?.classList.toggle('hidden', isOpen);
+    themeMenuTrigger.setAttribute('aria-expanded', String(!isOpen));
+});
+
 themeOptions.forEach((themeOption) => {
     themeOption.addEventListener('click', () => {
         applyTheme(themeOption.dataset.themeOption, true);
+
+        if (themeOption.closest('[data-theme-menu]')) {
+            closeThemeMenu(true);
+        }
     });
+});
+
+document.addEventListener('click', (event) => {
+    if (themeMenuRoot && !themeMenuRoot.contains(event.target)) {
+        closeThemeMenu();
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && themeMenuTrigger?.getAttribute('aria-expanded') === 'true') {
+        closeThemeMenu(true);
+    }
 });
 
 systemThemeQuery.addEventListener('change', () => {
