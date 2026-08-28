@@ -4,24 +4,32 @@ import mobileDark from '../images/hero/inspector-mobile-dark.png';
 import mobileLight from '../images/hero/inspector-mobile-light.png';
 
 const themeStorageKey = 'newdebugbar-website-theme';
-const themeToggle = document.querySelector('[data-theme-toggle]');
+const themeOptions = document.querySelectorAll('[data-theme-option]');
 const themeColor = document.querySelector('meta[name="theme-color"]');
 const heroProduct = document.querySelector('[data-hero-product]');
 const heroImage = document.querySelector('[data-hero-image]');
 const heroMobileSource = document.querySelector('[data-hero-mobile-source]');
+const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-const applyTheme = (theme, persist = false) => {
-    const isLight = theme === 'light';
-
-    document.documentElement.dataset.theme = isLight ? 'light' : 'dark';
-
-    if (themeToggle) {
-        const label = isLight ? 'Switch to dark theme' : 'Switch to light theme';
-
-        themeToggle.setAttribute('aria-label', label);
-        themeToggle.setAttribute('title', label);
-        themeToggle.setAttribute('aria-pressed', String(isLight));
+const resolveTheme = (themeMode) => {
+    if (themeMode === 'system') {
+        return systemThemeQuery.matches ? 'dark' : 'light';
     }
+
+    return themeMode;
+};
+
+const applyTheme = (themeMode, persist = false) => {
+    const selectedTheme = ['system', 'light', 'dark'].includes(themeMode) ? themeMode : 'system';
+    const resolvedTheme = resolveTheme(selectedTheme);
+    const isLight = resolvedTheme === 'light';
+
+    document.documentElement.dataset.themeMode = selectedTheme;
+    document.documentElement.dataset.theme = resolvedTheme;
+
+    themeOptions.forEach((themeOption) => {
+        themeOption.setAttribute('aria-pressed', String(themeOption.dataset.themeOption === selectedTheme));
+    });
 
     if (themeColor) {
         themeColor.setAttribute('content', isLight ? '#fafafa' : '#07070a');
@@ -34,14 +42,22 @@ const applyTheme = (theme, persist = false) => {
     }
 
     if (persist) {
-        localStorage.setItem(themeStorageKey, isLight ? 'light' : 'dark');
+        localStorage.setItem(themeStorageKey, selectedTheme);
     }
 };
 
-applyTheme(document.documentElement.dataset.theme);
+applyTheme(document.documentElement.dataset.themeMode);
 
-themeToggle?.addEventListener('click', () => {
-    applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark', true);
+themeOptions.forEach((themeOption) => {
+    themeOption.addEventListener('click', () => {
+        applyTheme(themeOption.dataset.themeOption, true);
+    });
+});
+
+systemThemeQuery.addEventListener('change', () => {
+    if (document.documentElement.dataset.themeMode === 'system') {
+        applyTheme('system');
+    }
 });
 
 const copyButton = document.querySelector('[data-copy-command]');
