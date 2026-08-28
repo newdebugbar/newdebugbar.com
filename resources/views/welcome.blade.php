@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta
             name="description"
-            content="Inspect Laravel requests, queries, exceptions, logs, events, jobs, mail, cache, and more, with structured profiles for coding agents through MCP."
+            content="Find Laravel bugs and bottlenecks without digging through scattered logs. Inspect requests, queries, exceptions, jobs, mail, cache, and more, with exact MCP context for coding agents."
         >
         <meta name="color-scheme" content="dark light">
         <meta name="theme-color" content="#07070a">
@@ -104,7 +104,7 @@
                     </h1>
 
                     <p class="mt-7 max-w-[32rem] text-lg leading-8 text-zinc-600 sm:text-xl sm:leading-9 dark:text-zinc-400">
-                        Inspect requests, queries, exceptions, logs, events, jobs, mail, cache, and more in one focused interface. Coding agents can read the same structured profiles through MCP with fewer tokens.
+                        Find bugs and bottlenecks without digging through scattered logs. Inspect requests, queries, exceptions, jobs, mail, cache, and more in one place—while MCP gives your coding agent exact context with less guessing and fewer tokens.
                     </p>
 
                     <div class="mt-9 max-w-[31rem]">
