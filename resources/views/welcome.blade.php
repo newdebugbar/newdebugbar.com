@@ -108,7 +108,7 @@
                     </p>
 
                     <div class="mt-9 max-w-[31rem]">
-                        <div class="inline-flex max-w-full items-center gap-1.5 rounded-xl border border-zinc-200 bg-white/75 px-4 py-2 shadow-sm dark:border-white/[0.13] dark:bg-white/[0.025] dark:shadow-none">
+                        <div class="inline-flex max-w-full items-center gap-1.5 rounded-xl border border-zinc-200 bg-white/75 py-2 pr-2 pl-4 shadow-sm dark:border-white/[0.13] dark:bg-white/[0.025] dark:shadow-none">
                             <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap font-mono text-[0.5625rem] leading-4 font-medium text-zinc-900 sm:text-xs dark:text-zinc-100">composer require newdebugbar/newdebugbar:dev-main --dev</code>
                             <button
                                 class="grid size-7 shrink-0 place-items-center rounded-lg text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:bg-white/[0.07] dark:hover:text-white"
