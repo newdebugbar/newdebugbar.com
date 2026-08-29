@@ -2,167 +2,17 @@ import requestInspectorDesktopDark from '../images/screenshots/request-inspector
 import requestInspectorDesktopLight from '../images/screenshots/request-inspector-desktop-light.png';
 import requestInspectorMobileDark from '../images/screenshots/request-inspector-mobile-dark.png';
 import requestInspectorMobileLight from '../images/screenshots/request-inspector-mobile-light.png';
+import { initializeSite } from './site.js';
 
-const themeStorageKey = 'newdebugbar-website-theme';
-const themeOptions = document.querySelectorAll('[data-theme-option]');
-const themeMenuRoot = document.querySelector('[data-theme-menu-root]');
-const themeMenu = document.querySelector('[data-theme-menu]');
-const themeMenuTrigger = document.querySelector('[data-theme-menu-trigger]');
-const themeColor = document.querySelector('meta[name="theme-color"]');
-const requestInspectorImage = document.querySelector('[data-request-inspector-image]');
-const requestInspectorMobileSource = document.querySelector('[data-request-inspector-mobile-source]');
-const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-const resolveTheme = (themeMode) => {
-    if (themeMode === 'system') {
-        return systemThemeQuery.matches ? 'dark' : 'light';
-    }
-
-    return themeMode;
-};
-
-const applyTheme = (themeMode, persist = false) => {
-    const selectedTheme = ['system', 'light', 'dark'].includes(themeMode) ? themeMode : 'system';
-    const resolvedTheme = resolveTheme(selectedTheme);
-    const isLight = resolvedTheme === 'light';
-
-    document.documentElement.dataset.themeMode = selectedTheme;
-    document.documentElement.dataset.theme = resolvedTheme;
-
-    themeOptions.forEach((themeOption) => {
-        const isSelected = themeOption.dataset.themeOption === selectedTheme;
-
-        if (themeOption.hasAttribute('aria-pressed')) {
-            themeOption.setAttribute('aria-pressed', String(isSelected));
-        }
-
-        if (themeOption.hasAttribute('aria-checked')) {
-            themeOption.setAttribute('aria-checked', String(isSelected));
-        }
-
-        themeOption.querySelector('[data-theme-selection]')?.classList.toggle('hidden', !isSelected);
-    });
-
-    if (themeColor) {
-        themeColor.setAttribute('content', isLight ? '#fafafa' : '#07070a');
-    }
-
-    if (requestInspectorImage && requestInspectorMobileSource) {
-        requestInspectorImage.src = isLight ? requestInspectorDesktopLight : requestInspectorDesktopDark;
-        requestInspectorMobileSource.srcset = isLight ? requestInspectorMobileLight : requestInspectorMobileDark;
-    }
-
-    if (persist) {
-        localStorage.setItem(themeStorageKey, selectedTheme);
-    }
-};
-
-applyTheme(document.documentElement.dataset.themeMode);
-
-const closeThemeMenu = (restoreFocus = false) => {
-    themeMenu?.classList.add('hidden');
-    themeMenuTrigger?.setAttribute('aria-expanded', 'false');
-
-    if (restoreFocus) {
-        themeMenuTrigger?.focus();
-    }
-};
-
-themeMenuTrigger?.addEventListener('click', () => {
-    const isOpen = themeMenuTrigger.getAttribute('aria-expanded') === 'true';
-
-    themeMenu?.classList.toggle('hidden', isOpen);
-    themeMenuTrigger.setAttribute('aria-expanded', String(!isOpen));
-});
-
-themeOptions.forEach((themeOption) => {
-    themeOption.addEventListener('click', () => {
-        applyTheme(themeOption.dataset.themeOption, true);
-
-        if (themeOption.closest('[data-theme-menu]')) {
-            closeThemeMenu(true);
-        }
-    });
-});
-
-document.addEventListener('click', (event) => {
-    if (themeMenuRoot && !themeMenuRoot.contains(event.target)) {
-        closeThemeMenu();
-    }
-});
-
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && themeMenuTrigger?.getAttribute('aria-expanded') === 'true') {
-        closeThemeMenu(true);
-    }
-});
-
-systemThemeQuery.addEventListener('change', () => {
-    if (document.documentElement.dataset.themeMode === 'system') {
-        applyTheme('system');
-    }
-});
-
-const copyButtons = document.querySelectorAll('[data-copy-command]');
-
-const copyText = async (text) => {
-    if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(text);
-
-        return;
-    }
-
-    const textarea = document.createElement('textarea');
-
-    textarea.value = text;
-    textarea.setAttribute('readonly', '');
-    textarea.style.position = 'fixed';
-    textarea.style.opacity = '0';
-    document.body.append(textarea);
-    textarea.select();
-
-    const copied = document.execCommand('copy');
-
-    textarea.remove();
-
-    if (!copied) {
-        throw new Error('Copy command was rejected');
-    }
-};
-
-copyButtons.forEach((copyButton) => {
-    copyButton.addEventListener('click', async () => {
-        const command = copyButton.dataset.copyCommand;
-        const copyIcon = copyButton.querySelector('[data-copy-icon]');
-        const successIcon = copyButton.querySelector('[data-copy-success]');
-        const status = copyButton.closest('[data-copy-root]')?.querySelector('[data-copy-status]');
-        const defaultLabel = copyButton.dataset.copyLabel ?? 'Copy install command';
-        const successMessage = copyButton.dataset.copySuccess ?? 'Install command copied';
-
-        try {
-            await copyText(command);
-
-            copyIcon?.classList.add('hidden');
-            successIcon?.classList.remove('hidden');
-            copyButton.setAttribute('aria-label', successMessage);
-
-            if (status) {
-                status.textContent = successMessage;
-            }
-
-            window.setTimeout(() => {
-                copyIcon?.classList.remove('hidden');
-                successIcon?.classList.add('hidden');
-                copyButton.setAttribute('aria-label', defaultLabel);
-
-                if (status) {
-                    status.textContent = '';
-                }
-            }, 3000);
-        } catch {
-            if (status) {
-                status.textContent = `Could not copy: ${command}`;
-            }
-        }
-    });
+initializeSite({
+    screenshots: {
+        desktop: {
+            dark: requestInspectorDesktopDark,
+            light: requestInspectorDesktopLight,
+        },
+        mobile: {
+            dark: requestInspectorMobileDark,
+            light: requestInspectorMobileLight,
+        },
+    },
 });
