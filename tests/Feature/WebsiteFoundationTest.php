@@ -22,6 +22,11 @@ class WebsiteFoundationTest extends TestCase
             ->assertSee('data-theme-option="light"', false)
             ->assertSee('data-theme-option="dark"', false)
             ->assertSee('data-hero-mobile-source', false)
+            ->assertSee('Supported by')
+            ->assertSee('https://onlyfansapi.com', false)
+            ->assertSee('Visit OnlyFans API, a New Debug Bar sponsor')
+            ->assertSee('Your logo here')
+            ->assertSee('Sponsor New Debug Bar and add your logo')
             ->assertDontSee('Built for AI-pilled developers')
             ->assertDontSee('clear explanations of what happened and what to check next')
             ->assertDontSee('LOCAL · READ-ONLY AGENT ACCESS');

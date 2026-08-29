@@ -256,6 +256,41 @@
                     </picture>
                 </div>
             </section>
+
+            <section class="relative border-t border-zinc-200/70 dark:border-white/[0.08]" aria-labelledby="sponsors-title">
+                <div class="mx-auto flex max-w-[100rem] flex-col items-center px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
+                    <h2 id="sponsors-title" class="text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-500">
+                        Supported by
+                    </h2>
+
+                    <ul class="mt-6 flex w-full max-w-[36rem] flex-col items-center justify-center gap-4 min-[23rem]:flex-row min-[23rem]:gap-6 sm:mt-7 sm:gap-8" role="list">
+                        <li>
+                            <a
+                                class="inline-flex min-h-12 items-center gap-2.5 rounded-xl px-3 py-2 text-zinc-950 transition-colors hover:text-violet-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:text-white dark:hover:text-violet-300"
+                                href="https://onlyfansapi.com"
+                                target="_blank"
+                                rel="noopener noreferrer sponsored"
+                                aria-label="Visit OnlyFans API, a New Debug Bar sponsor"
+                            >
+                                <svg class="size-5 sm:size-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="m4 17 6-6-6-6M12 19h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span class="text-base font-semibold tracking-[-0.025em] sm:text-lg">OnlyFans API</span>
+                            </a>
+                        </li>
+                        <li class="hidden h-8 w-px bg-zinc-200 min-[23rem]:block dark:bg-white/10" aria-hidden="true"></li>
+                        <li>
+                            <a
+                                class="inline-flex min-h-12 items-center justify-center rounded-xl border border-dashed border-zinc-300 px-5 text-sm font-medium text-zinc-500 transition-colors hover:border-violet-400 hover:text-violet-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:border-white/15 dark:text-zinc-400 dark:hover:border-violet-400/70 dark:hover:text-violet-300"
+                                href="https://github.com/sponsors/benjamincrozat"
+                                aria-label="Sponsor New Debug Bar and add your logo"
+                            >
+                                Your logo here
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
         </main>
     </body>
 </html>
