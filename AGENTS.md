@@ -17,3 +17,4 @@
 ## Design
 
 - Do not use badges unless they communicate an important status or category that plain text cannot express as clearly.
+- Store product screenshots under `resources/images/screenshots` and name them for the product view, not the page. Reuse the same source file across pages instead of making page-specific copies.

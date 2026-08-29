@@ -21,7 +21,7 @@ class WebsiteFoundationTest extends TestCase
             ->assertSee('data-theme-option="system"', false)
             ->assertSee('data-theme-option="light"', false)
             ->assertSee('data-theme-option="dark"', false)
-            ->assertSee('data-hero-mobile-source', false)
+            ->assertSee('data-request-inspector-mobile-source', false)
             ->assertSee('Supported by')
             ->assertSee('https://onlyfansapi.com', false)
             ->assertSee('Visit OnlyFans API, a New Debug Bar sponsor')
@@ -40,17 +40,17 @@ class WebsiteFoundationTest extends TestCase
             ->assertDontSee('LOCAL · READ-ONLY AGENT ACCESS');
     }
 
-    public function test_the_hero_has_desktop_and_mobile_captures_for_both_themes(): void
+    public function test_the_request_inspector_has_desktop_and_mobile_captures_for_both_themes(): void
     {
         $captures = [
-            'inspector-desktop-dark.png' => [1536, 780],
-            'inspector-desktop-light.png' => [1536, 780],
-            'inspector-mobile-dark.png' => [780, 1384],
-            'inspector-mobile-light.png' => [780, 1384],
+            'request-inspector-desktop-dark.png' => [1536, 780],
+            'request-inspector-desktop-light.png' => [1536, 780],
+            'request-inspector-mobile-dark.png' => [780, 1384],
+            'request-inspector-mobile-light.png' => [780, 1384],
         ];
 
         foreach ($captures as $capture => $expectedDimensions) {
-            $path = resource_path("images/hero/{$capture}");
+            $path = resource_path("images/screenshots/{$capture}");
 
             $this->assertFileExists($path);
             $this->assertSame($expectedDimensions, array_slice(getimagesize($path), 0, 2));

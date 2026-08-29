@@ -1,7 +1,7 @@
-import desktopDark from '../images/hero/inspector-desktop-dark.png';
-import desktopLight from '../images/hero/inspector-desktop-light.png';
-import mobileDark from '../images/hero/inspector-mobile-dark.png';
-import mobileLight from '../images/hero/inspector-mobile-light.png';
+import requestInspectorDesktopDark from '../images/screenshots/request-inspector-desktop-dark.png';
+import requestInspectorDesktopLight from '../images/screenshots/request-inspector-desktop-light.png';
+import requestInspectorMobileDark from '../images/screenshots/request-inspector-mobile-dark.png';
+import requestInspectorMobileLight from '../images/screenshots/request-inspector-mobile-light.png';
 
 const themeStorageKey = 'newdebugbar-website-theme';
 const themeOptions = document.querySelectorAll('[data-theme-option]');
@@ -9,8 +9,8 @@ const themeMenuRoot = document.querySelector('[data-theme-menu-root]');
 const themeMenu = document.querySelector('[data-theme-menu]');
 const themeMenuTrigger = document.querySelector('[data-theme-menu-trigger]');
 const themeColor = document.querySelector('meta[name="theme-color"]');
-const heroImage = document.querySelector('[data-hero-image]');
-const heroMobileSource = document.querySelector('[data-hero-mobile-source]');
+const requestInspectorImage = document.querySelector('[data-request-inspector-image]');
+const requestInspectorMobileSource = document.querySelector('[data-request-inspector-mobile-source]');
 const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
 const resolveTheme = (themeMode) => {
@@ -47,9 +47,9 @@ const applyTheme = (themeMode, persist = false) => {
         themeColor.setAttribute('content', isLight ? '#fafafa' : '#07070a');
     }
 
-    if (heroImage && heroMobileSource) {
-        heroImage.src = isLight ? desktopLight : desktopDark;
-        heroMobileSource.srcset = isLight ? mobileLight : mobileDark;
+    if (requestInspectorImage && requestInspectorMobileSource) {
+        requestInspectorImage.src = isLight ? requestInspectorDesktopLight : requestInspectorDesktopDark;
+        requestInspectorMobileSource.srcset = isLight ? requestInspectorMobileLight : requestInspectorMobileDark;
     }
 
     if (persist) {

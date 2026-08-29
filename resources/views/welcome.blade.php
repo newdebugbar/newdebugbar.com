@@ -101,18 +101,10 @@
 
                 <div class="hero-product-dock">
                     <div class="hero-product">
-                        <picture class="hero-product__picture">
-                            <source media="(max-width: 47.999rem)" data-hero-mobile-source>
-                            <img
-                                class="hero-product__image"
-                                data-hero-image
-                                width="1536"
-                                height="780"
-                                alt="New Debug Bar request inspector showing the request trace, route, controller, response, query count, and duration for a Kyoto trip page"
-                                decoding="async"
-                                fetchpriority="high"
-                            >
-                        </picture>
+                        <x-screenshots.request-inspector
+                            alt="New Debug Bar request inspector showing the request trace, route, controller, response, query count, and duration for a Kyoto trip page"
+                            fetchpriority="high"
+                        />
                     </div>
                 </div>
             </section>

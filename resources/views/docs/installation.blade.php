@@ -171,20 +171,10 @@
                         </div>
 
                         <figure class="mt-7">
-                            <div class="overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-100 shadow-xl shadow-zinc-950/10 dark:border-white/10 dark:bg-[#111116] dark:shadow-black/30">
-                                <picture class="hero-product__picture">
-                                    <source media="(max-width: 47.999rem)" data-hero-mobile-source>
-                                    <img
-                                        class="hero-product__image"
-                                        data-hero-image
-                                        width="1536"
-                                        height="780"
-                                        alt="New Debug Bar open over a Laravel page with request, query, and duration details"
-                                        loading="lazy"
-                                        decoding="async"
-                                    >
-                                </picture>
-                            </div>
+                            <x-screenshots.request-inspector
+                                alt="New Debug Bar open over a Laravel page with request, query, and duration details"
+                                loading="lazy"
+                            />
                             <figcaption class="mt-3 text-sm leading-6 text-zinc-500 dark:text-zinc-500">The compact bar stays at the bottom of your app until you open the inspector.</figcaption>
                         </figure>
                     </section>
