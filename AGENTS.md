@@ -17,5 +17,6 @@
 ## Design
 
 - Do not use badges unless they communicate an important status or category that plain text cannot express as clearly.
+- Keep `resources/css/app.css` limited to required Tailwind setup, source, variant, and theme directives. Put page and component styling in Tailwind utility classes in Blade.
 - Store product screenshots under `resources/images/screenshots` and name them for the product view, not the page. Reuse the same source file across pages instead of making page-specific copies.
 - Build repeated documentation interface patterns as Blade components under `resources/views/components/docs`; keep page-specific prose and simple markup in the page view.
