@@ -2,7 +2,18 @@
     'title',
     'description',
     'scrollSmooth' => false,
+    'canonical' => null,
+    'ogType' => 'website',
+    'ogTitle' => null,
+    'ogDescription' => null,
+    'socialImage' => null,
+    'socialImageAlt' => 'New Debug Bar request inspector open over a Laravel application',
+    'structuredData' => null,
 ])
+
+@php
+    $resolvedSocialImage = url($socialImage ?? Illuminate\Support\Facades\Vite::asset('resources/images/screenshots/request-inspector-desktop-light.png'));
+@endphp
 
 <!DOCTYPE html>
 <html
@@ -20,6 +31,32 @@
         <meta name="description" content="{{ $description }}">
         <meta name="color-scheme" content="dark light">
         <meta name="theme-color" content="#07070a">
+
+        @if ($canonical)
+            <link rel="canonical" href="{{ $canonical }}">
+        @endif
+
+        <meta property="og:type" content="{{ $ogType }}">
+        <meta property="og:site_name" content="New Debug Bar">
+        <meta property="og:title" content="{{ $ogTitle ?? $title }}">
+        <meta property="og:description" content="{{ $ogDescription ?? $description }}">
+        @if ($canonical)
+            <meta property="og:url" content="{{ $canonical }}">
+        @endif
+        <meta property="og:image" content="{{ $resolvedSocialImage }}">
+        <meta property="og:image:width" content="1536">
+        <meta property="og:image:height" content="780">
+        <meta property="og:image:alt" content="{{ $socialImageAlt }}">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ $ogTitle ?? $title }}">
+        <meta name="twitter:description" content="{{ $ogDescription ?? $description }}">
+        <meta name="twitter:image" content="{{ $resolvedSocialImage }}">
+        <meta name="twitter:image:alt" content="{{ $socialImageAlt }}">
+
+        @if ($structuredData)
+            <script type="application/ld+json">{!! json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) !!}</script>
+        @endif
 
         {{ $head ?? '' }}
 

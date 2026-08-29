@@ -3,6 +3,7 @@
 <x-layouts.site
     title="New Debug Bar — Laravel debugging for developers and agents"
     description="Find Laravel bugs and bottlenecks without digging through scattered logs. Inspect requests, queries, exceptions, jobs, mail, cache, and more, with exact MCP context for coding agents."
+    :canonical="url('/')"
 >
     <main class="relative isolate [background:radial-gradient(circle_at_73%_46%,rgb(124_58_237_/_10%),transparent_29rem),linear-gradient(145deg,#ffffff_0%,#fafafa_56%,#f7f5ff_100%)] max-[47.999rem]:[background:radial-gradient(circle_at_50%_74%,rgb(124_58_237_/_10%),transparent_24rem),#fafafa] dark:[background:radial-gradient(circle_at_73%_47%,rgb(119_87_255_/_14%),transparent_31rem),radial-gradient(circle_at_18%_87%,rgb(76_29_149_/_7%),transparent_28rem),#07070a] dark:max-[47.999rem]:[background:radial-gradient(circle_at_50%_72%,rgb(119_87_255_/_13%),transparent_24rem),#07070a]">
             <section class="relative mx-auto flex max-w-[100rem] flex-col items-center overflow-hidden px-5 pt-6 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-20 after:h-px after:bg-[linear-gradient(to_right,transparent,rgb(24_24_27_/_12%)_18%,rgb(24_24_27_/_12%)_82%,transparent)] after:content-[''] sm:px-8 sm:pt-10 lg:px-10 dark:after:bg-[linear-gradient(to_right,transparent,rgb(255_255_255_/_14%)_18%,rgb(255_255_255_/_14%)_82%,transparent)]" aria-labelledby="hero-title">
