@@ -16,6 +16,7 @@ class WebsiteFoundationTest extends TestCase
             ->assertSee('Find bugs and bottlenecks without digging through scattered logs. Inspect requests, queries, exceptions, jobs, mail, cache, and more in one place—while MCP gives your coding agent exact context with less guessing and fewer tokens.')
             ->assertSee('composer require newdebugbar/newdebugbar:dev-main --dev')
             ->assertSee('for Laravel')
+            ->assertSee('https://github.com/sponsors/benjamincrozat', false)
             ->assertSee('https://github.com/newdebugbar/newdebugbar#readme', false)
             ->assertSee('data-theme-option="system"', false)
             ->assertSee('data-theme-option="light"', false)
@@ -31,8 +32,8 @@ class WebsiteFoundationTest extends TestCase
         $captures = [
             'inspector-desktop-dark.png' => [1536, 780],
             'inspector-desktop-light.png' => [1536, 780],
-            'inspector-mobile-dark.png' => [780, 1386],
-            'inspector-mobile-light.png' => [780, 1386],
+            'inspector-mobile-dark.png' => [780, 1384],
+            'inspector-mobile-light.png' => [780, 1384],
         ];
 
         foreach ($captures as $capture => $expectedDimensions) {
