@@ -216,32 +216,26 @@
                         Find bugs and bottlenecks without digging through scattered logs. Inspect requests, queries, exceptions, jobs, mail, cache, and more in one place—while MCP gives your coding agent exact context with less guessing and fewer tokens.
                     </p>
 
-                    <div class="mt-6 inline-flex max-w-full items-center rounded-full border border-zinc-950/[0.08] bg-white/65 px-[1.3125rem] py-3 shadow-[0_0.75rem_2.5rem_rgb(24_24_27/0.08)] backdrop-blur-xl sm:mt-7 sm:py-4 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-[0_0.75rem_2.5rem_rgb(0_0_0/0.28)]">
-                        <span class="flex min-w-0 flex-wrap items-center justify-center gap-x-[0.55ch] gap-y-0.5">
-                            <span class="inline-flex basis-full shrink-0 items-center justify-center gap-3 min-[23rem]:basis-auto">
-                                <span class="shrink-0 font-mono text-base leading-5 text-violet-600 sm:text-lg sm:leading-6 dark:text-violet-400" aria-hidden="true">$</span>
-                                <code class="whitespace-nowrap font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 lg:text-base lg:tracking-[-0.03em] dark:text-white">composer require</code>
-                            </span>
-                            <code class="whitespace-nowrap font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 lg:text-base lg:tracking-[-0.03em] dark:text-white">newdebugbar/newdebugbar:dev-main</code>
-                            <span class="inline-flex shrink-0 items-center gap-[1.375rem] whitespace-nowrap">
-                                <code class="font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 lg:text-base lg:tracking-[-0.03em] dark:text-white">--dev</code>
-                                <button
-                                    class="relative inline-grid size-5 shrink-0 place-items-center text-zinc-500 transition-colors after:absolute after:-inset-2.5 after:content-[''] hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:text-white"
-                                    type="button"
-                                    data-copy-command="composer require newdebugbar/newdebugbar:dev-main --dev"
-                                    aria-label="Copy install command"
-                                    title="Copy install command"
-                                >
-                                    <svg data-copy-icon class="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                        <rect x="8" y="8" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.7"/>
-                                        <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                                    </svg>
-                                    <svg data-copy-success class="hidden size-5 text-emerald-500" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                        <path d="m5 12.5 4.3 4.3L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </button>
-                            </span>
+                    <div class="mt-6 inline-flex max-w-full items-center gap-[1.375rem] rounded-full border border-zinc-950/[0.08] bg-white/65 px-[1.3125rem] py-3 shadow-[0_0.75rem_2.5rem_rgb(24_24_27/0.08)] backdrop-blur-xl sm:mt-7 sm:py-4 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-[0_0.75rem_2.5rem_rgb(0_0_0/0.28)]">
+                        <span class="flex min-w-0 items-center gap-3">
+                            <span class="shrink-0 font-mono text-base leading-5 text-violet-600 sm:text-lg sm:leading-6 dark:text-violet-400" aria-hidden="true">$</span>
+                            <code class="min-w-0 truncate text-left font-mono text-sm leading-5 font-normal tracking-[-0.015em] text-zinc-950 sm:text-base sm:leading-6 lg:tracking-[-0.03em] dark:text-white">composer require newdebugbar/newdebugbar:dev-main --dev</code>
                         </span>
+                        <button
+                            class="relative inline-grid size-5 shrink-0 place-items-center text-zinc-500 transition-colors after:absolute after:-inset-2.5 after:content-[''] hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:text-white"
+                            type="button"
+                            data-copy-command="composer require newdebugbar/newdebugbar:dev-main --dev"
+                            aria-label="Copy install command"
+                            title="Copy install command"
+                        >
+                            <svg data-copy-icon class="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <rect x="8" y="8" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.7"/>
+                                <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                            </svg>
+                            <svg data-copy-success class="hidden size-5 text-emerald-500" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="m5 12.5 4.3 4.3L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
                         <p class="sr-only" data-copy-status aria-live="polite"></p>
                     </div>
 
@@ -285,7 +279,7 @@
 
                 <div class="hero-product-dock">
                     <div class="hero-product">
-                        <picture class="hero-product__picture" data-hero-product>
+                        <picture class="hero-product__picture">
                             <source media="(max-width: 47.999rem)" data-hero-mobile-source>
                             <img
                                 class="hero-product__image"

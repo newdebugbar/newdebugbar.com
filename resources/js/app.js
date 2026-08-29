@@ -9,7 +9,6 @@ const themeMenuRoot = document.querySelector('[data-theme-menu-root]');
 const themeMenu = document.querySelector('[data-theme-menu]');
 const themeMenuTrigger = document.querySelector('[data-theme-menu-trigger]');
 const themeColor = document.querySelector('meta[name="theme-color"]');
-const heroProduct = document.querySelector('[data-hero-product]');
 const heroImage = document.querySelector('[data-hero-image]');
 const heroMobileSource = document.querySelector('[data-hero-mobile-source]');
 const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -48,10 +47,9 @@ const applyTheme = (themeMode, persist = false) => {
         themeColor.setAttribute('content', isLight ? '#fafafa' : '#07070a');
     }
 
-    if (heroImage && heroMobileSource && heroProduct) {
+    if (heroImage && heroMobileSource) {
         heroImage.src = isLight ? desktopLight : desktopDark;
         heroMobileSource.srcset = isLight ? mobileLight : mobileDark;
-        heroProduct.dataset.ready = 'true';
     }
 
     if (persist) {
