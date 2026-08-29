@@ -16,7 +16,7 @@
                         <a class="inline-flex min-h-10 items-center rounded-lg px-2 text-sm font-medium text-violet-700 transition-colors hover:bg-violet-600/[0.07] hover:text-violet-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-violet-300 dark:hover:bg-violet-400/10 dark:hover:text-violet-200" href="https://github.com/sponsors/benjamincrozat">Sponsor</a>
                     </li>
                     <li>
-                        <a class="inline-flex min-h-10 items-center rounded-lg px-2 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-950/[0.04] hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:bg-white/[0.06] dark:hover:text-white" href="{{ route('docs.installation') }}">Docs</a>
+                        <a class="inline-flex min-h-10 items-center rounded-lg px-2 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-950/[0.04] hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:bg-white/[0.06] dark:hover:text-white" href="{{ route('docs.index') }}">Docs</a>
                     </li>
                     <li>
                         <a class="inline-flex min-h-10 items-center rounded-lg px-2 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-950/[0.04] hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:bg-white/[0.06] dark:hover:text-white" href="https://github.com/newdebugbar/newdebugbar">GitHub</a>

@@ -70,6 +70,7 @@ JSON;
         ['id' => 'vscode', 'label' => 'VS Code'],
         ['id' => 'other-clients', 'label' => 'Other clients'],
         ['id' => 'check-connection', 'label' => 'Check the connection'],
+        ['id' => 'debug-workflow', 'label' => 'Debug with an agent'],
         ['id' => 'troubleshooting', 'label' => 'Troubleshooting'],
     ]"
 >
@@ -197,9 +198,36 @@ JSON;
             Inspect the New Debug Bar profile for the page I just visited. Tell me what happened, what looks wrong, and what I should inspect next.
         </x-docs.callout>
 
-        <p class="mt-6 text-base leading-7 text-zinc-600 dark:text-zinc-400">When the agent can read the page's response headers, <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">X-NewDebugBar-Profile</code> identifies the exact profile. Otherwise, it can match the request from the recent profile list. The newest profile may belong to a background request.</p>
+    </x-docs.section>
 
-        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">Agents should start with findings and one small section. When a focused tool leaves out needed detail, <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">get-debug-profile-data</code> can follow bounded paths into every retained profile value.</p>
+    <x-docs.section id="debug-workflow" title="Debug one request with an agent">
+        <ol class="mt-6 space-y-6" role="list">
+            <x-docs.step number="1" title="Identify the exact profile">
+                Give the agent the <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">X-NewDebugBar-Profile</code> response-header value when possible. Otherwise, have it match method, path, status, request type, and recorded time from the recent list.
+            </x-docs.step>
+            <x-docs.step number="2" title="Read findings first">
+                Ask what happened, what deserves attention, why it matters, and which retained evidence supports that lead.
+            </x-docs.step>
+            <x-docs.step number="3" title="Open one focused section">
+                Use the symptom to choose Queries, Exceptions, Timeline, HTTP client, Livewire, Queue, or another small section instead of dumping the full profile.
+            </x-docs.step>
+            <x-docs.step number="4" title="Follow deeper paths only when needed">
+                Use <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">get-debug-profile-data</code> with <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">/sections</code> and returned JSON Pointer paths to reach retained evidence omitted from a concise response.
+            </x-docs.step>
+        </ol>
+
+        <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            <x-docs.callout label="Suggested query prompt">
+                Inspect profile <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">PROFILE_ID</code>. Explain its repeated or slow queries, show the application source, and tell me what to verify before changing code.
+            </x-docs.callout>
+            <x-docs.callout label="Suggested failure prompt">
+                Inspect profile <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">PROFILE_ID</code>. Trace the error through retained causes and application frames, then check nearby logs and timeline evidence.
+            </x-docs.callout>
+        </div>
+
+        <x-docs.callout class="mt-4" tone="notice" title="Do not ask for “the latest request” when precision matters">
+            A Livewire update, fetch, polling request, or local queue worker can create a newer profile after the page you meant to inspect.
+        </x-docs.callout>
     </x-docs.section>
 
     <x-docs.section id="troubleshooting" title="Troubleshooting">
