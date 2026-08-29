@@ -23,7 +23,6 @@
 
 - Keep public documentation URLs unversioned.
 - Build every documentation page with the shared `x-layouts.docs` layout.
-- Keep the documentation article visually centered in the page on wide desktop layouts. Use equal-width left and right rails so navigation never shifts the article off center.
 - Keep release-dependent installation values in `config/newdebugbar.php`. Do not hardcode Composer commands, package constraints, or prerelease state in views.
 - Link to an on-site documentation page when it exists instead of sending readers to the GitHub copy.
 
