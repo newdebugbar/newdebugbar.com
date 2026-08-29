@@ -110,8 +110,8 @@ PHP;
         <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Exact local values make a debugger useful. Query bindings and cache or Redis keys are therefore retained by default within the collection limits.</p>
 
         <ul class="mt-5 space-y-3" role="list">
-            <x-docs.check-item>Set <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">NEWDEBUGBAR_QUERY_BINDINGS=safe</code> to mask string bindings, or <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">none</code> to omit all bindings.</x-docs.check-item>
-            <x-docs.check-item>Set <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">NEWDEBUGBAR_KEY_POLICY=hash</code> when stable matching is enough and exact cache or Redis keys should not be stored.</x-docs.check-item>
+            <x-docs.check-item>Set <code class="break-all font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">NEWDEBUGBAR_QUERY_BINDINGS=safe</code> to mask string bindings, or <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">none</code> to omit all bindings.</x-docs.check-item>
+            <x-docs.check-item>Set <code class="break-all font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">NEWDEBUGBAR_KEY_POLICY=hash</code> when stable matching is enough and exact cache or Redis keys should not be stored.</x-docs.check-item>
         </ul>
 
         <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">These choices apply when the profile is captured. Changing them later does not rewrite profiles already on disk.</p>
