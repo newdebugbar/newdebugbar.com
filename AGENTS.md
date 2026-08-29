@@ -19,4 +19,12 @@
 - Do not use badges unless they communicate an important status or category that plain text cannot express as clearly.
 - Keep `resources/css/app.css` limited to required Tailwind setup, source, variant, and theme directives. Put page and component styling in Tailwind utility classes in Blade.
 - Store product screenshots under `resources/images/screenshots` and name them for the product view, not the page. Reuse the same source file across pages instead of making page-specific copies.
+- Show New Debug Bar screenshots without a decorative frame, border, or container background.
 - Build repeated documentation interface patterns as Blade components under `resources/views/components/docs`; keep page-specific prose and simple markup in the page view.
+- In the header, keep the Sponsor link at the normal navigation size on desktop. Highlight it with the same medium-weight violet text treatment as the footer, without chip padding or a hover animation, and preserve a clear gap from nearby controls.
+
+## Implementation
+
+- Follow the applicable global skill and its verification steps whenever working with a technology covered by one.
+- Write PHP tests with Pest and Laravel's testing helpers. Write JavaScript tests with Vitest.
+- Test stable behavior and state. Do not assert marketing copy or raw rendered HTML.
