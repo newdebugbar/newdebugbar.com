@@ -246,7 +246,7 @@
                             data-hero-image
                             width="1536"
                             height="780"
-                            alt="New Debug Bar request inspector showing the timeline, route, controller, response, query count, and duration for a Kyoto trip page"
+                            alt="New Debug Bar request inspector showing the request trace, route, controller, response, query count, and duration for a Kyoto trip page"
                             decoding="async"
                             fetchpriority="high"
                         >
