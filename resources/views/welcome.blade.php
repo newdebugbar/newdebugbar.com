@@ -1,3 +1,5 @@
+@php($installation = config('newdebugbar.installation'))
+
 <x-layouts.site
     title="New Debug Bar — Laravel debugging for developers and agents"
     description="Find Laravel bugs and bottlenecks without digging through scattered logs. Inspect requests, queries, exceptions, jobs, mail, cache, and more, with exact MCP context for coding agents."
@@ -16,12 +18,12 @@
                     <div class="mt-6 inline-flex max-w-full items-center gap-[1.375rem] rounded-full border border-zinc-950/[0.08] bg-white/65 px-[1.3125rem] py-3 shadow-[0_0.75rem_2.5rem_rgb(24_24_27/0.08)] backdrop-blur-xl sm:mt-7 sm:py-4 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-[0_0.75rem_2.5rem_rgb(0_0_0/0.28)]" data-copy-root>
                         <span class="flex min-w-0 items-center gap-3">
                             <span class="shrink-0 font-mono text-base leading-5 text-violet-600 sm:text-lg sm:leading-6 dark:text-violet-400" aria-hidden="true">$</span>
-                            <code class="min-w-0 truncate text-left font-mono text-sm leading-5 font-normal tracking-[-0.015em] text-zinc-950 sm:text-base sm:leading-6 lg:tracking-[-0.03em] dark:text-white">composer require newdebugbar/newdebugbar:dev-main --dev</code>
+                            <code class="min-w-0 truncate text-left font-mono text-sm leading-5 font-normal tracking-[-0.015em] text-zinc-950 sm:text-base sm:leading-6 lg:tracking-[-0.03em] dark:text-white">{{ $installation['command'] }}</code>
                         </span>
                         <button
                             class="relative inline-grid size-5 shrink-0 place-items-center text-zinc-500 transition-colors after:absolute after:-inset-2.5 after:content-[''] hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:text-white"
                             type="button"
-                            data-copy-command="composer require newdebugbar/newdebugbar:dev-main --dev"
+                            data-copy-command="{{ $installation['command'] }}"
                             aria-label="Copy install command"
                             title="Copy install command"
                         >

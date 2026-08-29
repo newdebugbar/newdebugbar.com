@@ -1,3 +1,5 @@
+@php($installation = config('newdebugbar.installation'))
+
 <x-layouts.docs
     meta-title="Install New Debug Bar in Laravel | New Debug Bar"
     description="Install New Debug Bar in a Laravel app, check that it is working, and learn the optional configuration steps."
@@ -6,8 +8,8 @@
     og-description="Add New Debug Bar to a Laravel app with one Composer command. No service provider, migrations, or asset publishing required."
     page-title="Installation"
     :sections="[
-        ['id' => 'requirements', 'label' => 'Requirements'],
         ['id' => 'install', 'label' => 'Install'],
+        ['id' => 'requirements', 'label' => 'Requirements'],
         ['id' => 'verify', 'label' => 'Check it works'],
         ['id' => 'configuration', 'label' => 'Configuration'],
         ['id' => 'troubleshooting', 'label' => 'Troubleshooting'],
@@ -17,14 +19,31 @@
         Add it to your Laravel app with one Composer command. Laravel discovers the package and the bar appears automatically while you work locally.
     </x-docs.page-header>
 
-    <x-docs.callout
-        class="mt-10"
-        tone="notice"
-        title="Install the development version for now"
-        label="Development version note"
-    >
-        New Debug Bar has not tagged version 1.0 yet, so the command below installs the current <code class="font-mono text-[0.9em]">dev-main</code> build.
-    </x-docs.callout>
+    @if ($installation['prerelease'])
+        <x-docs.callout
+            class="mt-10"
+            tone="notice"
+            title="Install the development version for now"
+            label="Development version note"
+        >
+            New Debug Bar has not tagged version 1.0 yet, so the command below installs the current <code class="font-mono text-[0.9em]">{{ $installation['constraint'] }}</code> build.
+        </x-docs.callout>
+    @endif
+
+    <x-docs.section id="install" title="Install the package">
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Run this command from your Laravel app:</p>
+
+        <x-docs.copyable-code
+            class="mt-5"
+            :code="$installation['command']"
+            copy-label="Copy Composer command"
+            copy-success="Composer command copied"
+            :prompt="true"
+            :prominent="true"
+        />
+
+        <p class="mt-4 text-sm leading-6 text-zinc-500 dark:text-zinc-500">Keep New Debug Bar in <code class="font-mono text-[0.9em] text-zinc-700 dark:text-zinc-300">require-dev</code> so production installs skip it.</p>
+    </x-docs.section>
 
     <x-docs.section id="requirements" title="Requirements">
         <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Before installing, make sure the app meets these requirements:</p>
@@ -55,21 +74,6 @@
         </x-docs.callout>
     </x-docs.section>
 
-    <x-docs.section id="install" title="Install the package">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Run this command from your Laravel app:</p>
-
-        <x-docs.copyable-code
-            class="mt-5"
-            code="composer require --dev newdebugbar/newdebugbar:dev-main"
-            copy-label="Copy Composer command"
-            copy-success="Composer command copied"
-            :prompt="true"
-            :prominent="true"
-        />
-
-        <p class="mt-4 text-sm leading-6 text-zinc-500 dark:text-zinc-500">Keep New Debug Bar in <code class="font-mono text-[0.9em] text-zinc-700 dark:text-zinc-300">require-dev</code> so production installs skip it.</p>
-    </x-docs.section>
-
     <x-docs.section id="verify" title="Check that it works">
         <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Open any normal page in your app while Laravel is using the <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">local</code> environment. The bar should appear at the bottom of the browser.</p>
 
@@ -77,7 +81,7 @@
             you do not need to register a service provider, run migrations, or publish frontend assets.
         </x-docs.callout>
 
-        <x-docs.figure class="mt-7" caption="The compact bar stays at the bottom of your app until you open the inspector.">
+        <x-docs.figure class="mt-7" caption="Open the compact bar to inspect the request, query count, duration, and other captured details.">
             <x-screenshots.request-inspector
                 alt="New Debug Bar open over a Laravel page with request, query, and duration details"
                 loading="lazy"
@@ -109,10 +113,18 @@
     <x-docs.section id="troubleshooting" title="Troubleshooting">
         <div class="mt-5 divide-y divide-zinc-200 border-y border-zinc-200 dark:divide-white/10 dark:border-white/10">
             <x-docs.disclosure summary="The bar does not appear">
-                Confirm that Laravel reports the <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">local</code> environment and that <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">NEWDEBUGBAR_ENABLED</code> is not set to <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">false</code>. If the app caches configuration, run <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">php artisan config:clear</code> and refresh the page.
+                Confirm that Laravel reports the <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">local</code> environment and that <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">NEWDEBUGBAR_ENABLED</code> is not set to <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">false</code>. If your app uses another name for local work, publish the config and add that name to <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">newdebugbar.environments</code>. After changing config, run <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">php artisan config:clear</code> and refresh the page.
             </x-docs.disclosure>
             <x-docs.disclosure summary="Composer reports a Livewire conflict">
-                New Debug Bar requires Livewire 4. Apps that already depend on Livewire 3 are not supported yet, even though an app does not otherwise need to use Livewire itself.
+                <p>New Debug Bar requires Livewire 4. Apps that already depend on Livewire 3 are not supported yet, even though an app does not otherwise need to use Livewire itself. Ask Composer which dependency blocks Livewire 4:</p>
+
+                <x-docs.copyable-code
+                    class="mt-4"
+                    code="composer why-not livewire/livewire ^4.1"
+                    copy-label="Copy dependency check"
+                    copy-success="Dependency check copied"
+                    :prompt="true"
+                />
             </x-docs.disclosure>
         </div>
     </x-docs.section>
