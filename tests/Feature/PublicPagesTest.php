@@ -54,6 +54,34 @@ it('keeps documentation routes unversioned', function (string $route, string $ur
     'MCP setup page' => ['docs.mcp', '/docs/mcp'],
 ]);
 
+it('exposes every configured documentation route in the mobile menu', function () {
+    $response = get('/docs/queries')->assertOk();
+    $expectedUrls = collect(config('docs.navigation'))
+        ->flatMap(fn (array $group): array => $group['pages'])
+        ->map(fn (array $page): string => route($page['route']))
+        ->values()
+        ->all();
+
+    $previousErrorHandling = libxml_use_internal_errors(true);
+    $document = new DOMDocument;
+    $document->loadHTML($response->getContent());
+    libxml_clear_errors();
+    libxml_use_internal_errors($previousErrorHandling);
+
+    $xpath = new DOMXPath($document);
+    $mobileUrls = [];
+
+    foreach ($xpath->query('//*[@data-mobile-docs-navigation]//a') as $link) {
+        $mobileUrls[] = $link->getAttribute('href');
+    }
+
+    $currentLinks = $xpath->query('//*[@data-mobile-docs-navigation]//a[@aria-current="page"]');
+
+    expect($mobileUrls)->toBe($expectedUrls)
+        ->and($currentLinks)->toHaveCount(1)
+        ->and($currentLinks->item(0)?->getAttribute('href'))->toBe(route('docs.queries'));
+});
+
 it('publishes every public documentation route through the XML sitemap', function () {
     $documentationRoutes = collect(config('docs.navigation'))
         ->flatMap(fn (array $group): array => $group['pages'])

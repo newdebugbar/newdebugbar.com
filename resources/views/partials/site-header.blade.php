@@ -1,4 +1,7 @@
-@php($docsActive = request()->routeIs('docs.*'))
+@php
+    $docsActive = request()->routeIs('docs.*');
+    $docsHomeActive = request()->routeIs('docs.index');
+@endphp
 
 <header class="relative z-50 border-b border-zinc-200/80 bg-white/80 text-zinc-950 backdrop-blur-xl dark:border-white/10 dark:bg-[#07070a]/80 dark:text-white">
     <nav
@@ -36,18 +39,18 @@
                     </button>
                     <div
                         id="newdebugbar-mobile-menu"
-                        class="absolute top-[calc(100%+1.125rem)] right-0 z-50 hidden w-64 rounded-2xl border border-zinc-200 bg-white p-2 text-zinc-600 shadow-xl shadow-zinc-950/10 dark:border-white/10 dark:bg-[#111116] dark:text-zinc-300 dark:shadow-black/40"
+                        class="absolute top-[calc(100%+1.125rem)] right-0 z-50 hidden max-h-[calc(100dvh-6.75rem)] w-[calc(100vw-2rem)] max-w-[22rem] overflow-y-auto overscroll-contain rounded-2xl border border-zinc-200 bg-white p-2 text-zinc-600 shadow-xl shadow-zinc-950/10 dark:border-white/10 dark:bg-[#111116] dark:text-zinc-300 dark:shadow-black/40"
                         data-mobile-menu
                     >
                         <nav class="space-y-1" aria-label="Mobile navigation">
                             <a
                                 @class([
                                     'flex min-h-11 items-center gap-3 rounded-xl px-3 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-violet-500',
-                                    'bg-violet-50 text-violet-700 dark:bg-violet-400/10 dark:text-violet-300' => $docsActive,
-                                    'hover:bg-zinc-100 hover:text-zinc-950 dark:hover:bg-white/[0.07] dark:hover:text-white' => ! $docsActive,
+                                    'bg-violet-50 text-violet-700 dark:bg-violet-400/10 dark:text-violet-300' => $docsHomeActive,
+                                    'hover:bg-zinc-100 hover:text-zinc-950 dark:hover:bg-white/[0.07] dark:hover:text-white' => ! $docsHomeActive,
                                 ])
                                 href="{{ route('docs.index') }}"
-                                @if ($docsActive) aria-current="page" @endif
+                                @if ($docsHomeActive) aria-current="page" @endif
                             >
                                 <svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                     <path d="M6.5 3.5h7L18 8v12.5H6.5a1 1 0 0 1-1-1v-15a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
@@ -65,6 +68,15 @@
                                 GitHub
                             </a>
                         </nav>
+
+                        @if ($docsActive)
+                            <div class="mt-2 border-t border-zinc-200 px-2 pt-4 dark:border-white/10">
+                                <x-docs.navigation
+                                    class="pb-2 [&_a]:min-h-11"
+                                    data-mobile-docs-navigation
+                                />
+                            </div>
+                        @endif
 
                         <div class="mt-2 border-t border-zinc-200 pt-2 dark:border-white/10" role="radiogroup" aria-label="Color theme">
                             <p class="px-3 pb-1.5 pt-1 text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400 dark:text-zinc-500">Theme</p>
