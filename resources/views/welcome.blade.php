@@ -222,17 +222,17 @@
                         <span class="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap sm:gap-2">
                             <code class="font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 min-[80rem]:text-[0.9375rem] min-[80rem]:tracking-[-0.03em] dark:text-white">--dev</code>
                             <button
-                                class="inline-grid size-10 shrink-0 place-items-center rounded-full align-middle text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 sm:size-9 dark:text-zinc-400 dark:hover:bg-white/[0.07] dark:hover:text-white"
+                                class="inline-grid size-[1.125rem] shrink-0 place-items-center align-middle text-zinc-500 transition-colors hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:text-white"
                                 type="button"
                                 data-copy-command="composer require newdebugbar/newdebugbar:dev-main --dev"
                                 aria-label="Copy install command"
                                 title="Copy install command"
                             >
-                                <svg data-copy-icon class="size-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <svg data-copy-icon class="size-[1.125rem]" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                     <rect x="8" y="8" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.7"/>
                                     <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
                                 </svg>
-                                <svg data-copy-success class="hidden size-4 text-emerald-500" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <svg data-copy-success class="hidden size-[1.125rem] text-emerald-500" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                     <path d="m5 12.5 4.3 4.3L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
