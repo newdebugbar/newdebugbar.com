@@ -4,6 +4,7 @@
     'copySuccess' => 'Code copied',
     'prompt' => false,
     'prominent' => false,
+    'multiline' => false,
 ])
 
 <div
@@ -14,13 +15,13 @@
     data-copy-root
     data-docs-code-block
 >
-    <div class="flex min-w-0 items-center gap-4 px-4 py-4 sm:px-5">
+    <div @class(['flex min-w-0 gap-4 px-4 py-4 sm:px-5', 'items-start' => $multiline, 'items-center' => ! $multiline])>
         @if ($prompt)
             <span class="shrink-0 font-mono text-sm text-violet-400" aria-hidden="true">$</span>
         @endif
-        <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap font-mono text-sm leading-6 text-zinc-100 sm:text-[0.9375rem]">{{ $code }}</code>
+        <code @class(['min-w-0 flex-1 overflow-x-auto font-mono text-sm leading-6 text-zinc-100 sm:text-[0.9375rem]', 'whitespace-pre' => $multiline, 'whitespace-nowrap' => ! $multiline])>{{ $code }}</code>
         <button
-            class="relative grid size-6 shrink-0 place-items-center text-zinc-400 transition-colors after:absolute after:-inset-2.5 after:content-[''] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-400"
+            @class(["relative grid size-6 shrink-0 place-items-center text-zinc-400 transition-colors after:absolute after:-inset-2.5 after:content-[''] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-400", 'mt-0.5' => $multiline])
             type="button"
             data-copy-command="{{ $code }}"
             data-copy-label="{{ $copyLabel }}"

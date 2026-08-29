@@ -26,30 +26,16 @@
 
                     <div class="mt-7">
                         <p class="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-400 dark:text-zinc-500">Getting started</p>
-                        <a
-                            @class([
-                                'mt-3 flex min-h-10 items-center rounded-lg px-3 text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500',
-                                'bg-violet-50 text-violet-700 dark:bg-violet-400/10 dark:text-violet-300' => request()->routeIs('docs.installation'),
-                                'text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-white/[0.06] dark:hover:text-white' => ! request()->routeIs('docs.installation'),
-                            ])
-                            href="{{ route('docs.installation') }}"
-                            @if (request()->routeIs('docs.installation')) aria-current="page" @endif
-                        >
+                        <x-docs.nav-link :href="route('docs.installation')" :active="request()->routeIs('docs.installation')">
                             Installation
-                        </a>
+                        </x-docs.nav-link>
                     </div>
 
                     <div class="mt-8 border-t border-zinc-950/[0.07] pt-7 dark:border-white/[0.08]">
                         <p class="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-400 dark:text-zinc-500">Use with agents</p>
-                        <a
-                            class="mt-3 flex min-h-10 items-center gap-2 rounded-lg px-3 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:bg-white/[0.06] dark:hover:text-white"
-                            href="https://github.com/newdebugbar/newdebugbar/blob/main/docs/mcp.md"
-                        >
+                        <x-docs.nav-link :href="route('docs.mcp')" :active="request()->routeIs('docs.mcp')">
                             MCP setup
-                            <svg class="size-3.5" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                                <path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
+                        </x-docs.nav-link>
                     </div>
                 </nav>
             </aside>

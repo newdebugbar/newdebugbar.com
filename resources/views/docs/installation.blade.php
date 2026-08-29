@@ -49,24 +49,15 @@
         <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Before installing, make sure the app meets these requirements:</p>
 
         <ul class="mt-5 space-y-3" role="list">
-            <li class="flex gap-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-                <svg class="mt-1 size-5 shrink-0 text-violet-600 dark:text-violet-400" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                    <path d="m4.5 10.5 3.2 3.2 7.8-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+            <x-docs.check-item>
                 PHP 8.1 or newer.
-            </li>
-            <li class="flex gap-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-                <svg class="mt-1 size-5 shrink-0 text-violet-600 dark:text-violet-400" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                    <path d="m4.5 10.5 3.2 3.2 7.8-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+            </x-docs.check-item>
+            <x-docs.check-item>
                 Laravel 10 or newer.
-            </li>
-            <li class="flex gap-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
-                <svg class="mt-1 size-5 shrink-0 text-violet-600 dark:text-violet-400" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                    <path d="m4.5 10.5 3.2 3.2 7.8-8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+            </x-docs.check-item>
+            <x-docs.check-item>
                 A Laravel app running in its <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">local</code> environment.
-            </li>
+            </x-docs.check-item>
         </ul>
 
         <x-docs.callout class="mt-6" title="Livewire compatibility:">
@@ -130,7 +121,7 @@
     </x-docs.section>
 
     <x-docs.next-step
-        href="https://github.com/newdebugbar/newdebugbar/blob/main/docs/mcp.md"
+        :href="route('docs.mcp')"
         title="Give your coding agent exact debug data"
         description="Connect the local MCP server so your agent can inspect saved request profiles instead of guessing from logs."
         link-label="Open the MCP setup guide"

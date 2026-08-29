@@ -14,9 +14,12 @@ it('serves a public page through its intended view', function (string $uri, stri
 })->with([
     'landing page' => ['/', 'welcome'],
     'installation page' => ['/docs/installation', 'docs.installation'],
+    'MCP setup page' => ['/docs/mcp', 'docs.mcp'],
 ]);
 
-it('keeps the installation route unversioned', function () {
-    expect(route('docs.installation', absolute: false))
-        ->toBe('/docs/installation');
-});
+it('keeps documentation routes unversioned', function (string $route, string $uri) {
+    expect(route($route, absolute: false))->toBe($uri);
+})->with([
+    'installation page' => ['docs.installation', '/docs/installation'],
+    'MCP setup page' => ['docs.mcp', '/docs/mcp'],
+]);
