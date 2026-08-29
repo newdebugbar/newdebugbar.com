@@ -1,9 +1,10 @@
 <?php
 
 use function Pest\Laravel\get;
+use function Pest\Laravel\withoutVite;
 
 beforeEach(function () {
-    $this->withoutVite();
+    withoutVite();
 });
 
 it('serves a public page through its intended view', function (string $uri, string $view) {
