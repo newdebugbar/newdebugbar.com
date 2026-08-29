@@ -245,7 +245,7 @@
                         <p class="sr-only" data-copy-status aria-live="polite"></p>
                     </div>
 
-                    <div class="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:mt-5" aria-labelledby="sponsors-title">
+                    <div class="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:mt-8" aria-labelledby="sponsors-title">
                         <h2 id="sponsors-title" class="text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-500">
                             Supported by
                         </h2>
@@ -278,7 +278,7 @@
                         </ul>
                     </div>
 
-                    <p class="mt-2 text-sm leading-6 text-zinc-500 sm:mt-3 dark:text-zinc-500">
+                    <p class="mt-4 text-sm leading-6 text-zinc-500 sm:mt-5 dark:text-zinc-500">
                         <span>Upgrade your debugging, not your application.</span>
                         <span class="whitespace-nowrap font-medium text-zinc-700 dark:text-zinc-300">Laravel 10–13</span>
                         <span aria-hidden="true">·</span>
