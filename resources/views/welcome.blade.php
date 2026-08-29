@@ -206,27 +206,27 @@
         </header>
 
         <main class="hero-backdrop">
-            <section class="hero-stage mx-auto max-w-[100rem] px-5 pt-8 sm:px-8 sm:pt-10 lg:px-10" aria-labelledby="hero-title">
+            <section class="hero-stage mx-auto max-w-[100rem] px-5 pt-6 sm:px-8 sm:pt-10 lg:px-10" aria-labelledby="hero-title">
                 <div class="relative z-10 flex w-full min-w-0 flex-col items-center text-center">
                     <h1 id="hero-title" class="max-w-[62rem] text-balance text-[2.55rem] font-semibold leading-none tracking-[-0.055em] text-zinc-950 sm:text-[3.5rem] lg:text-[3.75rem] dark:text-white">
                         Powerful, agent-friendly Laravel debugging—free and open source
                     </h1>
 
-                    <p class="mt-6 max-w-[56rem] text-lg leading-8 text-zinc-600 sm:text-xl sm:leading-9 dark:text-zinc-400">
+                    <p class="mt-5 max-w-[56rem] text-lg leading-8 text-zinc-600 sm:mt-6 sm:text-xl sm:leading-9 dark:text-zinc-400">
                         Find bugs and bottlenecks without digging through scattered logs. Inspect requests, queries, exceptions, jobs, mail, cache, and more in one place—while MCP gives your coding agent exact context with less guessing and fewer tokens.
                     </p>
 
-                    <div class="mt-7 inline-flex max-w-full items-center rounded-full border border-zinc-950/[0.08] bg-white/65 py-2.5 pr-2.5 pl-5 shadow-[0_0.75rem_2.5rem_rgb(24_24_27/0.08)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.06] dark:shadow-[0_0.75rem_2.5rem_rgb(0_0_0/0.28)]">
+                    <div class="mt-6 inline-flex max-w-full items-center rounded-full border border-zinc-950/[0.08] bg-white/65 px-[1.3125rem] py-3 shadow-[0_0.75rem_2.5rem_rgb(24_24_27/0.08)] backdrop-blur-xl sm:mt-7 sm:py-4 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-[0_0.75rem_2.5rem_rgb(0_0_0/0.28)]">
                         <span class="flex min-w-0 flex-wrap items-center justify-center gap-x-[0.55ch] gap-y-0.5">
                             <span class="inline-flex basis-full shrink-0 items-center justify-center gap-3 min-[23rem]:basis-auto">
                                 <span class="shrink-0 font-mono text-base leading-5 text-violet-600 sm:text-lg sm:leading-6 dark:text-violet-400" aria-hidden="true">$</span>
                                 <code class="whitespace-nowrap font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 lg:text-base lg:tracking-[-0.03em] dark:text-white">composer require</code>
                             </span>
                             <code class="whitespace-nowrap font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 lg:text-base lg:tracking-[-0.03em] dark:text-white">newdebugbar/newdebugbar:dev-main</code>
-                            <span class="inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap sm:gap-3">
+                            <span class="inline-flex shrink-0 items-center gap-[1.375rem] whitespace-nowrap">
                                 <code class="font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 lg:text-base lg:tracking-[-0.03em] dark:text-white">--dev</code>
                                 <button
-                                    class="inline-grid size-10 shrink-0 place-items-center rounded-full text-zinc-500 transition-colors hover:bg-zinc-950/[0.05] hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:bg-white/[0.08] dark:hover:text-white"
+                                    class="relative inline-grid size-5 shrink-0 place-items-center text-zinc-500 transition-colors after:absolute after:-inset-2.5 after:content-[''] hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:text-white"
                                     type="button"
                                     data-copy-command="composer require newdebugbar/newdebugbar:dev-main --dev"
                                     aria-label="Copy install command"
@@ -245,7 +245,7 @@
                         <p class="sr-only" data-copy-status aria-live="polite"></p>
                     </div>
 
-                    <div class="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2" aria-labelledby="sponsors-title">
+                    <div class="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:mt-5" aria-labelledby="sponsors-title">
                         <h2 id="sponsors-title" class="text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-500">
                             Supported by
                         </h2>
@@ -278,7 +278,7 @@
                         </ul>
                     </div>
 
-                    <p class="mt-3 text-sm leading-6 text-zinc-500 dark:text-zinc-500">
+                    <p class="mt-2 text-sm leading-6 text-zinc-500 sm:mt-3 dark:text-zinc-500">
                         <span>Upgrade your debugging, not your application.</span>
                         <span class="whitespace-nowrap font-medium text-zinc-700 dark:text-zinc-300">Laravel 10–13</span>
                         <span aria-hidden="true">·</span>

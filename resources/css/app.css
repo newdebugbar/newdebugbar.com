@@ -126,7 +126,7 @@
 
     .hero-product-dock {
         height: clamp(15rem, 82vw, 19rem);
-        margin-top: 1.25rem;
+        margin-top: 1rem;
     }
 
     .hero-product {
