@@ -81,7 +81,7 @@
     filter: drop-shadow(0 1.75rem 2.5rem rgb(0 0 0 / 48%));
 }
 
-@media (max-width: 69.999rem) {
+@media (max-width: 79.999rem) {
     .hero-product {
         justify-self: center;
         width: min(64rem, calc(100vw - 2.5rem));

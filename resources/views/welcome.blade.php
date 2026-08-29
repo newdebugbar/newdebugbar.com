@@ -206,7 +206,7 @@
         </header>
 
         <main class="hero-backdrop overflow-hidden">
-            <section class="mx-auto grid min-h-[calc(100svh-4.75rem)] max-w-[100rem] items-center gap-14 px-5 py-16 sm:px-8 sm:py-20 lg:px-10 min-[76rem]:grid-cols-[minmax(28rem,0.78fr)_minmax(44rem,1.22fr)] min-[76rem]:gap-8 min-[76rem]:py-24" aria-labelledby="hero-title">
+            <section class="mx-auto grid min-h-[calc(100svh-4.75rem)] max-w-[100rem] items-center gap-14 px-5 py-16 sm:px-8 sm:py-20 lg:px-10 min-[76rem]:py-24 min-[80rem]:grid-cols-[minmax(28rem,0.78fr)_minmax(44rem,1.22fr)] min-[80rem]:gap-10 min-[90rem]:gap-12 min-[100rem]:gap-16" aria-labelledby="hero-title">
                 <div class="relative z-10 w-full min-w-0 max-w-[36rem]">
                     <h1 id="hero-title" class="text-balance text-[2.55rem] font-semibold leading-none tracking-[-0.055em] text-zinc-950 sm:text-[3.5rem] min-[76rem]:text-[3.65rem] min-[90rem]:text-[4rem] dark:text-white">
                         Powerful, agent-friendly Laravel debugging—free and open source
@@ -216,11 +216,11 @@
                         Find bugs and bottlenecks without digging through scattered logs. Inspect requests, queries, exceptions, jobs, mail, cache, and more in one place—while MCP gives your coding agent exact context with less guessing and fewer tokens.
                     </p>
 
-                    <div class="mt-9 grid w-full max-w-[31rem] grid-cols-[minmax(0,1fr)_2.5rem] grid-rows-[2.5rem_auto] items-center gap-x-3 sm:inline-flex sm:w-auto sm:max-w-full sm:gap-1">
-                        <code class="col-start-1 row-start-1 whitespace-nowrap font-mono text-[0.6875rem] leading-5 font-semibold tracking-[-0.015em] text-zinc-950 min-[23rem]:text-xs sm:text-[0.8125rem] dark:text-white">composer require</code>
-                        <code class="col-span-2 row-start-2 whitespace-nowrap font-mono text-[0.6875rem] leading-5 font-semibold tracking-[-0.015em] text-zinc-950 min-[23rem]:text-xs sm:text-[0.8125rem] dark:text-white">newdebugbar/newdebugbar:dev-main --dev</code>
+                    <div class="mt-9 grid w-full max-w-[31rem] grid-cols-[minmax(0,1fr)_2.5rem] grid-rows-[2.5rem_auto] items-center gap-x-3 min-[90rem]:inline-flex min-[90rem]:w-auto min-[90rem]:max-w-full min-[90rem]:gap-0">
+                        <code class="col-start-1 row-start-1 whitespace-nowrap font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm dark:text-white">composer require</code>
+                        <code class="col-span-2 row-start-2 whitespace-nowrap font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm min-[90rem]:ml-[0.6ch] dark:text-white">newdebugbar/newdebugbar:dev-main --dev</code>
                         <button
-                            class="col-start-2 row-start-1 grid size-10 shrink-0 place-items-center rounded-full text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 sm:size-9 dark:text-zinc-400 dark:hover:bg-white/[0.07] dark:hover:text-white"
+                            class="col-start-2 row-start-1 grid size-10 shrink-0 place-items-center justify-self-end rounded-full text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 sm:size-9 min-[90rem]:ml-2 dark:text-zinc-400 dark:hover:bg-white/[0.07] dark:hover:text-white"
                             type="button"
                             data-copy-command="composer require newdebugbar/newdebugbar:dev-main --dev"
                             aria-label="Copy install command"
