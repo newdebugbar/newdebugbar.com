@@ -13,7 +13,7 @@
         <div class="ml-auto flex shrink-0 items-center">
             <div class="flex items-center gap-0.5 sm:hidden">
                 <a
-                    class="flex h-10 items-center rounded-lg px-2 text-xs font-medium text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-300 dark:hover:bg-white/[0.07] dark:hover:text-white"
+                    class="mr-2 flex h-10 items-center rounded-lg text-sm font-semibold text-violet-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-violet-300"
                     href="https://github.com/sponsors/benjamincrozat"
                 >
                     Sponsor
@@ -119,7 +119,7 @@
 
             <div class="hidden items-center gap-3 sm:flex">
                 <a
-                    class="rounded-lg px-3 py-2 text-base text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-300 dark:hover:bg-white/5 dark:hover:text-white"
+                    class="mr-2 inline-flex min-h-10 items-center rounded-lg text-lg font-semibold text-violet-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-violet-300"
                     href="https://github.com/sponsors/benjamincrozat"
                 >
                     Sponsor
