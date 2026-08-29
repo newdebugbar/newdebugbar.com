@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
     copyText,
     initializeCopyButtons,
+    initializeMobileMenu,
     initializeTheme,
     themeStorageKey,
 } from '../../resources/js/site.js';
@@ -46,18 +47,30 @@ const mountThemeControls = () => {
         <button data-theme-option="system" aria-pressed="false"><span class="hidden" data-theme-selection></span></button>
         <button data-theme-option="light" aria-pressed="false"><span class="hidden" data-theme-selection></span></button>
         <button data-theme-option="dark" aria-pressed="false"><span class="hidden" data-theme-selection></span></button>
-        <div data-theme-menu-root>
-            <button data-theme-menu-trigger aria-expanded="false"></button>
-            <div class="hidden" data-theme-menu>
-                <button data-theme-option="system" aria-checked="false"><span class="hidden" data-theme-selection></span></button>
-                <button data-theme-option="light" aria-checked="false"><span class="hidden" data-theme-selection></span></button>
-                <button data-theme-option="dark" aria-checked="false"><span class="hidden" data-theme-selection></span></button>
-            </div>
+        <div>
+            <button data-theme-option="system" aria-checked="false"><span class="hidden" data-theme-selection></span></button>
+            <button data-theme-option="light" aria-checked="false"><span class="hidden" data-theme-selection></span></button>
+            <button data-theme-option="dark" aria-checked="false"><span class="hidden" data-theme-selection></span></button>
         </div>
         <picture>
             <source data-request-inspector-mobile-source>
             <img data-request-inspector-image>
         </picture>
+    `;
+};
+
+const mountMobileMenu = () => {
+    document.body.innerHTML = `
+        <div data-mobile-menu-root>
+            <button data-mobile-menu-trigger aria-expanded="false" aria-label="Open navigation menu">
+                <span data-mobile-menu-open-icon></span>
+                <span class="hidden" data-mobile-menu-close-icon></span>
+            </button>
+            <div class="hidden" data-mobile-menu>
+                <button data-mobile-menu-dismiss></button>
+            </div>
+        </div>
+        <button data-outside></button>
     `;
 };
 
@@ -125,12 +138,10 @@ describe('theme controls', () => {
         expect(mediaQuery.removeEventListener).toHaveBeenCalledOnce();
     });
 
-    it('closes the mobile menu and follows system changes only in system mode', () => {
+    it('follows system changes only while system mode is selected', () => {
         mountThemeControls();
 
         const mediaQuery = createMediaQuery(false);
-        const trigger = document.querySelector('[data-theme-menu-trigger]');
-        const menu = document.querySelector('[data-theme-menu]');
         const destroy = initializeTheme({
             root: document,
             screenshots,
@@ -140,20 +151,63 @@ describe('theme controls', () => {
             },
         });
 
-        trigger.click();
-        expect(trigger.getAttribute('aria-expanded')).toBe('true');
-        expect(menu.classList.contains('hidden')).toBe(false);
-
         document.querySelector('[data-theme-option="system"][aria-checked]').click();
-        expect(trigger.getAttribute('aria-expanded')).toBe('false');
-        expect(document.activeElement).toBe(trigger);
-
         mediaQuery.setMatches(true);
         expect(document.documentElement.dataset.theme).toBe('dark');
 
         document.querySelector('[data-theme-option="light"][aria-pressed]').click();
         mediaQuery.setMatches(false);
         expect(document.documentElement.dataset.theme).toBe('light');
+
+        destroy();
+    });
+});
+
+describe('mobile navigation', () => {
+    it('toggles the menu and its accessible trigger state', () => {
+        mountMobileMenu();
+
+        const trigger = document.querySelector('[data-mobile-menu-trigger]');
+        const menu = document.querySelector('[data-mobile-menu]');
+        const openIcon = document.querySelector('[data-mobile-menu-open-icon]');
+        const closeIcon = document.querySelector('[data-mobile-menu-close-icon]');
+        const destroy = initializeMobileMenu({ root: document });
+
+        trigger.click();
+
+        expect(trigger.getAttribute('aria-expanded')).toBe('true');
+        expect(trigger.getAttribute('aria-label')).toBe('Close navigation menu');
+        expect(menu.classList.contains('hidden')).toBe(false);
+        expect(openIcon.classList.contains('hidden')).toBe(true);
+        expect(closeIcon.classList.contains('hidden')).toBe(false);
+
+        trigger.click();
+
+        expect(trigger.getAttribute('aria-expanded')).toBe('false');
+        expect(menu.classList.contains('hidden')).toBe(true);
+
+        destroy();
+    });
+
+    it('closes on dismissal, outside click, and Escape', () => {
+        mountMobileMenu();
+
+        const trigger = document.querySelector('[data-mobile-menu-trigger]');
+        const menu = document.querySelector('[data-mobile-menu]');
+        const destroy = initializeMobileMenu({ root: document });
+
+        trigger.click();
+        document.querySelector('[data-mobile-menu-dismiss]').click();
+        expect(menu.classList.contains('hidden')).toBe(true);
+
+        trigger.click();
+        document.querySelector('[data-outside]').click();
+        expect(menu.classList.contains('hidden')).toBe(true);
+
+        trigger.click();
+        document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+        expect(menu.classList.contains('hidden')).toBe(true);
+        expect(document.activeElement).toBe(trigger);
 
         destroy();
     });

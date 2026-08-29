@@ -11,65 +11,68 @@
         </a>
 
         <div class="ml-auto flex shrink-0 items-center">
-            <div class="flex items-center gap-0.5 sm:hidden">
+            <div class="flex items-center sm:hidden">
                 <a
-                    class="mr-2 flex h-10 items-center rounded-lg text-sm font-medium text-violet-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-violet-300"
+                    class="mr-3 flex h-10 items-center rounded-lg text-sm font-medium text-violet-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-violet-300"
                     href="https://github.com/sponsors/benjamincrozat"
                 >
                     Sponsor
                 </a>
-                <a
-                    @class([
-                        'grid size-10 place-items-center rounded-full transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500',
-                        'bg-violet-50 text-violet-700 dark:bg-violet-400/10 dark:text-violet-300' => $docsActive,
-                        'text-zinc-500 hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-white/[0.07] dark:hover:text-white' => ! $docsActive,
-                    ])
-                    href="{{ route('docs.installation') }}"
-                    aria-label="Documentation"
-                    @if ($docsActive) aria-current="page" @endif
-                    title="Documentation"
-                >
-                    <svg class="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path d="M6.5 3.5h7L18 8v12.5H6.5a1 1 0 0 1-1-1v-15a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
-                        <path d="M13.5 3.5V8H18M9 12h6M9 15.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-                <a
-                    class="grid size-10 place-items-center rounded-full text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:bg-white/[0.07] dark:hover:text-white"
-                    href="https://github.com/newdebugbar/newdebugbar"
-                    aria-label="GitHub"
-                    title="GitHub"
-                >
-                    <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M12 2.5a9.75 9.75 0 0 0-3.08 19c.49.09.67-.21.67-.47v-1.86c-2.73.59-3.31-1.16-3.31-1.16-.45-1.14-1.09-1.44-1.09-1.44-.89-.61.07-.6.07-.6.98.07 1.5 1.01 1.5 1.01.88 1.5 2.3 1.07 2.86.82.09-.64.34-1.07.62-1.32-2.18-.25-4.47-1.09-4.47-4.82 0-1.07.38-1.94 1.01-2.62-.1-.25-.44-1.24.1-2.58 0 0 .82-.26 2.68 1a9.3 9.3 0 0 1 4.88 0c1.86-1.26 2.68-1 2.68-1 .54 1.34.2 2.33.1 2.58.63.68 1.01 1.55 1.01 2.62 0 3.74-2.3 4.57-4.48 4.82.35.3.66.89.66 1.8v2.67c0 .26.18.57.67.47A9.75 9.75 0 0 0 12 2.5Z"/>
-                    </svg>
-                </a>
-                <div class="relative" data-theme-menu-root>
+                <div class="relative" data-mobile-menu-root>
                     <button
-                        class="grid size-10 place-items-center rounded-full text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 aria-expanded:bg-zinc-100 aria-expanded:text-zinc-950 dark:text-zinc-400 dark:hover:bg-white/[0.07] dark:hover:text-white dark:aria-expanded:bg-white/10 dark:aria-expanded:text-white"
+                        class="grid size-10 place-items-center rounded-full text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 aria-expanded:bg-zinc-100 aria-expanded:text-zinc-950 dark:text-zinc-300 dark:hover:bg-white/[0.07] dark:hover:text-white dark:aria-expanded:bg-white/10 dark:aria-expanded:text-white"
                         type="button"
-                        data-theme-menu-trigger
-                        aria-label="Choose color theme"
-                        aria-controls="newdebugbar-theme-menu"
+                        data-mobile-menu-trigger
+                        aria-label="Open navigation menu"
+                        aria-controls="newdebugbar-mobile-menu"
                         aria-expanded="false"
-                        title="Choose color theme"
                     >
-                        <svg class="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/>
-                            <path d="M12 3.5a8.5 8.5 0 0 1 0 17v-17Z" fill="currentColor"/>
+                        <svg class="size-5" data-mobile-menu-open-icon viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                        <svg class="hidden size-5" data-mobile-menu-close-icon viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                         </svg>
                     </button>
                     <div
-                        id="newdebugbar-theme-menu"
-                        class="absolute top-[calc(100%+1.125rem)] right-0 z-50 hidden w-44 rounded-2xl border border-zinc-200 bg-white p-1.5 text-zinc-600 shadow-xl shadow-zinc-950/10 dark:border-white/10 dark:bg-[#111116] dark:text-zinc-300 dark:shadow-black/40"
-                        data-theme-menu
-                        role="radiogroup"
-                        aria-label="Color theme"
+                        id="newdebugbar-mobile-menu"
+                        class="absolute top-[calc(100%+1.125rem)] right-0 z-50 hidden w-64 rounded-2xl border border-zinc-200 bg-white p-2 text-zinc-600 shadow-xl shadow-zinc-950/10 dark:border-white/10 dark:bg-[#111116] dark:text-zinc-300 dark:shadow-black/40"
+                        data-mobile-menu
                     >
+                        <nav class="space-y-1" aria-label="Mobile navigation">
+                            <a
+                                @class([
+                                    'flex min-h-11 items-center gap-3 rounded-xl px-3 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-violet-500',
+                                    'bg-violet-50 text-violet-700 dark:bg-violet-400/10 dark:text-violet-300' => $docsActive,
+                                    'hover:bg-zinc-100 hover:text-zinc-950 dark:hover:bg-white/[0.07] dark:hover:text-white' => ! $docsActive,
+                                ])
+                                href="{{ route('docs.index') }}"
+                                @if ($docsActive) aria-current="page" @endif
+                            >
+                                <svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M6.5 3.5h7L18 8v12.5H6.5a1 1 0 0 1-1-1v-15a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                                    <path d="M13.5 3.5V8H18M9 12h6M9 15.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Documentation
+                            </a>
+                            <a
+                                class="flex min-h-11 items-center gap-3 rounded-xl px-3 text-sm font-medium transition-colors hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-violet-500 dark:hover:bg-white/[0.07] dark:hover:text-white"
+                                href="https://github.com/newdebugbar/newdebugbar"
+                            >
+                                <svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M12 2.5a9.75 9.75 0 0 0-3.08 19c.49.09.67-.21.67-.47v-1.86c-2.73.59-3.31-1.16-3.31-1.16-.45-1.14-1.09-1.44-1.09-1.44-.89-.61.07-.6.07-.6.98.07 1.5 1.01 1.5 1.01.88 1.5 2.3 1.07 2.86.82.09-.64.34-1.07.62-1.32-2.18-.25-4.47-1.09-4.47-4.82 0-1.07.38-1.94 1.01-2.62-.1-.25-.44-1.24.1-2.58 0 0 .82-.26 2.68 1a9.3 9.3 0 0 1 4.88 0c1.86-1.26 2.68-1 2.68-1 .54 1.34.2 2.33.1 2.58.63.68 1.01 1.55 1.01 2.62 0 3.74-2.3 4.57-4.48 4.82.35.3.66.89.66 1.8v2.67c0 .26.18.57.67.47A9.75 9.75 0 0 0 12 2.5Z"/>
+                                </svg>
+                                GitHub
+                            </a>
+                        </nav>
+
+                        <div class="mt-2 border-t border-zinc-200 pt-2 dark:border-white/10" role="radiogroup" aria-label="Color theme">
+                            <p class="px-3 pb-1.5 pt-1 text-xs font-semibold uppercase tracking-[0.14em] text-zinc-400 dark:text-zinc-500">Theme</p>
                         <button
                             class="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-medium transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-violet-500 aria-checked:bg-violet-50 aria-checked:text-violet-700 dark:hover:bg-white/[0.07] dark:hover:text-white dark:aria-checked:bg-violet-400/10 dark:aria-checked:text-violet-300"
                             type="button"
                             data-theme-option="system"
+                            data-mobile-menu-dismiss
                             role="radio"
                             aria-checked="true"
                         >
@@ -86,6 +89,7 @@
                             class="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-medium transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-violet-500 aria-checked:bg-violet-50 aria-checked:text-violet-700 dark:hover:bg-white/[0.07] dark:hover:text-white dark:aria-checked:bg-violet-400/10 dark:aria-checked:text-violet-300"
                             type="button"
                             data-theme-option="light"
+                            data-mobile-menu-dismiss
                             role="radio"
                             aria-checked="false"
                         >
@@ -102,6 +106,7 @@
                             class="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-medium transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-violet-500 aria-checked:bg-violet-50 aria-checked:text-violet-700 dark:hover:bg-white/[0.07] dark:hover:text-white dark:aria-checked:bg-violet-400/10 dark:aria-checked:text-violet-300"
                             type="button"
                             data-theme-option="dark"
+                            data-mobile-menu-dismiss
                             role="radio"
                             aria-checked="false"
                         >
@@ -113,6 +118,7 @@
                                 <path d="m5 12.5 4.3 4.3L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -130,7 +136,7 @@
                         'bg-violet-50 font-medium text-violet-700 dark:bg-violet-400/10 dark:text-violet-300' => $docsActive,
                         'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-300 dark:hover:bg-white/5 dark:hover:text-white' => ! $docsActive,
                     ])
-                    href="{{ route('docs.installation') }}"
+                    href="{{ route('docs.index') }}"
                     @if ($docsActive) aria-current="page" @endif
                 >
                     Docs

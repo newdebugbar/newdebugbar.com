@@ -58,9 +58,6 @@ export const applyTheme = ({
 
 export const initializeTheme = ({ root, screenshots, storage, windowObject }) => {
     const themeOptions = [...root.querySelectorAll('[data-theme-option]')];
-    const themeMenuRoot = root.querySelector('[data-theme-menu-root]');
-    const themeMenu = root.querySelector('[data-theme-menu]');
-    const themeMenuTrigger = root.querySelector('[data-theme-menu-trigger]');
     const systemThemeQuery = windowObject.matchMedia('(prefers-color-scheme: dark)');
 
     const updateTheme = (themeMode, persist = false) => applyTheme({
@@ -72,47 +69,15 @@ export const initializeTheme = ({ root, screenshots, storage, windowObject }) =>
         persist,
     });
 
-    const closeThemeMenu = (restoreFocus = false) => {
-        themeMenu?.classList.add('hidden');
-        themeMenuTrigger?.setAttribute('aria-expanded', 'false');
-
-        if (restoreFocus) {
-            themeMenuTrigger?.focus();
-        }
-    };
-
-    const handleMenuTrigger = () => {
-        const isOpen = themeMenuTrigger.getAttribute('aria-expanded') === 'true';
-
-        themeMenu?.classList.toggle('hidden', isOpen);
-        themeMenuTrigger.setAttribute('aria-expanded', String(!isOpen));
-    };
-
     const optionHandlers = themeOptions.map((themeOption) => {
         const handler = () => {
             updateTheme(themeOption.dataset.themeOption, true);
-
-            if (themeOption.closest('[data-theme-menu]')) {
-                closeThemeMenu(true);
-            }
         };
 
         themeOption.addEventListener('click', handler);
 
         return [themeOption, handler];
     });
-
-    const handleDocumentClick = (event) => {
-        if (themeMenuRoot && !themeMenuRoot.contains(event.target)) {
-            closeThemeMenu();
-        }
-    };
-
-    const handleDocumentKeydown = (event) => {
-        if (event.key === 'Escape' && themeMenuTrigger?.getAttribute('aria-expanded') === 'true') {
-            closeThemeMenu(true);
-        }
-    };
 
     const handleSystemThemeChange = () => {
         if (root.documentElement.dataset.themeMode === 'system') {
@@ -121,17 +86,65 @@ export const initializeTheme = ({ root, screenshots, storage, windowObject }) =>
     };
 
     updateTheme(root.documentElement.dataset.themeMode);
-    themeMenuTrigger?.addEventListener('click', handleMenuTrigger);
-    root.addEventListener('click', handleDocumentClick);
-    root.addEventListener('keydown', handleDocumentKeydown);
     systemThemeQuery.addEventListener('change', handleSystemThemeChange);
 
     return () => {
-        themeMenuTrigger?.removeEventListener('click', handleMenuTrigger);
         optionHandlers.forEach(([themeOption, handler]) => themeOption.removeEventListener('click', handler));
+        systemThemeQuery.removeEventListener('change', handleSystemThemeChange);
+    };
+};
+
+export const initializeMobileMenu = ({ root }) => {
+    const menuRoot = root.querySelector('[data-mobile-menu-root]');
+    const menu = root.querySelector('[data-mobile-menu]');
+    const trigger = root.querySelector('[data-mobile-menu-trigger]');
+    const openIcon = root.querySelector('[data-mobile-menu-open-icon]');
+    const closeIcon = root.querySelector('[data-mobile-menu-close-icon]');
+
+    if (!menuRoot || !menu || !trigger) {
+        return () => {};
+    }
+
+    const setOpen = (isOpen, restoreFocus = false) => {
+        menu.classList.toggle('hidden', !isOpen);
+        trigger.setAttribute('aria-expanded', String(isOpen));
+        trigger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        openIcon?.classList.toggle('hidden', isOpen);
+        closeIcon?.classList.toggle('hidden', !isOpen);
+
+        if (restoreFocus) {
+            trigger.focus();
+        }
+    };
+
+    const handleTrigger = () => setOpen(trigger.getAttribute('aria-expanded') !== 'true');
+    const handleDocumentClick = (event) => {
+        if (!menuRoot.contains(event.target)) {
+            setOpen(false);
+        }
+    };
+    const handleDocumentKeydown = (event) => {
+        if (event.key === 'Escape' && trigger.getAttribute('aria-expanded') === 'true') {
+            setOpen(false, true);
+        }
+    };
+    const dismissHandlers = [...menu.querySelectorAll('[data-mobile-menu-dismiss]')].map((control) => {
+        const handler = () => setOpen(false);
+
+        control.addEventListener('click', handler);
+
+        return [control, handler];
+    });
+
+    trigger.addEventListener('click', handleTrigger);
+    root.addEventListener('click', handleDocumentClick);
+    root.addEventListener('keydown', handleDocumentKeydown);
+
+    return () => {
+        trigger.removeEventListener('click', handleTrigger);
         root.removeEventListener('click', handleDocumentClick);
         root.removeEventListener('keydown', handleDocumentKeydown);
-        systemThemeQuery.removeEventListener('change', handleSystemThemeChange);
+        dismissHandlers.forEach(([control, handler]) => control.removeEventListener('click', handler));
     };
 };
 
@@ -219,6 +232,7 @@ export const initializeSite = ({
     windowObject = window,
 }) => {
     const destroyTheme = initializeTheme({ root, screenshots, storage, windowObject });
+    const destroyMobileMenu = initializeMobileMenu({ root });
     const destroyCopyButtons = initializeCopyButtons({
         root,
         navigatorObject: windowObject.navigator,
@@ -227,6 +241,7 @@ export const initializeSite = ({
 
     return () => {
         destroyTheme();
+        destroyMobileMenu();
         destroyCopyButtons();
     };
 };
