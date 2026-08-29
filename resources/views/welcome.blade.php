@@ -219,7 +219,7 @@
                     <div class="mt-9 flex max-w-full flex-wrap items-center gap-x-[0.5ch] gap-y-1">
                         <code class="basis-full whitespace-nowrap font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 min-[80rem]:text-[0.9375rem] min-[80rem]:tracking-[-0.03em] min-[90rem]:basis-auto dark:text-white">composer require</code>
                         <code class="whitespace-nowrap font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 min-[80rem]:text-[0.9375rem] min-[80rem]:tracking-[-0.03em] dark:text-white">newdebugbar/newdebugbar:dev-main</code>
-                        <span class="inline-flex shrink-0 items-center gap-2 whitespace-nowrap sm:gap-2.5">
+                        <span class="inline-flex shrink-0 items-center gap-2.5 whitespace-nowrap sm:gap-3">
                             <code class="font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 min-[80rem]:text-[0.9375rem] min-[80rem]:tracking-[-0.03em] dark:text-white">--dev</code>
                             <button
                                 class="inline-grid size-[1.125rem] shrink-0 place-items-center align-middle text-zinc-500 transition-colors hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:text-white"
