@@ -83,11 +83,6 @@
                         <p class="mt-6 max-w-[42rem] text-lg leading-8 text-zinc-600 sm:text-xl sm:leading-9 dark:text-zinc-400">
                             Add it to your Laravel app with one Composer command. Laravel discovers the package and the bar appears automatically while you work locally.
                         </p>
-
-                        <div class="mt-7 flex flex-wrap gap-2" aria-label="Supported versions">
-                            <span class="inline-flex min-h-8 items-center rounded-full border border-zinc-200 bg-zinc-50 px-3 text-sm font-medium text-zinc-700 dark:border-white/10 dark:bg-white/[0.04] dark:text-zinc-300">Laravel 10+</span>
-                            <span class="inline-flex min-h-8 items-center rounded-full border border-zinc-200 bg-zinc-50 px-3 text-sm font-medium text-zinc-700 dark:border-white/10 dark:bg-white/[0.04] dark:text-zinc-300">PHP 8.1+</span>
-                        </div>
                     </header>
 
                     <aside class="mt-10 flex gap-4 rounded-2xl border border-violet-200 bg-violet-50/70 p-5 dark:border-violet-400/20 dark:bg-violet-400/[0.08]" aria-label="Development version note">

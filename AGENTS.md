@@ -13,3 +13,7 @@
 - Ground claims in current behavior.
 - Write related information as natural phrases or complete sentences. Never use `•`, `|`, or symbol-only separators as a shortcut.
 - State compatibility directly. Do not pad it with a generic slogan or list the highest supported framework version.
+
+## Design
+
+- Do not use badges unless they communicate an important status or category that plain text cannot express as clearly.
