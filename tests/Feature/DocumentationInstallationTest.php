@@ -10,7 +10,9 @@ class DocumentationInstallationTest extends TestCase
     {
         $this->withoutVite();
 
-        $this->get('/docs/installation')
+        $response = $this->get('/docs/installation');
+
+        $response
             ->assertOk()
             ->assertSee('<title>Install New Debug Bar in Laravel | New Debug Bar</title>', false)
             ->assertSee('rel="canonical" href="'.url('/docs/installation').'"', false)
@@ -24,8 +26,18 @@ class DocumentationInstallationTest extends TestCase
             ->assertSee('you do not need to register a service provider, run migrations, or publish frontend assets')
             ->assertSee('https://github.com/newdebugbar/newdebugbar/blob/main/docs/mcp.md', false)
             ->assertSee('aria-current="page"', false)
+            ->assertSee('data-docs-shell', false)
+            ->assertSee('data-docs-figure', false)
+            ->assertSee('data-request-inspector-image', false)
             ->assertDontSee('/docs/v1/', false)
             ->assertDontSee('git@newdebugbar.com');
+
+        $this->assertSame(3, substr_count($response->getContent(), 'data-docs-code-block'));
+        $this->assertMatchesRegularExpression(
+            '/<figure[^>]*data-docs-figure[^>]*>\s*<picture[^>]*data-request-inspector-screenshot/',
+            $response->getContent(),
+            'Product screenshots should not be wrapped in a decorative frame.',
+        );
     }
 
     public function test_the_landing_page_links_to_the_installation_docs(): void

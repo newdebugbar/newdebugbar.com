@@ -1,34 +1,9 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="dark" data-theme-mode="system">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta
-            name="description"
-            content="Find Laravel bugs and bottlenecks without digging through scattered logs. Inspect requests, queries, exceptions, jobs, mail, cache, and more, with exact MCP context for coding agents."
-        >
-        <meta name="color-scheme" content="dark light">
-        <meta name="theme-color" content="#07070a">
-
-        <title>New Debug Bar — Laravel debugging for developers and agents</title>
-
-        <script>
-            const storedTheme = localStorage.getItem('newdebugbar-website-theme');
-            const themeMode = ['system', 'light', 'dark'].includes(storedTheme) ? storedTheme : 'system';
-            const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-
-            document.documentElement.dataset.themeMode = themeMode;
-            document.documentElement.dataset.theme = themeMode === 'system' ? systemTheme : themeMode;
-        </script>
-
-        @fonts
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="min-h-screen bg-zinc-50 text-zinc-950 antialiased transition-colors duration-300 dark:bg-[#07070a] dark:text-white">
-        @include('partials.site-header')
-
-        <main class="hero-backdrop">
-            <section class="hero-stage mx-auto max-w-[100rem] px-5 pt-6 sm:px-8 sm:pt-10 lg:px-10" aria-labelledby="hero-title">
+<x-layouts.site
+    title="New Debug Bar — Laravel debugging for developers and agents"
+    description="Find Laravel bugs and bottlenecks without digging through scattered logs. Inspect requests, queries, exceptions, jobs, mail, cache, and more, with exact MCP context for coding agents."
+>
+    <main class="relative isolate [background:radial-gradient(circle_at_73%_46%,rgb(124_58_237_/_10%),transparent_29rem),linear-gradient(145deg,#ffffff_0%,#fafafa_56%,#f7f5ff_100%)] max-[47.999rem]:[background:radial-gradient(circle_at_50%_74%,rgb(124_58_237_/_10%),transparent_24rem),#fafafa] dark:[background:radial-gradient(circle_at_73%_47%,rgb(119_87_255_/_14%),transparent_31rem),radial-gradient(circle_at_18%_87%,rgb(76_29_149_/_7%),transparent_28rem),#07070a] dark:max-[47.999rem]:[background:radial-gradient(circle_at_50%_72%,rgb(119_87_255_/_13%),transparent_24rem),#07070a]">
+            <section class="relative mx-auto flex max-w-[100rem] flex-col items-center overflow-hidden px-5 pt-6 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-20 after:h-px after:bg-[linear-gradient(to_right,transparent,rgb(24_24_27_/_12%)_18%,rgb(24_24_27_/_12%)_82%,transparent)] after:content-[''] sm:px-8 sm:pt-10 lg:px-10 dark:after:bg-[linear-gradient(to_right,transparent,rgb(255_255_255_/_14%)_18%,rgb(255_255_255_/_14%)_82%,transparent)]" aria-labelledby="hero-title">
                 <div class="relative z-10 flex w-full min-w-0 flex-col items-center text-center">
                     <h1 id="hero-title" class="max-w-[62rem] text-balance text-[2.55rem] font-semibold leading-none tracking-[-0.055em] text-zinc-950 sm:text-[3.5rem] lg:text-[3.75rem] dark:text-white">
                         Powerful, agent-friendly Laravel debugging—free and open source
@@ -99,8 +74,8 @@
                     </p>
                 </div>
 
-                <div class="hero-product-dock">
-                    <div class="hero-product">
+                <div class="mt-8 h-[clamp(18rem,22vw,20rem)] w-full overflow-visible px-[clamp(3rem,6vw,6rem)] [clip-path:inset(-6rem_-6rem_0)] max-[79.999rem]:h-[clamp(17rem,28vw,19rem)] max-[47.999rem]:mt-6 max-[47.999rem]:h-[clamp(15rem,82vw,19rem)] max-[47.999rem]:px-0">
+                    <div class="relative mx-auto w-[calc(100%_-_1rem)] min-w-0 before:absolute before:inset-[12%_7%_5%] before:z-[-1] before:rounded-[50%] before:bg-[rgb(124_58_237_/_16%)] before:blur-[5rem] before:content-[''] max-[79.999rem]:w-full max-[47.999rem]:w-[min(28rem,calc(100%_+_0.5rem))] max-[47.999rem]:before:inset-[16%_0_8%] max-[47.999rem]:before:blur-[3.5rem]">
                         <x-screenshots.request-inspector
                             alt="New Debug Bar request inspector showing the request trace, route, controller, response, query count, and duration for a Kyoto trip page"
                             fetchpriority="high"
@@ -108,8 +83,5 @@
                     </div>
                 </div>
             </section>
-        </main>
-
-        @include('partials.site-footer')
-    </body>
-</html>
+    </main>
+</x-layouts.site>
