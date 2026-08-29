@@ -27,9 +27,8 @@ class WebsiteFoundationTest extends TestCase
             ->assertSee('Visit OnlyFans API, a New Debug Bar sponsor')
             ->assertSee('Your logo here')
             ->assertSee('Sponsor New Debug Bar and add your logo')
-            ->assertSee('Upgrade your debugging, not your application.')
-            ->assertSee('Laravel 10–13')
-            ->assertSee('Starts at PHP 8.1')
+            ->assertSee('Laravel 10+ and PHP 8.1+')
+            ->assertDontSee('Upgrade your debugging, not your application.')
             ->assertDontSee('Built for AI-pilled developers')
             ->assertDontSee('clear explanations of what happened and what to check next')
             ->assertDontSee('LOCAL · READ-ONLY AGENT ACCESS');

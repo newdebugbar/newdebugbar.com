@@ -278,11 +278,8 @@
                         </ul>
                     </div>
 
-                    <p class="mt-4 text-sm leading-6 text-zinc-500 sm:mt-5 dark:text-zinc-500">
-                        <span>Upgrade your debugging, not your application.</span>
-                        <span class="whitespace-nowrap font-medium text-zinc-700 dark:text-zinc-300">Laravel 10–13</span>
-                        <span aria-hidden="true">·</span>
-                        <span class="whitespace-nowrap font-medium text-zinc-700 dark:text-zinc-300">Starts at PHP 8.1</span>
+                    <p class="mt-4 text-sm font-medium leading-6 text-zinc-700 sm:mt-5 dark:text-zinc-300">
+                        Laravel 10+ and PHP 8.1+
                     </p>
                 </div>
 

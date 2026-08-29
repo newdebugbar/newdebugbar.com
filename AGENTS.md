@@ -11,3 +11,5 @@
 - Avoid internal terms like “structured profiles” unless required to use the product.
 - Present MCP as exact debugging context for agents: less guessing and fewer tokens.
 - Ground claims in current behavior.
+- Write related information as natural phrases or complete sentences. Never use `•`, `|`, or symbol-only separators as a shortcut.
+- State compatibility directly. Do not pad it with a generic slogan or list the highest supported framework version.
