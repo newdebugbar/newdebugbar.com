@@ -206,7 +206,7 @@
         </header>
 
         <main class="hero-backdrop overflow-hidden">
-            <section class="mx-auto grid min-h-[calc(100svh-4.75rem)] max-w-[100rem] items-center gap-14 px-5 py-16 sm:px-8 sm:py-20 lg:px-10 min-[76rem]:py-24 min-[80rem]:grid-cols-[minmax(28rem,0.78fr)_minmax(44rem,1.22fr)] min-[80rem]:gap-10 min-[90rem]:gap-12 min-[100rem]:gap-16" aria-labelledby="hero-title">
+            <section class="mx-auto grid max-w-[100rem] items-center gap-10 px-5 py-8 sm:px-8 lg:px-10 min-[80rem]:grid-cols-[minmax(28rem,0.78fr)_minmax(44rem,1.22fr)] min-[90rem]:gap-12 min-[100rem]:gap-16" aria-labelledby="hero-title">
                 <div class="relative z-10 w-full min-w-0 max-w-[36rem]">
                     <h1 id="hero-title" class="text-balance text-[2.55rem] font-semibold leading-none tracking-[-0.055em] text-zinc-950 sm:text-[3.5rem] min-[76rem]:text-[3.65rem] min-[90rem]:text-[4rem] dark:text-white">
                         Powerful, agent-friendly Laravel debugging—free and open source
@@ -219,7 +219,7 @@
                     <div class="mt-9 flex max-w-full flex-wrap items-center gap-x-[0.5ch] gap-y-1">
                         <code class="basis-full whitespace-nowrap font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 min-[80rem]:text-[0.9375rem] min-[80rem]:tracking-[-0.03em] min-[90rem]:basis-auto dark:text-white">composer require</code>
                         <code class="whitespace-nowrap font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 min-[80rem]:text-[0.9375rem] min-[80rem]:tracking-[-0.03em] dark:text-white">newdebugbar/newdebugbar:dev-main</code>
-                        <span class="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap sm:gap-2">
+                        <span class="inline-flex shrink-0 items-center gap-2 whitespace-nowrap sm:gap-2.5">
                             <code class="font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 min-[80rem]:text-[0.9375rem] min-[80rem]:tracking-[-0.03em] dark:text-white">--dev</code>
                             <button
                                 class="inline-grid size-[1.125rem] shrink-0 place-items-center align-middle text-zinc-500 transition-colors hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:text-white"
@@ -258,12 +258,12 @@
             </section>
 
             <section class="relative border-t border-zinc-200/70 dark:border-white/[0.08]" aria-labelledby="sponsors-title">
-                <div class="mx-auto flex max-w-[100rem] flex-col items-center px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
+                <div class="mx-auto flex max-w-[100rem] flex-col items-center px-5 py-10 sm:px-8 lg:px-10">
                     <h2 id="sponsors-title" class="text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-500">
                         Supported by
                     </h2>
 
-                    <ul class="mt-6 flex w-full max-w-[36rem] flex-col items-center justify-center gap-4 min-[23rem]:flex-row min-[23rem]:gap-6 sm:mt-7 sm:gap-8" role="list">
+                    <ul class="mt-6 flex w-full max-w-[36rem] flex-col items-center justify-center gap-4 min-[23rem]:flex-row min-[23rem]:gap-6 sm:gap-8" role="list">
                         <li>
                             <a
                                 class="inline-flex min-h-12 items-center gap-2.5 rounded-xl px-3 py-2 text-zinc-950 transition-colors hover:text-violet-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:text-white dark:hover:text-violet-300"
@@ -281,7 +281,7 @@
                         <li class="hidden h-8 w-px bg-zinc-200 min-[23rem]:block dark:bg-white/10" aria-hidden="true"></li>
                         <li>
                             <a
-                                class="inline-flex min-h-12 items-center justify-center rounded-xl border border-dashed border-zinc-300 px-5 text-sm font-medium text-zinc-500 transition-colors hover:border-violet-400 hover:text-violet-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:border-white/15 dark:text-zinc-400 dark:hover:border-violet-400/70 dark:hover:text-violet-300"
+                                class="inline-flex min-h-12 min-w-36 items-center justify-center rounded-xl bg-zinc-950/[0.04] px-5 text-sm font-medium text-zinc-600 transition-[background-color,color] hover:bg-zinc-950/[0.07] hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:bg-white/[0.06] dark:text-zinc-400 dark:hover:bg-white/[0.1] dark:hover:text-white"
                                 href="https://github.com/sponsors/benjamincrozat"
                                 aria-label="Sponsor New Debug Bar and add your logo"
                             >
