@@ -23,6 +23,18 @@
 - Build repeated documentation interface patterns as Blade components under `resources/views/components/docs`; keep page-specific prose and simple markup in the page view.
 - In the header, keep the Sponsor link at the normal navigation size on desktop. Highlight it with the same medium-weight violet text treatment as the footer, without chip padding or a hover animation, and preserve a clear gap from nearby controls.
 
+## Documentation
+
+- Keep documentation routes unversioned and named. Do not add a version segment unless the user explicitly reverses this decision.
+- Build every documentation page with `x-layouts.docs`. Keep documentation navigation, the article shell, the “On this page” rail, responsive breadcrumbs, and SEO metadata in the shared layout instead of rebuilding them per page.
+- Keep the documentation article visually centered in the page on wide desktop layouts. Use equal-width left and right rails so navigation never shifts the article off center.
+- Give every public documentation page a unique title and description, canonical URL, social metadata, and structured breadcrumbs through the shared layout.
+- Keep release-dependent installation values in `config/newdebugbar.php`. Do not hardcode Composer commands, package constraints, or prerelease state in views.
+- Treat the old website as a list of topics, not a technical source. Rewrite pages for the current product and verify installation, compatibility, behavior, and troubleshooting claims against the package repository.
+- Verify third-party MCP setup instructions against current official client documentation or installed CLI help before publishing them.
+- Link to an on-site documentation page when it exists instead of sending readers to the GitHub copy.
+- Verify documentation layout changes at mobile, the two-column breakpoint, and the centered three-column breakpoint in both themes. Check horizontal overflow, section anchors, and interactive controls.
+
 ## Implementation
 
 - Follow the applicable global skill and its verification steps whenever working with a technology covered by one.
