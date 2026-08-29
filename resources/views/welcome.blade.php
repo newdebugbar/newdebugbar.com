@@ -27,16 +27,22 @@
     <body class="min-h-screen bg-zinc-50 text-zinc-950 antialiased transition-colors duration-300 dark:bg-[#07070a] dark:text-white">
         <header class="relative z-50 border-b border-zinc-200/80 bg-white/80 text-zinc-950 backdrop-blur-xl dark:border-white/10 dark:bg-[#07070a]/80 dark:text-white">
             <nav
-                class="mx-auto flex h-[4.75rem] max-w-[100rem] items-center gap-2 px-5 sm:gap-5 sm:px-8 lg:px-10"
+                class="mx-auto flex h-[4.75rem] max-w-[100rem] items-center gap-2 px-4 sm:gap-5 sm:px-8 lg:px-10"
                 aria-label="Primary navigation"
             >
                 <a class="flex shrink-0 flex-col leading-none" href="/" aria-label="New Debug Bar for Laravel">
-                    <span class="text-[1.35rem] font-semibold tracking-[-0.035em] sm:text-2xl">New Debug Bar</span>
-                    <span class="mt-1 text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-violet-600 dark:text-violet-400">for Laravel</span>
+                    <span class="text-[0.875rem] font-semibold tracking-[-0.025em] min-[23rem]:text-base sm:text-2xl sm:tracking-[-0.035em]">New Debug Bar</span>
+                    <span class="mt-0.5 text-[0.45rem] font-semibold uppercase tracking-[0.14em] text-violet-600 min-[23rem]:text-[0.5rem] sm:mt-1 sm:text-[0.625rem] sm:tracking-[0.18em] dark:text-violet-400">for Laravel</span>
                 </a>
 
                 <div class="ml-auto flex shrink-0 items-center">
                     <div class="flex items-center gap-0.5 sm:hidden">
+                        <a
+                            class="flex h-10 items-center rounded-lg px-1 text-xs font-medium text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-300 dark:hover:bg-white/[0.07] dark:hover:text-white"
+                            href="https://github.com/sponsors/benjamincrozat"
+                        >
+                            Sponsor
+                        </a>
                         <a
                             class="grid size-10 place-items-center rounded-full text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:bg-white/[0.07] dark:hover:text-white"
                             href="https://github.com/newdebugbar/newdebugbar#readme"
@@ -140,6 +146,12 @@
                         </a>
                         <a
                             class="rounded-lg px-3 py-2 text-base text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-300 dark:hover:bg-white/5 dark:hover:text-white"
+                            href="https://github.com/sponsors/benjamincrozat"
+                        >
+                            Sponsor
+                        </a>
+                        <a
+                            class="rounded-lg px-3 py-2 text-base text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-300 dark:hover:bg-white/5 dark:hover:text-white"
                             href="https://github.com/newdebugbar/newdebugbar"
                         >
                             GitHub
@@ -205,10 +217,10 @@
                     </p>
 
                     <div class="mt-9 max-w-[31rem]">
-                        <div class="inline-flex max-w-full items-center gap-1.5 rounded-xl border border-zinc-200 bg-white/75 py-2 pr-2 pl-4 shadow-sm dark:border-white/[0.13] dark:bg-white/[0.025] dark:shadow-none">
-                            <code class="min-w-0 flex-1 overflow-x-auto whitespace-nowrap font-mono text-[0.5625rem] leading-4 font-medium text-zinc-900 sm:text-xs dark:text-zinc-100">composer require newdebugbar/newdebugbar:dev-main --dev</code>
+                        <div class="flex w-full flex-col items-start rounded-2xl border border-zinc-200 bg-white/75 px-4 py-3.5 shadow-sm sm:inline-flex sm:w-auto sm:max-w-full sm:flex-row sm:items-center sm:gap-1.5 sm:rounded-xl sm:py-2 sm:pr-2 sm:pl-4 dark:border-white/[0.13] dark:bg-white/[0.025] dark:shadow-none">
+                            <code class="w-full min-w-0 font-mono text-xs leading-5 font-medium text-zinc-900 sm:w-auto sm:flex-1 sm:overflow-x-auto sm:whitespace-nowrap sm:leading-4 dark:text-zinc-100"><span class="block sm:inline">composer require</span><span class="block sm:inline"><span class="hidden sm:inline"> </span>newdebugbar/newdebugbar:dev-main<span class="hidden min-[23rem]:inline"> --dev</span></span><span class="block min-[23rem]:hidden">--dev</span></code>
                             <button
-                                class="grid size-7 shrink-0 place-items-center rounded-lg text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-400 dark:hover:bg-white/[0.07] dark:hover:text-white"
+                                class="mt-2 inline-flex h-8 shrink-0 self-end items-center gap-1.5 rounded-lg bg-zinc-100 px-2.5 text-xs font-medium text-zinc-600 transition hover:bg-zinc-200 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 sm:mt-0 sm:grid sm:size-7 sm:self-auto sm:bg-transparent sm:p-0 sm:text-zinc-500 sm:hover:bg-zinc-100 dark:bg-white/[0.07] dark:text-zinc-300 dark:hover:bg-white/[0.12] dark:hover:text-white sm:dark:bg-transparent sm:dark:text-zinc-400 sm:dark:hover:bg-white/[0.07]"
                                 type="button"
                                 data-copy-command="composer require newdebugbar/newdebugbar:dev-main --dev"
                                 aria-label="Copy install command"
@@ -221,6 +233,7 @@
                                 <svg data-copy-success class="hidden size-4 text-emerald-500" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                     <path d="m5 12.5 4.3 4.3L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
+                                <span class="sm:sr-only">Copy</span>
                             </button>
                         </div>
                         <p class="sr-only" data-copy-status aria-live="polite"></p>
