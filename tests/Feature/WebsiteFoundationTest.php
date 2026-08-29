@@ -17,7 +17,7 @@ class WebsiteFoundationTest extends TestCase
             ->assertSee('composer require newdebugbar/newdebugbar:dev-main --dev')
             ->assertSee('for Laravel')
             ->assertSee('https://github.com/sponsors/benjamincrozat', false)
-            ->assertSee('https://github.com/newdebugbar/newdebugbar#readme', false)
+            ->assertSee(route('docs.installation'), false)
             ->assertSee('data-theme-option="system"', false)
             ->assertSee('data-theme-option="light"', false)
             ->assertSee('data-theme-option="dark"', false)

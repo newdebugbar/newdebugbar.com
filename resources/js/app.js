@@ -103,7 +103,7 @@ systemThemeQuery.addEventListener('change', () => {
     }
 });
 
-const copyButton = document.querySelector('[data-copy-command]');
+const copyButtons = document.querySelectorAll('[data-copy-command]');
 
 const copyText = async (text) => {
     if (navigator.clipboard?.writeText) {
@@ -130,35 +130,39 @@ const copyText = async (text) => {
     }
 };
 
-copyButton?.addEventListener('click', async () => {
-    const command = copyButton.dataset.copyCommand;
-    const copyIcon = copyButton.querySelector('[data-copy-icon]');
-    const successIcon = copyButton.querySelector('[data-copy-success]');
-    const status = document.querySelector('[data-copy-status]');
+copyButtons.forEach((copyButton) => {
+    copyButton.addEventListener('click', async () => {
+        const command = copyButton.dataset.copyCommand;
+        const copyIcon = copyButton.querySelector('[data-copy-icon]');
+        const successIcon = copyButton.querySelector('[data-copy-success]');
+        const status = copyButton.closest('[data-copy-root]')?.querySelector('[data-copy-status]');
+        const defaultLabel = copyButton.dataset.copyLabel ?? 'Copy install command';
+        const successMessage = copyButton.dataset.copySuccess ?? 'Install command copied';
 
-    try {
-        await copyText(command);
+        try {
+            await copyText(command);
 
-        copyIcon?.classList.add('hidden');
-        successIcon?.classList.remove('hidden');
-        copyButton.setAttribute('aria-label', 'Install command copied');
-
-        if (status) {
-            status.textContent = 'Install command copied';
-        }
-
-        window.setTimeout(() => {
-            copyIcon?.classList.remove('hidden');
-            successIcon?.classList.add('hidden');
-            copyButton.setAttribute('aria-label', 'Copy install command');
+            copyIcon?.classList.add('hidden');
+            successIcon?.classList.remove('hidden');
+            copyButton.setAttribute('aria-label', successMessage);
 
             if (status) {
-                status.textContent = '';
+                status.textContent = successMessage;
             }
-        }, 1800);
-    } catch {
-        if (status) {
-            status.textContent = 'Could not copy the install command';
+
+            window.setTimeout(() => {
+                copyIcon?.classList.remove('hidden');
+                successIcon?.classList.add('hidden');
+                copyButton.setAttribute('aria-label', defaultLabel);
+
+                if (status) {
+                    status.textContent = '';
+                }
+            }, 3000);
+        } catch {
+            if (status) {
+                status.textContent = `Could not copy: ${command}`;
+            }
         }
-    }
+    });
 });
