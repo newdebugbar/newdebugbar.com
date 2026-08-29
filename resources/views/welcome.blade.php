@@ -216,24 +216,27 @@
                         Find bugs and bottlenecks without digging through scattered logs. Inspect requests, queries, exceptions, jobs, mail, cache, and more in one place—while MCP gives your coding agent exact context with less guessing and fewer tokens.
                     </p>
 
-                    <div class="mt-9 grid w-full max-w-[31rem] grid-cols-[minmax(0,1fr)_2.5rem] grid-rows-[2.5rem_auto] items-center gap-x-3 min-[90rem]:inline-flex min-[90rem]:w-auto min-[90rem]:max-w-full min-[90rem]:gap-0">
-                        <code class="col-start-1 row-start-1 whitespace-nowrap font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm dark:text-white">composer require</code>
-                        <code class="col-span-2 row-start-2 whitespace-nowrap font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm min-[90rem]:ml-[0.6ch] dark:text-white">newdebugbar/newdebugbar:dev-main --dev</code>
-                        <button
-                            class="col-start-2 row-start-1 grid size-10 shrink-0 place-items-center justify-self-end rounded-full text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 sm:size-9 min-[90rem]:ml-2 dark:text-zinc-400 dark:hover:bg-white/[0.07] dark:hover:text-white"
-                            type="button"
-                            data-copy-command="composer require newdebugbar/newdebugbar:dev-main --dev"
-                            aria-label="Copy install command"
-                            title="Copy install command"
-                        >
-                            <svg data-copy-icon class="size-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                <rect x="8" y="8" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.7"/>
-                                <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-                            </svg>
-                            <svg data-copy-success class="hidden size-4 text-emerald-500" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                <path d="m5 12.5 4.3 4.3L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
+                    <div class="mt-9 flex max-w-full flex-wrap items-center gap-x-[0.5ch] gap-y-1">
+                        <code class="basis-full whitespace-nowrap font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 min-[80rem]:text-[0.9375rem] min-[80rem]:tracking-[-0.03em] min-[90rem]:basis-auto dark:text-white">composer require</code>
+                        <code class="whitespace-nowrap font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 min-[80rem]:text-[0.9375rem] min-[80rem]:tracking-[-0.03em] dark:text-white">newdebugbar/newdebugbar:dev-main</code>
+                        <span class="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap sm:gap-2">
+                            <code class="font-mono text-xs leading-5 font-normal tracking-[-0.015em] text-zinc-950 min-[23rem]:text-[0.8125rem] sm:text-sm sm:leading-6 min-[80rem]:text-[0.9375rem] min-[80rem]:tracking-[-0.03em] dark:text-white">--dev</code>
+                            <button
+                                class="inline-grid size-10 shrink-0 place-items-center rounded-full align-middle text-zinc-500 transition hover:bg-zinc-100 hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 sm:size-9 dark:text-zinc-400 dark:hover:bg-white/[0.07] dark:hover:text-white"
+                                type="button"
+                                data-copy-command="composer require newdebugbar/newdebugbar:dev-main --dev"
+                                aria-label="Copy install command"
+                                title="Copy install command"
+                            >
+                                <svg data-copy-icon class="size-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <rect x="8" y="8" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.7"/>
+                                    <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                                </svg>
+                                <svg data-copy-success class="hidden size-4 text-emerald-500" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="m5 12.5 4.3 4.3L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </span>
                         <p class="sr-only" data-copy-status aria-live="polite"></p>
                     </div>
                 </div>
