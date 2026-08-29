@@ -13,7 +13,7 @@
         <div class="ml-auto flex shrink-0 items-center">
             <div class="flex items-center gap-0.5 sm:hidden">
                 <a
-                    class="mr-2 flex h-10 items-center rounded-lg text-sm font-semibold text-violet-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-violet-300"
+                    class="mr-2 flex h-10 items-center rounded-lg text-sm font-medium text-violet-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-violet-300"
                     href="https://github.com/sponsors/benjamincrozat"
                 >
                     Sponsor
@@ -119,7 +119,7 @@
 
             <div class="hidden items-center gap-3 sm:flex">
                 <a
-                    class="mr-2 inline-flex min-h-10 items-center rounded-lg text-lg font-semibold text-violet-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-violet-300"
+                    class="mr-2 inline-flex min-h-10 items-center rounded-lg text-base font-medium text-violet-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-violet-300"
                     href="https://github.com/sponsors/benjamincrozat"
                 >
                     Sponsor
