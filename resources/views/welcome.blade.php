@@ -13,7 +13,7 @@
                     </h1>
 
                     <p class="mt-5 max-w-[56rem] text-lg leading-8 text-zinc-600 sm:mt-6 sm:text-xl sm:leading-9 dark:text-zinc-400">
-                        Find bugs and bottlenecks without digging through scattered logs. Inspect requests, queries, exceptions, jobs, mail, cache, and more in one place—while MCP gives your coding agent exact context with less guessing and fewer tokens.
+                        Find bugs and bottlenecks without digging through scattered logs. Inspect anything in one place—while MCP gives your agent exact context with less guessing and fewer tokens.
                     </p>
 
                     <div class="mt-6 inline-flex max-w-full items-center gap-[1.375rem] rounded-full border border-zinc-950/[0.08] bg-white/65 px-[1.3125rem] py-3 shadow-[0_0.75rem_2.5rem_rgb(24_24_27/0.08)] backdrop-blur-xl sm:mt-7 sm:py-4 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-[0_0.75rem_2.5rem_rgb(0_0_0/0.28)]" data-copy-root>
