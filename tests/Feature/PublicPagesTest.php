@@ -82,6 +82,30 @@ it('exposes every configured documentation route in the mobile menu', function (
         ->and($currentLinks->item(0)?->getAttribute('href'))->toBe(route('docs.queries'));
 });
 
+it('offers sponsorship and freelance paths on public content', function (string $uri, string $variant) {
+    $response = get($uri)->assertOk();
+
+    $previousErrorHandling = libxml_use_internal_errors(true);
+    $document = new DOMDocument;
+    $document->loadHTML($response->getContent());
+    libxml_clear_errors();
+    libxml_use_internal_errors($previousErrorHandling);
+
+    $xpath = new DOMXPath($document);
+    $supportOptions = $xpath->query(sprintf('//*[@data-support-options="%s"]', $variant));
+    $sponsorLink = $xpath->query(sprintf('//*[@data-support-options="%s"]//*[@data-support-option="sponsor"]', $variant));
+    $hireLink = $xpath->query(sprintf('//*[@data-support-options="%s"]//*[@data-support-option="hire"]', $variant));
+
+    expect($supportOptions)->toHaveCount(1)
+        ->and($sponsorLink)->toHaveCount(1)
+        ->and($sponsorLink->item(0)?->getAttribute('href'))->toBe('https://github.com/sponsors/benjamincrozat')
+        ->and($hireLink)->toHaveCount(1)
+        ->and($hireLink->item(0)?->getAttribute('href'))->toBe('https://benjamincrozat.com');
+})->with([
+    'landing page' => ['/', 'featured'],
+    'documentation page' => ['/docs/installation', 'compact'],
+]);
+
 it('publishes every public documentation route through the XML sitemap', function () {
     $documentationRoutes = collect(config('docs.navigation'))
         ->flatMap(fn (array $group): array => $group['pages'])

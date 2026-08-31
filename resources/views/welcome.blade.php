@@ -86,5 +86,7 @@
                     </div>
                 </div>
             </section>
+
+            <x-project-support variant="featured" />
     </main>
 </x-layouts.site>

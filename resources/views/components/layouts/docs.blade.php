@@ -95,6 +95,8 @@
                 </nav>
 
                 {{ $slot }}
+
+                <x-project-support variant="compact" />
             </article>
 
             <aside class="hidden border-l border-zinc-950/[0.07] px-6 py-16 xl:block dark:border-white/[0.08]" @if ($sections !== []) aria-label="On this page" @else aria-hidden="true" @endif>
