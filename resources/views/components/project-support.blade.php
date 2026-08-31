@@ -12,26 +12,26 @@
         aria-labelledby="project-support-title"
         data-support-options="featured"
     >
-        <div class="mx-auto max-w-[76rem] overflow-hidden rounded-[1.75rem] border border-zinc-950/10 bg-[#111116] text-white dark:border-white/10">
-            <div class="grid lg:grid-cols-[minmax(0,1.2fr)_minmax(22rem,0.8fr)]">
-                <div class="min-w-0 p-7 sm:p-10 lg:p-12 xl:p-14">
-                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-violet-300">Support New Debug Bar</p>
-                    <h2 id="project-support-title" class="mt-4 max-w-[38rem] text-balance text-3xl font-semibold tracking-[-0.045em] sm:text-4xl lg:text-[2.75rem] lg:leading-[1.05]">
-                        Support the project—or hire the developer behind it.
-                    </h2>
-                    <p class="mt-5 max-w-[40rem] text-base leading-7 text-zinc-300 sm:text-lg sm:leading-8">
-                        New Debug Bar is free and open source. Sponsorship funds the time to maintain it, document it, and keep making Laravel debugging better.
-                    </p>
+        <div class="mx-auto max-w-[68rem] overflow-hidden rounded-[1.75rem] border border-zinc-950/10 bg-[#111116] text-white dark:border-white/10">
+            <div class="min-w-0 p-7 sm:p-10 lg:p-12 xl:p-14">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-violet-300">Support New Debug Bar</p>
+                <h2 id="project-support-title" class="mt-4 max-w-[48rem] text-balance text-3xl font-semibold tracking-[-0.045em] sm:text-4xl lg:text-[2.75rem] lg:leading-[1.05]">
+                    Support the project—or hire the developer behind it.
+                </h2>
+                <p class="mt-5 max-w-[44rem] text-base leading-7 text-zinc-300 sm:text-lg sm:leading-8">
+                    New Debug Bar is free and open source. Sponsorship funds the time to maintain it, document it, and keep making Laravel debugging better.
+                </p>
 
-                    <div class="mt-10 grid gap-8 border-t border-white/10 pt-8 sm:grid-cols-2 sm:gap-0">
-                        <article class="flex min-w-0 flex-col sm:pr-8">
-                            <h3 class="text-lg font-semibold tracking-[-0.025em]">Sponsor ongoing work</h3>
-                            <p class="mt-3 text-sm leading-6 text-zinc-400">
-                                Help fund maintenance, documentation, and new debugging features.
-                            </p>
+                <div class="mt-10 grid gap-8 border-t border-white/10 pt-8 sm:grid-cols-2 sm:gap-0">
+                    <article class="grid min-w-0 grid-rows-[auto_1fr_auto] sm:pr-10">
+                        <h3 class="text-lg font-semibold tracking-[-0.025em]">Sponsor ongoing work</h3>
+                        <p class="mt-3 text-sm leading-6 text-zinc-400">
+                            Help fund maintenance, documentation, and new debugging features.
+                        </p>
 
+                        <div class="pt-7">
                             <a
-                                class="mt-6 inline-flex min-h-11 w-fit items-center gap-2 rounded-xl bg-violet-500 px-4 text-sm font-semibold text-white transition-colors hover:bg-violet-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300 sm:mt-auto"
+                                class="inline-flex min-h-11 w-fit items-center gap-2 rounded-xl bg-violet-500 px-4 text-sm font-semibold text-white transition-colors hover:bg-violet-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300"
                                 href="{{ $sponsorUrl }}"
                                 data-support-option="sponsor"
                             >
@@ -40,27 +40,29 @@
                                     <path d="M3.5 8h9M9 4.5 12.5 8 9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </a>
-                        </article>
+                        </div>
+                    </article>
 
-                        <article class="flex min-w-0 flex-col border-t border-white/10 pt-8 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-8">
-                            <div class="flex items-center gap-4">
-                                <img
-                                    class="size-20 shrink-0 rounded-2xl object-cover object-[50%_18%] ring-1 ring-white/15 lg:hidden"
-                                    src="{{ Illuminate\Support\Facades\Vite::asset('resources/images/people/benjamin-crozat.webp') }}"
-                                    alt=""
-                                    width="768"
-                                    height="1154"
-                                    loading="lazy"
-                                    decoding="async"
-                                >
-                                <h3 class="text-lg font-semibold tracking-[-0.025em]">Work with me</h3>
-                            </div>
-                            <p class="mt-3 text-sm leading-6 text-zinc-400">
-                                Bring me into your Laravel project for hands-on development.
-                            </p>
+                    <article class="grid min-w-0 grid-rows-[auto_1fr_auto] border-t border-white/10 pt-8 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-10">
+                        <div class="flex items-center gap-4">
+                            <img
+                                class="size-14 shrink-0 rounded-2xl object-cover object-[50%_18%] ring-1 ring-white/15"
+                                src="{{ Illuminate\Support\Facades\Vite::asset('resources/images/people/benjamin-crozat.webp') }}"
+                                alt=""
+                                width="512"
+                                height="770"
+                                loading="lazy"
+                                decoding="async"
+                            >
+                            <h3 class="text-lg font-semibold tracking-[-0.025em]">Work with me</h3>
+                        </div>
+                        <p class="mt-3 text-sm leading-6 text-zinc-400">
+                            Bring me into your Laravel project for hands-on development.
+                        </p>
 
+                        <div class="pt-7">
                             <a
-                                class="mt-6 inline-flex min-h-11 w-fit items-center gap-2 rounded-xl border border-white/15 bg-white/[0.06] px-4 text-sm font-semibold text-white transition-colors hover:bg-white/[0.11] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300 sm:mt-auto"
+                                class="inline-flex min-h-11 w-fit items-center gap-2 rounded-xl border border-white/15 bg-white/[0.06] px-4 text-sm font-semibold text-white transition-colors hover:bg-white/[0.11] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300"
                                 href="{{ $hireUrl }}"
                                 data-support-option="hire"
                             >
@@ -69,25 +71,8 @@
                                     <path d="M3.5 8h9M9 4.5 12.5 8 9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </a>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="relative hidden min-h-[33rem] overflow-hidden border-l border-white/10 lg:block">
-                    <img
-                        class="absolute inset-0 size-full object-cover object-[50%_18%]"
-                        src="{{ Illuminate\Support\Facades\Vite::asset('resources/images/people/benjamin-crozat.webp') }}"
-                        alt=""
-                        width="768"
-                        height="1154"
-                        loading="lazy"
-                        decoding="async"
-                    >
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" aria-hidden="true"></div>
-                    <div class="absolute inset-x-0 bottom-0 p-8">
-                        <p class="text-lg font-semibold tracking-[-0.025em]">Benjamin Crozat</p>
-                        <p class="mt-1 text-sm text-zinc-300">Creator of New Debug Bar</p>
-                    </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
@@ -110,45 +95,36 @@
                     Sponsor the maintenance, documentation, and features that keep it useful.
                 </p>
 
-                <a
-                    class="mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl bg-violet-600 px-4 text-sm font-semibold text-white transition-colors hover:bg-violet-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:bg-violet-500 dark:hover:bg-violet-400 dark:focus-visible:outline-violet-300"
-                    href="{{ $sponsorUrl }}"
-                    data-support-option="sponsor"
-                >
-                    Sponsor on GitHub
-                    <svg class="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                        <path d="M3.5 8h9M9 4.5 12.5 8 9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
+                <div class="pt-7">
+                    <a
+                        class="inline-flex min-h-11 items-center gap-2 rounded-xl bg-violet-600 px-4 text-sm font-semibold text-white transition-colors hover:bg-violet-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:bg-violet-500 dark:hover:bg-violet-400 dark:focus-visible:outline-violet-300"
+                        href="{{ $sponsorUrl }}"
+                        data-support-option="sponsor"
+                    >
+                        Sponsor on GitHub
+                        <svg class="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <path d="M3.5 8h9M9 4.5 12.5 8 9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
 
             <div class="border-t border-zinc-950/10 pt-6 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-8 dark:border-white/10">
-                <div class="flex items-center gap-4">
-                    <img
-                        class="size-14 shrink-0 rounded-2xl object-cover object-[50%_18%] ring-1 ring-zinc-950/10 dark:ring-white/15"
-                        src="{{ Illuminate\Support\Facades\Vite::asset('resources/images/people/benjamin-crozat.webp') }}"
-                        alt=""
-                        width="768"
-                        height="1154"
-                        loading="lazy"
-                        decoding="async"
-                    >
-                    <div>
-                        <p class="text-sm font-semibold">Need hands-on help?</p>
-                        <p class="mt-1 text-sm leading-5 text-zinc-600 dark:text-zinc-400">Bring Benjamin into your Laravel project.</p>
-                    </div>
-                </div>
+                <p class="text-sm font-semibold">Need hands-on help?</p>
+                <p class="mt-2 text-sm leading-5 text-zinc-600 dark:text-zinc-400">Bring Benjamin into your Laravel project.</p>
 
-                <a
-                    class="mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl border border-violet-300/80 bg-white/70 px-4 text-sm font-semibold text-violet-800 transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:border-white/15 dark:bg-white/[0.06] dark:text-white dark:hover:bg-white/[0.11] dark:focus-visible:outline-violet-300"
-                    href="{{ $hireUrl }}"
-                    data-support-option="hire"
-                >
-                    Hire Benjamin
-                    <svg class="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                        <path d="M3.5 8h9M9 4.5 12.5 8 9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
+                <div class="pt-7">
+                    <a
+                        class="inline-flex min-h-11 items-center gap-2 rounded-xl border border-violet-300/80 bg-white/70 px-4 text-sm font-semibold text-violet-800 transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:border-white/15 dark:bg-white/[0.06] dark:text-white dark:hover:bg-white/[0.11] dark:focus-visible:outline-violet-300"
+                        href="{{ $hireUrl }}"
+                        data-support-option="hire"
+                    >
+                        Hire Benjamin
+                        <svg class="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <path d="M3.5 8h9M9 4.5 12.5 8 9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </aside>
