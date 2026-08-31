@@ -56,10 +56,10 @@ JSON;
 @endphp
 
 <x-layouts.docs
-    meta-title="Connect New Debug Bar to Codex, Claude, Cursor, or VS Code"
-    description="Connect New Debug Bar's local MCP server to Codex, Claude Code, Cursor, VS Code, or another coding agent so it can inspect exact Laravel request profiles."
+    meta-title="Connect the New Debug Bar to Codex, Claude, Cursor, or VS Code"
+    description="Connect the New Debug Bar's local MCP server to Codex, Claude Code, Cursor, VS Code, or another coding agent so it can inspect exact Laravel request profiles."
     :canonical="url('/docs/mcp')"
-    og-title="Connect New Debug Bar to your coding agent"
+    og-title="Connect the New Debug Bar to your coding agent"
     og-description="Give Codex, Claude Code, Cursor, VS Code, and other local MCP clients exact Laravel request profiles instead of logs and guesses."
     page-title="MCP setup"
     :sections="[
@@ -74,7 +74,7 @@ JSON;
         ['id' => 'troubleshooting', 'label' => 'Troubleshooting'],
     ]"
 >
-    <x-docs.page-header category="Use with agents" title="Connect New Debug Bar to your coding agent">
+    <x-docs.page-header category="Use with agents" title="Connect the New Debug Bar to your coding agent">
         Let Codex, Claude Code, Cursor, VS Code, or another local MCP client read the exact profile saved for each Laravel request.
     </x-docs.page-header>
 
@@ -85,7 +85,7 @@ JSON;
     <x-docs.section id="before-you-start" title="Before you start">
         <ul class="mt-5 space-y-3" role="list">
             <x-docs.check-item>
-                <a class="font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:decoration-violet-600 dark:text-violet-300 dark:decoration-violet-500/60 dark:hover:decoration-violet-300" href="{{ route('docs.installation') }}">Install New Debug Bar</a> in your Laravel app.
+                <a class="font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:decoration-violet-600 dark:text-violet-300 dark:decoration-violet-500/60 dark:hover:decoration-violet-300" href="{{ route('docs.installation') }}">Install the New Debug Bar</a> in your Laravel app.
             </x-docs.check-item>
             <x-docs.check-item>
                 Make sure the app uses its <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">local</code> environment.
@@ -195,7 +195,7 @@ JSON;
         <p class="mt-6 text-base leading-7 text-zinc-600 dark:text-zinc-400">Visit a page in your Laravel app, then ask:</p>
 
         <x-docs.callout class="mt-5" label="Suggested agent prompt">
-            Inspect the New Debug Bar profile for the page I just visited. Tell me what happened, what looks wrong, and what I should inspect next.
+            Inspect the profile from the New Debug Bar for the page I just visited. Tell me what happened, what looks wrong, and what I should inspect next.
         </x-docs.callout>
 
     </x-docs.section>
@@ -245,7 +245,7 @@ JSON;
                 Visit a normal page in the Laravel app first, then ask the client to list recent profiles again.
             </x-docs.disclosure>
             <x-docs.disclosure summary="The client only runs online">
-                New Debug Bar needs a local MCP client that can start a command on your computer.
+                The New Debug Bar needs a local MCP client that can start a command on your computer.
             </x-docs.disclosure>
         </div>
     </x-docs.section>

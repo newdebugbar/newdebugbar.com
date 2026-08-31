@@ -24,7 +24,7 @@ PHP;
 
 <x-layouts.docs
     meta-title="Test Laravel request profiles with Pest | New Debug Bar"
-    description="Enable New Debug Bar in Laravel's testing environment and use Pest profile assertions for errors, queries, N+1 behavior, duration, query time, and peak memory."
+    description="Enable the New Debug Bar in Laravel's testing environment and use Pest profile assertions for errors, queries, N+1 behavior, duration, query time, and peak memory."
     :canonical="url('/docs/testing')"
     og-title="Test Laravel request profiles with Pest"
     og-description="Turn the exact New Debug Bar profile ID on a test response into focused performance and correctness assertions."
@@ -42,7 +42,7 @@ PHP;
     </x-docs.page-header>
 
     <x-docs.section id="enable" title="Enable profiling before the test app boots">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">New Debug Bar defaults to the <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">local</code> environment. To capture profiles during tests, publish the package configuration and include <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">testing</code> in the allowed environments:</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The New Debug Bar defaults to the <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">local</code> environment. To capture profiles during tests, publish the package configuration and include <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">testing</code> in the allowed environments:</p>
 
         <x-docs.copyable-code
             class="mt-5"

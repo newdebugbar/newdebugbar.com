@@ -14,12 +14,12 @@
     >
         <div class="mx-auto max-w-[68rem] overflow-hidden rounded-[1.75rem] border border-zinc-950/10 bg-[#111116] text-white dark:border-white/10">
             <div class="min-w-0 p-7 sm:p-10 lg:p-12 xl:p-14">
-                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-violet-300">Support New Debug Bar</p>
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-violet-300">Support the New Debug Bar</p>
                 <h2 id="project-support-title" class="mt-4 max-w-[48rem] text-balance text-3xl font-semibold tracking-[-0.045em] sm:text-4xl lg:text-[2.75rem] lg:leading-[1.05]">
                     Support the project—or hire the developer behind it.
                 </h2>
                 <p class="mt-5 max-w-[44rem] text-base leading-7 text-zinc-300 sm:text-lg sm:leading-8">
-                    New Debug Bar is free and open source. Sponsorship funds the time to maintain it, document it, and keep making Laravel debugging better.
+                    The New Debug Bar is free and open source. Sponsorship funds the time to maintain it, document it, and keep making Laravel debugging better.
                 </p>
 
                 <div class="mt-10 grid gap-8 border-t border-white/10 pt-8 sm:grid-cols-2 sm:gap-0">
@@ -89,7 +89,7 @@
             <div class="min-w-0">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-violet-700 dark:text-violet-300">Support the work</p>
                 <h2 id="documentation-support-title" class="mt-3 max-w-[24rem] text-2xl font-semibold tracking-[-0.035em] sm:text-[1.75rem] sm:leading-[1.12]">
-                    Help keep New Debug Bar moving.
+                    Help keep the New Debug Bar moving.
                 </h2>
                 <p class="mt-3 max-w-[27rem] text-sm leading-6 text-zinc-600 dark:text-zinc-300">
                     Sponsor the maintenance, documentation, and features that keep it useful.

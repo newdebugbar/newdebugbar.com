@@ -18,7 +18,7 @@
     </x-docs.page-header>
 
     <x-docs.section id="difference" title="Choose the section by API">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Cache records operations emitted by Laravel’s cache system, regardless of the selected cache driver. Redis records commands made through the Redis client. When a Redis-backed cache operation also emits a low-level command, New Debug Bar removes the duplicate Redis entry.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Cache records operations emitted by Laravel’s cache system, regardless of the selected cache driver. Redis records commands made through the Redis client. When a Redis-backed cache operation also emits a low-level command, the New Debug Bar removes the duplicate Redis entry.</p>
 
         <x-docs.callout class="mt-6" title="An empty Redis section can be correct:">
             using a Redis cache store does not mean every cache action should appear again as a direct Redis command.

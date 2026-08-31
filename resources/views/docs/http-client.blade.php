@@ -14,7 +14,7 @@
     ]"
 >
     <x-docs.page-header category="Framework activity" title="See which outbound call held up the request">
-        New Debug Bar connects Laravel HTTP client requests to their response, duration, failure state, redacted payload, and application call site.
+        The New Debug Bar connects Laravel HTTP client requests to their response, duration, failure state, redacted payload, and application call site.
     </x-docs.page-header>
 
     <x-docs.section id="captured" title="Inspect the request and response together">

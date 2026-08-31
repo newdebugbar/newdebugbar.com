@@ -1,5 +1,5 @@
 <x-layouts.docs
-    meta-title="Debug Livewire 4 with New Debug Bar"
+    meta-title="Debug Livewire 4 with the New Debug Bar"
     description="Inspect Livewire 4 page renders and update requests, component identity, properties, lifecycle activity, validation, queries, views, and events."
     :canonical="url('/docs/livewire')"
     og-title="Debug Livewire 4 requests and components"
@@ -18,9 +18,9 @@
     </x-docs.page-header>
 
     <x-docs.section id="compatibility" title="Livewire compatibility">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">New Debug Bar uses Livewire 4 for its own interface and can inspect host applications that use Livewire 4. Your Laravel app does not need to use Livewire, but an app that still depends on Livewire 3 cannot install the package.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The New Debug Bar uses Livewire 4 for its own interface and can inspect host applications that use Livewire 4. Your Laravel app does not need to use Livewire, but an app that still depends on Livewire 3 cannot install the package.</p>
 
-        <x-docs.callout class="mt-6" title="New Debug Bar ignores its own Livewire traffic:">
+        <x-docs.callout class="mt-6" title="The New Debug Bar ignores its own Livewire traffic:">
             toolbar updates and package assets are excluded so the inspector does not fill itself with internal profiles.
         </x-docs.callout>
     </x-docs.section>
@@ -42,7 +42,7 @@
     </x-docs.section>
 
     <x-docs.section id="activity" title="Follow component activity in order">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">New Debug Bar records bounded host-component activity such as mounting, hydration, property updates, method calls, rendering, dispatches, redirects, streams, downloads, and failures when Livewire exposes that lifecycle evidence.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The New Debug Bar records bounded host-component activity such as mounting, hydration, property updates, method calls, rendering, dispatches, redirects, streams, downloads, and failures when Livewire exposes that lifecycle evidence.</p>
 
         <ol class="mt-6 space-y-6" role="list">
             <x-docs.step number="1" title="Find the component instance">

@@ -51,7 +51,7 @@
                                     href="https://onlyfansapi.com"
                                     target="_blank"
                                     rel="noopener noreferrer sponsored"
-                                    aria-label="Visit OnlyFans API, a New Debug Bar sponsor"
+                                    aria-label="Visit OnlyFans API, a sponsor of the New Debug Bar"
                                 >
                                     <svg class="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                         <path d="m4 17 6-6-6-6M12 19h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -64,7 +64,7 @@
                                 <a
                                     class="inline-flex min-h-10 min-w-32 items-center justify-center rounded-full bg-zinc-950/[0.04] px-4 text-sm font-medium text-zinc-600 transition-[background-color,color] hover:bg-zinc-950/[0.07] hover:text-zinc-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:bg-white/[0.06] dark:text-zinc-400 dark:hover:bg-white/[0.1] dark:hover:text-white"
                                     href="https://github.com/sponsors/benjamincrozat"
-                                    aria-label="Sponsor New Debug Bar and add your logo"
+                                    aria-label="Sponsor the New Debug Bar and add your logo"
                                 >
                                     Your logo here
                                 </a>
@@ -80,7 +80,7 @@
                 <div class="mt-8 h-[clamp(18rem,22vw,20rem)] w-full overflow-visible px-[clamp(3rem,6vw,6rem)] [clip-path:inset(-6rem_-6rem_0)] max-[79.999rem]:h-[clamp(17rem,28vw,19rem)] max-[47.999rem]:mt-6 max-[47.999rem]:h-[clamp(15rem,82vw,19rem)] max-[47.999rem]:px-0">
                     <div class="relative mx-auto w-[calc(100%_-_1rem)] min-w-0 before:absolute before:inset-[12%_7%_5%] before:z-[-1] before:rounded-[50%] before:bg-[rgb(124_58_237_/_16%)] before:blur-[5rem] before:content-[''] max-[79.999rem]:w-full max-[47.999rem]:w-[min(28rem,calc(100%_+_0.5rem))] max-[47.999rem]:before:inset-[16%_0_8%] max-[47.999rem]:before:blur-[3.5rem]">
                         <x-screenshots.request-inspector
-                            alt="New Debug Bar request inspector showing the request trace, route, controller, response, query count, and duration for a Kyoto trip page"
+                            alt="The New Debug Bar request inspector showing the request trace, route, controller, response, query count, and duration for a Kyoto trip page"
                             fetchpriority="high"
                         />
                     </div>

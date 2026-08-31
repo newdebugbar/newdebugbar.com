@@ -1,6 +1,6 @@
 <x-layouts.docs
     meta-title="Debug Laravel Eloquent models | New Debug Bar"
-    description="Inspect Eloquent model retrievals, writes, repeated records, changed attributes, application sources, and related queries with New Debug Bar."
+    description="Inspect Eloquent model retrievals, writes, repeated records, changed attributes, application sources, and related queries with the New Debug Bar."
     :canonical="url('/docs/eloquent')"
     og-title="Debug Eloquent model activity"
     og-description="Connect Laravel model retrievals and writes to their records, source code, timing, and database queries."

@@ -32,7 +32,7 @@
     </x-docs.section>
 
     <x-docs.section id="background" title="Refresh correlated worker activity">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">New Debug Bar stores queue-worker executions as separate local profiles. Correlation facts can connect a dispatch, queued mail, or queued notification back to the worker profile that sent, completed, or failed it.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The New Debug Bar stores queue-worker executions as separate local profiles. Correlation facts can connect a dispatch, queued mail, or queued notification back to the worker profile that sent, completed, or failed it.</p>
 
         <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">If the original profile still shows pending background work, let the local worker process the job and refresh related activity. Open the worker profile for its own queries, logs, exceptions, model writes, mail, notifications, and duration.</p>
     </x-docs.section>
@@ -46,7 +46,7 @@
     <x-docs.section id="workflow" title="Debug one queued operation">
         <ol class="mt-6 space-y-6" role="list">
             <x-docs.step number="1" title="Capture the origin request">Confirm the job, connection, queue, delay, and dispatch source.</x-docs.step>
-            <x-docs.step number="2" title="Run the local worker">Let the same queue process the job under New Debug Bar.</x-docs.step>
+            <x-docs.step number="2" title="Run the local worker">Let the same queue process the job while the New Debug Bar is running.</x-docs.step>
             <x-docs.step number="3" title="Refresh related activity">Open the correlated worker profile instead of expecting worker evidence in the web profile.</x-docs.step>
             <x-docs.step number="4" title="Inspect the worker cause">Use Exceptions, Logs, Queries, Models, Mail, and Notifications inside that worker profile.</x-docs.step>
         </ol>

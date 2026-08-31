@@ -1,6 +1,6 @@
 <x-layouts.docs
-    meta-title="Profile Laravel performance with New Debug Bar"
-    description="Use New Debug Bar request duration, query time, peak memory, timeline, HTTP calls, views, and events to find expensive Laravel work."
+    meta-title="Profile Laravel performance with the New Debug Bar"
+    description="Use the New Debug Bar's request duration, query time, peak memory, timeline, HTTP calls, views, and events to find expensive Laravel work."
     :canonical="url('/docs/performance')"
     og-title="Profile Laravel request performance"
     og-description="A practical workflow for locating expensive work and comparing a Laravel request before and after a change."
@@ -24,14 +24,14 @@
             <x-docs.check-item>Compare the same method, path, request type, and realistic data.</x-docs.check-item>
             <x-docs.check-item>Use a second warm request when startup, compilation, or cache warming affects the first one.</x-docs.check-item>
             <x-docs.check-item>Repeat the request more than once when the difference is small.</x-docs.check-item>
-            <x-docs.check-item>Use production monitoring for production latency; use New Debug Bar to explain local work.</x-docs.check-item>
+            <x-docs.check-item>Use production monitoring for production latency; use the New Debug Bar to explain local work.</x-docs.check-item>
         </ul>
     </x-docs.section>
 
     <x-docs.section id="overview" title="Use the overview to choose a direction">
         <x-docs.figure class="mt-6" caption="Request duration, query count, query time, status, and findings narrow the search before you open a detailed inspector.">
             <x-screenshots.request-inspector
-                alt="New Debug Bar request overview with duration and query measurements"
+                alt="The New Debug Bar request overview with duration and query measurements"
                 loading="lazy"
             />
         </x-docs.figure>
@@ -80,7 +80,7 @@
     <x-docs.section id="verify" title="Verify the improvement">
         <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Repeat the same warm request and compare the metric your change was meant to improve. Also check status, response behavior, query count, and findings so a faster result did not hide missing work.</p>
 
-        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">For a path with a stable budget, use New Debug Bar’s profile assertions to protect maximum duration, query count, query time, peak memory, and error-free behavior in a Laravel test.</p>
+        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">For a path with a stable budget, use the New Debug Bar’s profile assertions to protect maximum duration, query count, query time, peak memory, and error-free behavior in a Laravel test.</p>
     </x-docs.section>
 
     <x-docs.next-step

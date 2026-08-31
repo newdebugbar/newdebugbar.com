@@ -8,7 +8,7 @@
         class="mx-auto flex h-[4.75rem] max-w-[100rem] items-center gap-2 px-4 sm:gap-5 sm:px-8 lg:px-10"
         aria-label="Primary navigation"
     >
-        <a class="flex shrink-0 flex-col leading-none" href="/" aria-label="New Debug Bar for Laravel">
+        <a class="flex shrink-0 flex-col leading-none" href="/" aria-label="The New Debug Bar for Laravel">
             <span class="text-[0.8125rem] font-semibold tracking-[-0.02em] min-[23rem]:text-base sm:text-2xl sm:tracking-[-0.035em]">New Debug Bar</span>
             <span class="mt-0.5 text-[0.45rem] font-semibold uppercase tracking-[0.14em] text-violet-600 min-[23rem]:text-[0.5rem] sm:mt-1 sm:text-[0.625rem] sm:tracking-[0.18em] dark:text-violet-400">for Laravel</span>
         </a>

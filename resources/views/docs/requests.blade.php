@@ -1,6 +1,6 @@
 <x-layouts.docs
-    meta-title="Inspect Laravel requests with New Debug Bar"
-    description="Choose the correct Laravel request profile, read its overview and findings, and move through New Debug Bar without losing the request you are debugging."
+    meta-title="Inspect Laravel requests with the New Debug Bar"
+    description="Choose the correct Laravel request profile, read its overview and findings, and move through the New Debug Bar without losing the request you are debugging."
     :canonical="url('/docs/requests')"
     og-title="Inspect Laravel request profiles"
     og-description="A practical workflow for selecting and understanding the exact request you need to debug."
@@ -22,7 +22,7 @@
 
         <x-docs.figure class="mt-7" caption="The same request inspector image is reused anywhere this product view helps explain a workflow.">
             <x-screenshots.request-inspector
-                alt="New Debug Bar request inspector showing a selected Laravel request profile"
+                alt="The New Debug Bar request inspector showing a selected Laravel request profile"
                 loading="lazy"
             />
         </x-docs.figure>

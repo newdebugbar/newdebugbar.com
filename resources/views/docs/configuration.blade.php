@@ -9,10 +9,10 @@ PHP;
 @endphp
 
 <x-layouts.docs
-    meta-title="Configure New Debug Bar for Laravel"
-    description="Configure New Debug Bar environments, thresholds, profile storage, capture limits, query bindings, keys, and call-site evidence."
+    meta-title="Configure the New Debug Bar for Laravel"
+    description="Configure environments, thresholds, profile storage, capture limits, query bindings, keys, and call-site evidence in the New Debug Bar."
     :canonical="url('/docs/configuration')"
-    og-title="Configure New Debug Bar"
+    og-title="Configure the New Debug Bar"
     og-description="Use the defaults first, then tune the few settings that change profiling, retention, or captured evidence."
     page-title="Configuration"
     :sections="[
@@ -25,7 +25,7 @@ PHP;
     ]"
 >
     <x-docs.page-header category="Getting started" title="Change only the defaults your app needs">
-        New Debug Bar works without a published file. Publish the configuration when your local environment, workload, or data policy needs a different runtime effect.
+        The New Debug Bar works without a published file. Publish the configuration when your local environment, workload, or data policy needs a different runtime effect.
     </x-docs.page-header>
 
     <x-docs.section id="publish" title="Publish the configuration">
@@ -75,7 +75,7 @@ PHP;
     </x-docs.section>
 
     <x-docs.section id="thresholds" title="Tune findings to local work">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Thresholds decide when New Debug Bar calls attention to captured work. They do not stop collection.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Thresholds decide when the New Debug Bar calls attention to captured work. They do not stop collection.</p>
 
         <ul class="mt-5 space-y-3" role="list">
             <x-docs.check-item><code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">slow_query_ms</code> defaults to <code class="font-mono text-[0.9em]">100</code>.</x-docs.check-item>

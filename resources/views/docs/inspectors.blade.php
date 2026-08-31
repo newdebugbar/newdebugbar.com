@@ -21,10 +21,10 @@
 @endphp
 
 <x-layouts.docs
-    meta-title="New Debug Bar inspector sections reference"
-    description="See what every New Debug Bar inspector captures for Laravel requests, queries, models, views, Livewire, errors, logs, HTTP, queues, mail, cache, Redis, and more."
+    meta-title="Inspector sections in the New Debug Bar"
+    description="See what every inspector in the New Debug Bar captures for Laravel requests, queries, models, views, Livewire, errors, logs, HTTP, queues, mail, cache, Redis, and more."
     :canonical="url('/docs/inspectors')"
-    og-title="New Debug Bar inspector sections"
+    og-title="Inspector sections in the New Debug Bar"
     og-description="A complete reference for the focused evidence available in each Laravel debug profile section."
     page-title="Inspector sections"
     :sections="[
@@ -67,7 +67,7 @@
     </x-docs.section>
 
     <x-docs.section id="empty-sections" title="An empty section can be correct">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">A request that sent no mail should have no mail records. A page that made no direct Redis commands may still use Laravel’s cache abstraction and populate Cache instead. The absence of rows means New Debug Bar retained no matching activity for that selected profile.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">A request that sent no mail should have no mail records. A page that made no direct Redis commands may still use Laravel’s cache abstraction and populate Cache instead. The absence of rows means the New Debug Bar retained no matching activity for that selected profile.</p>
 
         <x-docs.callout class="mt-6" title="Check truncation separately:">
             an empty section and a bounded section are different. When collection limits drop records, the section reports retained and omitted counts so you know the sample is incomplete.

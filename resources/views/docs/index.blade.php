@@ -1,10 +1,10 @@
 @php($groups = config('docs.navigation'))
 
 <x-layouts.docs
-    meta-title="New Debug Bar documentation for Laravel"
-    description="Learn how to install New Debug Bar, inspect Laravel requests, debug queries and framework activity, connect coding agents, and test saved profiles."
+    meta-title="The New Debug Bar documentation for Laravel"
+    description="Learn how to install the New Debug Bar, inspect Laravel requests, debug queries and framework activity, connect coding agents, and test saved profiles."
     :canonical="url('/docs')"
-    og-title="New Debug Bar documentation"
+    og-title="The New Debug Bar documentation"
     og-description="Practical guides for debugging Laravel requests, queries, performance, Livewire, queues, mail, cache, and more."
     page-title="Documentation"
 >

@@ -1,8 +1,8 @@
 <x-layouts.docs
-    meta-title="New Debug Bar data storage and privacy"
-    description="Understand which local Laravel debug data New Debug Bar captures, where profiles are stored, how retention and limits work, and how to mask bindings or hash keys."
+    meta-title="Data storage and privacy in the New Debug Bar"
+    description="Understand which local Laravel debug data the New Debug Bar captures, where profiles are stored, how retention and limits work, and how to mask bindings or hash keys."
     :canonical="url('/docs/data-and-privacy')"
-    og-title="New Debug Bar data and privacy"
+    og-title="Data and privacy in the New Debug Bar"
     og-description="Local profile storage, short retention, bounded collection, query binding policies, key policies, browser access, and MCP access."
     page-title="Data and privacy"
     :sections="[
@@ -15,21 +15,21 @@
     ]"
 >
     <x-docs.page-header category="Reference" title="Know what stays in a local debug profile">
-        New Debug Bar keeps short-lived request evidence on your machine. Exact values are useful for debugging, so choose stricter capture policies when the development environment is shared or uses sensitive data.
+        The New Debug Bar keeps short-lived request evidence on your machine. Exact values are useful for debugging, so choose stricter capture policies when the development environment is shared or uses sensitive data.
     </x-docs.page-header>
 
     <x-docs.section id="local-only" title="The package runs only in allowed environments">
         <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The default allowed environment is <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">local</code>. When the package is disabled or the current Laravel environment is not allowed, profiling, package routes, the browser interface, and the MCP server stay inactive.</p>
 
         <x-docs.callout class="mt-6" tone="notice" title="Do not treat an environment name as access control">
-            Keep New Debug Bar in <code class="font-mono text-[0.9em] text-violet-950 dark:text-violet-100">require-dev</code> and skip development dependencies in production. If a shared environment needs the package, protect that environment separately and choose stricter value policies.
+            Keep the New Debug Bar in <code class="font-mono text-[0.9em] text-violet-950 dark:text-violet-100">require-dev</code> and skip development dependencies in production. If a shared environment needs the package, protect that environment separately and choose stricter value policies.
         </x-docs.callout>
     </x-docs.section>
 
     <x-docs.section id="captured" title="Profiles contain debugging evidence">
         <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">A profile can contain request details, route and user context, query SQL and bindings, model identifiers and changes, cache and Redis keys, log context, exception frames and source context, validation messages, view data, mail previews, notification payloads, HTTP metadata, and other values produced during the request.</p>
 
-        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">The exact sections depend on what happened. New Debug Bar does not invent missing evidence, and it does not need every section to be populated for a profile to be useful.</p>
+        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">The exact sections depend on what happened. The New Debug Bar does not invent missing evidence, and it does not need every section to be populated for a profile to be useful.</p>
     </x-docs.section>
 
     <x-docs.section id="storage" title="Profiles use private short-lived files">
@@ -76,7 +76,7 @@
     <x-docs.section id="access" title="The browser and MCP read local profiles">
         <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The injected browser interface requests one selected profile and one inspector section at a time. The local MCP server exposes read-only tools with item and byte limits, and its generic data tool follows bounded paths into retained profile values.</p>
 
-        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">An MCP client must be able to start the Laravel app’s local Artisan command. New Debug Bar does not upload profiles to a hosted New Debug Bar service.</p>
+        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">An MCP client must be able to start the Laravel app’s local Artisan command. The New Debug Bar does not upload profiles to a hosted service.</p>
     </x-docs.section>
 
     <x-docs.next-step

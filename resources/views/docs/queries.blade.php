@@ -31,12 +31,12 @@
         </ol>
 
         <x-docs.callout class="mt-7" title="Keep the two costs separate:">
-            query time is only the time New Debug Bar observed around database execution. The full request also includes PHP, rendering, outbound HTTP, and other work.
+            query time is only the time the New Debug Bar observed around database execution. The full request also includes PHP, rendering, outbound HTTP, and other work.
         </x-docs.callout>
     </x-docs.section>
 
     <x-docs.section id="repeated" title="Investigate repeated queries and likely N+1 work">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">New Debug Bar groups queries with the same normalized SQL shape. Different bindings can reveal a loop that loads one related record at a time.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The New Debug Bar groups queries with the same normalized SQL shape. Different bindings can reveal a loop that loads one related record at a time.</p>
 
         <ul class="mt-5 space-y-3" role="list">
             <x-docs.check-item>Check whether the repeated group grows with the number of models shown on the page.</x-docs.check-item>
