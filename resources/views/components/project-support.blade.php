@@ -16,16 +16,33 @@
             <div class="min-w-0 p-7 sm:p-10 lg:p-12 xl:p-14">
                 <p class="text-xs font-semibold uppercase tracking-[0.18em] text-violet-300">Support the New Debug Bar</p>
                 <h2 id="project-support-title" class="mt-4 max-w-[48rem] text-balance text-3xl font-semibold tracking-[-0.045em] sm:text-4xl lg:text-[2.75rem] lg:leading-[1.05]">
-                    Support the project—or hire the developer behind it.
+                    Invest in better Laravel debugging.
                 </h2>
                 <p class="mt-5 max-w-[44rem] text-base leading-7 text-zinc-300 sm:text-lg sm:leading-8">
-                    The New Debug Bar is free and open source. Sponsorship funds the time to maintain it, document it, and keep making Laravel debugging better.
+                    The New Debug Bar is free and open source. Companies can fund its continued development—or work with me directly when their own Laravel projects need senior delivery and technical leadership.
                 </p>
 
                 <div class="mt-10 grid gap-8 border-t border-white/10 pt-8 sm:grid-cols-2 sm:gap-0">
                     <article class="grid min-w-0 grid-rows-[auto_1fr_auto] sm:pr-10">
-                        <h3 class="text-lg font-semibold tracking-[-0.025em]">Sponsor ongoing work</h3>
-                        <p class="mt-3 text-sm leading-6 text-zinc-400">Help fund new features.</p>
+                        <div>
+                            <h3 class="text-lg font-semibold tracking-[-0.025em]">Sponsor open-source development</h3>
+                            <p class="mt-3 text-sm leading-6 text-zinc-400">If your company builds with Laravel, sponsorship directly funds the work that keeps the project useful:</p>
+                            <ul class="mt-4 space-y-2.5 text-sm leading-6 text-zinc-300">
+                                <li class="flex gap-3">
+                                    <span class="mt-[0.65rem] size-1.5 shrink-0 rounded-full bg-violet-400" aria-hidden="true"></span>
+                                    <span>Expand and refine Laravel diagnostics</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="mt-[0.65rem] size-1.5 shrink-0 rounded-full bg-violet-400" aria-hidden="true"></span>
+                                    <span>Improve browser and agent workflows</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="mt-[0.65rem] size-1.5 shrink-0 rounded-full bg-violet-400" aria-hidden="true"></span>
+                                    <span>Maintain compatibility and fix reported issues</span>
+                                </li>
+                            </ul>
+                            <p class="mt-4 text-xs leading-5 text-zinc-500">Company tiers can also include recognition across the project.</p>
+                        </div>
 
                         <div class="pt-7">
                             <a
@@ -52,10 +69,10 @@
                                 loading="lazy"
                                 decoding="async"
                             >
-                            <h3 class="text-lg font-semibold tracking-[-0.025em]">Work with an experienced developer</h3>
+                            <h3 class="text-lg font-semibold tracking-[-0.025em]">Bring senior Laravel leadership to your team</h3>
                         </div>
                         <p class="mt-3 text-sm leading-6 text-zinc-400">
-                            Bring more than 10 years of professional web development experience to your Laravel project—from difficult bugs to new features.
+                            I bring more than 10 years of professional web development experience to companies that need both delivery and direction. I can take ownership of difficult Laravel work, guide technical decisions, and help your team ship with confidence.
                         </p>
 
                         <div class="pt-7">
@@ -83,14 +100,14 @@
     >
         <div class="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-violet-500/70 to-transparent" aria-hidden="true"></div>
 
-        <div class="relative grid gap-7 sm:grid-cols-[minmax(0,1fr)_14rem] sm:gap-8">
+        <div class="relative grid gap-7 sm:grid-cols-[minmax(0,1fr)_16rem] sm:gap-8">
             <div class="min-w-0">
                 <p class="text-xs font-semibold uppercase tracking-[0.16em] text-violet-700 dark:text-violet-300">Support the work</p>
                 <h2 id="documentation-support-title" class="mt-3 max-w-[24rem] text-2xl font-semibold tracking-[-0.035em] sm:text-[1.75rem] sm:leading-[1.12]">
-                    Help keep the New Debug Bar moving.
+                    Help build better Laravel debugging.
                 </h2>
                 <p class="mt-3 max-w-[27rem] text-sm leading-6 text-zinc-600 dark:text-zinc-300">
-                    Sponsor new features for the New Debug Bar.
+                    Sponsorship funds new diagnostics, better browser and agent workflows, compatibility work, and fixes for issues reported by the community.
                 </p>
 
                 <div class="pt-7">
@@ -108,8 +125,8 @@
             </div>
 
             <div class="border-t border-zinc-950/10 pt-6 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-8 dark:border-white/10">
-                <p class="text-sm font-semibold">Need an experienced Laravel developer?</p>
-                <p class="mt-2 text-sm leading-5 text-zinc-600 dark:text-zinc-400">Benjamin brings more than 10 years of professional web development experience to your project—from difficult bugs to new features.</p>
+                <p class="text-sm font-semibold">Need senior Laravel leadership?</p>
+                <p class="mt-2 text-sm leading-5 text-zinc-600 dark:text-zinc-400">I bring more than 10 years of professional web development experience, combining hands-on Laravel delivery with technical direction. I can take ownership of difficult work, guide decisions, and help your team ship.</p>
 
                 <div class="pt-7">
                     <a
