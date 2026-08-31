@@ -10,6 +10,7 @@
 
 - Write in plain language for Laravel developers. Lead with concrete product outcomes and use internal terms only when developers need them.
 - Present MCP as exact debugging context for agents: less guessing and fewer tokens.
+- When marketing Benjamin’s freelance work, say he has more than 10 years of professional web development experience.
 - Ground claims in current behavior.
 
 ## Design

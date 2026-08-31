@@ -25,9 +25,7 @@
                 <div class="mt-10 grid gap-8 border-t border-white/10 pt-8 sm:grid-cols-2 sm:gap-0">
                     <article class="grid min-w-0 grid-rows-[auto_1fr_auto] sm:pr-10">
                         <h3 class="text-lg font-semibold tracking-[-0.025em]">Sponsor ongoing work</h3>
-                        <p class="mt-3 text-sm leading-6 text-zinc-400">
-                            Help fund maintenance, documentation, and new debugging features.
-                        </p>
+                        <p class="mt-3 text-sm leading-6 text-zinc-400">Help fund new features.</p>
 
                         <div class="pt-7">
                             <a
@@ -54,10 +52,10 @@
                                 loading="lazy"
                                 decoding="async"
                             >
-                            <h3 class="text-lg font-semibold tracking-[-0.025em]">Work with me</h3>
+                            <h3 class="text-lg font-semibold tracking-[-0.025em]">Work with an experienced developer</h3>
                         </div>
                         <p class="mt-3 text-sm leading-6 text-zinc-400">
-                            Bring me into your Laravel project for hands-on development.
+                            Bring more than 10 years of professional web development experience to your Laravel project—from difficult bugs to new features.
                         </p>
 
                         <div class="pt-7">
@@ -92,7 +90,7 @@
                     Help keep the New Debug Bar moving.
                 </h2>
                 <p class="mt-3 max-w-[27rem] text-sm leading-6 text-zinc-600 dark:text-zinc-300">
-                    Sponsor the maintenance, documentation, and features that keep it useful.
+                    Sponsor new features for the New Debug Bar.
                 </p>
 
                 <div class="pt-7">
@@ -110,8 +108,8 @@
             </div>
 
             <div class="border-t border-zinc-950/10 pt-6 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-8 dark:border-white/10">
-                <p class="text-sm font-semibold">Need hands-on help?</p>
-                <p class="mt-2 text-sm leading-5 text-zinc-600 dark:text-zinc-400">Bring Benjamin into your Laravel project.</p>
+                <p class="text-sm font-semibold">Need an experienced Laravel developer?</p>
+                <p class="mt-2 text-sm leading-5 text-zinc-600 dark:text-zinc-400">Benjamin brings more than 10 years of professional web development experience to your project—from difficult bugs to new features.</p>
 
                 <div class="pt-7">
                     <a
