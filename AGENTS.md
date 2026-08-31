@@ -15,6 +15,7 @@
 
 ## Design
 
+- Design every public-facing component for both light and dark themes.
 - Do not use badges unless they communicate an important status or category that plain text cannot express as clearly.
 - Keep `resources/css/app.css` limited to required Tailwind setup, source, variant, and theme directives. Put page and component styling in Tailwind utility classes in Blade.
 - Store product screenshots under `resources/images/screenshots`, name them for the product view, and reuse them across pages. Show screenshots of the New Debug Bar without decorative frames.

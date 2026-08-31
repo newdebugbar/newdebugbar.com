@@ -12,41 +12,41 @@
         aria-labelledby="project-support-title"
         data-support-options="featured"
     >
-        <div class="mx-auto max-w-[68rem] overflow-hidden rounded-[1.75rem] border border-zinc-950/10 bg-[#111116] text-white dark:border-white/10">
+        <div class="mx-auto max-w-[68rem] overflow-hidden rounded-[1.75rem] border border-zinc-950/10 bg-white text-zinc-950 shadow-[0_28px_80px_-56px_rgba(24,24,27,0.4)] dark:border-white/10 dark:bg-[#111116] dark:text-white dark:shadow-none">
             <div class="min-w-0 p-7 sm:p-10 lg:p-12 xl:p-14">
-                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-violet-300">Support the New Debug Bar</p>
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-violet-700 dark:text-violet-300">Support the New Debug Bar</p>
                 <h2 id="project-support-title" class="mt-4 max-w-[48rem] text-balance text-3xl font-semibold tracking-[-0.045em] sm:text-4xl lg:text-[2.75rem] lg:leading-[1.05]">
                     Invest in better Laravel debugging.
                 </h2>
-                <p class="mt-5 max-w-[44rem] text-base leading-7 text-zinc-300 sm:text-lg sm:leading-8">
+                <p class="mt-5 max-w-[44rem] text-base leading-7 text-zinc-600 sm:text-lg sm:leading-8 dark:text-zinc-300">
                     The New Debug Bar is free and open source. Companies can fund its continued development—or work with me directly when their own Laravel projects need senior delivery and technical leadership.
                 </p>
 
-                <div class="mt-10 grid gap-8 border-t border-white/10 pt-8 sm:grid-cols-2 sm:gap-0">
+                <div class="mt-10 grid gap-8 border-t border-zinc-950/10 pt-8 sm:grid-cols-2 sm:gap-0 dark:border-white/10">
                     <article class="grid min-w-0 grid-rows-[auto_1fr_auto] sm:pr-10">
                         <div>
                             <h3 class="text-lg font-semibold tracking-[-0.025em]">Sponsor open-source development</h3>
-                            <p class="mt-3 text-sm leading-6 text-zinc-400">If your company builds with Laravel, sponsorship directly funds the work that keeps the project useful:</p>
-                            <ul class="mt-4 space-y-2.5 text-sm leading-6 text-zinc-300">
+                            <p class="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400">If your company builds with Laravel, sponsorship directly funds the work that keeps the project useful:</p>
+                            <ul class="mt-4 space-y-2.5 text-sm leading-6 text-zinc-700 dark:text-zinc-300">
                                 <li class="flex gap-3">
-                                    <span class="mt-[0.65rem] size-1.5 shrink-0 rounded-full bg-violet-400" aria-hidden="true"></span>
+                                    <span class="mt-[0.65rem] size-1.5 shrink-0 rounded-full bg-violet-600 dark:bg-violet-400" aria-hidden="true"></span>
                                     <span>Expand and refine Laravel diagnostics</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="mt-[0.65rem] size-1.5 shrink-0 rounded-full bg-violet-400" aria-hidden="true"></span>
+                                    <span class="mt-[0.65rem] size-1.5 shrink-0 rounded-full bg-violet-600 dark:bg-violet-400" aria-hidden="true"></span>
                                     <span>Improve browser and agent workflows</span>
                                 </li>
                                 <li class="flex gap-3">
-                                    <span class="mt-[0.65rem] size-1.5 shrink-0 rounded-full bg-violet-400" aria-hidden="true"></span>
+                                    <span class="mt-[0.65rem] size-1.5 shrink-0 rounded-full bg-violet-600 dark:bg-violet-400" aria-hidden="true"></span>
                                     <span>Maintain compatibility and fix reported issues</span>
                                 </li>
                             </ul>
-                            <p class="mt-4 text-xs leading-5 text-zinc-500">Company tiers can also include recognition across the project.</p>
+                            <p class="mt-4 text-xs leading-5 text-zinc-500 dark:text-zinc-400">Company tiers can also include recognition across the project.</p>
                         </div>
 
                         <div class="pt-7">
                             <a
-                                class="inline-flex min-h-11 w-fit items-center gap-2 rounded-xl bg-violet-500 px-4 text-sm font-semibold text-white transition-colors hover:bg-violet-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300"
+                                class="inline-flex min-h-11 w-fit items-center gap-2 rounded-xl bg-violet-600 px-4 text-sm font-semibold text-white transition-colors hover:bg-violet-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:bg-violet-500 dark:hover:bg-violet-400 dark:focus-visible:outline-violet-300"
                                 href="{{ $sponsorUrl }}"
                                 data-support-option="sponsor"
                             >
@@ -58,10 +58,10 @@
                         </div>
                     </article>
 
-                    <article class="grid min-w-0 grid-rows-[auto_1fr_auto] border-t border-white/10 pt-8 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-10">
+                    <article class="grid min-w-0 grid-rows-[auto_1fr_auto] border-t border-zinc-950/10 pt-8 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-10 dark:border-white/10">
                         <div class="flex items-center gap-4">
                             <img
-                                class="size-14 shrink-0 rounded-2xl object-cover object-[50%_18%] ring-1 ring-white/15"
+                                class="size-14 shrink-0 rounded-2xl object-cover object-[50%_18%] ring-1 ring-zinc-950/10 dark:ring-white/15"
                                 src="{{ Illuminate\Support\Facades\Vite::asset('resources/images/people/benjamin-crozat.webp') }}"
                                 alt=""
                                 width="512"
@@ -71,13 +71,13 @@
                             >
                             <h3 class="text-lg font-semibold tracking-[-0.025em]">Bring senior Laravel leadership to your team</h3>
                         </div>
-                        <p class="mt-3 text-sm leading-6 text-zinc-400">
+                        <p class="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
                             I bring more than 10 years of professional web development experience to companies that need both delivery and direction. I can take ownership of difficult Laravel work, guide technical decisions, and help your team ship with confidence.
                         </p>
 
                         <div class="pt-7">
                             <a
-                                class="inline-flex min-h-11 w-fit items-center gap-2 rounded-xl border border-white/15 bg-white/[0.06] px-4 text-sm font-semibold text-white transition-colors hover:bg-white/[0.11] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300"
+                                class="inline-flex min-h-11 w-fit items-center gap-2 rounded-xl border border-zinc-950/10 bg-zinc-950/[0.04] px-4 text-sm font-semibold text-zinc-900 transition-colors hover:bg-zinc-950/[0.08] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:border-white/15 dark:bg-white/[0.06] dark:text-white dark:hover:bg-white/[0.11] dark:focus-visible:outline-violet-300"
                                 href="{{ $hireUrl }}"
                                 data-support-option="hire"
                             >
