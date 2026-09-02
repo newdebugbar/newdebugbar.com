@@ -1,30 +1,74 @@
 @php
-    $roadmapItems = [
+    $roadmapGroups = [
         [
-            'title' => 'Searchable request history',
-            'description' => 'Open and search retained requests after leaving the original page.',
+            'id' => 'requests-and-performance',
+            'title' => 'Requests and performance',
+            'items' => [
+                [
+                    'title' => 'Searchable retained history',
+                    'description' => 'Find every retained page, API, command, test, and worker profile from the browser.',
+                ],
+                [
+                    'title' => 'Cross-request comparison',
+                    'description' => 'Compare duration, queries, failures, and section activity between two profiles.',
+                ],
+                [
+                    'title' => 'Failed query capture',
+                    'description' => 'Show failed SQL with its bindings, connection, exception, and application source.',
+                ],
+                [
+                    'title' => 'Causal performance breakdown',
+                    'description' => 'Explain where request time went across captured layers without counting the same work twice.',
+                ],
+                [
+                    'title' => 'Request-level capture rules',
+                    'description' => 'Let an app decide whether to capture one request after route and authentication context is known.',
+                ],
+            ],
         ],
         [
-            'title' => 'Failed query capture',
-            'description' => 'Show failed SQL beside successful queries, with the source that triggered it.',
+            'id' => 'laravel-ecosystem',
+            'title' => 'Laravel ecosystem',
+            'items' => [
+                [
+                    'title' => 'Inertia inspector',
+                    'description' => 'Inspect components, props, partial or deferred data, and the application source behind a response.',
+                ],
+                [
+                    'title' => 'Laravel AI inspector',
+                    'description' => 'Inspect agents, providers, models, token use, tool calls, and failures.',
+                ],
+                [
+                    'title' => 'Pennant inspector',
+                    'description' => 'See which feature flags were evaluated and the value each request received.',
+                ],
+            ],
         ],
         [
-            'title' => 'Request-level control',
-            'description' => 'Let an app enable or disable capture for one request using its own rules.',
-        ],
-        [
-            'title' => 'Inertia inspector',
-            'description' => 'Inspect the page component, props, and application source behind a response.',
-        ],
-        [
-            'title' => 'Laravel AI and Pennant',
-            'description' => 'See agent and tool activity alongside the feature values evaluated during a request.',
-        ],
-        [
-            'title' => 'Extension APIs',
-            'description' => 'Add custom messages, timers, exceptions, and controlled collectors.',
+            'id' => 'developer-workflow',
+            'title' => 'Developer workflow',
+            'items' => [
+                [
+                    'title' => 'Custom diagnostics API',
+                    'description' => 'Add application messages, timers, measurements, and manually reported exceptions.',
+                ],
+                [
+                    'title' => 'Controlled collector extensions',
+                    'description' => 'Let packages add bounded inspector sections while keeping redaction and MCP access intact.',
+                ],
+                [
+                    'title' => 'Editor navigation and path mapping',
+                    'description' => 'Open captured source in a local editor even when Laravel runs in Docker or on a remote machine.',
+                ],
+                [
+                    'title' => 'Server-Timing headers',
+                    'description' => 'Expose useful request timing in browser developer tools without opening the inspector.',
+                ],
+            ],
         ],
     ];
+
+    $roadmapIndex = 0;
 @endphp
 
 <section
@@ -53,18 +97,29 @@
             </a>
         </header>
 
-        <ol class="grid gap-x-10 gap-y-8 sm:grid-cols-2" role="list">
-            @foreach ($roadmapItems as $item)
-                <li class="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] gap-4 border-t border-zinc-950/10 pt-5 dark:border-white/10" data-roadmap-item>
-                    <span class="font-mono text-sm font-medium tabular-nums text-violet-700 dark:text-violet-300" aria-hidden="true">
-                        {{ str_pad((string) $loop->iteration, 2, '0', STR_PAD_LEFT) }}
-                    </span>
-                    <div class="min-w-0">
-                        <h3 class="text-lg font-semibold tracking-[-0.025em]">{{ $item['title'] }}</h3>
-                        <p class="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">{{ $item['description'] }}</p>
-                    </div>
-                </li>
+        <div class="space-y-11">
+            @foreach ($roadmapGroups as $group)
+                <section aria-labelledby="roadmap-group-{{ $group['id'] }}">
+                    <h3 id="roadmap-group-{{ $group['id'] }}" class="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-500">
+                        {{ $group['title'] }}
+                    </h3>
+
+                    <ol class="mt-4 grid gap-x-10 gap-y-8 sm:grid-cols-2" role="list">
+                        @foreach ($group['items'] as $item)
+                            @php($roadmapIndex++)
+                            <li class="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] gap-4 border-t border-zinc-950/10 pt-5 dark:border-white/10" data-roadmap-item>
+                                <span class="font-mono text-sm font-medium tabular-nums text-violet-700 dark:text-violet-300" aria-hidden="true">
+                                    {{ str_pad((string) $roadmapIndex, 2, '0', STR_PAD_LEFT) }}
+                                </span>
+                                <div class="min-w-0">
+                                    <h4 class="text-lg font-semibold tracking-[-0.025em]">{{ $item['title'] }}</h4>
+                                    <p class="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">{{ $item['description'] }}</p>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ol>
+                </section>
             @endforeach
-        </ol>
+        </div>
     </div>
 </section>

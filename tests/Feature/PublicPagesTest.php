@@ -123,7 +123,7 @@ it('shows the project roadmap after the support section', function () {
 
     expect($roadmap)->toHaveCount(1)
         ->and($roadmapAfterSupport)->toHaveCount(1)
-        ->and($roadmapItems)->toHaveCount(6)
+        ->and($roadmapItems)->toHaveCount(12)
         ->and($roadmapSource)->toHaveCount(1)
         ->and($roadmapSource->item(0)?->getAttribute('href'))->toBe('https://github.com/newdebugbar/newdebugbar/blob/main/ROADMAP.md');
 });
