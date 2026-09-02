@@ -107,11 +107,11 @@
                         @foreach ($group['items'] as $item)
                             @php($roadmapIndex++)
                             <li class="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] gap-4 border-t border-zinc-950/10 pt-5 dark:border-white/10" data-roadmap-item>
-                                <span class="font-mono text-sm font-medium tabular-nums text-violet-700 dark:text-violet-300" aria-hidden="true">
+                                <span class="flex size-8 items-center justify-center rounded-full border border-violet-200 bg-violet-50 font-mono text-xs font-medium leading-none tabular-nums text-violet-700 dark:border-white/15 dark:bg-white/5 dark:text-violet-300" aria-hidden="true">
                                     {{ str_pad((string) $roadmapIndex, 2, '0', STR_PAD_LEFT) }}
                                 </span>
                                 <div class="min-w-0">
-                                    <h4 class="text-lg font-semibold tracking-[-0.025em]">{{ $item['title'] }}</h4>
+                                    <h4 class="text-lg leading-8 font-semibold tracking-[-0.025em]">{{ $item['title'] }}</h4>
                                     <p class="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">{{ $item['description'] }}</p>
                                 </div>
                             </li>
