@@ -78,12 +78,11 @@
 >
     <div class="mx-auto grid max-w-[76rem] gap-12 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-20">
         <header class="max-w-[32rem]">
-            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-violet-700 dark:text-violet-300">Considering</p>
-            <h2 id="project-roadmap-title" class="mt-4 text-balance text-3xl font-semibold tracking-[-0.045em] sm:text-4xl lg:text-[2.75rem] lg:leading-[1.05]">
-                What comes next.
+            <h2 id="project-roadmap-title" class="text-balance text-3xl font-semibold tracking-[-0.045em] sm:text-4xl lg:text-[2.75rem] lg:leading-[1.05]">
+                Roadmap
             </h2>
             <p class="mt-5 text-base leading-7 text-zinc-600 sm:text-lg sm:leading-8 dark:text-zinc-300">
-                The roadmap stays open by design. These are the main gaps being considered, not promised release dates.
+                Here’s what could make the New Debug Bar even better.
             </p>
             <a
                 class="mt-7 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-violet-700 underline decoration-violet-300 underline-offset-4 transition-colors hover:text-violet-900 hover:decoration-violet-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:text-violet-300 dark:decoration-violet-500/60 dark:hover:text-violet-200 dark:hover:decoration-violet-300 dark:focus-visible:outline-violet-300"
