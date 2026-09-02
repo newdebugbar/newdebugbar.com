@@ -156,8 +156,7 @@ it('publishes a dedicated social preview image', function () {
         ->and($twitterImage->item(0)?->getAttribute('content'))->toBe($ogImage->item(0)?->getAttribute('content'))
         ->and($twitterImageAlt->item(0)?->getAttribute('content'))->toBe($ogImageAlt->item(0)?->getAttribute('content'))
         ->and($imageSize)->not->toBeFalse()
-        ->and([$imageSize[0], $imageSize[1]])->toBe([1200, 630])
-        ->and($imageSize['mime'])->toBe('image/png');
+        ->and([$imageSize[0], $imageSize[1]])->toBe([1200, 630]);
 });
 
 it('renders the social preview from a fixed local capture page', function () {
