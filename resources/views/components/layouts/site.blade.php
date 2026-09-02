@@ -7,7 +7,7 @@
     'ogTitle' => null,
     'ogDescription' => null,
     'socialImage' => null,
-    'socialImageAlt' => 'New Debug Bar for Laravel with the Requests inspector open',
+    'socialImageAlt' => 'New Debug Bar for Laravel with a repeated-query finding open',
     'structuredData' => null,
 ])
 

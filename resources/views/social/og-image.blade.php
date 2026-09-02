@@ -28,26 +28,27 @@
             data-social-preview-width="1200"
             data-social-preview-height="630"
         >
-            <h1 class="absolute top-[72px] left-[72px] w-[930px] text-[64px] leading-none font-semibold tracking-[-0.055em] text-zinc-50">
-                Debug Laravel<br>
-                without the guesswork.
+            <h1 class="absolute top-[66px] left-[72px] w-[930px] text-[68px] leading-[0.96] font-semibold tracking-[-0.055em] text-zinc-50">
+                See exactly what<br>
+                Laravel did.
             </h1>
 
-            <p class="absolute top-[230px] left-[72px] w-[880px] text-[23px] leading-8 text-zinc-400">
-                Inspect anything in one place. Give your coding agent exact context.
+            <p class="absolute top-[224px] left-[72px] w-[1050px] text-[26px] leading-9 text-zinc-300">
+                Requests, queries, exceptions, and exact context for your coding agent.
             </p>
 
-            <div class="absolute top-[340px] left-[72px] w-[1056px] before:absolute before:inset-[8%_7%_32%] before:z-[-1] before:rounded-[50%] before:bg-[rgb(124_58_237_/_13%)] before:blur-[5rem] before:content-['']">
+            <div class="absolute top-[344px] left-10 w-[1120px] rounded-2xl bg-[#0d0d10] shadow-[0_1.75rem_3.25rem_rgb(0_0_0_/_60%)] ring-2 ring-white/[0.16] before:absolute before:-top-6 before:-right-6 before:-left-6 before:h-[15rem] before:z-[-1] before:rounded-[45%] before:bg-[rgb(124_58_237_/_24%)] before:blur-[42px] before:content-['']">
                 <img
-                    class="block h-auto w-full drop-shadow-[0_1.75rem_2.5rem_rgb(0_0_0_/_48%)]"
-                    src="{{ Vite::asset('resources/images/screenshots/request-inspector-desktop-dark.png') }}"
+                    class="block h-auto w-full rounded-[14px]"
+                    src="{{ Vite::asset('resources/images/screenshots/queries-inspector-desktop-dark.png') }}"
                     width="1536"
-                    height="780"
-                    alt="The New Debug Bar Requests inspector showing exact Laravel request data"
+                    height="640"
+                    alt="The New Debug Bar Queries inspector showing a repeated query pattern that may be an N+1 query"
                     decoding="sync"
                     fetchpriority="high"
                     data-request-inspector-image
                     data-request-inspector-theme="dark"
+                    data-request-inspector-view="queries"
                 >
             </div>
         </main>

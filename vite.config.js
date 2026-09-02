@@ -10,6 +10,7 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
                 'resources/images/people/benjamin-crozat.webp',
+                'resources/images/screenshots/queries-inspector-desktop-dark.png',
                 'resources/images/social/newdebugbar-og.png',
             ],
             refresh: true,

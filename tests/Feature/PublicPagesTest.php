@@ -183,8 +183,9 @@ it('renders the social preview from a fixed local capture page', function () {
         ->and($canvas->item(0)?->getAttribute('data-social-preview-height'))->toBe('630')
         ->and($productScreenshot)->toHaveCount(1)
         ->and($productScreenshot->item(0)?->getAttribute('width'))->toBe('1536')
-        ->and($productScreenshot->item(0)?->getAttribute('height'))->toBe('780')
+        ->and($productScreenshot->item(0)?->getAttribute('height'))->toBe('640')
         ->and($productScreenshot->item(0)?->getAttribute('data-request-inspector-theme'))->toBe('dark')
+        ->and($productScreenshot->item(0)?->getAttribute('data-request-inspector-view'))->toBe('queries')
         ->and($injectedToolbar)->toHaveCount(0);
 });
 
