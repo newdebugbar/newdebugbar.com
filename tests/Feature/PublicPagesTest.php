@@ -103,6 +103,56 @@ it('offers sponsorship and freelance paths on the landing page', function () {
         ->and($hireLink->item(0)?->getAttribute('href'))->toBe('https://benjamincrozat.com');
 });
 
+it('shows the project roadmap after the support section', function () {
+    $response = get('/')->assertOk();
+
+    $previousErrorHandling = libxml_use_internal_errors(true);
+    $document = new DOMDocument;
+    $document->loadHTML($response->getContent());
+    libxml_clear_errors();
+    libxml_use_internal_errors($previousErrorHandling);
+
+    $xpath = new DOMXPath($document);
+    $roadmap = $xpath->query('//*[@data-project-roadmap]');
+    $roadmapAfterSupport = $xpath->query('//*[@data-support-options="featured"]/following-sibling::*[@data-project-roadmap]');
+    $roadmapItems = $xpath->query('//*[@data-project-roadmap]//*[@data-roadmap-item]');
+    $roadmapSource = $xpath->query('//*[@data-project-roadmap]//*[@data-roadmap-source]');
+
+    expect($roadmap)->toHaveCount(1)
+        ->and($roadmapAfterSupport)->toHaveCount(1)
+        ->and($roadmapItems)->toHaveCount(6)
+        ->and($roadmapSource)->toHaveCount(1)
+        ->and($roadmapSource->item(0)?->getAttribute('href'))->toBe('https://github.com/newdebugbar/newdebugbar/blob/main/ROADMAP.md');
+});
+
+it('publishes a dedicated social preview image', function () {
+    $response = get('/')->assertOk();
+
+    $previousErrorHandling = libxml_use_internal_errors(true);
+    $document = new DOMDocument;
+    $document->loadHTML($response->getContent());
+    libxml_clear_errors();
+    libxml_use_internal_errors($previousErrorHandling);
+
+    $xpath = new DOMXPath($document);
+    $ogImage = $xpath->query('//meta[@property="og:image"]');
+    $ogImageType = $xpath->query('//meta[@property="og:image:type"]');
+    $ogImageWidth = $xpath->query('//meta[@property="og:image:width"]');
+    $ogImageHeight = $xpath->query('//meta[@property="og:image:height"]');
+    $ogImageAlt = $xpath->query('//meta[@property="og:image:alt"]');
+    $twitterImage = $xpath->query('//meta[@name="twitter:image"]');
+    $twitterImageAlt = $xpath->query('//meta[@name="twitter:image:alt"]');
+
+    expect($ogImage)->toHaveCount(1)
+        ->and($ogImage->item(0)?->getAttribute('content'))->not->toBe('')
+        ->and($ogImageType->item(0)?->getAttribute('content'))->toBe('image/png')
+        ->and($ogImageWidth->item(0)?->getAttribute('content'))->toBe('1200')
+        ->and($ogImageHeight->item(0)?->getAttribute('content'))->toBe('630')
+        ->and($ogImageAlt->item(0)?->getAttribute('content'))->not->toBe('')
+        ->and($twitterImage->item(0)?->getAttribute('content'))->toBe($ogImage->item(0)?->getAttribute('content'))
+        ->and($twitterImageAlt->item(0)?->getAttribute('content'))->toBe($ogImageAlt->item(0)?->getAttribute('content'));
+});
+
 it('publishes every public documentation route through the XML sitemap', function () {
     $documentationRoutes = collect(config('docs.navigation'))
         ->flatMap(fn (array $group): array => $group['pages'])

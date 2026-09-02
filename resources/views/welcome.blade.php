@@ -88,5 +88,6 @@
             </section>
 
             <x-project-support />
+            <x-project-roadmap />
     </main>
 </x-layouts.site>

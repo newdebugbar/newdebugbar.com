@@ -7,12 +7,12 @@
     'ogTitle' => null,
     'ogDescription' => null,
     'socialImage' => null,
-    'socialImageAlt' => 'The New Debug Bar request inspector open over a Laravel application',
+    'socialImageAlt' => 'New Debug Bar for Laravel with the Requests inspector open',
     'structuredData' => null,
 ])
 
 @php
-    $resolvedSocialImage = url($socialImage ?? Illuminate\Support\Facades\Vite::asset('resources/images/screenshots/request-inspector-desktop-light.png'));
+    $resolvedSocialImage = url($socialImage ?? Illuminate\Support\Facades\Vite::asset('resources/images/social/newdebugbar-og.png'));
 @endphp
 
 <!DOCTYPE html>
@@ -44,8 +44,9 @@
             <meta property="og:url" content="{{ $canonical }}">
         @endif
         <meta property="og:image" content="{{ $resolvedSocialImage }}">
-        <meta property="og:image:width" content="1536">
-        <meta property="og:image:height" content="780">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
         <meta property="og:image:alt" content="{{ $socialImageAlt }}">
 
         <meta name="twitter:card" content="summary_large_image">
