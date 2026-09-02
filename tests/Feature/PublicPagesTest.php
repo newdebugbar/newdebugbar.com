@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
+use NewDebugBar\Support\RequestEligibility;
+
 use function Pest\Laravel\get;
 use function Pest\Laravel\withoutVite;
 
@@ -127,6 +130,7 @@ it('shows the project roadmap after the support section', function () {
 
 it('publishes a dedicated social preview image', function () {
     $response = get('/')->assertOk();
+    $imageSize = getimagesize(resource_path('images/social/newdebugbar-og.png'));
 
     $previousErrorHandling = libxml_use_internal_errors(true);
     $document = new DOMDocument;
@@ -150,7 +154,38 @@ it('publishes a dedicated social preview image', function () {
         ->and($ogImageHeight->item(0)?->getAttribute('content'))->toBe('630')
         ->and($ogImageAlt->item(0)?->getAttribute('content'))->not->toBe('')
         ->and($twitterImage->item(0)?->getAttribute('content'))->toBe($ogImage->item(0)?->getAttribute('content'))
-        ->and($twitterImageAlt->item(0)?->getAttribute('content'))->toBe($ogImageAlt->item(0)?->getAttribute('content'));
+        ->and($twitterImageAlt->item(0)?->getAttribute('content'))->toBe($ogImageAlt->item(0)?->getAttribute('content'))
+        ->and($imageSize)->not->toBeFalse()
+        ->and([$imageSize[0], $imageSize[1]])->toBe([1200, 630]);
+});
+
+it('renders the social preview from a fixed local capture page', function () {
+    expect(app(RequestEligibility::class)->allows(Request::create('/__newdebugbar/social-preview')))->toBeFalse();
+
+    $response = get('/__newdebugbar/social-preview')
+        ->assertOk()
+        ->assertViewIs('social.og-image')
+        ->assertHeaderMissing('X-NewDebugBar-Profile');
+
+    $previousErrorHandling = libxml_use_internal_errors(true);
+    $document = new DOMDocument;
+    $document->loadHTML($response->getContent());
+    libxml_clear_errors();
+    libxml_use_internal_errors($previousErrorHandling);
+
+    $xpath = new DOMXPath($document);
+    $canvas = $xpath->query('//*[@data-social-preview-canvas]');
+    $productScreenshot = $xpath->query('//*[@data-social-preview-canvas]//*[@data-request-inspector-image]');
+    $injectedToolbar = $xpath->query('//*[@id="newdebugbar"]');
+
+    expect($canvas)->toHaveCount(1)
+        ->and($canvas->item(0)?->getAttribute('data-social-preview-width'))->toBe('1200')
+        ->and($canvas->item(0)?->getAttribute('data-social-preview-height'))->toBe('630')
+        ->and($productScreenshot)->toHaveCount(1)
+        ->and($productScreenshot->item(0)?->getAttribute('width'))->toBe('1536')
+        ->and($productScreenshot->item(0)?->getAttribute('height'))->toBe('780')
+        ->and($productScreenshot->item(0)?->getAttribute('data-request-inspector-theme'))->toBe('dark')
+        ->and($injectedToolbar)->toHaveCount(0);
 });
 
 it('publishes every public documentation route through the XML sitemap', function () {

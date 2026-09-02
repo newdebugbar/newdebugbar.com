@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 
+if (app()->isLocal() || app()->runningUnitTests()) {
+    Route::view('/__newdebugbar/social-preview', 'social.og-image')->name('social.og-image');
+}
+
 Route::get('/sitemap.xml', function () {
     $documentationUrls = collect(config('docs.navigation'))
         ->flatMap(fn (array $group): array => $group['pages'])
