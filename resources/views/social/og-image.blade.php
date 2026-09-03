@@ -38,15 +38,15 @@
                 without the <span class="text-violet-300 [text-shadow:0_0_38px_rgb(124_58_237_/_30%)]">guesswork.</span>
             </h1>
 
-            <p class="absolute top-[239px] left-[84px] z-30 m-0 w-[1000px] text-[26px] leading-[1.35] [font-weight:450] tracking-[-0.018em] text-zinc-100 [text-shadow:0_1px_3px_rgb(0_0_0_/_80%),0_0_12px_rgb(167_139_250_/_60%),0_0_30px_rgb(139_92_246_/_42%)]">
+            <p class="absolute top-[239px] left-[84px] z-30 m-0 w-[1000px] text-[26px] leading-[1.35] [font-weight:450] tracking-[-0.018em] text-zinc-100 [text-shadow:0_2px_3px_rgb(0_0_0_/_80%),0_0_5px_rgb(221_214_254_/_75%),0_0_14px_rgb(167_139_250_/_100%),0_0_30px_rgb(139_92_246_/_85%),0_0_56px_rgb(124_58_237_/_60%)]">
                 See what happened. Give your coding agent the same evidence.
             </p>
 
             <div class="absolute top-[270px] left-[72px] z-10 w-[1050px] [transform-origin:56%_0%] [transform-style:preserve-3d] [transform:perspective(1100px)_rotateX(8deg)_rotateY(-5deg)_rotateZ(-2.6deg)]">
-                <div class="absolute inset-0 translate-x-[11px] translate-y-[15px] rounded-[23px] bg-[linear-gradient(145deg,#5b21b6_0%,#211534_46%,#08080c_100%)] opacity-95 [box-shadow:-20px_52px_100px_rgb(0_0_0_/_88%),0_0_78px_rgb(124_58_237_/_38%)]" aria-hidden="true"></div>
+                <div class="absolute inset-0 translate-x-[11px] translate-y-[15px] rounded-[23px] bg-[linear-gradient(145deg,#5b21b6_0%,#211534_46%,#08080c_100%)] opacity-70 blur-[14px] [box-shadow:-20px_52px_100px_rgb(0_0_0_/_88%),0_0_96px_rgb(124_58_237_/_45%)]" aria-hidden="true"></div>
 
-                <div class="relative rounded-[23px] bg-[linear-gradient(110deg,rgb(255_255_255_/_38%),rgb(196_181_253_/_76%)_43%,rgb(124_58_237_/_30%)_72%,rgb(255_255_255_/_16%))] p-[3px] shadow-[inset_0_1px_rgb(255_255_255_/_22%)]">
-                    <div class="overflow-hidden rounded-[20px] bg-[#0b0b0e] shadow-[inset_0_1px_rgb(255_255_255_/_9%)]">
+                <div class="relative rounded-[23px] bg-[#0b0b0e] p-[3px]">
+                    <div class="overflow-hidden rounded-[20px] bg-[#0b0b0e]">
                         <img
                             class="block h-auto w-full"
                             src="{{ Vite::asset('resources/images/screenshots/request-inspector-desktop-dark.png') }}"
