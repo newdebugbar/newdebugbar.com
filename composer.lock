@@ -2031,16 +2031,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "3.10.0",
+            "version": "3.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "b321dd6749f0bf7189444158a3ce785cc16d69b0"
+                "reference": "147f303310f06334f03f409e49d7ad1e275ff05a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/b321dd6749f0bf7189444158a3ce785cc16d69b0",
-                "reference": "b321dd6749f0bf7189444158a3ce785cc16d69b0",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/147f303310f06334f03f409e49d7ad1e275ff05a",
+                "reference": "147f303310f06334f03f409e49d7ad1e275ff05a",
                 "shasum": ""
             },
             "require": {
@@ -2118,7 +2118,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/3.10.0"
+                "source": "https://github.com/Seldaek/monolog/tree/3.11.0"
             },
             "funding": [
                 {
@@ -2130,7 +2130,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-02T08:56:05+00:00"
+            "time": "2026-09-02T12:39:56+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -7222,12 +7222,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/newdebugbar/newdebugbar.git",
-                "reference": "35b61abac4364abec6a08f739a32943b76a12c77"
+                "reference": "caeee89bb0461e160b27566187b3ded9fdb06364"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/newdebugbar/newdebugbar/zipball/35b61abac4364abec6a08f739a32943b76a12c77",
-                "reference": "35b61abac4364abec6a08f739a32943b76a12c77",
+                "url": "https://api.github.com/repos/newdebugbar/newdebugbar/zipball/caeee89bb0461e160b27566187b3ded9fdb06364",
+                "reference": "caeee89bb0461e160b27566187b3ded9fdb06364",
                 "shasum": ""
             },
             "require": {
@@ -7271,7 +7271,7 @@
                 "issues": "https://github.com/newdebugbar/newdebugbar/issues",
                 "source": "https://github.com/newdebugbar/newdebugbar/tree/main"
             },
-            "time": "2026-08-31T10:42:29+00:00"
+            "time": "2026-09-02T11:53:30+00:00"
         },
         {
             "name": "nunomaduro/collision",
