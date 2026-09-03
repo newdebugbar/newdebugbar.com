@@ -71,23 +71,7 @@
         aria-labelledby="project-freelance-title"
         data-support-section="hire"
     >
-        <div class="mx-auto grid max-w-[76rem] gap-10 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:items-start lg:gap-20">
-            <div class="flex items-center gap-5 lg:flex-col lg:items-end lg:text-right">
-                <img
-                    class="size-24 shrink-0 rounded-[1.75rem] object-cover object-[50%_18%] ring-1 ring-zinc-950/10 sm:size-28 lg:size-40 dark:ring-white/15"
-                    src="{{ Illuminate\Support\Facades\Vite::asset('resources/images/people/benjamin-crozat.webp') }}"
-                    alt=""
-                    width="512"
-                    height="770"
-                    loading="lazy"
-                    decoding="async"
-                >
-                <div class="min-w-0 lg:mt-5 lg:flex lg:flex-col lg:items-end">
-                    <p class="text-lg font-semibold tracking-[-0.025em] text-zinc-950 dark:text-white">Benjamin Crozat</p>
-                    <p class="mt-1 max-w-[17rem] text-sm leading-6 text-zinc-600 dark:text-zinc-400">Laravel delivery, product thinking, and technical leadership</p>
-                </div>
-            </div>
-
+        <div class="mx-auto grid max-w-[76rem] gap-10 lg:grid-cols-[minmax(0,1.28fr)_minmax(0,0.72fr)] lg:items-start lg:gap-20">
             <div class="min-w-0">
                 <h2 id="project-freelance-title" class="max-w-[46rem] text-balance text-3xl font-semibold tracking-[-0.045em] text-zinc-950 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.05] dark:text-white">
                     Bring senior Laravel leadership to your team
@@ -120,6 +104,22 @@
                         <path d="M4.5 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
+            </div>
+
+            <div class="flex items-center gap-5 lg:flex-col lg:items-start">
+                <img
+                    class="size-24 shrink-0 rounded-[1.75rem] object-cover object-[50%_18%] ring-1 ring-zinc-950/10 sm:size-28 lg:size-40 dark:ring-white/15"
+                    src="{{ Illuminate\Support\Facades\Vite::asset('resources/images/people/benjamin-crozat.webp') }}"
+                    alt=""
+                    width="512"
+                    height="770"
+                    loading="lazy"
+                    decoding="async"
+                >
+                <div class="min-w-0 lg:mt-5">
+                    <p class="text-lg font-semibold tracking-[-0.025em] text-zinc-950 dark:text-white">Benjamin Crozat</p>
+                    <p class="mt-1 max-w-[17rem] text-sm leading-6 text-zinc-600 dark:text-zinc-400">Laravel delivery, product thinking, and technical leadership</p>
+                </div>
             </div>
         </div>
     </section>
