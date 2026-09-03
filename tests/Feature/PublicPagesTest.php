@@ -109,7 +109,7 @@ it('offers sponsorship and freelance sections on the landing page', function () 
         ->and($sponsorLink)->toHaveCount(1)
         ->and($sponsorLink->item(0)?->getAttribute('href'))->toBe('https://github.com/sponsors/benjamincrozat')
         ->and($hireLink)->toHaveCount(1)
-        ->and($hireLink->item(0)?->getAttribute('href'))->toBe('https://benjamincrozat.com');
+        ->and($hireLink->item(0)?->getAttribute('href'))->toBe('mailto:hello@benjamincrozat.com');
 });
 
 it('shows the project roadmap after the support section', function () {

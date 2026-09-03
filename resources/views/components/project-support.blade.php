@@ -2,7 +2,7 @@
 
 @php
     $sponsorUrl = 'https://github.com/sponsors/benjamincrozat';
-    $hireUrl = 'https://benjamincrozat.com';
+    $hireUrl = 'mailto:hello@benjamincrozat.com';
     $sponsorPoints = [
         'Ship roadmap work sooner',
         'Deepen request and performance diagnostics',
@@ -97,8 +97,8 @@
                     data-support-option="hire"
                 >
                     <span class="text-left">
-                        <span class="block text-base leading-5 font-semibold">See how I can help</span>
-                        <span class="mt-0.5 block text-xs leading-4 font-medium text-zinc-400 dark:text-zinc-600">Laravel consulting and leadership</span>
+                        <span class="block text-base leading-5 font-semibold">Email me about your project</span>
+                        <span class="mt-0.5 block text-xs leading-4 font-medium text-zinc-400 dark:text-zinc-600">hello@benjamincrozat.com</span>
                     </span>
                     <svg class="size-5 shrink-0 transition-transform group-hover:translate-x-0.5 motion-reduce:transform-none" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                         <path d="M4.5 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
