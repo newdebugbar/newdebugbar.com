@@ -4,8 +4,12 @@
     $sponsorUrl = 'https://github.com/sponsors/benjamincrozat';
     $hireUrl = 'https://benjamincrozat.com';
     $sponsorPoints = [
-        'Better Laravel diagnostics and agent workflows',
-        'Compatibility, maintenance, and issue fixes',
+        'Ship roadmap work sooner',
+        'Deepen request and performance diagnostics',
+        'Expand support across Laravel workflows',
+        'Improve browser and MCP workflows',
+        'Keep pace with Laravel and PHP releases',
+        'Fix reported issues and maintain the project long term',
     ];
     $freelancePoints = [
         'Take ownership of complex Laravel builds, fixes, and launches.',
@@ -26,7 +30,7 @@
                     Sponsor open-source development
                 </h2>
                 <p class="mt-5 text-base leading-7 text-zinc-600 sm:text-lg sm:leading-8 dark:text-zinc-300">
-                    If your company builds with Laravel, sponsorship directly funds the work that keeps the project useful.
+                    If your company builds with Laravel, sponsorship gives the New Debug Bar dedicated time to improve and stay dependable.
                 </p>
                 <a
                     class="group mt-8 inline-flex min-h-16 w-fit items-center gap-5 rounded-full bg-gradient-to-r from-violet-700 via-violet-600 to-violet-500 py-3 pr-3 pl-7 text-white shadow-[0_16px_32px_-18px_rgba(109,40,217,0.9)] ring-1 ring-white/15 transition-[transform,box-shadow] hover:-translate-y-0.5 hover:shadow-[0_20px_38px_-18px_rgba(109,40,217,0.95)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 motion-reduce:transform-none dark:focus-visible:outline-violet-300"
@@ -46,7 +50,7 @@
             </header>
 
             <div class="min-w-0 lg:pt-1">
-                <p class="text-sm font-semibold tracking-[-0.01em] text-zinc-950 dark:text-white">Sponsorship funds</p>
+                <p class="text-sm font-semibold tracking-[-0.01em] text-zinc-950 dark:text-white">What funding unlocks</p>
                 <ul class="mt-4 space-y-3" role="list">
                     @foreach ($sponsorPoints as $point)
                         <li class="flex items-start gap-3">
