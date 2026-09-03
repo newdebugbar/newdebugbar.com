@@ -85,7 +85,7 @@ it('exposes every configured documentation route in the mobile menu', function (
         ->and($currentLinks->item(0)?->getAttribute('href'))->toBe(route('docs.queries'));
 });
 
-it('offers sponsorship and freelance paths on the landing page', function () {
+it('offers sponsorship and freelance sections on the landing page', function () {
     $response = get('/')->assertOk();
 
     $previousErrorHandling = libxml_use_internal_errors(true);
@@ -96,10 +96,16 @@ it('offers sponsorship and freelance paths on the landing page', function () {
 
     $xpath = new DOMXPath($document);
     $supportOptions = $xpath->query('//*[@data-support-options="featured"]');
-    $sponsorLink = $xpath->query('//*[@data-support-options="featured"]//*[@data-support-option="sponsor"]');
-    $hireLink = $xpath->query('//*[@data-support-options="featured"]//*[@data-support-option="hire"]');
+    $sponsorSection = $xpath->query('//*[@data-support-options="featured"]/*[@data-support-section="sponsor"]');
+    $hireSection = $xpath->query('//*[@data-support-options="featured"]/*[@data-support-section="hire"]');
+    $hireAfterSponsor = $xpath->query('//*[@data-support-section="sponsor"]/following-sibling::*[@data-support-section="hire"]');
+    $sponsorLink = $xpath->query('//*[@data-support-section="sponsor"]//*[@data-support-option="sponsor"]');
+    $hireLink = $xpath->query('//*[@data-support-section="hire"]//*[@data-support-option="hire"]');
 
     expect($supportOptions)->toHaveCount(1)
+        ->and($sponsorSection)->toHaveCount(1)
+        ->and($hireSection)->toHaveCount(1)
+        ->and($hireAfterSponsor)->toHaveCount(1)
         ->and($sponsorLink)->toHaveCount(1)
         ->and($sponsorLink->item(0)?->getAttribute('href'))->toBe('https://github.com/sponsors/benjamincrozat')
         ->and($hireLink)->toHaveCount(1)
