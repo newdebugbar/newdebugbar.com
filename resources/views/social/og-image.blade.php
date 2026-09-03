@@ -38,7 +38,7 @@
                 without the <span class="text-violet-300 [text-shadow:0_0_38px_rgb(124_58_237_/_30%)]">guesswork.</span>
             </h1>
 
-            <p class="absolute top-[239px] left-[84px] z-30 m-0 w-[1000px] text-[26px] leading-[1.35] [font-weight:450] tracking-[-0.018em] text-zinc-300 [text-shadow:0_2px_18px_rgb(7_7_10_/_96%)]">
+            <p class="absolute top-[239px] left-[84px] z-30 m-0 w-[1000px] text-[26px] leading-[1.35] [font-weight:450] tracking-[-0.018em] text-zinc-100 [text-shadow:0_1px_3px_rgb(0_0_0_/_80%),0_0_12px_rgb(167_139_250_/_60%),0_0_30px_rgb(139_92_246_/_42%)]">
                 See what happened. Give your coding agent the same evidence.
             </p>
 
