@@ -4,9 +4,13 @@
     $sponsorUrl = 'https://github.com/sponsors/benjamincrozat';
     $hireUrl = 'https://benjamincrozat.com';
     $sponsorPoints = [
-        'Expand and refine Laravel diagnostics',
-        'Improve browser and agent workflows',
-        'Maintain compatibility and fix reported issues',
+        'Better Laravel diagnostics and agent workflows',
+        'Compatibility, maintenance, and issue fixes',
+    ];
+    $freelancePoints = [
+        'Take ownership of complex Laravel builds, fixes, and launches.',
+        'Turn business needs into clear product priorities and technical decisions.',
+        'Give teams practical leadership that keeps delivery moving.',
     ];
 @endphp
 
@@ -25,7 +29,7 @@
                     If your company builds with Laravel, sponsorship directly funds the work that keeps the project useful.
                 </p>
                 <a
-                    class="group mt-8 inline-flex min-h-14 w-fit items-center gap-4 rounded-full bg-gradient-to-r from-violet-700 via-violet-600 to-violet-500 py-2 pr-2.5 pl-5 text-white shadow-[0_16px_32px_-18px_rgba(109,40,217,0.9)] ring-1 ring-white/15 transition-[transform,box-shadow] hover:-translate-y-0.5 hover:shadow-[0_20px_38px_-18px_rgba(109,40,217,0.95)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 motion-reduce:transform-none dark:focus-visible:outline-violet-300"
+                    class="group mt-8 inline-flex min-h-16 w-fit items-center gap-5 rounded-full bg-gradient-to-r from-violet-700 via-violet-600 to-violet-500 py-3 pr-3 pl-7 text-white shadow-[0_16px_32px_-18px_rgba(109,40,217,0.9)] ring-1 ring-white/15 transition-[transform,box-shadow] hover:-translate-y-0.5 hover:shadow-[0_20px_38px_-18px_rgba(109,40,217,0.95)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 motion-reduce:transform-none dark:focus-visible:outline-violet-300"
                     href="{{ $sponsorUrl }}"
                     data-support-option="sponsor"
                 >
@@ -33,7 +37,7 @@
                         <span class="block text-base leading-5 font-semibold">Sponsor the project</span>
                         <span class="mt-0.5 block text-xs leading-4 font-medium text-violet-100">via GitHub Sponsors</span>
                     </span>
-                    <span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/20 transition-transform group-hover:translate-x-0.5 motion-reduce:transform-none" aria-hidden="true">
+                    <span class="flex size-10 shrink-0 items-center justify-center rounded-full bg-white/15 ring-1 ring-white/20 transition-transform group-hover:translate-x-0.5 motion-reduce:transform-none" aria-hidden="true">
                         <svg class="size-4" viewBox="0 0 16 16" fill="none">
                             <path d="M3.5 8h9M9 4.5 12.5 8 9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -42,11 +46,12 @@
             </header>
 
             <div class="min-w-0 lg:pt-1">
-                <ul class="divide-y divide-zinc-950/10 border-y border-zinc-950/10 dark:divide-white/10 dark:border-white/10" role="list">
+                <p class="text-sm font-semibold tracking-[-0.01em] text-zinc-950 dark:text-white">Sponsorship funds</p>
+                <ul class="mt-4 space-y-3" role="list">
                     @foreach ($sponsorPoints as $point)
-                        <li class="flex items-start gap-4 py-5 sm:py-6">
-                            <span class="mt-[0.6rem] size-2 shrink-0 rounded-full bg-violet-600 dark:bg-violet-400" aria-hidden="true"></span>
-                            <span class="text-lg leading-7 font-medium tracking-[-0.02em] text-zinc-900 sm:text-xl dark:text-zinc-100">{{ $point }}</span>
+                        <li class="flex items-start gap-3">
+                            <span class="mt-[0.65rem] size-1.5 shrink-0 rounded-full bg-violet-600 dark:bg-violet-400" aria-hidden="true"></span>
+                            <span class="text-base leading-7 text-zinc-700 dark:text-zinc-300">{{ $point }}</span>
                         </li>
                     @endforeach
                 </ul>
@@ -87,12 +92,19 @@
                     I bring more than 10 years of professional web development experience, combining hands-on delivery with a strong business and product mindset.
                 </p>
 
-                <p class="mt-7 max-w-[43rem] border-t border-zinc-950/10 pt-5 text-base leading-7 font-medium text-zinc-900 dark:border-white/10 dark:text-zinc-100">
-                    I take ownership of difficult Laravel work, turn business needs into practical product and technical decisions, and help your team ship with confidence.
-                </p>
+                <ul class="mt-8 max-w-[44rem] space-y-4" role="list">
+                    @foreach ($freelancePoints as $point)
+                        <li class="flex items-start gap-3 text-base leading-7 text-zinc-800 dark:text-zinc-200">
+                            <svg class="mt-1.5 size-4 shrink-0 text-violet-600 dark:text-violet-400" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                <path d="m3.25 8.25 3 3 6.5-6.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>{{ $point }}</span>
+                        </li>
+                    @endforeach
+                </ul>
 
                 <a
-                    class="group mt-8 inline-flex min-h-14 w-fit items-center gap-4 rounded-full bg-zinc-950 py-2 pr-2.5 pl-5 text-white shadow-[0_16px_32px_-20px_rgba(24,24,27,0.75)] ring-1 ring-zinc-950/10 transition-[transform,background-color,box-shadow] hover:-translate-y-0.5 hover:bg-zinc-800 hover:shadow-[0_20px_38px_-20px_rgba(24,24,27,0.8)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 motion-reduce:transform-none dark:bg-white dark:text-zinc-950 dark:ring-white/20 dark:hover:bg-zinc-200 dark:focus-visible:outline-violet-300"
+                    class="group mt-8 inline-flex min-h-16 w-fit items-center gap-5 rounded-full bg-zinc-950 px-7 py-3 text-white shadow-[0_16px_32px_-20px_rgba(24,24,27,0.75)] ring-1 ring-zinc-950/10 transition-[transform,background-color,box-shadow] hover:-translate-y-0.5 hover:bg-zinc-800 hover:shadow-[0_20px_38px_-20px_rgba(24,24,27,0.8)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 motion-reduce:transform-none dark:bg-white dark:text-zinc-950 dark:ring-white/20 dark:hover:bg-zinc-200 dark:focus-visible:outline-violet-300"
                     href="{{ $hireUrl }}"
                     data-support-option="hire"
                 >
@@ -100,11 +112,9 @@
                         <span class="block text-base leading-5 font-semibold">See how I can help</span>
                         <span class="mt-0.5 block text-xs leading-4 font-medium text-zinc-400 dark:text-zinc-600">Laravel consulting and leadership</span>
                     </span>
-                    <span class="flex size-9 shrink-0 items-center justify-center rounded-full bg-violet-600 text-white shadow-sm transition-transform group-hover:translate-x-0.5 motion-reduce:transform-none" aria-hidden="true">
-                        <svg class="size-4" viewBox="0 0 16 16" fill="none">
-                            <path d="M3.5 8h9M9 4.5 12.5 8 9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </span>
+                    <svg class="size-5 shrink-0 transition-transform group-hover:translate-x-0.5 motion-reduce:transform-none" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                        <path d="M4.5 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </a>
             </div>
         </div>
