@@ -16,6 +16,7 @@ it('serves a public page through its intended view', function (string $uri, stri
         ->assertViewIs($view);
 })->with([
     'landing page' => ['/', 'welcome'],
+    'features page' => ['/features', 'features'],
     'documentation home' => ['/docs', 'docs.index'],
     'installation page' => ['/docs/installation', 'docs.installation'],
     'requests page' => ['/docs/requests', 'docs.requests'],
@@ -35,9 +36,10 @@ it('serves a public page through its intended view', function (string $uri, stri
     'MCP setup page' => ['/docs/mcp', 'docs.mcp'],
 ]);
 
-it('keeps documentation routes unversioned', function (string $route, string $uri) {
+it('keeps public routes unversioned', function (string $route, string $uri) {
     expect(route($route, absolute: false))->toBe($uri);
 })->with([
+    'features page' => ['features', '/features'],
     'documentation home' => ['docs.index', '/docs'],
     'installation page' => ['docs.installation', '/docs/installation'],
     'requests page' => ['docs.requests', '/docs/requests'],
@@ -55,6 +57,31 @@ it('keeps documentation routes unversioned', function (string $route, string $ur
     'cache and Redis page' => ['docs.cache-and-redis', '/docs/cache-and-redis'],
     'testing page' => ['docs.testing', '/docs/testing'],
     'MCP setup page' => ['docs.mcp', '/docs/mcp'],
+]);
+
+it('links to features from the desktop header, mobile menu, and footer with the current page state', function (string $uri, bool $current) {
+    $response = get($uri)->assertOk();
+
+    $previousErrorHandling = libxml_use_internal_errors(true);
+    $document = new DOMDocument;
+    $document->loadHTML($response->getContent());
+    libxml_clear_errors();
+    libxml_use_internal_errors($previousErrorHandling);
+
+    $xpath = new DOMXPath($document);
+    $featuresUrl = route('features');
+    $mobileLinks = $xpath->query('//nav[@aria-label="Mobile navigation"]//a[@href="'.$featuresUrl.'"]');
+    $desktopLinks = $xpath->query('//header//a[@href="'.$featuresUrl.'" and not(ancestor::nav[@aria-label="Mobile navigation"])]');
+    $footerLinks = $xpath->query('//nav[@aria-label="Footer navigation"]//a[@href="'.$featuresUrl.'"]');
+
+    foreach ([$desktopLinks, $mobileLinks, $footerLinks] as $links) {
+        expect($links)->toHaveCount(1)
+            ->and($links->item(0)?->getAttribute('aria-current'))->toBe($current ? 'page' : '');
+    }
+})->with([
+    'landing page' => ['/', false],
+    'features page' => ['/features', true],
+    'documentation page' => ['/docs/queries', false],
 ]);
 
 it('exposes every configured documentation route in the mobile menu', function () {
@@ -195,18 +222,19 @@ it('renders the social preview from a fixed local capture page', function () {
         ->and($injectedToolbar)->toHaveCount(0);
 });
 
-it('publishes every public documentation route through the XML sitemap', function () {
-    $documentationRoutes = collect(config('docs.navigation'))
+it('publishes every public page through the XML sitemap', function () {
+    $publicRoutes = collect(config('docs.navigation'))
         ->flatMap(fn (array $group): array => $group['pages'])
         ->pluck('route')
-        ->prepend('docs.index');
+        ->prepend('docs.index')
+        ->prepend('features');
 
     get('/sitemap.xml')
         ->assertOk()
         ->assertHeader('Content-Type', 'application/xml; charset=UTF-8')
         ->assertViewIs('sitemap')
-        ->assertViewHas('urls', function (array $urls) use ($documentationRoutes): bool {
-            return $documentationRoutes->every(
+        ->assertViewHas('urls', function (array $urls) use ($publicRoutes): bool {
+            return in_array(url('/'), $urls, true) && $publicRoutes->every(
                 fn (string $route): bool => in_array(route($route), $urls, true),
             );
         });

@@ -1,4 +1,5 @@
 @php
+    $featuresActive = request()->routeIs('features');
     $docsActive = request()->routeIs('docs.*');
     $docsHomeActive = request()->routeIs('docs.index');
 @endphp
@@ -14,7 +15,7 @@
         </a>
 
         <div class="ml-auto flex shrink-0 items-center">
-            <div class="flex items-center sm:hidden">
+            <div class="flex items-center lg:hidden">
                 <a
                     class="mr-3 flex h-10 items-center rounded-lg text-sm font-medium text-violet-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-violet-300"
                     href="https://github.com/sponsors/benjamincrozat"
@@ -43,6 +44,23 @@
                         data-mobile-menu
                     >
                         <nav class="space-y-1" aria-label="Mobile navigation">
+                            <a
+                                @class([
+                                    'flex min-h-11 items-center gap-3 rounded-xl px-3 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-violet-500',
+                                    'bg-violet-50 text-violet-700 dark:bg-violet-400/10 dark:text-violet-300' => $featuresActive,
+                                    'hover:bg-zinc-100 hover:text-zinc-950 dark:hover:bg-white/[0.07] dark:hover:text-white' => ! $featuresActive,
+                                ])
+                                href="{{ route('features') }}"
+                                @if ($featuresActive) aria-current="page" @endif
+                            >
+                                <svg class="size-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.7"/>
+                                    <rect x="14" y="3.5" width="6.5" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.7"/>
+                                    <rect x="3.5" y="14" width="6.5" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.7"/>
+                                    <rect x="14" y="14" width="6.5" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.7"/>
+                                </svg>
+                                Features
+                            </a>
                             <a
                                 @class([
                                     'flex min-h-11 items-center gap-3 rounded-xl px-3 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-violet-500',
@@ -135,12 +153,23 @@
                 </div>
             </div>
 
-            <div class="hidden items-center gap-3 sm:flex">
+            <div class="hidden items-center gap-3 lg:flex">
                 <a
                     class="mr-2 inline-flex min-h-10 items-center rounded-lg text-base font-medium text-violet-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-violet-300"
                     href="https://github.com/sponsors/benjamincrozat"
                 >
                     Sponsor
+                </a>
+                <a
+                    @class([
+                        'rounded-lg px-3 py-2 text-base transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500',
+                        'bg-violet-50 font-medium text-violet-700 dark:bg-violet-400/10 dark:text-violet-300' => $featuresActive,
+                        'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-300 dark:hover:bg-white/5 dark:hover:text-white' => ! $featuresActive,
+                    ])
+                    href="{{ route('features') }}"
+                    @if ($featuresActive) aria-current="page" @endif
+                >
+                    Features
                 </a>
                 <a
                     @class([
