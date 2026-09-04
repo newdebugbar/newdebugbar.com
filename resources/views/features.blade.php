@@ -1,13 +1,13 @@
 {{-- The complete feature reference for the New Debug Bar. --}}
 <x-layouts.site
-    title="Laravel Debug Bar Features — New Debug Bar"
+    title="New Debug Bar for Laravel: Features"
     description="Features of the New Debug Bar for Laravel, including SQL queries, Livewire components, requests, cache, queues, mail, and local MCP tools."
     :canonical="route('features')"
 >
     <main class="border-b border-zinc-200 bg-white dark:border-white/10 dark:bg-[#09090c]" id="features">
         <div class="mx-auto max-w-5xl px-5 pt-10 pb-16 sm:px-8 sm:pt-12 lg:px-10 lg:pt-14 lg:pb-24">
             <h1 class="text-4xl leading-tight font-semibold tracking-[-0.045em] text-zinc-950 sm:text-5xl dark:text-white">
-                Laravel Debug Bar Features
+                New Debug Bar for Laravel: Features
             </h1>
 
             <div class="mt-12 space-y-16 lg:mt-16 lg:space-y-20">
