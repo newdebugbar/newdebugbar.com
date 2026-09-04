@@ -77,12 +77,12 @@
             </figure>
 
             <div class="min-w-0">
-                <p class="text-xs font-semibold tracking-[0.16em] text-violet-700 uppercase dark:text-violet-400">Work with me</p>
+                <p class="text-xs font-semibold tracking-[0.16em] text-violet-700 uppercase dark:text-violet-400">Available for new projects</p>
                 <h2 id="project-freelance-title" class="mt-4 max-w-[42rem] text-balance text-4xl leading-[1.08] font-semibold tracking-[-0.045em] text-zinc-950 sm:text-5xl dark:text-white">
-                    Build the right product.<br> Build it well.
+                    Hire me as a freelancer.
                 </h2>
                 <p class="mt-5 max-w-[42rem] text-base leading-7 text-zinc-600 sm:text-lg sm:leading-8 dark:text-zinc-400">
-                    I’m a freelance developer with more than 10 years of professional web development experience. I connect business goals with product decisions and hands-on Laravel delivery.
+                    I bring more than 10 years of professional web development experience to your team. I connect business goals with product decisions and hands-on Laravel delivery.
                 </p>
 
                 <ul class="mt-8 grid gap-5 border-t border-zinc-950/10 pt-6 sm:grid-cols-3 sm:gap-6 dark:border-white/10" role="list">
