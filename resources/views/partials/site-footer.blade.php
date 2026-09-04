@@ -33,9 +33,18 @@
         </div>
 
         <div class="mt-6 flex flex-col gap-3 border-t border-zinc-950/[0.07] pt-5 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between dark:border-white/[0.08] dark:text-zinc-500">
-            <p>
-                Built by <a class="font-medium text-zinc-700 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-zinc-950 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-300 dark:decoration-zinc-700 dark:hover:text-white" href="https://github.com/benjamincrozat">Benjamin Crozat</a>.
-            </p>
+            <div>
+                <p>Built by <span class="font-medium text-zinc-700 dark:text-zinc-300">Benjamin Crozat</span></p>
+                <nav class="mt-1" aria-label="Benjamin Crozat links">
+                    <ul class="flex flex-wrap items-center gap-x-4" role="list">
+                        @foreach (['Blog' => 'https://benjamincrozat.com', 'GitHub' => 'https://github.com/benjamincrozat', 'X' => 'https://x.com/benjamincrozat'] as $label => $url)
+                            <li>
+                                <a class="inline-flex min-h-8 min-w-6 items-center font-medium text-zinc-700 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-zinc-950 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-300 dark:decoration-zinc-700 dark:hover:text-white" href="{{ $url }}">{{ $label }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </nav>
+            </div>
             <p>
                 Open source under the <a class="font-medium text-zinc-700 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-zinc-950 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500 dark:text-zinc-300 dark:decoration-zinc-700 dark:hover:text-white" href="https://github.com/newdebugbar/newdebugbar/blob/main/LICENSE">Apache License 2.0</a>.
             </p>

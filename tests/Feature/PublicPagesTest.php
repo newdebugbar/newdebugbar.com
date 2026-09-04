@@ -84,6 +84,30 @@ it('links to features from the desktop header, mobile menu, and footer with the 
     'documentation page' => ['/docs/queries', false],
 ]);
 
+it('provides separate author destinations in the shared footer', function (string $uri) {
+    $response = get($uri)->assertOk();
+
+    $previousErrorHandling = libxml_use_internal_errors(true);
+    $document = new DOMDocument;
+    $document->loadHTML($response->getContent());
+    libxml_clear_errors();
+    libxml_use_internal_errors($previousErrorHandling);
+
+    $xpath = new DOMXPath($document);
+    $authorLinks = $xpath->query('//footer//nav[@aria-label="Benjamin Crozat links"]//a');
+    $authorUrls = [];
+
+    foreach ($authorLinks as $link) {
+        $authorUrls[] = $link->getAttribute('href');
+    }
+
+    expect($authorUrls)->toBe([
+        'https://benjamincrozat.com',
+        'https://github.com/benjamincrozat',
+        'https://x.com/benjamincrozat',
+    ]);
+})->with(['/', '/features', '/docs/queries']);
+
 it('exposes every configured documentation route in the mobile menu', function () {
     $response = get('/docs/queries')->assertOk();
     $expectedUrls = collect(config('docs.navigation'))
