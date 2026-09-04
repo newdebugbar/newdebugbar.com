@@ -53,18 +53,5 @@
                 @endforeach
             </div>
         </div>
-
-        <section class="border-t border-zinc-200 bg-zinc-50/70 dark:border-white/10 dark:bg-white/[0.015]" aria-labelledby="features-start-title">
-            <div class="mx-auto flex max-w-5xl flex-col gap-7 px-5 py-12 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:px-10 lg:py-16">
-                <div>
-                    <h2 id="features-start-title" class="text-2xl font-semibold tracking-[-0.035em] text-zinc-950 sm:text-3xl dark:text-white">See it in your own Laravel app.</h2>
-                    <p class="mt-3 text-base leading-7 text-zinc-600 dark:text-zinc-400">Free and open source. Install locally and start with your next request.</p>
-                </div>
-                <a href="{{ route('docs.installation') }}" class="inline-flex min-h-12 shrink-0 items-center justify-center gap-3 self-start rounded-xl bg-violet-700 px-6 text-sm font-semibold text-white transition-colors hover:bg-violet-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 lg:self-auto dark:bg-violet-400 dark:text-violet-950 dark:hover:bg-violet-300">
-                    Install the New Debug Bar
-                    <span aria-hidden="true">→</span>
-                </a>
-            </div>
-        </section>
     </main>
 </x-layouts.site>
