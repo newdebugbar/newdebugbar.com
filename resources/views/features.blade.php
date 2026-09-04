@@ -14,7 +14,7 @@
                 @foreach (config('features', []) as $collection)
                     <section aria-labelledby="collection-{{ $collection['id'] }}">
                         <div class="flex items-start gap-4 border-b border-zinc-200 pb-6 dark:border-white/10">
-                            <span class="pt-2 text-xs text-violet-600 tabular-nums dark:text-violet-400" aria-hidden="true">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                            <span class="flex size-8 shrink-0 items-center justify-center rounded-full border border-violet-200 bg-violet-50 font-mono text-xs font-medium leading-none tabular-nums text-violet-700 dark:border-white/15 dark:bg-white/5 dark:text-violet-300" aria-hidden="true">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
                             <div class="min-w-0">
                                 <h2 id="collection-{{ $collection['id'] }}" class="text-2xl font-semibold tracking-[-0.035em] text-zinc-950 sm:text-3xl dark:text-white">{{ $collection['label'] }}</h2>
                                 <p class="mt-2 max-w-xl text-sm leading-6 text-zinc-600 dark:text-zinc-400">{{ $collection['description'] }}</p>
