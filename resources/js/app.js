@@ -3,7 +3,6 @@ import requestInspectorDesktopLight from '../images/screenshots/request-inspecto
 import requestInspectorMobileDark from '../images/screenshots/request-inspector-mobile-dark.png';
 import requestInspectorMobileLight from '../images/screenshots/request-inspector-mobile-light.png';
 import { initializeSite } from './site.js';
-import { initializeFeatureCatalogue } from './features.js';
 
 initializeSite({
     screenshots: {
@@ -17,5 +16,3 @@ initializeSite({
         },
     },
 });
-
-initializeFeatureCatalogue();
