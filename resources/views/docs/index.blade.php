@@ -13,6 +13,15 @@
         captured context.
     </x-docs.page-header>
 
+    <x-docs.flow
+        :steps="[
+            ['title' => 'Capture a request', 'description' => 'Install the package, repeat the action, and select its exact profile.'],
+            ['title' => 'Follow the evidence', 'description' => 'Use the inspector or your coding agent to trace a finding to its source.'],
+            ['title' => 'Verify the change', 'description' => 'Repeat the same action and compare its data, behavior, and measurements.'],
+        ]"
+        caption="Use the guides below at the point where you need help: setup, diagnosis, or verification."
+    />
+
     <div class="mt-14 space-y-16">
         @foreach ($groups as $group)
             <section aria-labelledby="{{ Illuminate\Support\Str::slug($group['label']) }}-title">

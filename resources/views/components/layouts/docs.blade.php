@@ -76,7 +76,7 @@
                 <x-docs.navigation />
             </aside>
 
-            <article class="min-w-0 px-5 py-8 sm:px-8 sm:py-12 lg:px-10 lg:py-14 xl:px-12 xl:py-16">
+            <article class="min-w-0 wrap-anywhere px-5 py-8 sm:px-8 sm:py-12 lg:px-10 lg:py-14 xl:px-12 xl:py-16">
                 <nav
                     class="mb-6 flex items-center gap-2 text-sm text-zinc-500 lg:hidden dark:text-zinc-400"
                     aria-label="Breadcrumb"

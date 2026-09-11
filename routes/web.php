@@ -40,4 +40,17 @@ Route::prefix('docs')->name('docs.')->group(function () {
     Route::view('/cache-and-redis', 'docs.cache-and-redis')->name('cache-and-redis');
     Route::view('/testing', 'docs.testing')->name('testing');
     Route::view('/mcp', 'docs.mcp')->name('mcp');
+    Route::view('/troubleshooting', 'docs.troubleshooting')->name('troubleshooting');
+    Route::view('/troubleshooting/bar-not-showing', 'docs.troubleshooting.bar-not-showing')->name('troubleshooting.bar-not-showing');
+    Route::view('/troubleshooting/mcp', 'docs.troubleshooting.mcp')->name('troubleshooting.mcp');
+    Route::view('/troubleshooting/missing-profiles', 'docs.troubleshooting.missing-profiles')->name('troubleshooting.missing-profiles');
+    Route::view('/artisan', 'docs.artisan')->name('artisan');
+    Route::view('/authorization', 'docs.authorization')->name('authorization');
+    Route::view('/validation', 'docs.validation')->name('validation');
+    Route::view('/views', 'docs.views')->name('views');
+    Route::view('/events', 'docs.events')->name('events');
+    Route::view('/debugging-with-agents', 'docs.debugging-with-agents')->name('debugging-with-agents');
+    Route::view('/mcp-tools', 'docs.mcp-tools')->name('mcp-tools');
+    Route::view('/local-environments', 'docs.local-environments')->name('local-environments');
+    Route::view('/switching-from-laravel-debugbar', 'docs.switching-from-laravel-debugbar')->name('switching-from-laravel-debugbar');
 });
