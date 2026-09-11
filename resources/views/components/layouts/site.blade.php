@@ -74,6 +74,8 @@
 
         @fonts
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="d8ec6a0d-753a-41cc-9412-b5f28409c6c6"></script>
     </head>
     <body class="min-h-screen bg-zinc-50 text-zinc-950 antialiased transition-colors duration-300 [&_a]:[-webkit-tap-highlight-color:transparent] [&_button]:[-webkit-tap-highlight-color:transparent] dark:bg-[#07070a] dark:text-white">
         @include('partials.site-header')
