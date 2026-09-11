@@ -8,11 +8,11 @@
     <main class="relative isolate [background:radial-gradient(circle_at_73%_46%,rgb(124_58_237_/_10%),transparent_29rem),linear-gradient(145deg,#ffffff_0%,#fafafa_56%,#f7f5ff_100%)] max-[47.999rem]:[background:radial-gradient(circle_at_50%_74%,rgb(124_58_237_/_10%),transparent_24rem),#fafafa] dark:[background:radial-gradient(circle_at_73%_47%,rgb(119_87_255_/_14%),transparent_31rem),radial-gradient(circle_at_18%_87%,rgb(76_29_149_/_7%),transparent_28rem),#07070a] dark:max-[47.999rem]:[background:radial-gradient(circle_at_50%_72%,rgb(119_87_255_/_13%),transparent_24rem),#07070a]">
             <section class="relative mx-auto flex max-w-[100rem] flex-col items-center overflow-hidden px-5 pt-6 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-20 after:h-px after:bg-[linear-gradient(to_right,transparent,rgb(24_24_27_/_12%)_18%,rgb(24_24_27_/_12%)_82%,transparent)] after:content-[''] sm:px-8 sm:pt-10 lg:px-10 dark:after:bg-[linear-gradient(to_right,transparent,rgb(255_255_255_/_14%)_18%,rgb(255_255_255_/_14%)_82%,transparent)]" aria-labelledby="hero-title">
                 <div class="relative z-10 flex w-full min-w-0 flex-col items-center text-center">
-                    <h1 id="hero-title" class="max-w-[62rem] text-balance text-[2.55rem] font-semibold leading-none tracking-[-0.055em] text-zinc-950 sm:text-[3.5rem] lg:text-[3.75rem] dark:text-white">
+                    <h1 id="hero-title" class="max-w-[62rem] text-balance text-[2rem] font-semibold leading-none tracking-[-0.055em] text-zinc-950 sm:text-[3rem] lg:text-[3.75rem] dark:text-white">
                         Powerful, agent-friendly Laravel debugging—free and open source
                     </h1>
 
-                    <p class="mt-5 max-w-[56rem] text-lg leading-8 text-zinc-600 sm:mt-6 sm:text-xl sm:leading-9 dark:text-zinc-400">
+                    <p class="mt-5 max-w-[56rem] text-base leading-7 text-zinc-600 sm:mt-6 sm:text-lg sm:leading-8 lg:text-xl lg:leading-9 dark:text-zinc-400">
                         Find bugs and bottlenecks without digging through scattered logs. Inspect anything in one place—while MCP gives your agent exact context with less guessing and fewer tokens.
                     </p>
 
@@ -38,6 +38,8 @@
                         </button>
                         <p class="sr-only" data-copy-status aria-live="polite"></p>
                     </div>
+
+                    <x-community-proof :community="$community" />
 
                     <div class="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 sm:mt-8" aria-labelledby="sponsors-title">
                         <h2 id="sponsors-title" class="text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-500">

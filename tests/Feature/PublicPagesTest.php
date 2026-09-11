@@ -1,6 +1,8 @@
 <?php
 
+use App\Community\ProjectCommunity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use NewDebugBar\Support\RequestEligibility;
 
 use function Pest\Laravel\get;
@@ -8,6 +10,7 @@ use function Pest\Laravel\withoutVite;
 
 beforeEach(function () {
     withoutVite();
+    Cache::put(ProjectCommunity::CHECKED_KEY, true, now()->addDay());
 });
 
 it('serves a public page through its intended view', function (string $uri, string $view) {

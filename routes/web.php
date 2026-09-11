@@ -1,8 +1,9 @@
 <?php
 
+use App\Community\ProjectCommunity;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome');
+Route::get('/', fn (ProjectCommunity $community) => view('welcome', ['community' => $community->forHero()]));
 
 if (app()->isLocal() || app()->runningUnitTests()) {
     Route::view('/__newdebugbar/social-preview', 'social.og-image')->name('social.og-image');
