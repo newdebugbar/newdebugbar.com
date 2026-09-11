@@ -1,4 +1,4 @@
-# New Debug Bar website
+# The New Debug Bar website
 
 This is the Laravel application for [newdebugbar.com](https://newdebugbar.com).
 

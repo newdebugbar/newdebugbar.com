@@ -21,10 +21,10 @@
 @endphp
 
 <x-layouts.docs
-    meta-title="Inspectors in the New Debug Bar"
-    description="See what every inspector in the New Debug Bar captures for Laravel requests, queries, models, views, Livewire, errors, logs, HTTP, queues, mail, cache, Redis, and more."
+    meta-title="Inspectors in The New Debug Bar"
+    description="See what every inspector in The New Debug Bar captures for Laravel requests, queries, models, views, Livewire, errors, logs, HTTP, queues, mail, cache, Redis, and more."
     :canonical="url('/docs/inspectors')"
-    og-title="Inspectors in the New Debug Bar"
+    og-title="Inspectors in The New Debug Bar"
     og-description="A complete reference for the focused evidence available in each Laravel inspector."
     page-title="Inspectors"
     :sections="[
@@ -35,7 +35,8 @@
     ]"
 >
     <x-docs.page-header category="Reference" title="Choose the inspector that answers your next question">
-        Each inspector keeps one kind of evidence focused. Start with the request overview or a finding, then open the smallest inspector that can explain the symptom.
+        Each inspector keeps one kind of evidence focused. Start with the request overview or a finding, then open the
+        smallest inspector that can explain the symptom.
     </x-docs.page-header>
 
     <x-docs.section id="how-to-use" title="Move from symptom to source">
@@ -47,7 +48,8 @@
                 Let the visible symptom choose the first inspector instead of opening every tab.
             </x-docs.step>
             <x-docs.step number="3" title="Follow application evidence">
-                Open source locations, call stacks, related records, and ordered activity until you reach code that controls the behavior.
+                Open source locations, call stacks, related records, and ordered activity until you reach code that
+                controls the behavior.
             </x-docs.step>
             <x-docs.step number="4" title="Repeat the request">
                 Verify the change on the same path and check that related behavior still works.
@@ -60,24 +62,39 @@
             @foreach ($inspectors as $inspector)
                 <article class="rounded-2xl border border-zinc-200 bg-zinc-50/60 p-5 dark:border-white/10 dark:bg-white/[0.025]">
                     <h3 class="font-semibold text-zinc-950 dark:text-white">{{ $inspector['name'] }}</h3>
-                    <p class="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">{{ $inspector['description'] }}</p>
+                    <p class="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                        {{ $inspector['description'] }}
+                    </p>
                 </article>
             @endforeach
         </div>
     </x-docs.section>
 
     <x-docs.section id="empty-inspectors" title="An empty inspector can be correct">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">A request that sent no mail should have no mail records. A page that made no direct Redis commands may still use Laravel’s cache abstraction and populate Cache instead. The absence of rows means the New Debug Bar retained no matching activity for that selected profile.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">
+            A request that sent no mail should have no mail records. A page that made no direct Redis commands may still
+            use Laravel’s cache abstraction and populate Cache instead. The absence of rows means The New Debug Bar
+            retained no matching activity for that selected profile.
+        </p>
 
         <x-docs.callout class="mt-6" title="Check truncation separately:">
-            an empty inspector and a bounded inspector are different. When collection limits drop records, the inspector reports retained and omitted counts so you know the sample is incomplete.
+            an empty inspector and a bounded inspector are different. When collection limits drop records, the inspector
+            reports retained and omitted counts so you know the sample is incomplete.
         </x-docs.callout>
     </x-docs.section>
 
     <x-docs.section id="mcp-parity" title="Agents can reach the same retained evidence">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The local MCP server exposes every inspector’s retained evidence through bounded requests. Focused tools summarize common work, while <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">get-debug-profile-data</code> follows returned JSON Pointer paths into deeper evidence.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">
+            The local MCP server exposes every inspector’s retained evidence through bounded requests. Focused tools
+            summarize common work, while
+            <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">get-debug-profile-data</code> follows
+            returned JSON Pointer paths into deeper evidence.
+        </p>
 
-        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">Capture-time masking, hashing, truncation, and retention apply equally to the browser inspector and MCP. The agent cannot read a value that the stored profile does not retain.</p>
+        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">
+            Capture-time masking, hashing, truncation, and retention apply equally to the browser inspector and MCP. The
+            agent cannot read a value that the stored profile does not retain.
+        </p>
     </x-docs.section>
 
     <x-docs.next-step

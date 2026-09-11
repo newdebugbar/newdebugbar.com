@@ -78,11 +78,14 @@
 >
     <div class="mx-auto grid max-w-[76rem] gap-12 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-20">
         <header class="max-w-[32rem]">
-            <h2 id="project-roadmap-title" class="text-balance text-3xl font-semibold tracking-[-0.045em] sm:text-4xl lg:text-[2.75rem] lg:leading-[1.05]">
+            <h2
+                id="project-roadmap-title"
+                class="text-3xl font-semibold tracking-[-0.045em] text-balance sm:text-4xl lg:text-[2.75rem] lg:leading-[1.05]"
+            >
                 Roadmap
             </h2>
             <p class="mt-5 text-base leading-7 text-zinc-600 sm:text-lg sm:leading-8 dark:text-zinc-300">
-                Here’s what could make the New Debug Bar even better.
+                Here’s what could make The New Debug Bar even better.
             </p>
             <a
                 class="mt-7 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-violet-700 underline decoration-violet-300 underline-offset-4 transition-colors hover:text-violet-900 hover:decoration-violet-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500 dark:text-violet-300 dark:decoration-violet-500/60 dark:hover:text-violet-200 dark:hover:decoration-violet-300 dark:focus-visible:outline-violet-300"
@@ -91,7 +94,7 @@
             >
                 View the roadmap on GitHub
                 <svg class="size-4" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3.5 8h9M9 4.5 12.5 8 9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3.5 8h9M9 4.5 12.5 8 9 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </a>
         </header>
@@ -99,20 +102,33 @@
         <div class="space-y-11">
             @foreach ($roadmapGroups as $group)
                 <section aria-labelledby="roadmap-group-{{ $group['id'] }}">
-                    <h3 id="roadmap-group-{{ $group['id'] }}" class="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-500">
+                    <h3
+                        id="roadmap-group-{{ $group['id'] }}"
+                        class="text-xs font-semibold tracking-[0.16em] text-zinc-500 uppercase dark:text-zinc-500"
+                    >
                         {{ $group['title'] }}
                     </h3>
 
                     <ol class="mt-4 grid gap-x-10 gap-y-8 sm:grid-cols-2" role="list">
                         @foreach ($group['items'] as $item)
                             @php($roadmapIndex++)
-                            <li class="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] gap-4 border-t border-zinc-950/10 pt-5 dark:border-white/10" data-roadmap-item>
-                                <span class="flex size-8 items-center justify-center rounded-full border border-violet-200 bg-violet-50 font-mono text-xs font-medium leading-none tabular-nums text-violet-700 dark:border-white/15 dark:bg-white/5 dark:text-violet-300" aria-hidden="true">
+                            <li
+                                class="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] gap-4 border-t border-zinc-950/10 pt-5 dark:border-white/10"
+                                data-roadmap-item
+                            >
+                                <span
+                                    class="flex size-8 items-center justify-center rounded-full border border-violet-200 bg-violet-50 font-mono text-xs leading-none font-medium text-violet-700 tabular-nums dark:border-white/15 dark:bg-white/5 dark:text-violet-300"
+                                    aria-hidden="true"
+                                >
                                     {{ str_pad((string) $roadmapIndex, 2, '0', STR_PAD_LEFT) }}
                                 </span>
                                 <div class="min-w-0">
-                                    <h4 class="text-lg leading-8 font-semibold tracking-[-0.025em]">{{ $item['title'] }}</h4>
-                                    <p class="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">{{ $item['description'] }}</p>
+                                    <h4 class="text-lg leading-8 font-semibold tracking-[-0.025em]">
+                                        {{ $item['title'] }}
+                                    </h4>
+                                    <p class="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                                        {{ $item['description'] }}
+                                    </p>
                                 </div>
                             </li>
                         @endforeach

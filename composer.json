@@ -2,8 +2,12 @@
     "$schema": "https://getcomposer.org/schema.json",
     "name": "newdebugbar/website",
     "type": "project",
-    "description": "The official website for New Debug Bar.",
-    "keywords": ["debugging", "laravel", "newdebugbar"],
+    "description": "The official website for The New Debug Bar.",
+    "keywords": [
+        "debugging",
+        "laravel",
+        "newdebugbar"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.3",

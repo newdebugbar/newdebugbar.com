@@ -21,12 +21,17 @@
     >
         <div class="mx-auto grid max-w-[76rem] gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-24">
             <header class="max-w-[31rem]">
-                <p class="text-xs font-semibold tracking-[0.16em] text-violet-700 uppercase dark:text-violet-400">Sponsorship</p>
-                <h2 id="project-sponsorship-title" class="mt-4 text-balance text-4xl leading-[1.08] font-semibold tracking-[-0.045em] text-zinc-950 sm:text-5xl dark:text-white">
+                <p class="text-xs font-semibold tracking-[0.16em] text-violet-700 uppercase dark:text-violet-400">
+                    Sponsorship
+                </p>
+                <h2
+                    id="project-sponsorship-title"
+                    class="mt-4 text-4xl leading-[1.08] font-semibold tracking-[-0.045em] text-balance text-zinc-950 sm:text-5xl dark:text-white"
+                >
                     Help build what’s next.
                 </h2>
                 <p class="mt-5 text-base leading-7 text-zinc-600 sm:text-lg sm:leading-8 dark:text-zinc-400">
-                    Sponsorship gives me more time to improve the New Debug Bar for the Laravel teams who use it.
+                    Sponsorship gives me more time to improve The New Debug Bar for the Laravel teams who use it.
                 </p>
                 <div class="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3">
                     <a
@@ -36,17 +41,22 @@
                     >
                         Sponsor the project
                         <svg class="size-5 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                            <path d="M5 15 15 5M5 5h10v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5 15 15 5M5 5h10v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </a>
                     <span class="text-sm text-zinc-500 dark:text-zinc-400">via GitHub Sponsors</span>
                 </div>
             </header>
 
-            <ul class="divide-y divide-zinc-950/10 border-y border-zinc-950/10 dark:divide-white/10 dark:border-white/10" role="list">
+            <ul
+                class="divide-y divide-zinc-950/10 border-y border-zinc-950/10 dark:divide-white/10 dark:border-white/10"
+                role="list"
+            >
                 @foreach ($sponsorPoints as $point)
                     <li class="grid gap-2 py-6 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6 lg:py-7">
-                        <h3 class="text-base leading-7 font-semibold tracking-[-0.02em] text-zinc-950 dark:text-white">{{ $point['title'] }}</h3>
+                        <h3 class="text-base leading-7 font-semibold tracking-[-0.02em] text-zinc-950 dark:text-white">
+                            {{ $point['title'] }}
+                        </h3>
                         <p class="text-base leading-7 text-zinc-600 dark:text-zinc-400">{{ $point['description'] }}</p>
                     </li>
                 @endforeach
@@ -69,27 +79,42 @@
                     height="770"
                     loading="lazy"
                     decoding="async"
-                >
+                />
                 <figcaption class="lg:mt-5">
-                    <p class="text-base font-semibold tracking-[-0.02em] text-zinc-950 dark:text-white">Benjamin Crozat</p>
-                    <p class="mt-1 text-sm leading-6 text-zinc-600 dark:text-zinc-400">Creator of the New Debug Bar</p>
+                    <p class="text-base font-semibold tracking-[-0.02em] text-zinc-950 dark:text-white">
+                        Benjamin Crozat
+                    </p>
+                    <p class="mt-1 text-sm leading-6 text-zinc-600 dark:text-zinc-400">Creator of The New Debug Bar</p>
                 </figcaption>
             </figure>
 
             <div class="min-w-0">
-                <p class="text-xs font-semibold tracking-[0.16em] text-violet-700 uppercase dark:text-violet-400">Available for new projects</p>
-                <h2 id="project-freelance-title" class="mt-4 max-w-[42rem] text-balance text-4xl leading-[1.08] font-semibold tracking-[-0.045em] text-zinc-950 sm:text-5xl dark:text-white">
+                <p class="text-xs font-semibold tracking-[0.16em] text-violet-700 uppercase dark:text-violet-400">
+                    Available for new projects
+                </p>
+                <h2
+                    id="project-freelance-title"
+                    class="mt-4 max-w-[42rem] text-4xl leading-[1.08] font-semibold tracking-[-0.045em] text-balance text-zinc-950 sm:text-5xl dark:text-white"
+                >
                     Hire me as a freelancer.
                 </h2>
                 <p class="mt-5 max-w-[42rem] text-base leading-7 text-zinc-600 sm:text-lg sm:leading-8 dark:text-zinc-400">
-                    I bring more than 10 years of professional web development experience to your team. I connect business goals with product decisions and hands-on Laravel delivery.
+                    I bring more than 10 years of professional web development experience to your team. I connect
+                    business goals with product decisions and hands-on Laravel delivery.
                 </p>
 
-                <ul class="mt-8 grid gap-5 border-t border-zinc-950/10 pt-6 sm:grid-cols-3 sm:gap-6 dark:border-white/10" role="list">
+                <ul
+                    class="mt-8 grid gap-5 border-t border-zinc-950/10 pt-6 sm:grid-cols-3 sm:gap-6 dark:border-white/10"
+                    role="list"
+                >
                     @foreach ($freelancePoints as $point)
                         <li>
-                            <h3 class="text-sm leading-6 font-semibold text-zinc-950 dark:text-white">{{ $point['title'] }}</h3>
-                            <p class="mt-1 text-sm leading-6 text-zinc-600 dark:text-zinc-400">{{ $point['description'] }}</p>
+                            <h3 class="text-sm leading-6 font-semibold text-zinc-950 dark:text-white">
+                                {{ $point['title'] }}
+                            </h3>
+                            <p class="mt-1 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                                {{ $point['description'] }}
+                            </p>
                         </li>
                     @endforeach
                 </ul>
@@ -102,7 +127,7 @@
                     <span class="inline-flex items-center gap-3 text-base leading-7 font-semibold">
                         <span class="underline decoration-violet-300 underline-offset-4 hover:decoration-violet-600 dark:decoration-violet-500 dark:hover:decoration-violet-300">Email me about your project</span>
                         <svg class="size-5 shrink-0 text-violet-700 dark:text-violet-400" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                            <path d="M4.5 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4.5 10h11m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </span>
                     <span class="text-sm leading-6 text-zinc-600 dark:text-zinc-400">hello@benjamincrozat.com</span>

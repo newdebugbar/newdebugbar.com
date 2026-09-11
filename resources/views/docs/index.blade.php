@@ -2,20 +2,24 @@
 
 <x-layouts.docs
     meta-title="The New Debug Bar documentation for Laravel"
-    description="Learn how to install the New Debug Bar, inspect Laravel requests, debug queries and framework activity, connect coding agents, and test saved profiles."
+    description="Learn how to install The New Debug Bar, inspect Laravel requests, debug queries and framework activity, connect coding agents, and test saved profiles."
     :canonical="url('/docs')"
     og-title="The New Debug Bar documentation"
     og-description="Practical guides for debugging Laravel requests, queries, performance, Livewire, queues, mail, cache, and more."
     page-title="Documentation"
 >
-    <x-docs.page-header category="New Debug Bar" title="Debug Laravel with exact request data">
-        Start with a request, follow the evidence to the code that produced it, and give local coding agents the same captured context.
+    <x-docs.page-header category="The New Debug Bar" title="Debug Laravel with exact request data">
+        Start with a request, follow the evidence to the code that produced it, and give local coding agents the same
+        captured context.
     </x-docs.page-header>
 
     <div class="mt-14 space-y-16">
         @foreach ($groups as $group)
             <section aria-labelledby="{{ Illuminate\Support\Str::slug($group['label']) }}-title">
-                <h2 id="{{ Illuminate\Support\Str::slug($group['label']) }}-title" class="text-2xl font-semibold tracking-[-0.035em] text-zinc-950 dark:text-white">
+                <h2
+                    id="{{ Illuminate\Support\Str::slug($group['label']) }}-title"
+                    class="text-2xl font-semibold tracking-[-0.035em] text-zinc-950 dark:text-white"
+                >
                     {{ $group['label'] }}
                 </h2>
 
