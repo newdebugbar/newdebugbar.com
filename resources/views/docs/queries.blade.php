@@ -42,7 +42,7 @@
             <x-docs.check-item>Check whether the repeated group grows with the number of models shown on the page.</x-docs.check-item>
             <x-docs.check-item>Compare bindings to see whether only an identifier changes between calls.</x-docs.check-item>
             <x-docs.check-item>Open the application call site and inspect the surrounding loop, resource, accessor, view, or relationship access.</x-docs.check-item>
-            <x-docs.check-item>Look at the Models and Views sections for repeated retrieval or rendering that explains the query pattern.</x-docs.check-item>
+            <x-docs.check-item>Look at the Models and Views inspectors for repeated retrieval or rendering that explains the query pattern.</x-docs.check-item>
         </ul>
 
         <x-docs.callout class="mt-6" tone="notice" title="Likely N+1 is a heuristic">

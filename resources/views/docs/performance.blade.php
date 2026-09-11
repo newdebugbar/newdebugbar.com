@@ -41,7 +41,7 @@
                 <thead class="bg-zinc-50 text-zinc-950 dark:bg-white/[0.035] dark:text-white">
                     <tr>
                         <th class="px-4 py-3 font-semibold" scope="col">Signal</th>
-                        <th class="px-4 py-3 font-semibold" scope="col">Useful next section</th>
+                        <th class="px-4 py-3 font-semibold" scope="col">Useful next inspector</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-zinc-200 text-zinc-600 dark:divide-white/10 dark:text-zinc-400">
@@ -57,13 +57,13 @@
     <x-docs.section id="timeline" title="Read work in execution order">
         <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The Timeline joins supported activity into one ordered view. Use it to see whether expensive work is isolated, repeated, or waiting on another operation.</p>
 
-        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">Open a timeline item for its source and related detail. A long outbound request, a sequence of repeated queries, repeated view rendering, or a burst of model work gives you a concrete section to inspect next.</p>
+        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">Open a timeline item for its source and related detail. A long outbound request, a sequence of repeated queries, repeated view rendering, or a burst of model work gives you a concrete inspector to inspect next.</p>
     </x-docs.section>
 
     <x-docs.section id="bottlenecks" title="Follow the bottleneck to its cause">
         <ol class="mt-6 space-y-6" role="list">
             <x-docs.step number="1" title="Open the dominant operation">
-                Choose the largest credible source of time or memory, not merely the section with the most rows.
+                Choose the largest credible source of time or memory, not merely the inspector with the most rows.
             </x-docs.step>
             <x-docs.step number="2" title="Inspect its application source">
                 Use the file, line, and retained application stack to find the caller that controls the work.

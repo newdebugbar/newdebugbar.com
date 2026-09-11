@@ -48,7 +48,7 @@ JSON;
 
     $tools = [
         'list-debug-profiles',
-        'get-debug-profile-section',
+        'get-debug-profile-inspector',
         'get-debug-profile-data',
         'inspect-debug-queries',
         'get-debug-findings',
@@ -208,11 +208,11 @@ JSON;
             <x-docs.step number="2" title="Read findings first">
                 Ask what happened, what deserves attention, why it matters, and which retained evidence supports that lead.
             </x-docs.step>
-            <x-docs.step number="3" title="Open one focused section">
-                Use the symptom to choose Queries, Exceptions, Timeline, HTTP client, Livewire, Queue, or another small section instead of dumping the full profile.
+            <x-docs.step number="3" title="Open one focused inspector">
+                Use the symptom to choose Queries, Exceptions, Timeline, HTTP client, Livewire, Queue, or another small inspector instead of dumping the full profile.
             </x-docs.step>
             <x-docs.step number="4" title="Follow deeper paths only when needed">
-                Use <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">get-debug-profile-data</code> with <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">/sections</code> and returned JSON Pointer paths to reach retained evidence omitted from a concise response.
+                Use <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">get-debug-profile-data</code> with <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">/inspectors</code> and returned JSON Pointer paths to reach retained evidence omitted from a concise response.
             </x-docs.step>
         </ol>
 

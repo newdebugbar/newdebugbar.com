@@ -18,7 +18,7 @@
     </x-docs.page-header>
 
     <x-docs.section id="mail" title="Inspect created mail">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The Mail section retains bounded message metadata, sender and recipient addresses, subject, headers, HTML and text bodies, attachments, source, and queued facts when available.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The Mail inspector retains bounded message metadata, sender and recipient addresses, subject, headers, HTML and text bodies, attachments, source, and queued facts when available.</p>
 
         <ul class="mt-5 space-y-3" role="list">
             <x-docs.check-item>Confirm To, Cc, and Bcc recipients before judging delivery behavior.</x-docs.check-item>
@@ -35,7 +35,7 @@
     </x-docs.section>
 
     <x-docs.section id="notifications" title="Review each notification channel">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The Notifications section connects the notification class and recipient to each channel delivery. Inspect payload, status, failure, timing, source, and related mail evidence instead of treating one multi-channel notification as several unrelated operations.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The Notifications inspector connects the notification class and recipient to each channel delivery. Inspect payload, status, failure, timing, source, and related mail evidence instead of treating one multi-channel notification as several unrelated operations.</p>
 
         <x-docs.callout class="mt-6" title="A created notification is not always delivered:">
             check the channel status and queued outcome. The originating request may only record that delivery work was queued.

@@ -33,7 +33,7 @@
     </x-docs.section>
 
     <x-docs.section id="overview" title="Read the overview first">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The compact bar and request overview answer the first questions without making you open every section:</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The compact bar and request overview answer the first questions without making you open every inspector:</p>
 
         <ul class="mt-5 space-y-3" role="list">
             <x-docs.check-item><strong class="font-semibold text-zinc-950 dark:text-white">What happened:</strong> method, path, request type, status, and duration.</x-docs.check-item>
@@ -57,7 +57,7 @@
             <x-docs.step number="1" title="State the symptom">
                 Name the visible problem: a failed page, repeated database work, a slow update, or an unexpected side effect.
             </x-docs.step>
-            <x-docs.step number="2" title="Open one relevant section">
+            <x-docs.step number="2" title="Open one relevant inspector">
                 Use the finding or overview to choose Queries, Timeline, Exceptions, HTTP client, Livewire, or another focused inspector.
             </x-docs.step>
             <x-docs.step number="3" title="Trace it to application code">

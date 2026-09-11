@@ -17,10 +17,10 @@
         Use Cache for Laravel’s cache abstraction and Redis for direct client commands, then trace keys, stores, results, failures, timing, and source without counting the same operation twice.
     </x-docs.page-header>
 
-    <x-docs.section id="difference" title="Choose the section by API">
+    <x-docs.section id="difference" title="Choose the inspector by API">
         <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Cache records operations emitted by Laravel’s cache system, regardless of the selected cache driver. Redis records commands made through the Redis client. When a Redis-backed cache operation also emits a low-level command, the New Debug Bar removes the duplicate Redis entry.</p>
 
-        <x-docs.callout class="mt-6" title="An empty Redis section can be correct:">
+        <x-docs.callout class="mt-6" title="An empty Redis inspector can be correct:">
             using a Redis cache store does not mean every cache action should appear again as a direct Redis command.
         </x-docs.callout>
     </x-docs.section>
@@ -43,7 +43,7 @@
     </x-docs.section>
 
     <x-docs.section id="redis" title="Inspect direct Redis commands">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The Redis section keeps command, connection, bounded key evidence and parameters, timing, failure state, and the application call site. Results and error details are bounded and redacted before storage.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The Redis inspector keeps command, connection, bounded key evidence and parameters, timing, failure state, and the application call site. Results and error details are bounded and redacted before storage.</p>
 
         <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">Use the source to distinguish an intentional pipeline, lock, rate limiter, pub/sub action, or application data structure from accidental repeated commands. A slow command needs database-side context as well as local duration.</p>
     </x-docs.section>

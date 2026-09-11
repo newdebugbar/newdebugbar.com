@@ -97,8 +97,8 @@ return [
             'pages' => [
                 [
                     'route' => 'docs.inspectors',
-                    'label' => 'Inspector sections',
-                    'description' => 'See what every inspector captures and when each section is useful.',
+                    'label' => 'Inspectors',
+                    'description' => 'See what each inspector captures and when to use it.',
                 ],
                 [
                     'route' => 'docs.data-and-privacy',

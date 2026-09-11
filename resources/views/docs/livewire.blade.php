@@ -36,7 +36,7 @@
     </x-docs.section>
 
     <x-docs.section id="components" title="Inspect component identity and state shape">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The Livewire section lists component instances by name, class, source, view, ID, and parent relationship. It also describes public properties without storing the framework’s full component snapshot.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The Livewire inspector lists component instances by name, class, source, view, ID, and parent relationship. It also describes public properties without storing the framework’s full component snapshot.</p>
 
         <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">Use instance identity and parentage when the same component appears more than once or a nested child behaves differently. Open the source attached to that instance instead of searching by component name alone.</p>
     </x-docs.section>

@@ -43,7 +43,7 @@
     </x-docs.section>
 
     <x-docs.section id="logs" title="Use logs as request-scoped context">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The Logs section keeps level, message, bounded context, channel information, and the application source that wrote each retained entry. Because the entries belong to one profile, you do not need to search a large log file by time alone.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The Logs inspector keeps level, message, bounded context, channel information, and the application source that wrote each retained entry. Because the entries belong to one profile, you do not need to search a large log file by time alone.</p>
 
         <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">Start with warning and error levels, but keep lower-level entries when they record the state transition or external identifier that explains the failure. Common sensitive keys are redacted during capture.</p>
     </x-docs.section>

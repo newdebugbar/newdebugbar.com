@@ -18,7 +18,7 @@
     </x-docs.page-header>
 
     <x-docs.section id="overview" title="Start with the model groups">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The Models section groups activity by model class, connection, table, source, and logical operation. This keeps a busy lifecycle readable without hiding the underlying retained records.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The Models inspector groups activity by model class, connection, table, source, and logical operation. This keeps a busy lifecycle readable without hiding the underlying retained records.</p>
 
         <ul class="mt-5 space-y-3" role="list">
             <x-docs.check-item>Use retrieval counts to spot models loaded more often than the page needs.</x-docs.check-item>

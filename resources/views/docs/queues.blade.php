@@ -18,7 +18,7 @@
     </x-docs.page-header>
 
     <x-docs.section id="dispatch" title="Read the dispatch evidence">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The Queue section records bounded lifecycle facts such as the job class, queued or executed kind, connection, queue, job ID, delay, source, duration when available, and failure state.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The Queue inspector records bounded lifecycle facts such as the job class, queued or executed kind, connection, queue, job ID, delay, source, duration when available, and failure state.</p>
 
         <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">Use the application call site to answer why the job was dispatched. A job class tells you what can run; the source tells you which request path chose to run it.</p>
     </x-docs.section>

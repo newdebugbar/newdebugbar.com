@@ -29,7 +29,7 @@
     <x-docs.section id="captured" title="Profiles contain debugging evidence">
         <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">A profile can contain request details, route and user context, query SQL and bindings, model identifiers and changes, cache and Redis keys, log context, exception frames and source context, validation messages, view data, mail previews, notification payloads, HTTP metadata, and other values produced during the request.</p>
 
-        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">The exact sections depend on what happened. The New Debug Bar does not invent missing evidence, and it does not need every section to be populated for a profile to be useful.</p>
+        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">The exact inspectors depend on what happened. The New Debug Bar does not invent missing evidence, and it does not need every inspector to be populated for a profile to be useful.</p>
     </x-docs.section>
 
     <x-docs.section id="storage" title="Profiles use private short-lived files">
@@ -44,10 +44,10 @@
     </x-docs.section>
 
     <x-docs.section id="limits" title="Collection is bounded before storage">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The package limits records, nested arrays, depth, string length, mail bodies, attachment bodies, call-site frames, exception evidence, and findings. Large sections may report that data was dropped or truncated instead of growing without a bound.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The package limits records, nested arrays, depth, string length, mail bodies, attachment bodies, call-site frames, exception evidence, and findings. Large inspectors may report that data was dropped or truncated instead of growing without a bound.</p>
 
         <x-docs.callout class="mt-6" title="Bounds are part of the evidence:">
-            when a section reports omitted items, do not read the retained sample as a complete count. Increase the relevant limit only when the missing detail is needed for the local investigation.
+            when an inspector reports omitted items, do not read the retained sample as a complete count. Increase the relevant limit only when the missing detail is needed for the local investigation.
         </x-docs.callout>
     </x-docs.section>
 
@@ -74,7 +74,7 @@
     </x-docs.section>
 
     <x-docs.section id="access" title="The browser and MCP read local profiles">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The injected browser interface requests one selected profile and one inspector section at a time. The local MCP server exposes read-only tools with item and byte limits, and its generic data tool follows bounded paths into retained profile values.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The injected browser interface requests one selected profile and one inspector at a time. The local MCP server exposes read-only tools with item and byte limits, and its generic data tool follows bounded paths into retained profile values.</p>
 
         <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">An MCP client must be able to start the Laravel app’s local Artisan command. The New Debug Bar does not upload profiles to a hosted service.</p>
     </x-docs.section>

@@ -10,7 +10,7 @@
                 ],
                 [
                     'title' => 'Cross-request comparison',
-                    'description' => 'Compare duration, queries, failures, and section activity between two profiles.',
+                    'description' => 'Compare duration, queries, failures, and inspector activity between two profiles.',
                 ],
                 [
                     'title' => 'Failed query capture',
@@ -54,7 +54,7 @@
                 ],
                 [
                     'title' => 'Controlled collector extensions',
-                    'description' => 'Let packages add bounded inspector sections while keeping redaction and MCP access intact.',
+                    'description' => 'Let packages add bounded inspectors while keeping redaction and MCP access intact.',
                 ],
                 [
                     'title' => 'Editor navigation and path mapping',

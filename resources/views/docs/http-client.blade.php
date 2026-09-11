@@ -26,7 +26,7 @@
     </x-docs.section>
 
     <x-docs.section id="slow" title="Separate remote wait from local work">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The section summary totals observed outbound HTTP duration. A call at or above <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">slow_http_request_ms</code> is marked as slow; the default threshold is 250 milliseconds.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The inspector summary totals observed outbound HTTP duration. A call at or above <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">slow_http_request_ms</code> is marked as slow; the default threshold is 250 milliseconds.</p>
 
         <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">Use the Timeline to see whether calls run one after another, repeat with similar URLs, or sit beside expensive local work. Then decide whether the source can batch, cache, defer, parallelize, or avoid the call.</p>
     </x-docs.section>
