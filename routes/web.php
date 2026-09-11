@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
-Route::view('/features', 'features')->name('features');
 
 if (app()->isLocal() || app()->runningUnitTests()) {
     Route::view('/__newdebugbar/social-preview', 'social.og-image')->name('social.og-image');
@@ -17,7 +16,7 @@ Route::get('/sitemap.xml', function () {
 
     return response()
         ->view('sitemap', [
-            'urls' => [url('/'), route('features'), route('docs.index'), ...$documentationUrls],
+            'urls' => [url('/'), route('docs.index'), ...$documentationUrls],
         ])
         ->header('Content-Type', 'application/xml; charset=UTF-8');
 })->name('sitemap');
