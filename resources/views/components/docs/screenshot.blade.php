@@ -5,11 +5,14 @@
 <x-docs.figure {{ $attributes->class('mt-8') }} :caption="$caption">
     @foreach (['light', 'dark'] as $theme)
         <a
-            @class(['block' => $theme === 'light', 'dark:hidden' => $theme === 'light', 'hidden dark:block' => $theme === 'dark'])
+            @class([
+                'cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-500',
+                'block dark:hidden' => $theme === 'light',
+                'hidden dark:block' => $theme === 'dark',
+            ])
             href="{{ Vite::asset($directory.'-desktop-'.$theme.'.png') }}"
             target="_blank"
             rel="noopener"
-            aria-label="Open full-size desktop screenshot: {{ $alt }}"
             data-docs-screenshot="{{ $name }}"
             data-docs-screenshot-theme="{{ $theme }}"
         >
@@ -30,7 +33,6 @@
                     decoding="async"
                 >
             </picture>
-            <span class="mt-3 inline-flex text-xs font-medium text-violet-700 underline underline-offset-4 dark:text-violet-300">Open full-size desktop screenshot</span>
         </a>
     @endforeach
 </x-docs.figure>
