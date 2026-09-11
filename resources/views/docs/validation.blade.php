@@ -60,7 +60,7 @@ EXAMPLE2;
     <x-docs.section id="responses" title="Understand the response you received">
         <div class="mt-6 overflow-x-auto rounded-xl border border-zinc-200 dark:border-white/10">
             <table class="w-full min-w-[34rem] text-left text-sm">
-                <thead class="bg-zinc-50 text-zinc-950 dark:bg-white/[0.035]">
+                <thead class="bg-zinc-50 text-zinc-950 dark:bg-white/[0.035] dark:text-white">
                     <tr>
                         <th class="px-4 py-3 font-semibold" scope="col">Flow</th>
                         <th class="px-4 py-3 font-semibold" scope="col">What to inspect</th>
