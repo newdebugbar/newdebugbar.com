@@ -27,7 +27,7 @@ contributors in random order. Refresh the data immediately with:
 php artisan app:refresh-community
 ```
 
-The Laravel scheduler runs this command daily. Homepage visits also refresh stale
-or missing data after sending the response, so a queue worker is not required.
+The Laravel scheduler runs this command hourly. Homepage visits also refresh data
+older than one hour or missing data after sending the response, so a queue worker is not required.
 Failed refreshes retain the last successful values and retry after at least ten
 minutes. The public APIs do not require a token.

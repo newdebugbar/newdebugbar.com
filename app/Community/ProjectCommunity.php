@@ -77,7 +77,7 @@ class ProjectCommunity
                 }
             }
 
-            Cache::put(self::CHECKED_KEY, true, $successful ? now()->addDay() : $this->retryAfter);
+            Cache::put(self::CHECKED_KEY, true, $successful ? now()->addHour() : $this->retryAfter);
 
             return $successful;
         });

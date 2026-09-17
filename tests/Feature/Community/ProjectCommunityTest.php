@@ -59,7 +59,7 @@ it('refreshes public counts and merges people from both repositories without bot
     Http::assertSentCount(4);
 });
 
-it('defers the first fetch until after rendering and reuses the saved data for a day', function () {
+it('defers the first fetch until after rendering and reuses the saved data for an hour', function () {
     Http::fake($this->responses);
     $community = app(ProjectCommunity::class);
 
@@ -70,12 +70,12 @@ it('defers the first fetch until after rendering and reuses the saved data for a
     Http::assertSentCount(4);
     expect($community->forHero()['downloads'])->toBe(19903);
 
-    travel(23)->hours();
+    travel(59)->minutes();
     $community->forHero();
     defer()->invoke();
     Http::assertSentCount(4);
 
-    travel(2)->hours();
+    travel(1)->minutes();
     expect($community->forHero()['downloads'])->toBe(19903);
     Http::assertSentCount(4);
 
