@@ -63,8 +63,8 @@ PHP;
                 <tbody class="divide-y divide-zinc-200 text-zinc-600 dark:divide-white/10 dark:text-zinc-400">
                     <tr>
                         <td class="px-4 py-3"><code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">enabled</code></td>
-                        <td class="px-4 py-3"><code class="font-mono text-[0.9em]">true</code></td>
-                        <td class="px-4 py-3">A local task needs profiling, routes, interface work, and MCP completely inactive.</td>
+                        <td class="px-4 py-3"><code class="font-mono text-[0.9em]">null</code></td>
+                        <td class="px-4 py-3">A local task needs a different setting from Laravel’s debug mode.</td>
                     </tr>
                     <tr>
                         <td class="px-4 py-3"><code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">environments</code></td>
@@ -80,7 +80,15 @@ PHP;
             </table>
         </div>
 
-        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">Set <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">NEWDEBUGBAR_ENABLED=false</code> to disable the package without removing it. A theme chosen in the browser overrides the starting theme for that browser.</p>
+        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">By default, the package follows <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">APP_DEBUG</code>. Set <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">NEWDEBUGBAR_ENABLED=true</code> or <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">NEWDEBUGBAR_ENABLED=false</code> to override that default. The app must still use an allowed environment. A theme chosen in the browser overrides the starting theme for that browser.</p>
+        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">If you already published the configuration, remove any default <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">true</code> value from the enabled setting so it can follow debug mode:</p>
+
+        <x-docs.copyable-code
+            class="mt-5"
+            code="'enabled' => env('NEWDEBUGBAR_ENABLED'),"
+            copy-label="Copy automatic enablement configuration"
+            copy-success="Configuration copied"
+        />
     </x-docs.section>
 
     <x-docs.section id="thresholds" title="Tune findings to local work">
@@ -142,9 +150,9 @@ PHP;
                 <tbody class="divide-y divide-zinc-200 text-zinc-600 dark:divide-white/10 dark:text-zinc-400">
                     <tr>
                         <td class="px-4 py-3 align-top"><code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">enabled</code></td>
-                        <td class="px-4 py-3 align-top">Boolean</td>
-                        <td class="px-4 py-3 align-top"><code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">true</code></td>
-                        <td class="px-4 py-3 align-top">Starts or disables profiling, routes, the interface, and MCP. <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">NEWDEBUGBAR_ENABLED</code> controls it.</td>
+                        <td class="px-4 py-3 align-top">Boolean or null</td>
+                        <td class="px-4 py-3 align-top"><code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">null</code></td>
+                        <td class="px-4 py-3 align-top">Null follows <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">app.debug</code>. <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">NEWDEBUGBAR_ENABLED</code> can explicitly enable or disable profiling, routes, the interface, and MCP within the allowed environments.</td>
                     </tr>
                     <tr>
                         <td class="px-4 py-3 align-top"><code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">environments</code></td>

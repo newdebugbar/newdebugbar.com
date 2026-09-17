@@ -41,7 +41,7 @@ EXAMPLE2;
     <x-docs.section id="startup" title="Read a startup failure before retrying">
         <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Check the client’s MCP log for the first startup error. Missing PHP, a missing Artisan file, a Composer/autoload failure, or a Laravel bootstrap exception must be resolved before tool discovery can work.</p>
 
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Confirm that the process uses an allowed environment and that <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">NEWDEBUGBAR_ENABLED</code> is not false. If configuration changed, clear the app’s configuration cache and restart this MCP connection.</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Confirm that the process uses an allowed environment and that <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">APP_DEBUG</code> is true. An explicit <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">NEWDEBUGBAR_ENABLED</code> value overrides debug mode, so set it to true if this local process needs MCP while debug mode is off. If configuration changed, clear the app’s configuration cache and restart this MCP connection.</p>
 
         <x-docs.callout class="mt-6" title="A quiet terminal is normal"><code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">php artisan mcp:start newdebugbar</code> is a stdio server: it waits for protocol messages. Your client normally owns this process. A waiting terminal by itself is not a successful connection test.</x-docs.callout>
 

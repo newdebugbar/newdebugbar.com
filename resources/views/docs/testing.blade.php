@@ -84,7 +84,7 @@ PHP;
     <x-docs.flow :steps="$diagram1" caption="A profile assertion complements the application test; it does not replace the response assertion." />
 
     <x-docs.section id="enable" title="Enable profiling before the test app boots">
-        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The New Debug Bar defaults to the <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">local</code> environment. To capture profiles during tests, publish the package configuration and include <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">testing</code> in the allowed environments:</p>
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The New Debug Bar defaults to the <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">local</code> environment and follows <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">APP_DEBUG</code>. To capture profiles during tests, enable debug mode or set <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">NEWDEBUGBAR_ENABLED=true</code> in the test environment. Publish the package configuration and include <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">testing</code> in the allowed environments:</p>
 
         <x-docs.copyable-code
             class="mt-5"

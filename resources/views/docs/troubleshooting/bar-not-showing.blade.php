@@ -42,7 +42,7 @@ EXAMPLE2;
 
         <x-docs.copyable-code class="mt-5" :code="$example2" copy-label="Copy configuration refresh" copy-success="Example copied" :multiline="true" />
 
-        <x-docs.callout class="mt-6" title="Use the package settings">Changing <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">APP_DEBUG</code> alone is not the switch for The New Debug Bar. See <a class="font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:decoration-violet-600 dark:text-violet-300 dark:decoration-violet-500/60" href="{{ route('docs.configuration') }}">Configuration</a> for the actual startup settings.</x-docs.callout>
+        <x-docs.callout class="mt-6" title="Check debug mode and any override">By default, The New Debug Bar follows <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">APP_DEBUG</code>. Set <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">NEWDEBUGBAR_ENABLED=true</code> to keep it enabled while debug mode is off, or <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">NEWDEBUGBAR_ENABLED=false</code> to disable it. The app must still use an allowed environment. See <a class="font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:decoration-violet-600 dark:text-violet-300 dark:decoration-violet-500/60" href="{{ route('docs.configuration') }}">Configuration</a> for the actual startup settings.</x-docs.callout>
     </x-docs.section>
 
     <x-docs.section id="response" title="Was the response captured?">

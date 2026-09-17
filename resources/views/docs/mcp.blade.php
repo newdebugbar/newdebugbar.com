@@ -242,7 +242,7 @@ JSON;
     <x-docs.section id="troubleshooting" title="Troubleshooting">
         <div class="mt-5 divide-y divide-zinc-200 border-y border-zinc-200 dark:divide-white/10 dark:border-white/10">
             <x-docs.disclosure summary="The server is missing">
-                Make sure the package is installed, the app uses an allowed local environment, and <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">NEWDEBUGBAR_ENABLED</code> is not set to <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">false</code>.
+                Make sure the package is installed and the app uses an allowed local environment. The package follows <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">APP_DEBUG</code> by default; an explicit <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">NEWDEBUGBAR_ENABLED=true</code> enables it even when debug mode is off, and <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">NEWDEBUGBAR_ENABLED=false</code> disables it.
             </x-docs.disclosure>
             <x-docs.disclosure summary="The command cannot find PHP">
                 Replace <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">php</code> with the full path to your PHP program.
