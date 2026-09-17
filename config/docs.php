@@ -8,7 +8,6 @@ return [
                 ['route' => 'docs.installation', 'label' => 'Installation', 'description' => 'Install the package and confirm the bar appears in your Laravel app.'],
                 ['route' => 'docs.requests', 'label' => 'Requests', 'description' => 'Choose the right request profile and understand what happened during it.'],
                 ['route' => 'docs.local-environments', 'label' => 'Local environments', 'description' => 'Keep Laravel web requests, MCP commands, containers, and queue workers aligned on the correct PHP runtime, environment, and profile storage.'],
-                ['route' => 'docs.switching-from-laravel-debugbar', 'label' => 'Switch from Laravel Debugbar', 'description' => 'Plan a practical switch from Laravel Debugbar to The New Debug Bar by checking requirements, existing helper calls, storage, source actions, and agent workflows.'],
             ],
         ],
         [

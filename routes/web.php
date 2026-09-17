@@ -52,5 +52,4 @@ Route::prefix('docs')->name('docs.')->group(function () {
     Route::view('/debugging-with-agents', 'docs.debugging-with-agents')->name('debugging-with-agents');
     Route::view('/mcp-tools', 'docs.mcp-tools')->name('mcp-tools');
     Route::view('/local-environments', 'docs.local-environments')->name('local-environments');
-    Route::view('/switching-from-laravel-debugbar', 'docs.switching-from-laravel-debugbar')->name('switching-from-laravel-debugbar');
 });

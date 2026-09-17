@@ -128,7 +128,6 @@
             <x-docs.check-item><a class="font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:decoration-violet-600 dark:text-violet-300 dark:decoration-violet-500/60" href="{{ route('docs.troubleshooting.bar-not-showing') }}">The bar is missing or will not open</a> — separate disabled capture, unsupported response bodies, and browser startup errors.</x-docs.check-item>
             <x-docs.check-item><a class="font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:decoration-violet-600 dark:text-violet-300 dark:decoration-violet-500/60" href="{{ route('docs.local-environments') }}">Local environments</a> — keep the web process, MCP client, and worker on the correct application setup.</x-docs.check-item>
             <x-docs.check-item><a class="font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:decoration-violet-600 dark:text-violet-300 dark:decoration-violet-500/60" href="{{ route('docs.queries') }}">Queries</a> — work through a concrete N+1 example.</x-docs.check-item>
-            <x-docs.check-item><a class="font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:decoration-violet-600 dark:text-violet-300 dark:decoration-violet-500/60" href="{{ route('docs.switching-from-laravel-debugbar') }}">Switch from Laravel Debugbar</a> — inventory existing helpers and workflows before removing another package.</x-docs.check-item>
         </ul>
     </x-docs.section>
 
