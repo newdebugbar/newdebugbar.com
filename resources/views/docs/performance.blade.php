@@ -45,6 +45,8 @@ EXAMPLE1;
             <x-docs.check-item>Repeat the request more than once when the difference is small.</x-docs.check-item>
             <x-docs.check-item>Use production monitoring for production latency; use The New Debug Bar to explain local work.</x-docs.check-item>
         </ul>
+
+        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">The same workflow applies to API endpoints. Send requests with an HTTP client and compare their exact profiles through <a class="font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:decoration-violet-600 dark:text-violet-300 dark:decoration-violet-500/60" href="{{ route('docs.mcp') }}#api-profiling">MCP without a browser</a>. Keep the payload, authentication, and cache state consistent. For APIs called by a page, select each later request in the bar instead of attributing its work to the initial page load.</p>
     </x-docs.section>
 
     <x-docs.section id="overview" title="Use the overview to choose a direction">

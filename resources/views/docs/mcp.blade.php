@@ -58,6 +58,18 @@ JSON;
         'inspect-debug-queries',
         'get-debug-findings',
     ];
+
+    $apiRequest = <<<'SHELL'
+curl -i -H 'Accept: application/json' http://your-app.test/api/trips
+SHELL;
+
+    $apiPrompt = <<<'PROMPT'
+Profile GET http://your-app.test/api/trips using an HTTP client and The New Debug Bar MCP server.
+Keep the exact X-NewDebugBar-Profile ID from each response.
+Compare repeated requests with the same inputs and authentication, separating cold and warm caches.
+Report status, server duration, query count and time, and peak memory.
+Inspect findings and the relevant queries, cache activity, or outgoing HTTP calls to explain the expensive work.
+PROMPT;
 @endphp
 
 <x-layouts.docs
@@ -76,6 +88,7 @@ JSON;
         ['id' => 'other-clients', 'label' => 'Other clients'],
         ['id' => 'check-connection', 'label' => 'Check the connection'],
         ['id' => 'debug-workflow', 'label' => 'Debug with an agent'],
+        ['id' => 'api-profiling', 'label' => 'Profile an API without a browser'],
         ['id' => 'troubleshooting', 'label' => 'Troubleshooting'],
         ['id' => 'next-workflow', 'label' => 'Continue from connection to a verified fix'],
         ['id' => 'client-references', 'label' => 'Client documentation'],
@@ -87,8 +100,8 @@ JSON;
 
     <x-docs.flow :steps="$diagram1" caption="Client setup connects the data. The debugging walkthrough shows how to use it." />
 
-    <x-docs.callout class="mt-10" title="Your coding tool starts the server:">
-        do not run <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">mcp:start</code> in a separate terminal.
+    <x-docs.callout class="mt-10" title="Your coding tool starts the server">
+        Configure the command in your MCP client. It launches <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">mcp:start</code> and communicates over standard input and output. You do not need a separate terminal process or an HTTP server URL.
     </x-docs.callout>
 
     <x-docs.section id="before-you-start" title="Before you start">
@@ -97,7 +110,7 @@ JSON;
                 <a class="font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:decoration-violet-600 dark:text-violet-300 dark:decoration-violet-500/60 dark:hover:decoration-violet-300" href="{{ route('docs.installation') }}">Install The New Debug Bar</a> in your Laravel app.
             </x-docs.check-item>
             <x-docs.check-item>
-                Make sure the app uses its <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">local</code> environment.
+                Make sure the app is in an allowed environment, which defaults to <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">local</code>, and The New Debug Bar is enabled. It follows <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">APP_DEBUG</code> unless <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">NEWDEBUGBAR_ENABLED</code> overrides it.
             </x-docs.check-item>
             <x-docs.check-item>
                 For manual setup, find the full path to the app's <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">artisan</code> file.
@@ -105,6 +118,8 @@ JSON;
         </ul>
 
         <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">The examples use <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">/absolute/path/to/your-app/artisan</code>. Replace it with your real path.</p>
+
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The command must boot the same Laravel app and read the same profile storage as the process handling your requests. If the app runs in Sail, Docker, or another host, follow the <a class="font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:decoration-violet-600 dark:text-violet-300 dark:decoration-violet-500/60" href="{{ route('docs.local-environments') }}">local environment guide</a>.</p>
     </x-docs.section>
 
     <x-docs.section id="codex" title="Codex">
@@ -120,6 +135,8 @@ JSON;
         />
 
         <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">Open the Laravel app's root folder in Codex and start a new task. You do not need to publish The New Debug Bar config file.</p>
+
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">If your Codex version does not provide the plugin commands, use the manual MCP setup below.</p>
 
         <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">For manual setup, add a server that points to this app and then check it:</p>
 
@@ -164,6 +181,8 @@ JSON;
             copy-success="Cursor configuration copied"
             :multiline="true"
         />
+
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Save the file and restart Cursor. Check the server in Customize → MCPs.</p>
     </x-docs.section>
 
     <x-docs.section id="vscode" title="VS Code">
@@ -176,6 +195,8 @@ JSON;
             copy-success="VS Code configuration copied"
             :multiline="true"
         />
+
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Run <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">MCP: List Servers</code> from the Command Palette to start the server or inspect its output.</p>
     </x-docs.section>
 
     <x-docs.section id="other-clients" title="Other MCP clients">
@@ -201,7 +222,7 @@ JSON;
             @endforeach
         </ul>
 
-        <p class="mt-6 text-base leading-7 text-zinc-600 dark:text-zinc-400">Visit a page in your Laravel app, then ask:</p>
+        <p class="mt-6 text-base leading-7 text-zinc-600 dark:text-zinc-400">Make a request to your Laravel app, using a browser or an HTTP client. For a page you just visited, ask:</p>
 
         <x-docs.callout class="mt-5" label="Suggested agent prompt">
             Inspect the profile from The New Debug Bar for the page I just visited. Tell me what happened, what looks wrong, and what I should inspect next.
@@ -239,6 +260,24 @@ JSON;
         </x-docs.callout>
     </x-docs.section>
 
+    <x-docs.section id="api-profiling" title="Profile an API without a browser">
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The New Debug Bar captures requests inside Laravel. The local MCP server reads those saved profiles, so it works with JSON APIs even when there is no page or visible toolbar. Install and enable the package in the app as usual; the API does not need a separate collector.</p>
+
+        <ol class="mt-6 space-y-6" role="list">
+            <x-docs.step number="1" title="Send the API request">Use curl, Postman, a test, or your agent’s HTTP tools. Use the endpoint’s usual authentication and, where required, session cookies and CSRF token.</x-docs.step>
+            <x-docs.step number="2" title="Keep the response profile ID">Read <code class="font-mono text-[0.9em]">X-NewDebugBar-Profile</code> from that response. The JSON body keeps its normal format, including validation and error responses.</x-docs.step>
+            <x-docs.step number="3" title="Inspect that profile through MCP">Start with <code class="font-mono text-[0.9em]">get-debug-findings</code>, then use a focused inspector or <code class="font-mono text-[0.9em]">get-debug-profile-data</code> for the evidence you need. MCP reads the result; it does not call the endpoint.</x-docs.step>
+        </ol>
+
+        <x-docs.copyable-code class="mt-6" :code="$apiRequest" copy-label="Copy API request" copy-success="Request copied" :multiline="true" />
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Replace the URL with an existing local endpoint. To have an agent compare requests, use a prompt such as:</p>
+        <x-docs.copyable-code class="mt-5" :code="$apiPrompt" copy-label="Copy API profiling prompt" copy-success="Prompt copied" :multiline="true" />
+
+        <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">A browser is useful for reproducing a real click, fetch, or Livewire interaction. Each resulting HTTP request has its own profile. Fetching the initial HTML with curl does not run its JavaScript or trigger later updates. The <a class="font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:decoration-violet-600 dark:text-violet-300 dark:decoration-violet-500/60" href="{{ route('docs.requests') }}#background">request picker</a> lets you inspect calls made by the page.</p>
+
+        <x-docs.callout class="mt-6" title="Compare server work, not browser speed">Profile duration measures captured server work, not the client’s network round trip or browser rendering. Profiling adds overhead. Keep inputs and cache state comparable, and confirm important speed claims without the profiler. See the <a class="font-medium underline underline-offset-4" href="{{ route('docs.performance') }}#measurement-boundaries">performance measurement limits</a>.</x-docs.callout>
+    </x-docs.section>
+
     <x-docs.section id="troubleshooting" title="Troubleshooting">
         <div class="mt-5 divide-y divide-zinc-200 border-y border-zinc-200 dark:divide-white/10 dark:border-white/10">
             <x-docs.disclosure summary="The server is missing">
@@ -251,10 +290,10 @@ JSON;
                 Check that the configured path points to that app's <code class="font-mono text-[0.9em] text-zinc-900 dark:text-zinc-200">artisan</code> file.
             </x-docs.disclosure>
             <x-docs.disclosure summary="No profiles appear">
-                Visit a normal page in the Laravel app first, then ask the client to list recent profiles again.
+                Make a fresh page or API request with The New Debug Bar enabled, then use its response-header profile ID. Check that the MCP process reads the same app’s profile storage. Stored profiles can expire or be removed by the retention limit.
             </x-docs.disclosure>
             <x-docs.disclosure summary="The client only runs online">
-                The New Debug Bar needs a local MCP client that can start a command on your computer.
+                This package registers a stdio server, not a remote HTTP MCP endpoint. Your client must be able to launch the Artisan command in an environment that can boot the app and read its profiles. A hosted client that only accepts remote HTTP servers cannot connect directly.
             </x-docs.disclosure>
         </div>
     </x-docs.section>

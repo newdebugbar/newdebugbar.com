@@ -1,6 +1,6 @@
 @php
     $example1 = <<<'EXAMPLE1'
-curl -i http://your-app.test/api/trips
+curl -i -H 'Accept: application/json' http://your-app.test/api/trips
 EXAMPLE1;
 
 @endphp
@@ -75,6 +75,8 @@ EXAMPLE1;
     </x-docs.section>
 
     <x-docs.section id="background" title="Watch for background requests">
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">When a page calls an internal API through fetch or XMLHttpRequest, The New Debug Bar discovers the profile from that response. Open the subsequent requests menu beside the current request and select the API call. A seat check, quote request, or failed form submission has its own queries, duration, and errors; those belong to the later request, not the original page load.</p>
+
         <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">The newest profile is not always the page you care about. A Livewire update, polling request, asset-related fetch, or application request made after the main response may be newer.</p>
 
         <p class="mt-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">Reselect the profile by method and path after the list refreshes. When an agent or test needs certainty, pass the exact response-header ID instead of saying “the latest request.”</p>
@@ -83,9 +85,13 @@ EXAMPLE1;
     <x-docs.section id="response-types" title="Inspect APIs, redirects, downloads, and streams">
         <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">A request can be captured without receiving toolbar HTML. JSON, redirects, downloads, and streamed responses preserve their response format. Read the profile header and use MCP when there is no HTML page to host the bar.</p>
 
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">No browser is required. Call an endpoint in your enabled local Laravel app with curl, Postman, a test, or another HTTP client. Laravel captures the work, and the MCP server reads the saved profile. It does not send the request itself.</p>
+
         <x-docs.copyable-code class="mt-5" :code="$example1" copy-label="Copy API inspection example" copy-success="Example copied" :multiline="true" />
 
         <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">Replace that example URL with an existing local route. Read <code class="font-mono text-[0.9em] text-zinc-950 dark:text-zinc-100">X-NewDebugBar-Profile</code> from the response and pass its value to your agent. For redirects, identify the response whose work you need; the destination page is another request.</p>
+
+        <p class="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-400">See <a class="font-medium text-violet-700 underline decoration-violet-300 underline-offset-4 hover:decoration-violet-600 dark:text-violet-300 dark:decoration-violet-500/60" href="{{ route('docs.mcp') }}#api-profiling">Profile an API without a browser</a> for the agent workflow. Calls made by a separate API client do not automatically appear in an already-open page’s request menu; use their profile IDs through MCP.</p>
 
         <div class="mt-6 overflow-x-auto rounded-xl border border-zinc-200 dark:border-white/10">
             <table class="w-full min-w-[34rem] text-left text-sm">
